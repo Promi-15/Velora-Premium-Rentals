@@ -1827,21 +1827,6 @@
 
         </div>
 
-        <!-- Studio Light Gradient Transition to Lower White Canvas -->
-        <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
-
-        <!-- MAIN FOREGROUND COMPLETE VEHICLE HERO (Overlapping the panels & lower canvas) -->
-        <div class="absolute inset-x-0 bottom-1 sm:bottom-2 z-20 flex flex-col items-center justify-center px-4 pointer-events-none">
-          <div class="relative w-full max-w-[760px] sm:max-w-[860px] transition-all duration-700">
-            <img id="modalHeroImg" 
-                 src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=1200&q=80" 
-                 alt="Vehicle Campaign Hero" 
-                 class="w-full h-auto max-h-[250px] sm:max-h-[340px] md:max-h-[380px] object-contain drop-shadow-[0_28px_40px_rgba(0,0,0,0.55)] transition-all duration-500">
-            <!-- Ground Contact Shadow -->
-            <div class="w-[85%] h-8 sm:h-12 bg-ink/35 rounded-[50%] blur-xl mx-auto -mt-3 sm:-mt-5 pointer-events-none"></div>
-          </div>
-        </div>
-
       </div>
 
       <!-- 2. CLEAN WHITE EDITORIAL CONTENT AREA (Bottom Section) -->
@@ -2547,25 +2532,20 @@
       const t1 = document.getElementById('modalPanelTag1');
       const t2 = document.getElementById('modalPanelTag2');
       const t3 = document.getElementById('modalPanelTag3');
-      const hero = document.getElementById('modalHeroImg');
 
-      if (p1) p1.src = data.panels.front;
-      if (p2) p2.src = data.panels.rear;
-      if (p3) p3.src = data.panels.side;
+      [p1, p2, p3].forEach(p => {
+        if (p) p.style.opacity = '0.35';
+      });
+
+      setTimeout(() => {
+        if (p1) { p1.src = data.panels.front; p1.style.opacity = '1'; }
+        if (p2) { p2.src = data.panels.rear; p2.style.opacity = '1'; }
+        if (p3) { p3.src = data.panels.side; p3.style.opacity = '1'; }
+      }, 120);
+
       if (t1) t1.innerText = data.panelTags.tag1;
       if (t2) t2.innerText = data.panelTags.tag2;
       if (t3) t3.innerText = data.panelTags.tag3;
-
-      if (hero) {
-        hero.style.opacity = '0.3';
-        hero.style.transform = 'scale(0.97)';
-        setTimeout(() => {
-          hero.src = data.heroImg;
-          hero.alt = `${data.brand} ${data.model}`;
-          hero.style.opacity = '1';
-          hero.style.transform = 'scale(1)';
-        }, 150);
-      }
 
       // Editorial Typography
       const brand = document.getElementById('modalBrandText');
