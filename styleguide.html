@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velora Drive — Design System & Style Guide</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0E0F12',
+            inkSecondary: '#5C6068',
+            electric: '#2F5BFF',
+            page: '#FFFFFF',
+            pageAlt: '#F5F6F8',
+            hairline: 'rgba(14, 15, 18, 0.08)',
+          },
+          fontFamily: {
+            sans: ['Manrope', 'sans-serif'],
+            serif: ['"Instrument Serif"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-ink font-sans p-6 sm:p-12">
+  <div class="max-w-5xl mx-auto space-y-12">
+    
+    <!-- Header -->
+    <div class="flex items-center justify-between pb-6 border-b border-hairline">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="font-extrabold text-2xl tracking-tighter">VELORA</span>
+          <span class="w-2 h-2 rounded-full bg-electric"></span>
+        </div>
+        <h1 class="text-xs font-bold uppercase tracking-widest text-inkSecondary mt-1">Design System & Brand Specifications</h1>
+      </div>
+      <a href="index.html" class="px-5 py-2.5 rounded-full bg-ink text-white text-xs font-semibold hover:bg-neutral-800 transition">
+        ← Return to Live Website
+      </a>
+    </div>
+
+    <!-- 1. Color System -->
+    <section class="space-y-4">
+      <div class="text-xs font-bold uppercase tracking-wider text-inkSecondary">/ 01 Color Architecture</div>
+      <div class="grid grid-cols-2 sm:grid-cols-5 gap-4">
+        
+        <div class="p-4 rounded-2xl bg-pageAlt border border-hairline">
+          <div class="h-16 rounded-xl bg-white border border-hairline mb-2"></div>
+          <div class="text-xs font-bold">Main Page</div>
+          <div class="text-[11px] font-mono text-inkSecondary">#FFFFFF / #F5F6F8</div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-pageAlt border border-hairline">
+          <div class="h-16 rounded-xl bg-gradient-to-b from-[#EEF1F9] to-[#DCE3F5] border border-hairline mb-2"></div>
+          <div class="text-xs font-bold">Hero Lavender</div>
+          <div class="text-[11px] font-mono text-inkSecondary">#EEF1F9 to #DCE3F5</div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-pageAlt border border-hairline">
+          <div class="h-16 rounded-xl bg-[#0E0F12] mb-2"></div>
+          <div class="text-xs font-bold">Ink Black</div>
+          <div class="text-[11px] font-mono text-inkSecondary">#0E0F12</div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-pageAlt border border-hairline">
+          <div class="h-16 rounded-xl bg-[#5C6068] mb-2"></div>
+          <div class="text-xs font-bold">Secondary Text</div>
+          <div class="text-[11px] font-mono text-inkSecondary">#5C6068</div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-pageAlt border border-hairline">
+          <div class="h-16 rounded-xl bg-[#2F5BFF] mb-2 shadow-sm"></div>
+          <div class="text-xs font-bold text-electric">Electric Accent</div>
+          <div class="text-[11px] font-mono text-inkSecondary">#2F5BFF (Only Accent)</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. Typography Rules -->
+    <section class="space-y-4">
+      <div class="text-xs font-bold uppercase tracking-wider text-inkSecondary">/ 02 Typography & Accent Serifs</div>
+      <div class="p-8 rounded-3xl bg-pageAlt border border-hairline space-y-6">
+        <div>
+          <span class="text-[11px] font-mono text-electric">Hero Display (88-96px)</span>
+          <h2 class="text-4xl sm:text-6xl font-extrabold tracking-tight mt-1">
+            Arrive in <span class="font-serif italic font-normal">style.</span>
+          </h2>
+          <p class="text-xs text-inkSecondary mt-1">Manrope 800 + Instrument Serif Italic for ONE accent word</p>
+        </div>
+
+        <div class="pt-4 border-t border-hairline">
+          <span class="text-[11px] font-mono text-electric">Section Headings (48-56px)</span>
+          <h3 class="text-2xl sm:text-4xl font-extrabold tracking-tight mt-1">
+            Crafted for <span class="font-serif italic font-normal">every</span> occasion.
+          </h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Glass vs Solid Rules -->
+    <section class="space-y-4">
+      <div class="text-xs font-bold uppercase tracking-wider text-inkSecondary">/ 03 Glass vs Solid Rules</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <div class="p-6 rounded-3xl bg-pageAlt border border-hairline space-y-2">
+          <h4 class="text-sm font-bold text-ink flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-electric"></span>
+            <span>Glass Elements (40-55% white, 20px blur)</span>
+          </h4>
+          <p class="text-xs text-inkSecondary leading-relaxed">
+            Used STRICTLY on floating elements over imagery:
+          </p>
+          <ul class="text-xs text-inkSecondary list-disc list-inside space-y-1">
+            <li>Floating Navbar Pill</li>
+            <li>Hero Booking Bar</li>
+            <li>Callout chips with fine leader lines</li>
+            <li>"Watch the story" video thumbnail chip</li>
+            <li>Floating pill labels on arch frames</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-pageAlt border border-hairline space-y-2">
+          <h4 class="text-sm font-bold text-ink flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-ink"></span>
+            <span>Solid Elements</span>
+          </h4>
+          <p class="text-xs text-inkSecondary leading-relaxed">
+            All primary structural components:
+          </p>
+          <ul class="text-xs text-inkSecondary list-disc list-inside space-y-1">
+            <li>White & soft gray section canvases</li>
+            <li>Solid Ink Black pill buttons with separate circular arrow buttons</li>
+            <li>Hairline dividers (1px, 8% ink)</li>
+            <li>Dark ink pricing cards and footer</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

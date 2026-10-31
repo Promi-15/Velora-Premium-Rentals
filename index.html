@@ -1,0 +1,2219 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velora Drive — Premium Car Rental & Chauffeur Service | Dhaka</title>
+  <meta name="description" content="Arrive in style. Book in minutes. Premium car rental and professional chauffeur service across Dhaka, Bangladesh.">
+
+  <!-- Google Fonts: Manrope + Instrument Serif (Italic) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            page: '#FFFFFF',
+            pageAlt: '#F5F6F8',
+            ink: '#0E0F12',
+            inkSecondary: '#5C6068',
+            hairline: 'rgba(14, 15, 18, 0.08)',
+            hairlineLight: 'rgba(255, 255, 255, 0.12)',
+            electric: '#2F5BFF',
+            electricHover: '#1E47E6',
+            electricGlow: 'rgba(47, 91, 255, 0.25)',
+          },
+          fontFamily: {
+            sans: ['Manrope', 'sans-serif'],
+            serif: ['"Instrument Serif"', 'serif'],
+          },
+          boxShadow: {
+            'glass': '0 8px 32px 0 rgba(14, 15, 18, 0.06)',
+            'glass-hover': '0 12px 40px 0 rgba(14, 15, 18, 0.10)',
+            'pill': '0 4px 20px -2px rgba(14, 15, 18, 0.12)',
+            'card-lift': '0 20px 40px -15px rgba(14, 15, 18, 0.08)',
+            'electric': '0 0 24px -2px rgba(47, 91, 255, 0.4)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FFFFFF;
+      color: #0E0F12;
+      font-family: 'Manrope', sans-serif;
+      overflow-x: hidden;
+      selection-background-color: #2F5BFF;
+      selection-color: #ffffff;
+    }
+
+    ::selection {
+      background-color: #2F5BFF;
+      color: #ffffff;
+    }
+
+    .font-serif-italic {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    /* Glass Effect (white 40-55%, blur 18-24px, 1px white border, soft shadow) */
+    .glass-floating {
+      background: rgba(255, 255, 255, 0.52);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 8px 32px 0 rgba(14, 15, 18, 0.06);
+    }
+
+    .glass-floating-dark {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* 12-Column Architectural Grid Overlay */
+    .hero-grid-lines {
+      background-image: repeating-linear-gradient(
+        to right,
+        rgba(14, 15, 18, 0.035) 0px,
+        rgba(14, 15, 18, 0.035) 1px,
+        transparent 1px,
+        transparent calc((100% - 11px) / 12)
+      );
+    }
+
+    .hero-grid-lines-dark {
+      background-image: repeating-linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.03) 0px,
+        rgba(255, 255, 255, 0.03) 1px,
+        transparent 1px,
+        transparent calc((100% - 11px) / 12)
+      );
+    }
+
+    /* Hero Background Video Styling & Right-Shift */
+    .hero-video-media {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      transform: translateX(18%);
+      mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.3) 10%, rgba(0,0,0,0.85) 24%, black 36%, black 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.3) 10%, rgba(0,0,0,0.85) 24%, black 36%, black 100%);
+      transition: opacity 0.6s ease-in-out;
+      will-change: opacity, transform;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-video-media {
+        transform: translateX(10%);
+        mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 15%, black 35%, black 100%);
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 15%, black 35%, black 100%);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-video-media {
+        transform: translateX(0);
+        object-position: center 20%;
+        mask-image: linear-gradient(to bottom, black 0%, black 50%, rgba(0,0,0,0.4) 75%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, black 0%, black 50%, rgba(0,0,0,0.4) 75%, transparent 100%);
+      }
+    }
+
+    .viewport-mobile .hero-video-media {
+      transform: translateX(0) !important;
+      object-position: center 20% !important;
+      mask-image: linear-gradient(to bottom, black 0%, black 50%, rgba(0,0,0,0.4) 75%, transparent 100%) !important;
+      -webkit-mask-image: linear-gradient(to bottom, black 0%, black 50%, rgba(0,0,0,0.4) 75%, transparent 100%) !important;
+    }
+
+    /* Dark gradient overlay for >= 4.5:1 text contrast */
+    .hero-video-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.84) 0%, rgba(0, 0, 0, 0.68) 32%, rgba(0, 0, 0, 0.28) 58%, rgba(0, 0, 0, 0.05) 100%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    @media (max-width: 768px) {
+      .hero-video-overlay {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.72) 42%, rgba(0, 0, 0, 0.95) 80%);
+      }
+    }
+
+    .viewport-mobile .hero-video-overlay {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.72) 42%, rgba(0, 0, 0, 0.95) 80%) !important;
+    }
+
+    /* Floating Pill Full-Glass Navbar */
+    .hero-glass-nav {
+      background: rgba(255, 255, 255, 0.10);
+      backdrop-filter: blur(22px) saturate(150%);
+      -webkit-backdrop-filter: blur(22px) saturate(150%);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
+      transition: background 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hero-glass-nav.is-scrolled {
+      background: rgba(14, 15, 18, 0.85);
+      backdrop-filter: blur(28px) saturate(160%);
+      -webkit-backdrop-filter: blur(28px) saturate(160%);
+      border-color: rgba(255, 255, 255, 0.18);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Floating Glass Booking Bar */
+    .hero-booking-glass {
+      background: rgba(255, 255, 255, 0.10);
+      backdrop-filter: blur(22px) saturate(150%);
+      -webkit-backdrop-filter: blur(22px) saturate(150%);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 16px 45px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Entrance Keyframe Animations */
+    @keyframes heroFadeDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-24px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes heroSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(36px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes heroFadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .animate-hero-nav {
+      animation: heroFadeDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .animate-hero-line-1 {
+      opacity: 0;
+      animation: heroSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+    }
+
+    .animate-hero-line-2 {
+      opacity: 0;
+      animation: heroSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.32s forwards;
+    }
+
+    .animate-hero-subtext {
+      opacity: 0;
+      animation: heroFadeIn 0.8s ease-out 0.5s forwards;
+    }
+
+    .animate-hero-buttons {
+      opacity: 0;
+      animation: heroFadeIn 0.8s ease-out 0.65s forwards;
+    }
+
+    .animate-hero-booking {
+      opacity: 0;
+      animation: heroFadeIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
+    }
+
+    /* 360° Ring Perspective Orbit */
+    .ellipse-orbit {
+      transform: rotateX(68deg);
+      border-radius: 50%;
+    }
+
+    /* Continuous Left-to-Right Auto-Scrolling Slider (Editorial Reference Style) */
+    @keyframes marqueeScrollLeftToRight {
+      0% {
+        transform: translate3d(-50%, 0, 0);
+      }
+      100% {
+        transform: translate3d(0%, 0, 0);
+      }
+    }
+
+    .auto-marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeScrollLeftToRight 36s linear infinite;
+      will-change: transform;
+    }
+
+    .auto-marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    .slider-viewport-mask {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+      padding: 48px 0 38px;
+      mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+    }
+
+    .editorial-card {
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+      transform-origin: center center;
+      backface-visibility: hidden;
+    }
+
+    .editorial-card:hover {
+      transform: scale(1.06) translateY(-4px) !important;
+      z-index: 30;
+      box-shadow: 0 25px 45px -10px rgba(14, 15, 18, 0.28);
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F5F6F8;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D1D5DB;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #2F5BFF;
+    }
+
+    /* Responsive Device Simulation Frame */
+    .viewport-mobile {
+      max-width: 390px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      box-shadow: 0 0 50px rgba(0,0,0,0.25);
+      border-left: 1px solid #E5E7EB;
+      border-right: 1px solid #E5E7EB;
+      border-radius: 40px;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body id="appBody" class="bg-white text-ink antialiased">
+
+  <!-- TOP BAR: Viewport Switcher & Meta -->
+  <aside aria-label="Design Toolbar" class="bg-ink text-white py-2 px-4 text-xs z-50 relative border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-electric animate-pulse"></span>
+        <span class="font-medium tracking-wide">Velora Drive — Dhaka Executive Chauffeur & Fleet</span>
+      </div>
+      
+      <div class="flex items-center gap-2">
+        <span class="text-white/40 hidden sm:inline">Viewport:</span>
+        <button id="btnDesktopView" onclick="setViewport('desktop')" class="px-2.5 py-1 rounded-full bg-white/20 text-white font-medium hover:bg-white/30 transition text-[11px] flex items-center gap-1.5">
+          <i data-lucide="monitor" class="w-3.5 h-3.5"></i>
+          <span>Desktop (1440px)</span>
+        </button>
+        <button id="btnMobileView" onclick="setViewport('mobile')" class="px-2.5 py-1 rounded-full bg-white/10 text-white/70 font-medium hover:bg-white/20 hover:text-white transition text-[11px] flex items-center gap-1.5">
+          <i data-lucide="smartphone" class="w-3.5 h-3.5"></i>
+          <span>Mobile (390px)</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ROOT CONTAINER (Allows switching to 390px Mobile View) -->
+  <div id="mainViewportWrapper" class="w-full transition-all duration-300">
+
+    <!-- 1. HERO SECTION (Full-Screen 100vh Background Video, Pure Black #000, Full-Glass Floating Navbar, Glass Booking Bar) -->
+    <header id="hero" class="relative w-full min-h-screen min-h-[720px] bg-black flex flex-col justify-between">
+      
+      <!-- HERO BACKGROUND VIDEO CONTAINER -->
+      <div id="heroMediaContainer" class="absolute inset-0 w-full h-full pointer-events-none overflow-hidden bg-black z-0">
+        <!-- Dual Stacked Video Elements for Seamless Crossfade Looping -->
+        <video id="heroVideo1" autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg" class="hero-video-media z-[1] opacity-100">
+          <source src="hero.mp4?v=2" type="video/mp4">
+        </video>
+        <video id="heroVideo2" muted playsinline preload="auto" poster="hero-poster.jpg" class="hero-video-media z-[1] opacity-0 pointer-events-none">
+          <source src="hero.mp4?v=2" type="video/mp4">
+        </video>
+
+        <!-- Dark Gradient Contrast Overlay (Black ~84% on left fading to 0% on right for text contrast >= 4.5:1) -->
+        <div class="hero-video-overlay"></div>
+
+        <!-- Subtle architectural grid lines overlay for depth -->
+        <div class="absolute inset-0 hero-grid-lines-dark pointer-events-none opacity-25 z-[3]"></div>
+      </div>
+
+      <!-- 1.1 FLOATING FULL-GLASS PILL NAVBAR (24px top, max-w-[1200px], h-[68px], sticky) -->
+      <div class="sticky top-6 z-40 w-full px-4 sm:px-6 pointer-events-none animate-hero-nav">
+        <nav id="heroGlassNavbar" class="pointer-events-auto max-w-[1200px] h-[68px] mx-auto hero-glass-nav rounded-full px-5 sm:px-7 flex items-center justify-between transition-all duration-300">
+          
+          <!-- Left: Velora Logo (Circular mark with V + wordmark) -->
+          <a href="#" class="flex items-center gap-2.5 group">
+            <div class="w-9 h-9 rounded-full bg-white/10 border border-white/25 flex items-center justify-center font-bold text-white text-sm tracking-tight group-hover:scale-105 group-hover:bg-electric transition-all duration-300 shadow-sm">
+              <span>V</span>
+            </div>
+            <span class="font-extrabold tracking-tight text-xl text-white">VELORA</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-electric group-hover:scale-150 transition duration-300"></span>
+          </a>
+
+          <!-- Centre: Nav Menu Links with subtle underline hover (Desktop) -->
+          <div class="hidden md:flex items-center space-x-7 text-sm font-medium text-white/80">
+            <a href="#fleet" class="hover:text-white transition py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-white hover:after:w-full after:transition-all">Fleet</a>
+            <a href="#electric-network" class="hover:text-white transition py-1 relative flex items-center gap-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-electric hover:after:w-full after:transition-all">
+              <span>Electric Hub</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-electric animate-pulse"></span>
+            </a>
+            <a href="#services" class="hover:text-white transition py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-white hover:after:w-full after:transition-all">Services</a>
+            <a href="#how-it-works" class="hover:text-white transition py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-white hover:after:w-full after:transition-all">How it works</a>
+            <a href="#pricing" class="hover:text-white transition py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-white hover:after:w-full after:transition-all">Pricing</a>
+            <a href="#faq" class="hover:text-white transition py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-white hover:after:w-full after:transition-all">FAQ</a>
+          </div>
+
+          <!-- Right: "Book now" White Pill Button + "Log in" link -->
+          <div class="flex items-center gap-3 sm:gap-4">
+            <a href="#" class="hidden sm:inline-block text-xs sm:text-sm font-medium text-white/75 hover:text-white transition">Log in</a>
+            
+            <button onclick="openBookingDrawer()" class="group flex items-center gap-2 pl-4 sm:pl-5 pr-1.5 py-1.5 rounded-full bg-white text-ink font-semibold text-xs sm:text-sm hover:bg-neutral-100 transition shadow-lg">
+              <span>Book now</span>
+              <span class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-ink text-white flex items-center justify-center group-hover:bg-electric transition duration-300">
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-white"></i>
+              </span>
+            </button>
+
+            <!-- Mobile Hamburger Icon -->
+            <button id="mobileNavToggle" onclick="toggleMobileNavMenu()" class="md:hidden w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white transition" aria-label="Toggle Mobile Menu">
+              <i data-lucide="menu" id="hamburgerIcon" class="w-4 h-4 text-white"></i>
+            </button>
+          </div>
+
+        </nav>
+
+        <!-- Mobile Glass Dropdown Menu -->
+        <div id="mobileGlassDropdown" class="hidden md:hidden max-w-[1200px] mx-auto mt-2 hero-glass-nav rounded-3xl p-5 space-y-3 pointer-events-auto shadow-2xl">
+          <div class="flex flex-col space-y-3 text-sm font-medium text-white/90">
+            <a href="#fleet" onclick="toggleMobileNavMenu()" class="px-3 py-2 rounded-xl hover:bg-white/10 transition">Fleet</a>
+            <a href="#electric-network" onclick="toggleMobileNavMenu()" class="px-3 py-2 rounded-xl hover:bg-white/10 transition flex items-center justify-between">
+              <span>Electric Hub</span>
+              <span class="w-2 h-2 rounded-full bg-electric"></span>
+            </a>
+            <a href="#services" onclick="toggleMobileNavMenu()" class="px-3 py-2 rounded-xl hover:bg-white/10 transition">Services</a>
+            <a href="#how-it-works" onclick="toggleMobileNavMenu()" class="px-3 py-2 rounded-xl hover:bg-white/10 transition">How it works</a>
+            <a href="#pricing" onclick="toggleMobileNavMenu()" class="px-3 py-2 rounded-xl hover:bg-white/10 transition">Pricing</a>
+            <a href="#faq" onclick="toggleMobileNavMenu()" class="px-3 py-2 rounded-xl hover:bg-white/10 transition">FAQ</a>
+            <div class="pt-2 border-t border-white/15 flex items-center justify-between px-3">
+              <a href="#" class="text-xs text-white/70 hover:text-white">Customer Portal (Log in)</a>
+              <span class="text-xs text-electric font-semibold">Dhaka 24/7</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1.2 HERO TEXT & CTAS (Left Side, Vertically Centred, max-w-[1280px]) -->
+      <div class="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 relative z-20 my-auto">
+        <div class="max-w-[580px] space-y-6 sm:space-y-7">
+          
+          <!-- Small Label Above Headline -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-semibold tracking-wider text-white uppercase animate-hero-line-1">
+            <span class="w-2 h-2 rounded-full bg-electric animate-pulse"></span>
+            <span>Premium car rental · Dhaka</span>
+          </div>
+
+          <!-- Headline: Manrope 88-96px desktop / 44px mobile, tight tracking, Instrument Serif italic "style." -->
+          <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-[92px] font-extrabold tracking-tight text-white leading-[1.0] select-none">
+            <span class="block animate-hero-line-1">Arrive in</span>
+            <span class="block font-serif-italic font-normal italic tracking-normal text-white animate-hero-line-2 mt-0.5 sm:mt-1">style.</span>
+          </h1>
+
+          <!-- Subtext: 18px white at 75% opacity, max-w-[460px] -->
+          <p class="text-white/75 text-base sm:text-lg font-normal max-w-[460px] leading-relaxed animate-hero-subtext">
+            Premium cars with professional chauffeurs, ready across Dhaka, 24/7. Book in minutes.
+          </p>
+
+          <!-- Two Buttons Side by Side -->
+          <div class="pt-2 flex flex-wrap items-center gap-3.5 sm:gap-4 animate-hero-buttons">
+            <!-- White pill "Find a car" with circular arrow button -->
+            <button onclick="scrollToSection('fleet')" class="group flex items-center gap-2.5 pl-6 pr-2 py-2 rounded-full bg-white text-ink font-semibold text-xs sm:text-sm hover:bg-neutral-100 transition shadow-lg">
+              <span>Find a car</span>
+              <span class="w-8 h-8 rounded-full bg-ink text-white flex items-center justify-center group-hover:bg-electric transition duration-300">
+                <i data-lucide="arrow-right" class="w-4 h-4 text-white"></i>
+              </span>
+            </button>
+
+            <!-- Glass outline pill "How it works" -->
+            <button onclick="scrollToSection('how-it-works')" class="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium text-xs sm:text-sm backdrop-blur-md border border-white/25 transition">
+              <span>How it works</span>
+            </button>
+          </div>
+
+          <!-- Social Proof & Rating Badge -->
+          <div class="pt-3 sm:pt-4 flex items-center gap-3 animate-hero-subtext">
+            <div class="flex -space-x-2 overflow-hidden">
+              <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white/20 object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Client">
+              <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white/20 object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Client">
+              <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white/20 object-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Client">
+            </div>
+            <div class="text-xs text-white/80">
+              <div class="flex items-center gap-1.5 font-bold text-white">
+                <span>4.9</span>
+                <i data-lucide="star" class="w-3 h-3 fill-amber-400 text-amber-400"></i>
+                <span class="text-white/60 font-normal">• 500+ Executive Trips</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 1.3 FLOATING GLASS BOOKING BAR (~90px above bottom edge, max-w-[1120px], 24px radius) -->
+      <div class="w-full px-4 sm:px-6 relative z-30 pb-20 sm:pb-24 animate-hero-booking">
+        <div class="hero-booking-glass rounded-[24px] p-3 sm:p-3.5 max-w-[1120px] mx-auto shadow-2xl">
+          <form onsubmit="handleHeroSearch(event)" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-2.5 items-center">
+            
+            <!-- 1. Pickup Location -->
+            <div class="px-4 py-2 rounded-2xl hover:bg-white/10 transition">
+              <label class="text-[10px] font-bold tracking-wider text-white/60 uppercase block">Pickup Location</label>
+              <select id="bookPickup" class="w-full bg-transparent text-xs font-semibold text-white focus:outline-none cursor-pointer [&>option]:bg-neutral-900 [&>option]:text-white">
+                <option value="Hazrat Shahjalal Airport (DAC)" selected>Airport (DAC Terminal 1 & 2)</option>
+                <option value="Gulshan 1 & 2">Gulshan 1 & 2</option>
+                <option value="Banani Commercial Area">Banani Commercial Area</option>
+                <option value="Dhanmondi / Satmasjid Rd">Dhanmondi / Satmasjid Rd</option>
+                <option value="Uttara Model Town">Uttara Model Town</option>
+                <option value="Bashundhara R/A">Bashundhara R/A</option>
+              </select>
+            </div>
+
+            <!-- 2. Drop-off Location -->
+            <div class="px-4 py-2 rounded-2xl hover:bg-white/10 transition border-t sm:border-t-0 sm:border-l border-white/15">
+              <label class="text-[10px] font-bold tracking-wider text-white/60 uppercase block">Drop-off Location</label>
+              <select id="bookDropoff" class="w-full bg-transparent text-xs font-semibold text-white focus:outline-none cursor-pointer [&>option]:bg-neutral-900 [&>option]:text-white">
+                <option value="Same as Pickup (Round-Trip)">Same as Pickup (Round-Trip)</option>
+                <option value="Hazrat Shahjalal Airport (DAC)" selected>Airport (DAC Terminal 1 & 2)</option>
+                <option value="Gulshan 2">Gulshan 2</option>
+                <option value="Banani Club / Rd 11">Banani Club / Rd 11</option>
+                <option value="Inter-District Expressway">Inter-District Expressway</option>
+              </select>
+            </div>
+
+            <!-- 3. Pickup Date -->
+            <div class="px-4 py-2 rounded-2xl hover:bg-white/10 transition border-t sm:border-t-0 lg:border-l border-white/15">
+              <label class="text-[10px] font-bold tracking-wider text-white/60 uppercase block">Pickup Date</label>
+              <input type="date" id="bookDate" class="w-full bg-transparent text-xs font-semibold text-white focus:outline-none cursor-pointer [color-scheme:dark]">
+            </div>
+
+            <!-- 4. Return Date -->
+            <div class="px-4 py-2 rounded-2xl hover:bg-white/10 transition border-t sm:border-t-0 sm:border-l border-white/15">
+              <label class="text-[10px] font-bold tracking-wider text-white/60 uppercase block">Return Date</label>
+              <input type="date" id="bookReturnDate" class="w-full bg-transparent text-xs font-semibold text-white focus:outline-none cursor-pointer [color-scheme:dark]">
+            </div>
+
+            <!-- 5. Time -->
+            <div class="px-4 py-2 rounded-2xl hover:bg-white/10 transition border-t sm:border-t-0 sm:border-l border-white/15">
+              <label class="text-[10px] font-bold tracking-wider text-white/60 uppercase block">Time</label>
+              <select id="bookTime" class="w-full bg-transparent text-xs font-semibold text-white focus:outline-none cursor-pointer [&>option]:bg-neutral-900 [&>option]:text-white">
+                <option value="09:00 AM">09:00 AM (Morning)</option>
+                <option value="11:30 AM" selected>11:30 AM (Executive)</option>
+                <option value="03:00 PM">03:00 PM (Afternoon)</option>
+                <option value="07:30 PM">07:30 PM (Evening)</option>
+                <option value="11:45 PM">11:45 PM (Night Flight)</option>
+              </select>
+            </div>
+
+            <!-- 6. Solid Black Pill Button "Search cars" -->
+            <div class="p-1 sm:col-span-2 lg:col-span-1">
+              <button type="submit" class="w-full h-11 sm:h-12 rounded-full bg-ink hover:bg-neutral-800 text-white font-semibold text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-pill border border-white/20 group">
+                <span class="w-2 h-2 rounded-full bg-electric group-hover:scale-125 transition"></span>
+                <span>Search cars</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-0.5 transition"></i>
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+      <!-- 1.4 CURVED NOTCH WITH ROUND BLACK SCROLL-DOWN BUTTON (Transition to white section below) -->
+      <div class="absolute bottom-0 left-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-auto z-30">
+        <!-- White Notch Inverted Arc SVG -->
+        <svg class="w-36 h-10 text-white fill-current block" viewBox="0 0 144 40">
+          <path d="M0,40 C36,40 44,0 72,0 C100,0 108,40 144,40 Z"></path>
+        </svg>
+        <!-- Round Black Scroll Button with White Chevron (100% visible, not clipped) -->
+        <a href="#intro" class="absolute bottom-1 w-11 h-11 rounded-full bg-ink text-white border-2 border-white flex items-center justify-center hover:bg-neutral-800 hover:scale-110 transition shadow-xl group" title="Scroll down" aria-label="Scroll to next section">
+          <i data-lucide="chevron-down" class="w-4 h-4 text-white group-hover:translate-y-0.5 transition-transform"></i>
+        </a>
+      </div>
+
+    </header>
+
+    <!-- 2. INTRO SECTION (Statement with italic word + Rounded photo + Glass "Watch the story" chip + Black pill button) -->
+    <section id="intro" class="py-24 sm:py-32 max-w-[1280px] mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left: Statement & Narrative -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-ink uppercase">
+            <span class="text-electric font-mono">/ 02</span>
+            <span>VELORA PHILOSOPHY</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-ink leading-[1.15]">
+            Moving through Dhaka should feel effortless, dignified, and undeniably <span class="font-serif-italic font-normal tracking-normal text-ink">refined.</span>
+          </h2>
+
+          <p class="text-inkSecondary text-base sm:text-lg leading-relaxed">
+            We conceived Velora Drive to solve the friction of traditional car hire in Bangladesh. By combining an impeccably maintained luxury fleet with certified, English-fluent chauffeurs and upfront pricing, we restore calm and punctuality to every journey.
+          </p>
+
+          <div class="pt-4 flex items-center gap-4">
+            <button onclick="scrollToSection('services')" class="group flex items-center gap-2 pl-6 pr-2 py-2 rounded-full bg-ink text-white font-medium text-sm hover:bg-neutral-800 transition shadow-pill">
+              <span>Explore services</span>
+              <span class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-electric transition duration-300">
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-white"></i>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Rounded Photo + Glass "Watch the story" Chip -->
+        <div class="lg:col-span-6 relative">
+          <div class="rounded-[32px] overflow-hidden aspect-[4/3] bg-pageAlt border border-hairline shadow-card-lift relative group">
+            <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Velora Chauffeur Executive Service Dhaka" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            
+            <!-- Glass "Watch the story" Chip with Play Icon -->
+            <div class="absolute bottom-6 left-6 glass-floating px-4 py-2.5 rounded-full flex items-center gap-3 shadow-glass">
+              <span class="w-8 h-8 rounded-full bg-ink text-white flex items-center justify-center">
+                <i data-lucide="play" class="w-3.5 h-3.5 fill-white text-white ml-0.5"></i>
+              </span>
+              <div>
+                <span class="text-xs font-bold text-ink block leading-none">Watch the story</span>
+                <span class="text-[10px] text-inkSecondary">1 min film • Dhaka Fleet</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. FLEET SHOWCASE: PARABOLIC U-CURVED CAROUSEL (Exact match to reference image) -->
+    <section id="fleet" class="py-24 bg-pageAlt border-y border-hairline relative overflow-hidden">
+      
+      <!-- Section Header -->
+      <div class="max-w-[1280px] mx-auto px-4 sm:px-6 text-center mb-6 sm:mb-8">
+        <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-ink uppercase mb-2">
+          <span class="text-electric font-mono">/ 03</span>
+          <span>EXECUTIVE FLEET SHOWCASE</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-ink">
+          Engineered for pure <span class="font-serif-italic font-normal tracking-normal text-ink">comfort.</span>
+        </h2>
+        <p class="text-inkSecondary text-sm sm:text-base mt-2 max-w-xl mx-auto">
+          Explore our handpicked fleet of prestige vehicles and executive sedans in Dhaka. Driven by certified chauffeurs for your daily commute, airport transfer, or VIP event.
+        </p>
+
+      </div>
+
+      <!-- SEAMLESS LEFT-TO-RIGHT INFINITE AUTO-SCROLLING SLIDER -->
+      <div class="slider-viewport-mask">
+        <div class="auto-marquee-track">
+          
+          <!-- SEQUENCE A (8 Cards) -->
+          <div class="flex items-center gap-5 sm:gap-6 px-3">
+            
+            <!-- Card 1: Mercedes S-Class 450 -->
+            <div class="editorial-card w-[240px] sm:w-[280px] md:w-[310px] lg:w-[330px] aspect-[10/13] rounded-[24px] overflow-hidden relative shadow-md hover:shadow-2xl border border-white/80 bg-ink group cursor-pointer flex-shrink-0" style="transform: rotate(2.5deg) translateY(-8px);" onclick="openBookingDrawer()">
+              <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80" 
+                   alt="Mercedes S-Class 450" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-500 pointer-events-none">
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-black/20 pointer-events-none"></div>
+              
+              <!-- Bottom-left Circular Glass Play Icon (Reference Style) -->
+              <div class="absolute bottom-4 left-4 w-8 h-8 rounded-full bg-white/35 backdrop-blur-md border border-white/60 flex items-center justify-center text-white shadow-sm group-hover:bg-electric transition">
+                <i data-lucide="play" class="w-3.5 h-3.5 fill-white text-white ml-0.5"></i>
+              </div>
+
+              <!-- Model & Price Label -->
+              <div class="absolute bottom-4 left-15 right-3 text-right">
+                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">S-Class 450</span>
+                <span class="text-[10px] text-white/80 font-medium">৳ 18,000/day</span>
+              </div>
+            </div>
+
+            <!-- Card 2: Toyota Land Cruiser Prado TX -->
+            <div class="editorial-card w-[240px] sm:w-[280px] md:w-[310px] lg:w-[330px] aspect-[10/13] rounded-[24px] overflow-hidden relative shadow-md hover:shadow-2xl border border-white/80 bg-ink group cursor-pointer flex-shrink-0" style="transform: rotate(-3deg) translateY(6px);" onclick="openBookingDrawer()">
+              <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" 
+                   alt="Toyota Land Cruiser Prado TX" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-500 pointer-events-none">
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-black/20 pointer-events-none"></div>
+              
+              <div class="absolute bottom-4 left-4 w-8 h-8 rounded-full bg-white/35 backdrop-blur-md border border-white/60 flex items-center justify-center text-white shadow-sm group-hover:bg-electric transition">
+                <i data-lucide="play" class="w-3.5 h-3.5 fill-white text-white ml-0.5"></i>
+              </div>
+
+              <div class="absolute bottom-4 left-15 right-3 text-right">
+                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">Prado TX</span>
+                <span class="text-[10px] text-white/80 font-medium">৳ 9,500/day</span>
+              </div>
+            </div>
+
+            <!-- Card 3: Porsche Taycan 4S Electric -->
+            <div class="editorial-card w-[240px] sm:w-[280px] md:w-[310px] lg:w-[330px] aspect-[10/13] rounded-[24px] overflow-hidden relative shadow-md hover:shadow-2xl border border-white/80 bg-ink group cursor-pointer flex-shrink-0" style="transform: rotate(1.8deg) translateY(-10px);" onclick="openBookingDrawer()">
+              <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" 
+                   alt="Porsche Taycan 4S" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-500 pointer-events-none">
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-black/20 pointer-events-none"></div>
+              
+              <div class="absolute bottom-4 left-4 w-8 h-8 rounded-full bg-white/35 backdrop-blur-md border border-white/60 flex items-center justify-center text-white shadow-sm group-hover:bg-electric transition">
+                <i data-lucide="play" class="w-3.5 h-3.5 fill-white text-white ml-0.5"></i>
+              </div>
+
+              <div class="absolute bottom-4 left-15 right-3 text-right">
+                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">Taycan 4S</span>
+                <span class="text-[10px] text-white/80 font-medium">৳ 16,000/day</span>
+              </div>
+            </div>
+
+            <!-- Card 4: Mercedes-Benz E-Class Avantgarde -->
+            <div class="editorial-card w-[240px] sm:w-[280px] md:w-[310px] lg:w-[330px] aspect-[10/13] rounded-[24px] overflow-hidden relative shadow-md hover:shadow-2xl border border-white/80 bg-ink group cursor-pointer flex-shrink-0" style="transform: rotate(-2.2deg) translateY(5px);" onclick="openBookingDrawer()">
+              <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=800&q=80" 
+                   alt="Mercedes-Benz E-Class" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-500 pointer-events-none">
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-black/20 pointer-events-none"></div>
+              
+              <div class="absolute bottom-4 left-4 w-8 h-8 rounded-full bg-white/35 backdrop-blur-md border border-white/60 flex items-center justify-center text-white shadow-sm group-hover:bg-electric transition">
+                <i data-lucide="play" class="w-3.5 h-3.5 fill-white text-white ml-0.5"></i>
+              </div>
+
+              <div class="absolute bottom-4 left-15 right-3 text-right">
+                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">E-Class 300</span>
+                <span class="text-[10px] text-white/80 font-medium">৳ 6,500/day</span>
+              </div>
+            </div>
+
+            <!-- Card 5: Toyota Alphard VIP Royal Lounge -->
+            <div class="editorial-card w-[240px] sm:w-[280px] md:w-[310px] lg:w-[330px] aspect-[10/13] rounded-[24px] overflow-hidden relative shadow-md hover:shadow-2xl border border-white/80 bg-ink group cursor-pointer flex-shrink-0" style="transform: rotate(3deg) translateY(-7px);" onclick="openBookingDrawer()">
+              <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80" 
+                   alt="Toyota Alphard VIP Lounge" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-500 pointer-events-none">
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-black/20 pointer-events-none"></div>
+              
+              <div class="absolute bottom-4 left-4 w-8 h-8 rounded-full bg-white/35 backdrop-blur-md border border-white/60 flex items-center justify-center text-white shadow-sm group-hover:bg-electric transition">
+                <i data-lucide="play" class="w-3.5 h-3.5 fill-white text-white ml-0.5"></i>
+              </div>
+
+              <div class="absolute bottom-4 left-15 right-3 text-right">
+                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">Alphard VIP</span>
+                <span class="text-[10px] text-white/80 font-medium">৳ 8,000/day</span>
+              </div>
+            </div>
+
+            <!-- Card 6: Range Rover Vogue Autobiography -->
+            <div class="editorial-card w-[240px] sm:w-[280px] md:w-[310px] lg:w-[330px] aspect-[10/13] rounded-[24px] overflow-hidden relative shadow-md hover:shadow-2xl border border-white/80 bg-ink group cursor-pointer flex-shrink-0" style="transform: rotate(-1.5deg) translateY(6px);" onclick="openBookingDrawer()">
+              <img src="https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=800&q=80" 
+                   alt="Range Rover Vogue Autobiography" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-500 pointer-events-none">
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-black/20 pointer-events-none"></div>
+              
+              <div class="absolute bottom-4 left-4 w-8 h-8 rounded-full bg-white/35 backdrop-blur-md border border-white/60 flex items-center justify-center text-white shadow-sm group-hover:bg-electric transition">
+                <i data-lucide="play" class="w-3.5 h-3.5 fill-white text-white ml-0.5"></i>
+              </div>
+
+              <div class="absolute bottom-4 left-15 right-3 text-right">
+                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">Range Rover</span>
+                <span class="text-[10px] text-white/80 font-medium">৳ 22,000/day</span>
+              </div>
+            </div>
+
+            <!-- Card 7: BMW 7 Series 740Li M-Sport -->
+            <div class="editorial-card w-[240px] sm:w-[280px] md:w-[310px] lg:w-[330px] aspect-[10/13] rounded-[24px] overflow-hidden relative shadow-md hover:shadow-2xl border border-white/80 bg-ink group cursor-pointer flex-shrink-0" style="transform: rotate(2deg) translateY(-5px);" onclick="openBookingDrawer()">
+              <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80" 
+                   alt="BMW 7 Series 740Li" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-500 pointer-events-none">
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-black/20 pointer-events-none"></div>
+              
+              <div class="absolute bottom-4 left-4 w-8 h-8 rounded-full bg-white/35 backdrop-blur-md border border-white/60 flex items-center justify-center text-white shadow-sm group-hover:bg-electric transition">
+                <i data-lucide="play" class="w-3.5 h-3.5 fill-white text-white ml-0.5"></i>
+              </div>
+
+              <div class="absolute bottom-4 left-15 right-3 text-right">
+                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">BMW 740Li</span>
+                <span class="text-[10px] text-white/80 font-medium">৳ 17,500/day</span>
+              </div>
+            </div>
+
+            <!-- Card 8: Tesla Model 3 Long Range -->
+            <div class="editorial-card w-[240px] sm:w-[280px] md:w-[310px] lg:w-[330px] aspect-[10/13] rounded-[24px] overflow-hidden relative shadow-md hover:shadow-2xl border border-white/80 bg-ink group cursor-pointer flex-shrink-0" style="transform: rotate(-2.8deg) translateY(8px);" onclick="openBookingDrawer()">
+              <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=800&q=80" 
+                   alt="Tesla Model 3 Long Range" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-500 pointer-events-none">
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-black/20 pointer-events-none"></div>
+              
+              <div class="absolute bottom-4 left-4 w-8 h-8 rounded-full bg-white/35 backdrop-blur-md border border-white/60 flex items-center justify-center text-white shadow-sm group-hover:bg-electric transition">
+                <i data-lucide="play" class="w-3.5 h-3.5 fill-white text-white ml-0.5"></i>
+              </div>
+
+              <div class="absolute bottom-4 left-15 right-3 text-right">
+                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">Tesla 3</span>
+                <span class="text-[10px] text-white/80 font-medium">৳ 14,000/day</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- SEQUENCE B (Exact Identical Clone for Seamless Infinite Loop) -->
+          <div class="flex items-center gap-5 sm:gap-6 px-3" aria-hidden="true">
+            
+            <!-- Card 1: Mercedes S-Class 450 -->
+            <div class="editorial-card w-[240px] sm:w-[280px] md:w-[310px] lg:w-[330px] aspect-[10/13] rounded-[24px] overflow-hidden relative shadow-md hover:shadow-2xl border border-white/80 bg-ink group cursor-pointer flex-shrink-0" style="transform: rotate(2.5deg) translateY(-8px);" onclick="openBookingDrawer()">
+              <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80" 
+                   alt="Mercedes S-Class 450" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-500 pointer-events-none">
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-black/20 pointer-events-none"></div>
+              
+              <div class="absolute bottom-4 left-4 w-8 h-8 rounded-full bg-white/35 backdrop-blur-md border border-white/60 flex items-center justify-center text-white shadow-sm group-hover:bg-electric transition">
+                <i data-lucide="play" class="w-3.5 h-3.5 fill-white text-white ml-0.5"></i>
+              </div>
+
+              <div class="absolute bottom-4 left-15 right-3 text-right">
+                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">S-Class 450</span>
+                <span class="text-[10px] text-white/80 font-medium">৳ 18,000/day</span>
+              </div>
+            </div>
+
+            <!-- Card 2: Toyota Land Cruiser Prado TX -->
+            <div class="editorial-card w-[240px] sm:w-[280px] md:w-[310px] lg:w-[330px] aspect-[10/13] rounded-[24px] overflow-hidden relative shadow-md hover:shadow-2xl border border-white/80 bg-ink group cursor-pointer flex-shrink-0" style="transform: rotate(-3deg) translateY(6px);" onclick="openBookingDrawer()">
+              <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" 
+                   alt="Toyota Land Cruiser Prado TX" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-500 pointer-events-none">
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-black/20 pointer-events-none"></div>
+              
+              <div class="absolute bottom-4 left-4 w-8 h-8 rounded-full bg-white/35 backdrop-blur-md border border-white/60 flex items-center justify-center text-white shadow-sm group-hover:bg-electric transition">
+                <i data-lucide="play" class="w-3.5 h-3.5 fill-white text-white ml-0.5"></i>
+              </div>
+
+              <div class="absolute bottom-4 left-15 right-3 text-right">
+                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">Prado TX</span>
+                <span class="text-[10px] text-white/80 font-medium">৳ 9,500/day</span>
+              </div>
+            </div>
+
+            <!-- Card 3: Porsche Taycan 4S Electric -->
+            <div class="editorial-card w-[240px] sm:w-[280px] md:w-[310px] lg:w-[330px] aspect-[10/13] rounded-[24px] overflow-hidden relative shadow-md hover:shadow-2xl border border-white/80 bg-ink group cursor-pointer flex-shrink-0" style="transform: rotate(1.8deg) translateY(-10px);" onclick="openBookingDrawer()">
+              <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" 
+                   alt="Porsche Taycan 4S" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-500 pointer-events-none">
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-black/20 pointer-events-none"></div>
+              
+              <div class="absolute bottom-4 left-4 w-8 h-8 rounded-full bg-white/35 backdrop-blur-md border border-white/60 flex items-center justify-center text-white shadow-sm group-hover:bg-electric transition">
+                <i data-lucide="play" class="w-3.5 h-3.5 fill-white text-white ml-0.5"></i>
+              </div>
+
+              <div class="absolute bottom-4 left-15 right-3 text-right">
+                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">Taycan 4S</span>
+                <span class="text-[10px] text-white/80 font-medium">৳ 16,000/day</span>
+              </div>
+            </div>
+
+            <!-- Card 4: Mercedes-Benz E-Class Avantgarde -->
+            <div class="editorial-card w-[240px] sm:w-[280px] md:w-[310px] lg:w-[330px] aspect-[10/13] rounded-[24px] overflow-hidden relative shadow-md hover:shadow-2xl border border-white/80 bg-ink group cursor-pointer flex-shrink-0" style="transform: rotate(-2.2deg) translateY(5px);" onclick="openBookingDrawer()">
+              <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=800&q=80" 
+                   alt="Mercedes-Benz E-Class" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-500 pointer-events-none">
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-black/20 pointer-events-none"></div>
+              
+              <div class="absolute bottom-4 left-4 w-8 h-8 rounded-full bg-white/35 backdrop-blur-md border border-white/60 flex items-center justify-center text-white shadow-sm group-hover:bg-electric transition">
+                <i data-lucide="play" class="w-3.5 h-3.5 fill-white text-white ml-0.5"></i>
+              </div>
+
+              <div class="absolute bottom-4 left-15 right-3 text-right">
+                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">E-Class 300</span>
+                <span class="text-[10px] text-white/80 font-medium">৳ 6,500/day</span>
+              </div>
+            </div>
+
+            <!-- Card 5: Toyota Alphard VIP Royal Lounge -->
+            <div class="editorial-card w-[240px] sm:w-[280px] md:w-[310px] lg:w-[330px] aspect-[10/13] rounded-[24px] overflow-hidden relative shadow-md hover:shadow-2xl border border-white/80 bg-ink group cursor-pointer flex-shrink-0" style="transform: rotate(3deg) translateY(-7px);" onclick="openBookingDrawer()">
+              <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80" 
+                   alt="Toyota Alphard VIP Lounge" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-500 pointer-events-none">
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-black/20 pointer-events-none"></div>
+              
+              <div class="absolute bottom-4 left-4 w-8 h-8 rounded-full bg-white/35 backdrop-blur-md border border-white/60 flex items-center justify-center text-white shadow-sm group-hover:bg-electric transition">
+                <i data-lucide="play" class="w-3.5 h-3.5 fill-white text-white ml-0.5"></i>
+              </div>
+
+              <div class="absolute bottom-4 left-15 right-3 text-right">
+                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">Alphard VIP</span>
+                <span class="text-[10px] text-white/80 font-medium">৳ 8,000/day</span>
+              </div>
+            </div>
+
+            <!-- Card 6: Range Rover Vogue Autobiography -->
+            <div class="editorial-card w-[240px] sm:w-[280px] md:w-[310px] lg:w-[330px] aspect-[10/13] rounded-[24px] overflow-hidden relative shadow-md hover:shadow-2xl border border-white/80 bg-ink group cursor-pointer flex-shrink-0" style="transform: rotate(-1.5deg) translateY(6px);" onclick="openBookingDrawer()">
+              <img src="https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=800&q=80" 
+                   alt="Range Rover Vogue Autobiography" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-500 pointer-events-none">
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-black/20 pointer-events-none"></div>
+              
+              <div class="absolute bottom-4 left-4 w-8 h-8 rounded-full bg-white/35 backdrop-blur-md border border-white/60 flex items-center justify-center text-white shadow-sm group-hover:bg-electric transition">
+                <i data-lucide="play" class="w-3.5 h-3.5 fill-white text-white ml-0.5"></i>
+              </div>
+
+              <div class="absolute bottom-4 left-15 right-3 text-right">
+                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">Range Rover</span>
+                <span class="text-[10px] text-white/80 font-medium">৳ 22,000/day</span>
+              </div>
+            </div>
+
+            <!-- Card 7: BMW 7 Series 740Li M-Sport -->
+            <div class="editorial-card w-[240px] sm:w-[280px] md:w-[310px] lg:w-[330px] aspect-[10/13] rounded-[24px] overflow-hidden relative shadow-md hover:shadow-2xl border border-white/80 bg-ink group cursor-pointer flex-shrink-0" style="transform: rotate(2deg) translateY(-5px);" onclick="openBookingDrawer()">
+              <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80" 
+                   alt="BMW 7 Series 740Li" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-500 pointer-events-none">
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-black/20 pointer-events-none"></div>
+              
+              <div class="absolute bottom-4 left-4 w-8 h-8 rounded-full bg-white/35 backdrop-blur-md border border-white/60 flex items-center justify-center text-white shadow-sm group-hover:bg-electric transition">
+                <i data-lucide="play" class="w-3.5 h-3.5 fill-white text-white ml-0.5"></i>
+              </div>
+
+              <div class="absolute bottom-4 left-15 right-3 text-right">
+                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">BMW 740Li</span>
+                <span class="text-[10px] text-white/80 font-medium">৳ 17,500/day</span>
+              </div>
+            </div>
+
+            <!-- Card 8: Tesla Model 3 Long Range -->
+            <div class="editorial-card w-[240px] sm:w-[280px] md:w-[310px] lg:w-[330px] aspect-[10/13] rounded-[24px] overflow-hidden relative shadow-md hover:shadow-2xl border border-white/80 bg-ink group cursor-pointer flex-shrink-0" style="transform: rotate(-2.8deg) translateY(8px);" onclick="openBookingDrawer()">
+              <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=800&q=80" 
+                   alt="Tesla Model 3 Long Range" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-500 pointer-events-none">
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-black/20 pointer-events-none"></div>
+              
+              <div class="absolute bottom-4 left-4 w-8 h-8 rounded-full bg-white/35 backdrop-blur-md border border-white/60 flex items-center justify-center text-white shadow-sm group-hover:bg-electric transition">
+                <i data-lucide="play" class="w-3.5 h-3.5 fill-white text-white ml-0.5"></i>
+              </div>
+
+              <div class="absolute bottom-4 left-15 right-3 text-right">
+                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">Tesla 3</span>
+                <span class="text-[10px] text-white/80 font-medium">৳ 14,000/day</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- BELOW THE SLIDER: CTA "SEE MORE" BUTTON (As requested by user) -->
+      <div class="mt-8 sm:mt-12 flex flex-col items-center justify-center gap-3">
+        <button onclick="toggleFleetCatalog()" id="btnSeeMoreFleet" class="group inline-flex items-center gap-3 pl-8 pr-2.5 py-2.5 rounded-full bg-ink text-white font-semibold text-sm hover:bg-neutral-800 transition shadow-pill">
+          <span id="seeMoreText">See more</span>
+          <span class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-electric transition duration-300">
+            <i data-lucide="arrow-down" id="seeMoreIcon" class="w-4 h-4 text-white"></i>
+          </span>
+        </button>
+        <span class="text-xs text-inkSecondary">Explore full Dhaka fleet specifications & instant booking</span>
+      </div>
+
+      <!-- EXPANDABLE FULL FLEET CATALOG (Toggled by "See more") -->
+      <div id="expandedFleetCatalog" class="hidden max-w-[1280px] mx-auto px-4 sm:px-6 mt-12 pt-10 border-t border-hairline transition-all duration-500">
+        
+        <div class="text-center mb-8">
+          <h3 class="text-2xl font-extrabold text-ink">Comprehensive Fleet Specifications</h3>
+          <p class="text-xs text-inkSecondary mt-1">Detailed passenger capacity, luggage volume, and daily Dhaka chauffeur rates</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div class="p-6 rounded-3xl bg-white border border-hairline shadow-sm space-y-3">
+            <div class="flex justify-between items-start">
+              <div>
+                <span class="text-[10px] font-bold text-electric uppercase">Flagship Sedan</span>
+                <h4 class="font-extrabold text-base text-ink">Mercedes S-Class 450</h4>
+              </div>
+              <span class="text-xs font-bold text-ink">৳ 18,000</span>
+            </div>
+            <p class="text-xs text-inkSecondary">Airmatic adaptive suspension, massage recliners, executive rear tablet.</p>
+            <div class="pt-2 flex items-center justify-between border-t border-hairline text-xs text-inkSecondary">
+              <span>4 Seats • 4 Bags</span>
+              <button onclick="openBookingDrawer()" class="text-xs font-bold text-electric hover:underline">Book →</button>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-3xl bg-white border border-hairline shadow-sm space-y-3">
+            <div class="flex justify-between items-start">
+              <div>
+                <span class="text-[10px] font-bold text-electric uppercase">Prestige SUV</span>
+                <h4 class="font-extrabold text-base text-ink">Land Cruiser Prado TX</h4>
+              </div>
+              <span class="text-xs font-bold text-ink">৳ 9,500</span>
+            </div>
+            <p class="text-xs text-inkSecondary">7 High-clearance seats, 4WD terrain response for Dhaka & expressway routes.</p>
+            <div class="pt-2 flex items-center justify-between border-t border-hairline text-xs text-inkSecondary">
+              <span>7 Seats • 5 Bags</span>
+              <button onclick="openBookingDrawer()" class="text-xs font-bold text-electric hover:underline">Book →</button>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-3xl bg-white border border-hairline shadow-sm space-y-3">
+            <div class="flex justify-between items-start">
+              <div>
+                <span class="text-[10px] font-bold text-electric uppercase">Corporate Sedan</span>
+                <h4 class="font-extrabold text-base text-ink">Mercedes E-Class</h4>
+              </div>
+              <span class="text-xs font-bold text-ink">৳ 6,500</span>
+            </div>
+            <p class="text-xs text-inkSecondary">Silent cabin, 9G-Tronic transmission, daily corporate board meeting favorite.</p>
+            <div class="pt-2 flex items-center justify-between border-t border-hairline text-xs text-inkSecondary">
+              <span>5 Seats • 3 Bags</span>
+              <button onclick="openBookingDrawer()" class="text-xs font-bold text-electric hover:underline">Book →</button>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-3xl bg-white border border-hairline shadow-sm space-y-3">
+            <div class="flex justify-between items-start">
+              <div>
+                <span class="text-[10px] font-bold text-electric uppercase">VIP Lounge Microbus</span>
+                <h4 class="font-extrabold text-base text-ink">Toyota Alphard Royal</h4>
+              </div>
+              <span class="text-xs font-bold text-ink">৳ 8,000</span>
+            </div>
+            <p class="text-xs text-inkSecondary">First-class captain chairs, private cabin partition, HDMI screen.</p>
+            <div class="pt-2 flex items-center justify-between border-t border-hairline text-xs text-inkSecondary">
+              <span>7 Recliners • 6 Bags</span>
+              <button onclick="openBookingDrawer()" class="text-xs font-bold text-electric hover:underline">Book →</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- NEW SECTION: THE ELECTRIC ERA (Inspired by reference with clean modern glass aesthetics & Dhaka EV context) -->
+    <section id="electric-network" class="py-24 sm:py-32 relative overflow-hidden bg-gradient-to-b from-white via-[#F4F6FC] to-white border-b border-hairline">
+      
+      <!-- Ambient background grid and orbital trajectory -->
+      <div class="absolute inset-0 pointer-events-none flex items-center justify-center">
+        <!-- Giant Faint Electric Arch Trajectory -->
+        <div class="w-[850px] h-[850px] rounded-full border border-dashed border-electric/25 absolute -top-40 right-[-100px]"></div>
+        <div class="w-[600px] h-[600px] rounded-full border border-ink/[0.04] absolute top-10 right-20"></div>
+        <div class="w-96 h-96 bg-electric/10 rounded-full blur-3xl absolute -bottom-10 left-10"></div>
+      </div>
+
+      <div class="max-w-[1280px] mx-auto px-4 sm:px-6 relative z-10">
+        
+        <!-- Section Header -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12 sm:mb-16">
+          <div class="lg:col-span-7 space-y-4">
+            <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-ink uppercase">
+              <span class="text-electric font-mono">/ 04</span>
+              <span>SUSTAINABLE PRESTIGE • ZERO EMISSIONS</span>
+            </div>
+            <h2 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-ink leading-[1.05]">
+              Powering Dhaka’s <span class="font-serif-italic font-normal tracking-normal text-ink">silent</span> revolution.
+            </h2>
+            <p class="text-inkSecondary text-base sm:text-lg max-w-xl leading-relaxed">
+              Quiet, vibration-free executive transit with zero tailpipe emissions. Powered by dedicated 180 kW private supercharger bays across Gulshan-2, Banani, and Hazrat Shahjalal International Airport.
+            </p>
+          </div>
+
+          <div class="lg:col-span-5 flex flex-wrap lg:justify-end items-center gap-4 pt-2">
+            <button onclick="openBookingDrawer()" class="group flex items-center gap-2 pl-6 pr-2 py-2 rounded-full bg-ink text-white font-medium text-sm hover:bg-neutral-800 transition shadow-pill">
+              <span>Reserve EV Fleet</span>
+              <span class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-electric transition duration-300">
+                <i data-lucide="arrow-right" class="w-4 h-4 text-white"></i>
+              </span>
+            </button>
+            <button onclick="toggleChargingDemo()" class="glass-floating px-5 py-2.5 rounded-full text-xs font-bold text-ink hover:bg-white transition flex items-center gap-2 shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span id="demoStateLabel">Simulate Fast Charge</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Central Staging Area: Electric Vehicle + Modern Charging Pedestal + Floating Glass Callouts -->
+        <div class="relative min-h-[460px] sm:min-h-[520px] rounded-[36px] bg-gradient-to-tr from-[#EEF2FC] via-[#F8F9FD] to-white p-6 sm:p-12 border border-white/80 shadow-glass overflow-hidden flex items-center">
+          
+          <!-- Background Atmospheric Horizon & Light Arc -->
+          <div class="absolute inset-0 pointer-events-none">
+            <!-- Concentric Orbital Arcs with data dots (Image inspiration) -->
+            <svg class="w-full h-full opacity-60" viewBox="0 0 1000 500" fill="none">
+              <path d="M 100 450 Q 500 50 900 450" stroke="#2F5BFF" stroke-width="1.2" stroke-dasharray="6 6" stroke-opacity="0.35"/>
+              <circle cx="320" cy="180" r="4" fill="#2F5BFF"/>
+              <circle cx="680" cy="180" r="4" fill="#2F5BFF"/>
+              <line x1="320" y1="180" x2="280" y2="120" stroke="#2F5BFF" stroke-width="1" stroke-opacity="0.4"/>
+              <line x1="680" y1="180" x2="740" y2="130" stroke="#2F5BFF" stroke-width="1" stroke-opacity="0.4"/>
+            </svg>
+            <!-- Soft ground shadow -->
+            <div class="w-[80%] h-12 bg-ink/15 rounded-full blur-2xl absolute bottom-8 left-[10%]"></div>
+          </div>
+
+          <!-- Vehicle & Charging Station Visual Assembly -->
+          <div class="relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <!-- Left Side: Clean Electric Luxury Sedan Profile -->
+            <div class="lg:col-span-8 relative">
+              <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=1200&q=80" 
+                   alt="Velora Electric Sedan" 
+                   class="w-full h-auto object-contain filter contrast-105 drop-shadow-[0_20px_35px_rgba(14,15,18,0.18)] transform hover:scale-[1.01] transition duration-500">
+              
+              <!-- Floating Glass Callout 1 (Bottom Left - Sustainability / Clean Power) -->
+              <div class="absolute -bottom-4 sm:bottom-4 left-2 sm:left-6 glass-floating p-4 rounded-2xl max-w-xs shadow-glass border border-white/90">
+                <div class="flex items-center gap-2 mb-1.5">
+                  <span class="w-6 h-6 rounded-lg bg-emerald-500/10 text-emerald-600 flex items-center justify-center">
+                    <i data-lucide="leaf" class="w-3.5 h-3.5"></i>
+                  </span>
+                  <span class="text-xs font-bold text-ink">Zero Tailpipe Impact</span>
+                </div>
+                <p class="text-[11px] text-inkSecondary leading-relaxed">
+                  100% solar-backed grid charging. Ideal for Dhaka multinational headquarters and diplomatic missions with ESG targets.
+                </p>
+              </div>
+            </div>
+
+            <!-- Right Side: Futuristic Fast-Charging Pedestal Hub -->
+            <div class="lg:col-span-4 relative flex justify-center">
+              
+              <!-- Futuristic Charging Station Pedestal Card with Glass & LED Accents -->
+              <div class="w-full max-w-[320px] rounded-[32px] bg-gradient-to-b from-white to-[#F0F3FA] p-6 border-2 border-white shadow-2xl relative group">
+                
+                <!-- Glowing Electric Blue Edge Accent -->
+                <div class="absolute -inset-0.5 rounded-[34px] bg-gradient-to-b from-electric/30 via-transparent to-electric/20 blur-sm pointer-events-none -z-10"></div>
+                
+                <!-- Top Status & Brand Tag -->
+                <div class="flex items-center justify-between pb-4 border-b border-hairline">
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-electric animate-ping"></span>
+                    <span class="text-xs font-bold text-ink">VELORA CHARGE</span>
+                  </div>
+                  <span class="text-[10px] font-mono text-electric font-semibold px-2 py-0.5 rounded-full bg-electric/10">180 kW DC</span>
+                </div>
+
+                <!-- Digital OLED Telemetry Display (Image Reference Style) -->
+                <div class="my-5 p-4 rounded-2xl bg-ink text-white shadow-inner relative overflow-hidden">
+                  <div class="flex items-center justify-between text-xs text-white/60 mb-2">
+                    <span>Battery Status</span>
+                    <span class="text-emerald-400 font-mono flex items-center gap-1">
+                      <i data-lucide="zap" class="w-3 h-3 fill-emerald-400 text-emerald-400"></i> Fast Sync
+                    </span>
+                  </div>
+
+                  <div class="flex items-baseline justify-between">
+                    <div id="livePercent" class="font-extrabold text-4xl sm:text-5xl tracking-tight text-white font-mono">
+                      84<span class="text-xl text-electric">%</span>
+                    </div>
+                    <div class="text-right">
+                      <div id="liveRange" class="text-sm font-bold text-white">460 km</div>
+                      <div class="text-[10px] text-white/50">Calculated Range</div>
+                    </div>
+                  </div>
+
+                  <!-- Progress Bar -->
+                  <div class="w-full h-1.5 rounded-full bg-white/20 mt-4 overflow-hidden">
+                    <div id="liveProgress" class="h-full bg-gradient-to-r from-electric to-emerald-400 rounded-full transition-all duration-700" style="width: 84%"></div>
+                  </div>
+
+                  <div class="flex items-center justify-between text-[10px] text-white/60 mt-3 pt-2 border-t border-white/10">
+                    <span>Charging Speed: <b class="text-white">180 kW</b></span>
+                    <span>Remaining: <b id="liveTime" class="text-white">12 mins</b></span>
+                  </div>
+                </div>
+
+                <!-- Specs Breakdown -->
+                <div class="space-y-2 text-xs">
+                  <div class="flex items-center justify-between p-2 rounded-xl bg-white/70 border border-hairline">
+                    <span class="text-inkSecondary">Hub Location:</span>
+                    <span class="font-bold text-ink">Gulshan-2 & Airport Bay</span>
+                  </div>
+                  <div class="flex items-center justify-between p-2 rounded-xl bg-white/70 border border-hairline">
+                    <span class="text-inkSecondary">Plug Standard:</span>
+                    <span class="font-bold text-ink">CCS2 Fast Dual Gun</span>
+                  </div>
+                </div>
+
+                <!-- Connector Cable Graphic Line -->
+                <div class="mt-4 pt-3 border-t border-hairline flex items-center justify-between">
+                  <span class="text-[11px] text-ink font-semibold flex items-center gap-1.5">
+                    <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-electric"></i>
+                    Auto-Handshake Active
+                  </span>
+                  <span class="text-[10px] text-emerald-600 font-bold uppercase tracking-wider">Online</span>
+                </div>
+
+              </div>
+
+              <!-- Floating Glass Callout 2 (Top Right - Digital Display & Telemetry) -->
+              <div class="absolute -top-6 -right-2 sm:-right-4 glass-floating p-3.5 rounded-2xl max-w-[210px] shadow-glass border border-white/90 hidden sm:block">
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="w-5 h-5 rounded-lg bg-electric/10 text-electric flex items-center justify-center">
+                    <i data-lucide="cpu" class="w-3 h-3"></i>
+                  </span>
+                  <span class="text-xs font-bold text-ink">Live Telemetry</span>
+                </div>
+                <p class="text-[10px] text-inkSecondary leading-tight">
+                  Chauffeur dispatch monitors SoC and pre-conditions cabin temperature to 21°C before pickup.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Bottom Metric & Social Proof Bar (Glass effect) -->
+          <div class="absolute bottom-4 right-4 sm:right-8 z-20 hidden md:flex items-center gap-4 glass-floating px-5 py-2.5 rounded-full shadow-glass border border-white/90">
+            <div class="flex -space-x-2">
+              <img class="w-7 h-7 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Executive User">
+              <img class="w-7 h-7 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Executive User">
+              <img class="w-7 h-7 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Executive User">
+            </div>
+            <div class="text-left text-xs">
+              <span class="font-extrabold text-ink block">500,000+ Clean km</span>
+              <span class="text-[10px] text-inkSecondary">Zero emissions across Dhaka</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. SERVICES (Arch frame with dashed outline + Floating pill labels + List of rows with hairlines & circular arrows) -->
+    <section id="services" class="py-24 sm:py-32 max-w-[1280px] mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left Column: Arch-shaped Image Frame with Dashed Outline & Floating Pill Labels (Image 3 style) -->
+        <div class="lg:col-span-5 relative flex justify-center">
+          
+          <!-- Outer dashed arch outline -->
+          <div class="w-[300px] sm:w-[360px] h-[440px] sm:h-[500px] rounded-t-full rounded-b-[36px] border-2 border-dashed border-electric/40 p-3 relative">
+            
+            <!-- Inner Photo Container -->
+            <div class="w-full h-full rounded-t-full rounded-b-[28px] overflow-hidden bg-pageAlt relative">
+              <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80" 
+                   alt="Airport Meet & Greet Chauffeur Dhaka" 
+                   class="w-full h-full object-cover filter brightness-95">
+            </div>
+
+            <!-- Floating Glass Pill Label 1 -->
+            <div class="absolute top-16 -left-6 glass-floating px-3.5 py-1.5 rounded-full text-xs font-semibold text-ink shadow-glass flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-electric"></span>
+              <span>Airport transfer</span>
+            </div>
+
+            <!-- Floating Glass Pill Label 2 -->
+            <div class="absolute top-44 -right-6 glass-floating px-3.5 py-1.5 rounded-full text-xs font-semibold text-ink shadow-glass flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-electric"></span>
+              <span>Wedding</span>
+            </div>
+
+            <!-- Floating Glass Pill Label 3 -->
+            <div class="absolute bottom-28 -left-8 glass-floating px-3.5 py-1.5 rounded-full text-xs font-semibold text-ink shadow-glass flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-electric"></span>
+              <span>Corporate</span>
+            </div>
+
+            <!-- Floating Glass Pill Label 4 -->
+            <div class="absolute bottom-10 -right-4 glass-floating px-3.5 py-1.5 rounded-full text-xs font-semibold text-ink shadow-glass flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-electric"></span>
+              <span>City tour</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Right Column: Heading with italic word + List of rows separated by 1px hairlines -->
+        <div class="lg:col-span-7 space-y-8">
+          <div>
+            <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-ink uppercase mb-2">
+              <span class="text-electric font-mono">/ 04</span>
+              <span>BESPOKE MOBILITY</span>
+            </div>
+            <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-ink">
+              Crafted for <span class="font-serif-italic font-normal tracking-normal text-ink">every</span> occasion.
+            </h2>
+          </div>
+
+          <!-- Service Rows (Hairline dividers, numbers, circular arrows) -->
+          <div class="divide-y divide-hairline border-y border-hairline">
+            
+            <!-- Row 1 -->
+            <div class="py-6 flex items-center justify-between group cursor-pointer hover:bg-pageAlt/50 px-2 rounded-xl transition">
+              <div class="flex items-center gap-6">
+                <span class="text-xs font-mono font-bold text-electric">/ 01</span>
+                <div>
+                  <h3 class="text-lg sm:text-xl font-bold text-ink group-hover:text-electric transition">Airport VIP Transfer</h3>
+                  <p class="text-xs sm:text-sm text-inkSecondary mt-0.5">Flight-tracked meet & greet at Hazrat Shahjalal International Airport.</p>
+                </div>
+              </div>
+              <div class="w-10 h-10 rounded-full border border-hairline group-hover:border-electric group-hover:bg-electric flex items-center justify-center transition">
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-ink group-hover:text-white transition"></i>
+              </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="py-6 flex items-center justify-between group cursor-pointer hover:bg-pageAlt/50 px-2 rounded-xl transition">
+              <div class="flex items-center gap-6">
+                <span class="text-xs font-mono font-bold text-electric">/ 02</span>
+                <div>
+                  <h3 class="text-lg sm:text-xl font-bold text-ink group-hover:text-electric transition">Wedding & Ceremonial Fleet</h3>
+                  <p class="text-xs sm:text-sm text-inkSecondary mt-0.5">Floral-decorated luxury sedans & Land Cruisers for grand entrances.</p>
+                </div>
+              </div>
+              <div class="w-10 h-10 rounded-full border border-hairline group-hover:border-electric group-hover:bg-electric flex items-center justify-center transition">
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-ink group-hover:text-white transition"></i>
+              </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="py-6 flex items-center justify-between group cursor-pointer hover:bg-pageAlt/50 px-2 rounded-xl transition">
+              <div class="flex items-center gap-6">
+                <span class="text-xs font-mono font-bold text-electric">/ 03</span>
+                <div>
+                  <h3 class="text-lg sm:text-xl font-bold text-ink group-hover:text-electric transition">Corporate & Diplomatic Retainers</h3>
+                  <p class="text-xs sm:text-sm text-inkSecondary mt-0.5">Monthly dedicated vehicles with NBR VAT-compliant corporate invoicing.</p>
+                </div>
+              </div>
+              <div class="w-10 h-10 rounded-full border border-hairline group-hover:border-electric group-hover:bg-electric flex items-center justify-center transition">
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-ink group-hover:text-white transition"></i>
+              </div>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="py-6 flex items-center justify-between group cursor-pointer hover:bg-pageAlt/50 px-2 rounded-xl transition">
+              <div class="flex items-center gap-6">
+                <span class="text-xs font-mono font-bold text-electric">/ 04</span>
+                <div>
+                  <h3 class="text-lg sm:text-xl font-bold text-ink group-hover:text-electric transition">Inter-District Highway Tours</h3>
+                  <p class="text-xs sm:text-sm text-inkSecondary mt-0.5">Smooth transit via Padma Bridge to Sreemangal, Chittagong, and Sylhet.</p>
+                </div>
+              </div>
+              <div class="w-10 h-10 rounded-full border border-hairline group-hover:border-electric group-hover:bg-electric flex items-center justify-center transition">
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-ink group-hover:text-white transition"></i>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. HOW IT WORKS (White rounded sheet with 3 columns, vertical dividers, 01/02/03, dashed curve) -->
+    <section id="how-it-works" class="py-24 bg-pageAlt border-y border-hairline">
+      <div class="max-w-[1280px] mx-auto px-4 sm:px-6">
+        
+        <div class="text-center max-w-xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-ink uppercase mb-2">
+            <span class="text-electric font-mono">/ 05</span>
+            <span>SEAMLESS WORKFLOW</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-ink">
+            Simple steps to your <span class="font-serif-italic font-normal tracking-normal text-ink">journey.</span>
+          </h2>
+        </div>
+
+        <!-- White Rounded Sheet with 3 Columns & Thin Vertical Dividers -->
+        <div class="bg-white rounded-[32px] sm:rounded-[36px] border border-hairline p-8 sm:p-12 shadow-sm relative">
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative z-10 divide-y md:divide-y-0 md:divide-x divide-hairline">
+            
+            <!-- Step 1 -->
+            <div class="pt-6 md:pt-0 md:px-6 first:pl-0 space-y-4 text-center md:text-left">
+              <div class="w-12 h-12 rounded-full bg-pageAlt border border-hairline flex items-center justify-center font-extrabold text-ink text-base shadow-sm mx-auto md:mx-0">
+                01
+              </div>
+              <h3 class="text-xl font-bold text-ink">Choose your car</h3>
+              <p class="text-sm text-inkSecondary leading-relaxed">
+                Browse our curated sedans, high-clearance SUVs, VIP microbuses, or German flagships for your route.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="pt-6 md:pt-0 md:px-6 space-y-4 text-center md:text-left">
+              <div class="w-12 h-12 rounded-full bg-pageAlt border border-hairline flex items-center justify-center font-extrabold text-ink text-base shadow-sm mx-auto md:mx-0">
+                02
+              </div>
+              <h3 class="text-xl font-bold text-ink">Pick date and place</h3>
+              <p class="text-sm text-inkSecondary leading-relaxed">
+                Specify your Dhaka pickup location or airport terminal. Receive driver credentials in under 2 minutes.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="pt-6 md:pt-0 md:px-6 space-y-4 text-center md:text-left">
+              <div class="w-12 h-12 rounded-full bg-pageAlt border border-hairline flex items-center justify-center font-extrabold text-ink text-base shadow-sm mx-auto md:mx-0">
+                03
+              </div>
+              <h3 class="text-xl font-bold text-ink">Get picked up</h3>
+              <p class="text-sm text-inkSecondary leading-relaxed">
+                Your suited, vetted chauffeur arrives 15 minutes early. Sit back in air-conditioned comfort and arrive in style.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. PRICING (3 Dark Rounded Cards in Ink #0E0F12, Middle highlighted with #2F5BFF border & "Most popular" tag, circular arrows, BDT) -->
+    <section id="pricing" class="py-24 sm:py-32 max-w-[1280px] mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-ink uppercase mb-2">
+          <span class="text-electric font-mono">/ 06</span>
+          <span>TRANSPARENT TARIFFS</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-ink">
+          Clear pricing, zero <span class="font-serif-italic font-normal tracking-normal text-ink">ambiguity.</span>
+        </h2>
+        <p class="text-inkSecondary text-sm sm:text-base mt-2">All rates fixed in Bangladeshi Taka (৳). Chauffeur and fuel policy itemized.</p>
+      </div>
+
+      <!-- 3 Dark Cards Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        
+        <!-- Card 1: Daily -->
+        <div class="bg-ink text-white rounded-[32px] p-8 sm:p-10 flex flex-col justify-between border border-white/10 shadow-card-lift">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold tracking-widest uppercase text-white/50">Daily Rental</span>
+              <span class="text-[11px] font-semibold text-white/70 px-2.5 py-1 rounded-full bg-white/10">10 Hours</span>
+            </div>
+            
+            <div class="mb-6 pb-6 border-b border-white/10">
+              <span class="text-xs text-white/50">From</span>
+              <div class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mt-1">৳ 6,500</div>
+              <span class="text-xs text-white/50">Per 10 hours duty in Dhaka</span>
+            </div>
+
+            <ul class="space-y-3.5 text-xs sm:text-sm text-white/80">
+              <li class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-electric flex-shrink-0"></span>
+                <span>Licensed, suited executive chauffeur</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-electric flex-shrink-0"></span>
+                <span>Up to 70 km city travel included</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-electric flex-shrink-0"></span>
+                <span>Free cancellation up to 6h prior</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-electric flex-shrink-0"></span>
+                <span>Complimentary chilled water bottles</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-8">
+            <button onclick="openBookingDrawer()" class="w-full py-3.5 rounded-full bg-white/10 hover:bg-white text-white hover:text-ink font-semibold text-xs sm:text-sm transition flex items-center justify-between px-6 group">
+              <span>Select Daily</span>
+              <span class="w-7 h-7 rounded-full bg-white/20 group-hover:bg-ink group-hover:text-white flex items-center justify-center transition">
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2: Weekly (HIGHLIGHTED: Electric border + "Most popular" tag + circular arrow) -->
+        <div class="bg-ink text-white rounded-[32px] p-8 sm:p-10 flex flex-col justify-between border-2 border-electric relative shadow-electric lg:-translate-y-2">
+          
+          <!-- "Most popular" Tag -->
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-electric text-white text-[11px] font-bold tracking-wider uppercase">
+            Most Popular
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between mb-4 mt-1">
+              <span class="text-xs font-bold tracking-widest uppercase text-white/50">Weekly Executive</span>
+              <span class="text-[11px] font-semibold text-electric px-2.5 py-1 rounded-full bg-electric/15">Save 15%</span>
+            </div>
+            
+            <div class="mb-6 pb-6 border-b border-white/10">
+              <span class="text-xs text-white/50">From</span>
+              <div class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mt-1">৳ 38,000</div>
+              <span class="text-xs text-white/50">7 Full days continuous dispatch</span>
+            </div>
+
+            <ul class="space-y-3.5 text-xs sm:text-sm text-white/90">
+              <li class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-electric flex-shrink-0"></span>
+                <span>Dedicated personal chauffeur for the week</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-electric flex-shrink-0"></span>
+                <span>Hazrat Shahjalal Airport Meet & Greet</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-electric flex-shrink-0"></span>
+                <span>500 km cumulative mileage pool</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-electric flex-shrink-0"></span>
+                <span>Guaranteed replacement car within 25 mins</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-8">
+            <button onclick="openBookingDrawer()" class="w-full py-3.5 rounded-full bg-electric hover:bg-electricHover text-white font-semibold text-xs sm:text-sm transition flex items-center justify-between px-6 group">
+              <span>Book Weekly Package</span>
+              <span class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center transition">
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-white"></i>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3: Monthly -->
+        <div class="bg-ink text-white rounded-[32px] p-8 sm:p-10 flex flex-col justify-between border border-white/10 shadow-card-lift">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold tracking-widest uppercase text-white/50">Monthly Corporate</span>
+              <span class="text-[11px] font-semibold text-white/70 px-2.5 py-1 rounded-full bg-white/10">B2B Retainer</span>
+            </div>
+            
+            <div class="mb-6 pb-6 border-b border-white/10">
+              <span class="text-xs text-white/50">Custom contract from</span>
+              <div class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mt-1">৳ 120,000</div>
+              <span class="text-xs text-white/50">Per month with dedicated fleet</span>
+            </div>
+
+            <ul class="space-y-3.5 text-xs sm:text-sm text-white/80">
+              <li class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-electric flex-shrink-0"></span>
+                <span>Full-time vetted chauffeur + backup roster</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-electric flex-shrink-0"></span>
+                <span>NBR VAT 6.3 compliant invoicing</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-electric flex-shrink-0"></span>
+                <span>Full maintenance, insurance & telemetry</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-electric flex-shrink-0"></span>
+                <span>Dedicated corporate account manager</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-8">
+            <button onclick="openBookingDrawer()" class="w-full py-3.5 rounded-full bg-white/10 hover:bg-white text-white hover:text-ink font-semibold text-xs sm:text-sm transition flex items-center justify-between px-6 group">
+              <span>Inquire Corporate</span>
+              <span class="w-7 h-7 rounded-full bg-white/20 group-hover:bg-ink group-hover:text-white flex items-center justify-center transition">
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 7. FAQ (Centred heading: "Frequently Asked Questions" with italic word, 6 pill-shaped accordion rows with + icon) -->
+    <section id="faq" class="py-24 bg-pageAlt border-t border-hairline">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center mb-16">
+          <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-ink uppercase mb-2">
+            <span class="text-electric font-mono">/ 07</span>
+            <span>CLARITY & ASSURANCE</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-ink">
+            Frequently Asked <span class="font-serif-italic font-normal tracking-normal text-ink">Questions</span>
+          </h2>
+        </div>
+
+        <!-- 6 Clean Proportioned Accordion Rows -->
+        <div class="space-y-3 max-w-2xl mx-auto">
+          
+          <!-- Accordion Row 1 (Default Open) -->
+          <div class="rounded-2xl sm:rounded-[20px] bg-white border border-hairline hover:border-ink/20 shadow-[0_2px_10px_rgba(14,15,18,0.03)] transition-all overflow-hidden">
+            <button onclick="toggleFaqPill(1)" class="w-full px-5 sm:px-6 py-4 flex items-center justify-between text-left focus:outline-none group cursor-pointer">
+              <span class="font-bold text-sm sm:text-[15px] text-ink group-hover:text-electric transition-colors pr-3">Is a chauffeur included in all rental packages?</span>
+              <span id="faqPillIcon-1" class="w-7 h-7 rounded-full bg-pageAlt group-hover:bg-ink group-hover:text-white flex items-center justify-center text-ink text-sm font-semibold flex-shrink-0 transition-colors">-</span>
+            </button>
+            <div id="faqPillContent-1" class="px-5 sm:px-6 pb-4 pt-2 text-xs sm:text-[13.5px] text-inkSecondary leading-relaxed border-t border-hairline/50 block">
+              Yes. All standard Velora Drive bookings include an experienced, licensed, uniform-dressed executive chauffeur. For corporate self-drive requests, we require verified institutional documentation, valid BRTA endorsement, and a refundable security deposit.
+            </div>
+          </div>
+
+          <!-- Accordion Row 2 -->
+          <div class="rounded-2xl sm:rounded-[20px] bg-white border border-hairline hover:border-ink/20 shadow-[0_2px_10px_rgba(14,15,18,0.03)] transition-all overflow-hidden">
+            <button onclick="toggleFaqPill(2)" class="w-full px-5 sm:px-6 py-4 flex items-center justify-between text-left focus:outline-none group cursor-pointer">
+              <span class="font-bold text-sm sm:text-[15px] text-ink group-hover:text-electric transition-colors pr-3">How does Hazrat Shahjalal Airport VIP pickup work?</span>
+              <span id="faqPillIcon-2" class="w-7 h-7 rounded-full bg-pageAlt group-hover:bg-ink group-hover:text-white flex items-center justify-center text-ink text-sm font-semibold flex-shrink-0 transition-colors">+</span>
+            </button>
+            <div id="faqPillContent-2" class="px-5 sm:px-6 pb-4 pt-2 text-xs sm:text-[13.5px] text-inkSecondary leading-relaxed border-t border-hairline/50 hidden">
+              Our dispatch team monitors your flight telemetry in real time. Your chauffeur waits at Terminal 1 or 2 with your name placard, assists with luggage, and navigates the Dhaka Elevated Expressway smoothly.
+            </div>
+          </div>
+
+          <!-- Accordion Row 3 -->
+          <div class="rounded-2xl sm:rounded-[20px] bg-white border border-hairline hover:border-ink/20 shadow-[0_2px_10px_rgba(14,15,18,0.03)] transition-all overflow-hidden">
+            <button onclick="toggleFaqPill(3)" class="w-full px-5 sm:px-6 py-4 flex items-center justify-between text-left focus:outline-none group cursor-pointer">
+              <span class="font-bold text-sm sm:text-[15px] text-ink group-hover:text-electric transition-colors pr-3">What payment methods do you accept in Dhaka?</span>
+              <span id="faqPillIcon-3" class="w-7 h-7 rounded-full bg-pageAlt group-hover:bg-ink group-hover:text-white flex items-center justify-center text-ink text-sm font-semibold flex-shrink-0 transition-colors">+</span>
+            </button>
+            <div id="faqPillContent-3" class="px-5 sm:px-6 pb-4 pt-2 text-xs sm:text-[13.5px] text-inkSecondary leading-relaxed border-t border-hairline/50 hidden">
+              We accept bKash Merchant, Nagad, Visa, Mastercard, American Express, and corporate direct bank transfers (BEFTN/NPSB) with official VAT-compliant receipts.
+            </div>
+          </div>
+
+          <!-- Accordion Row 4 -->
+          <div class="rounded-2xl sm:rounded-[20px] bg-white border border-hairline hover:border-ink/20 shadow-[0_2px_10px_rgba(14,15,18,0.03)] transition-all overflow-hidden">
+            <button onclick="toggleFaqPill(4)" class="w-full px-5 sm:px-6 py-4 flex items-center justify-between text-left focus:outline-none group cursor-pointer">
+              <span class="font-bold text-sm sm:text-[15px] text-ink group-hover:text-electric transition-colors pr-3">What is your cancellation and rescheduling policy?</span>
+              <span id="faqPillIcon-4" class="w-7 h-7 rounded-full bg-pageAlt group-hover:bg-ink group-hover:text-white flex items-center justify-center text-ink text-sm font-semibold flex-shrink-0 transition-colors">+</span>
+            </button>
+            <div id="faqPillContent-4" class="px-5 sm:px-6 pb-4 pt-2 text-xs sm:text-[13.5px] text-inkSecondary leading-relaxed border-t border-hairline/50 hidden">
+              You can cancel or modify your reservation free of charge up to 6 hours before scheduled pickup. Cancellations within 6 hours incur a nominal 20% driver compensation fee.
+            </div>
+          </div>
+
+          <!-- Accordion Row 5 -->
+          <div class="rounded-2xl sm:rounded-[20px] bg-white border border-hairline hover:border-ink/20 shadow-[0_2px_10px_rgba(14,15,18,0.03)] transition-all overflow-hidden">
+            <button onclick="toggleFaqPill(5)" class="w-full px-5 sm:px-6 py-4 flex items-center justify-between text-left focus:outline-none group cursor-pointer">
+              <span class="font-bold text-sm sm:text-[15px] text-ink group-hover:text-electric transition-colors pr-3">How are bridge tolls, fuel, and overtime handled?</span>
+              <span id="faqPillIcon-5" class="w-7 h-7 rounded-full bg-pageAlt group-hover:bg-ink group-hover:text-white flex items-center justify-center text-ink text-sm font-semibold flex-shrink-0 transition-colors">+</span>
+            </button>
+            <div id="faqPillContent-5" class="px-5 sm:px-6 pb-4 pt-2 text-xs sm:text-[13.5px] text-inkSecondary leading-relaxed border-t border-hairline/50 hidden">
+              Daily rentals include up to 70 km of city fuel. Highway tolls (Dhaka Elevated Expressway, Padma Bridge) are charged at official actuals with digital slips. Overtime past 10 hours is calculated at a fixed ৳ 400/hr.
+            </div>
+          </div>
+
+          <!-- Accordion Row 6 -->
+          <div class="rounded-2xl sm:rounded-[20px] bg-white border border-hairline hover:border-ink/20 shadow-[0_2px_10px_rgba(14,15,18,0.03)] transition-all overflow-hidden">
+            <button onclick="toggleFaqPill(6)" class="w-full px-5 sm:px-6 py-4 flex items-center justify-between text-left focus:outline-none group cursor-pointer">
+              <span class="font-bold text-sm sm:text-[15px] text-ink group-hover:text-electric transition-colors pr-3">Can I book an inter-district trip outside Dhaka?</span>
+              <span id="faqPillIcon-6" class="w-7 h-7 rounded-full bg-pageAlt group-hover:bg-ink group-hover:text-white flex items-center justify-center text-ink text-sm font-semibold flex-shrink-0 transition-colors">+</span>
+            </button>
+            <div id="faqPillContent-6" class="px-5 sm:px-6 pb-4 pt-2 text-xs sm:text-[13.5px] text-inkSecondary leading-relaxed border-t border-hairline/50 hidden">
+              Yes. We regularly operate trips across Bangladesh including Cox's Bazar, Sylhet tea resorts, Chittagong, and Khulna via expressway corridors.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 8. CTA BLOCK (Large dark rounded block in Ink #0E0F12, dark car silhouette, "Ready to ride?", glass pill button, WhatsApp/phone) -->
+    <section class="py-20 sm:py-24 max-w-[1280px] mx-auto px-4 sm:px-6">
+      <div class="bg-ink rounded-[32px] sm:rounded-[36px] overflow-hidden p-8 sm:p-16 relative border border-white/10 shadow-2xl">
+        
+        <!-- Subtle Electric Glow behind imagery -->
+        <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-electric/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-xs font-semibold text-white">
+              <span class="w-1.5 h-1.5 rounded-full bg-electric"></span>
+              <span>Available 24/7 across Dhaka</span>
+            </div>
+
+            <h2 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+              Ready to <span class="font-serif-italic font-normal tracking-normal text-white">ride?</span>
+            </h2>
+
+            <p class="text-white/70 text-base sm:text-lg max-w-lg leading-relaxed">
+              Arrive in style. Book in minutes. Our concierge team is standing by to confirm your vehicle and driver immediately.
+            </p>
+
+            <!-- Glass Pill Button + Phone/WhatsApp Line -->
+            <div class="pt-2 flex flex-wrap items-center gap-4">
+              <button onclick="openBookingDrawer()" class="glass-floating-dark px-7 py-3.5 rounded-full text-white font-semibold text-sm hover:bg-white hover:text-ink transition shadow-pill flex items-center gap-2">
+                <span>Reserve Your Car</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+
+              <a href="https://wa.me/8801700000000" target="_blank" class="flex items-center gap-2 text-white/80 hover:text-white text-xs sm:text-sm font-medium transition py-2 px-3">
+                <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+                <span>WhatsApp: +880 1700-VELORA</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Car Cutout Visual -->
+          <div class="lg:col-span-5 relative flex items-center justify-center">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" 
+                 alt="Velora Luxury Sports Sedan" 
+                 class="w-full h-auto object-cover rounded-2xl filter brightness-90 contrast-110">
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 9. FOOTER (Dark Ink #0E0F12, 4 link columns, newsletter input) -->
+    <footer class="bg-ink text-white pt-20 pb-12 sm:pb-16 overflow-hidden relative border-t border-white/10">
+      <div class="max-w-[1280px] mx-auto px-4 sm:px-6 relative z-10">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-16 border-b border-white/10">
+          
+          <!-- Col 1 & 2: Brand, Address & Newsletter -->
+          <div class="lg:col-span-2 space-y-6">
+            <div class="flex items-center gap-2">
+              <span class="font-extrabold tracking-tighter text-2xl text-white">VELORA</span>
+              <span class="w-2 h-2 rounded-full bg-electric"></span>
+            </div>
+            
+            <p class="text-xs sm:text-sm text-white/60 max-w-sm leading-relaxed">
+              Premium car rental and professional chauffeur service in Dhaka, Bangladesh. Road 11, Banani, Dhaka-1213.
+            </p>
+
+            <!-- Newsletter Input with Black Pill Button -->
+            <form onsubmit="event.preventDefault(); alert('Subscribed to Velora Dispatch updates!');" class="flex items-center max-w-md bg-white/10 rounded-full p-1.5 border border-white/15">
+              <input type="email" placeholder="Enter your email" required class="w-full bg-transparent px-4 text-xs text-white placeholder-white/40 focus:outline-none">
+              <button type="submit" class="px-5 py-2.5 rounded-full bg-white text-ink font-bold text-xs hover:bg-neutral-200 transition shadow-sm">
+                Join
+              </button>
+            </form>
+          </div>
+
+          <!-- Col 3: Navigation -->
+          <div class="space-y-3">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-white/50">Navigation</h4>
+            <ul class="space-y-2 text-xs sm:text-sm text-white/80">
+              <li><a href="#fleet" class="hover:text-white transition">Fleet Garage</a></li>
+              <li><a href="#services" class="hover:text-white transition">Bespoke Services</a></li>
+              <li><a href="#how-it-works" class="hover:text-white transition">How It Works</a></li>
+              <li><a href="#pricing" class="hover:text-white transition">Transparent Pricing</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Services -->
+          <div class="space-y-3">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-white/50">Services</h4>
+            <ul class="space-y-2 text-xs sm:text-sm text-white/80">
+              <li><a href="#services" class="hover:text-white transition">Airport Meet & Greet</a></li>
+              <li><a href="#services" class="hover:text-white transition">Wedding Convoys</a></li>
+              <li><a href="#services" class="hover:text-white transition">Corporate Retainers</a></li>
+              <li><a href="#services" class="hover:text-white transition">Inter-District Highway</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 5: Contact & Hub -->
+          <div class="space-y-3">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-white/50">Dhaka Hub</h4>
+            <div class="space-y-2 text-xs text-white/70">
+              <p>House 48, Road 11, Block D</p>
+              <p>Banani, Dhaka-1213</p>
+              <p class="text-white font-medium">+880 1700-VELORA</p>
+              <p class="text-electric">concierge@veloradrive.com</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Copyright Row -->
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-white/50 gap-4">
+          <p>© 2026 Velora Drive Ltd. All rights reserved.</p>
+          <div class="flex items-center gap-6">
+            <a href="#" class="hover:text-white transition">Privacy Policy</a>
+            <a href="#" class="hover:text-white transition">Terms of Service</a>
+            <a href="#" class="hover:text-white transition">BRTA Commercial Compliance</a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- INTERACTIVE BOOKING DRAWER / MODAL -->
+  <div id="bookingDrawer" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-ink/70 backdrop-blur-md hidden transition-opacity">
+    <div class="bg-white max-w-lg w-full rounded-[32px] p-6 sm:p-8 border border-hairline shadow-2xl relative max-h-[90vh] overflow-y-auto">
+      
+      <!-- Close button -->
+      <button onclick="closeBookingDrawer()" class="absolute top-6 right-6 p-2 rounded-full bg-pageAlt border border-hairline hover:bg-neutral-200 transition">
+        <i data-lucide="x" class="w-4 h-4 text-ink"></i>
+      </button>
+
+      <div class="mb-6">
+        <div class="inline-flex items-center gap-2 text-[10px] font-bold tracking-widest text-ink uppercase mb-1">
+          <span class="text-electric font-mono">/ INSTANT DISPATCH</span>
+        </div>
+        <h3 class="text-2xl font-extrabold text-ink">Reserve Your Vehicle</h3>
+        <p class="text-xs text-inkSecondary mt-1">Receive driver credentials and confirmation via SMS & WhatsApp.</p>
+      </div>
+
+      <form id="drawerBookingForm" onsubmit="handleDrawerSubmit(event)" class="space-y-4">
+        
+        <div>
+          <label class="text-[11px] font-bold text-ink uppercase block mb-1">Selected Vehicle Class</label>
+          <select id="modalCarSelect" onchange="updateDrawerPrice()" class="w-full h-11 px-4 rounded-xl bg-pageAlt border border-hairline text-xs font-semibold text-ink focus:outline-none cursor-pointer">
+            <option value="6500" selected>Mercedes-Benz E-Class — ৳ 6,500 / day</option>
+            <option value="9500">Toyota Land Cruiser Prado TX — ৳ 9,500 / day</option>
+            <option value="18000">Mercedes-Benz S-Class 450 — ৳ 18,000 / day</option>
+            <option value="16000">Porsche Taycan / Tesla — ৳ 16,000 / day</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="text-[11px] font-bold text-ink uppercase block mb-1">Your Full Name</label>
+            <input type="text" required placeholder="e.g. Asif Chowdhury" class="w-full h-11 px-4 rounded-xl bg-pageAlt border border-hairline text-xs text-ink focus:outline-none">
+          </div>
+          <div>
+            <label class="text-[11px] font-bold text-ink uppercase block mb-1">Mobile / WhatsApp</label>
+            <input type="tel" required placeholder="e.g. 01711-XXXXXX" class="w-full h-11 px-4 rounded-xl bg-pageAlt border border-hairline text-xs text-ink focus:outline-none">
+          </div>
+        </div>
+
+        <div>
+          <label class="text-[11px] font-bold text-ink uppercase block mb-1">Pickup Location in Dhaka</label>
+          <input type="text" id="modalPickupInput" required placeholder="e.g. Hazrat Shahjalal Airport / Gulshan-2" class="w-full h-11 px-4 rounded-xl bg-pageAlt border border-hairline text-xs text-ink focus:outline-none">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="text-[11px] font-bold text-ink uppercase block mb-1">Pickup Date</label>
+            <input type="date" id="modalDateInput" required class="w-full h-11 px-4 rounded-xl bg-pageAlt border border-hairline text-xs text-ink focus:outline-none">
+          </div>
+          <div>
+            <label class="text-[11px] font-bold text-ink uppercase block mb-1">Rental Duration</label>
+            <select id="modalDurationSelect" onchange="updateDrawerPrice()" class="w-full h-11 px-4 rounded-xl bg-pageAlt border border-hairline text-xs font-semibold text-ink focus:outline-none cursor-pointer">
+              <option value="1">1 Day (10 Hours)</option>
+              <option value="2">2 Days</option>
+              <option value="3">3 Days (5% discount)</option>
+              <option value="7">7 Days (Weekly Package)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Calculated Price Box -->
+        <div class="p-4 rounded-2xl bg-pageAlt border border-hairline flex items-center justify-between">
+          <div>
+            <span class="text-[10px] uppercase font-bold text-inkSecondary">Estimated Total (BDT)</span>
+            <div id="modalCalculatedTotal" class="text-xl font-extrabold text-ink">৳ 6,500</div>
+          </div>
+          <span class="text-[11px] font-semibold text-electric bg-electric/10 px-3 py-1 rounded-full">
+            bKash / Post-Service
+          </span>
+        </div>
+
+        <button type="submit" class="w-full h-12 rounded-full bg-ink hover:bg-neutral-800 text-white font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-pill">
+          <span>Confirm Booking Request</span>
+          <i data-lucide="check" class="w-4 h-4"></i>
+        </button>
+      </form>
+
+      <!-- Confirmation Feedback Screen -->
+      <div id="drawerSuccessState" class="hidden text-center py-8 space-y-4">
+        <div class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center">
+          <i data-lucide="check" class="w-7 h-7"></i>
+        </div>
+        <h4 class="text-2xl font-extrabold text-ink">Booking Confirmed!</h4>
+        <p class="text-xs text-inkSecondary max-w-xs mx-auto leading-relaxed">
+          Our concierge has dispatched your vehicle details. We've sent a WhatsApp confirmation to your phone.
+        </p>
+        <button onclick="closeBookingDrawer()" class="px-6 py-2 rounded-full bg-ink text-white text-xs font-semibold hover:bg-neutral-800 transition">
+          Done
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT: Dynamic fleet switching, Accordions, Viewport toggling -->
+  <script>
+    // Lucide Icons
+    lucide.createIcons();
+
+    // Set Default Dates
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('bookDate').value = today;
+    document.getElementById('modalDateInput').value = today;
+
+    // Viewport Mode Switcher (Desktop 1440px vs Mobile 390px)
+    function setViewport(mode) {
+      const wrapper = document.getElementById('mainViewportWrapper');
+      const btnDesk = document.getElementById('btnDesktopView');
+      const btnMob = document.getElementById('btnMobileView');
+
+      if (mode === 'mobile') {
+        wrapper.classList.add('viewport-mobile');
+        btnMob.classList.replace('bg-white/10', 'bg-white/30');
+        btnMob.classList.replace('text-white/70', 'text-white');
+        btnDesk.classList.replace('bg-white/20', 'bg-white/10');
+      } else {
+        wrapper.classList.remove('viewport-mobile');
+        btnDesk.classList.replace('bg-white/10', 'bg-white/20');
+        btnMob.classList.replace('bg-white/30', 'bg-white/10');
+        btnMob.classList.replace('text-white', 'text-white/70');
+      }
+    }
+
+    // Smooth Scroll Helper
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Dynamic Fleet Database
+    const fleetData = {
+      sedan: {
+        name: 'Mercedes-Benz E-Class',
+        watermark: 'E-CLASS',
+        image: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=80',
+        seats: '4 + 1 Seats',
+        luggage: '3 Suitcases',
+        transmission: '9G-Tronic Auto',
+        rate: '৳ 6,500',
+        calloutSeats: '5 Executive Seats',
+        calloutLuggage: '3 Large Suitcases'
+      },
+      suv: {
+        name: 'Toyota Land Cruiser Prado TX',
+        watermark: 'PRADO',
+        image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80',
+        seats: '7 High-Profile Seats',
+        luggage: '5 Suitcases',
+        transmission: '4WD Automatic',
+        rate: '৳ 9,500',
+        calloutSeats: '7 Spacious Seats',
+        calloutLuggage: '5 Large Bags'
+      },
+      luxury: {
+        name: 'Mercedes-Benz S-Class 450',
+        watermark: 'S-CLASS',
+        image: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1200&q=80',
+        seats: '4 Presidential Seats',
+        luggage: '4 Suitcases',
+        transmission: 'Airmatic 9G Auto',
+        rate: '৳ 18,000',
+        calloutSeats: 'First-Class Recliner',
+        calloutLuggage: '4 VIP Bags'
+      },
+      electric: {
+        name: 'Porsche Taycan / Tesla Model 3',
+        watermark: 'TAYCAN',
+        image: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=1200&q=80',
+        seats: '5 Modern EV Seats',
+        luggage: '2 Suitcases + Frunk',
+        transmission: 'Dual-Motor EV',
+        rate: '৳ 16,000',
+        calloutSeats: 'Panoramic Glass',
+        calloutLuggage: 'Dual Cargo Bays'
+      }
+    };
+
+    // Fleet Tab Switching Function
+    function switchFleetTab(category) {
+      // Toggle Tab pill styles
+      document.querySelectorAll('.fleet-pill').forEach(btn => {
+        btn.classList.remove('bg-ink', 'text-white', 'font-bold');
+        btn.classList.add('text-inkSecondary', 'font-medium');
+      });
+      const activeBtn = document.getElementById(`tab-${category}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('text-inkSecondary', 'font-medium');
+        activeBtn.classList.add('bg-ink', 'text-white', 'font-bold');
+      }
+
+      // Smooth vehicle swap
+      const item = fleetData[category];
+      const img = document.getElementById('fleetCarImg');
+      const watermark = document.getElementById('fleetWatermark');
+
+      img.style.opacity = '0';
+      watermark.style.opacity = '0';
+
+      setTimeout(() => {
+        img.src = item.image;
+        watermark.innerText = item.watermark;
+        document.getElementById('specSeats').innerText = item.seats;
+        document.getElementById('specLuggage').innerText = item.luggage;
+        document.getElementById('specTransmission').innerText = item.transmission;
+        document.getElementById('specRate').innerText = item.rate;
+        document.getElementById('calloutSeats').innerText = item.calloutSeats;
+        document.getElementById('calloutLuggage').innerText = item.calloutLuggage;
+
+        img.style.opacity = '1';
+        watermark.style.opacity = '0.04';
+      }, 250);
+    }
+
+    // Pill Accordion Toggle
+    function toggleFaqPill(id) {
+      const content = document.getElementById(`faqPillContent-${id}`);
+      const icon = document.getElementById(`faqPillIcon-${id}`);
+      const isHidden = content.classList.contains('hidden');
+
+      // Close all
+      for (let i = 1; i <= 6; i++) {
+        const c = document.getElementById(`faqPillContent-${i}`);
+        const ic = document.getElementById(`faqPillIcon-${i}`);
+        if (c) c.classList.add('hidden');
+        if (ic) ic.innerText = '+';
+      }
+
+      // Open clicked
+      if (isHidden) {
+        content.classList.remove('hidden');
+        icon.innerText = '-';
+      }
+    }
+
+    // Booking Drawer
+    function openBookingDrawer() {
+      document.getElementById('bookingDrawer').classList.remove('hidden');
+      document.getElementById('drawerBookingForm').classList.remove('hidden');
+      document.getElementById('drawerSuccessState').classList.add('hidden');
+      updateDrawerPrice();
+    }
+
+    function closeBookingDrawer() {
+      document.getElementById('bookingDrawer').classList.add('hidden');
+    }
+
+    function updateDrawerPrice() {
+      const base = parseInt(document.getElementById('modalCarSelect').value);
+      const days = parseInt(document.getElementById('modalDurationSelect').value);
+      let total = base * days;
+      if (days === 3) total = Math.round(total * 0.95);
+      if (days === 7) total = Math.round(total * 0.85);
+      document.getElementById('modalCalculatedTotal').innerText = `৳ ${total.toLocaleString()}`;
+    }
+
+    function handleHeroSearch(e) {
+      e.preventDefault();
+      const pickup = document.getElementById('bookPickup').value;
+      const date = document.getElementById('bookDate').value;
+      document.getElementById('modalPickupInput').value = pickup;
+      document.getElementById('modalDateInput').value = date;
+      openBookingDrawer();
+    }
+
+    function handleDrawerSubmit(e) {
+      e.preventDefault();
+      document.getElementById('drawerBookingForm').classList.add('hidden');
+      document.getElementById('drawerSuccessState').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    // Charging Demo Simulation Handler
+    let isChargingFull = false;
+    function toggleChargingDemo() {
+      const percentEl = document.getElementById('livePercent');
+      const rangeEl = document.getElementById('liveRange');
+      const progressEl = document.getElementById('liveProgress');
+      const timeEl = document.getElementById('liveTime');
+      const labelEl = document.getElementById('demoStateLabel');
+
+      isChargingFull = !isChargingFull;
+
+      if (isChargingFull) {
+        percentEl.innerHTML = '98<span class="text-xl text-emerald-400">%</span>';
+        rangeEl.innerText = '520 km';
+        progressEl.style.width = '98%';
+        timeEl.innerText = '3 mins';
+        labelEl.innerText = 'Reset Charge State';
+      } else {
+        percentEl.innerHTML = '84<span class="text-xl text-electric">%</span>';
+        rangeEl.innerText = '460 km';
+        progressEl.style.width = '84%';
+        timeEl.innerText = '12 mins';
+        labelEl.innerText = 'Simulate Fast Charge';
+      }
+    }
+
+    // Toggle Expandable Fleet Catalog (Triggered by "See more" CTA)
+    function toggleFleetCatalog() {
+      const catalog = document.getElementById('expandedFleetCatalog');
+      const text = document.getElementById('seeMoreText');
+      const icon = document.getElementById('seeMoreIcon');
+      
+      if (catalog.classList.contains('hidden')) {
+        catalog.classList.remove('hidden');
+        text.innerText = 'Show less';
+        icon.classList.add('rotate-180');
+        catalog.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else {
+        catalog.classList.add('hidden');
+        text.innerText = 'See more';
+        icon.classList.remove('rotate-180');
+      }
+    }
+
+    // Close on Escape
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeBookingDrawer();
+    });
+
+    // Sticky Glass Navbar Blur Enhancement on Scroll
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('heroGlassNavbar');
+      if (!nav) return;
+      if (window.scrollY > 40) {
+        nav.classList.add('is-scrolled');
+      } else {
+        nav.classList.remove('is-scrolled');
+      }
+    });
+
+    // Mobile Navbar Menu Drawer Toggle
+    function toggleMobileNavMenu() {
+      const menu = document.getElementById('mobileGlassDropdown');
+      const icon = document.getElementById('hamburgerIcon');
+      if (!menu) return;
+      const isHidden = menu.classList.contains('hidden');
+      if (isHidden) {
+        menu.classList.remove('hidden');
+        if (icon) icon.setAttribute('data-lucide', 'x');
+      } else {
+        menu.classList.add('hidden');
+        if (icon) icon.setAttribute('data-lucide', 'menu');
+      }
+      lucide.createIcons();
+    }
+
+    // Hero Audio Toggle Handler
+    let isHeroMuted = true;
+    function toggleHeroAudio() {
+      const v1 = document.getElementById('heroVideo1');
+      const v2 = document.getElementById('heroVideo2');
+      const icon = document.getElementById('heroAudioIcon');
+      const label = document.getElementById('heroAudioLabel');
+      isHeroMuted = !isHeroMuted;
+
+      if (v1) v1.muted = isHeroMuted;
+      if (v2) v2.muted = isHeroMuted;
+
+      if (isHeroMuted) {
+        if (icon) icon.setAttribute('data-lucide', 'volume-x');
+        if (label) label.innerText = 'Muted';
+      } else {
+        if (icon) icon.setAttribute('data-lucide', 'volume-2');
+        if (label) label.innerText = 'Sound On';
+      }
+      lucide.createIcons();
+    }
+
+    // Prepopulate Pickup and Return Dates
+    (function initDatePickers() {
+      const today = new Date();
+      const tomorrow = new Date(today);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      const returnDate = new Date(today);
+      returnDate.setDate(returnDate.getDate() + 4);
+
+      const d1 = tomorrow.toISOString().split('T')[0];
+      const d2 = returnDate.toISOString().split('T')[0];
+
+      const pDate = document.getElementById('bookDate');
+      const rDate = document.getElementById('bookReturnDate');
+      if (pDate && !pDate.value) pDate.value = d1;
+      if (rDate && !rDate.value) rDate.value = d2;
+    })();
+
+    // Hero Background Video Seamless Crossfade & Autoplay Management
+    (function initHeroVideo() {
+      const v1 = document.getElementById('heroVideo1');
+      const v2 = document.getElementById('heroVideo2');
+      if (!v1 || !v2) return;
+
+      let activeVideo = v1;
+      let nextVideo = v2;
+      let isCrossfading = false;
+
+      // Autoplay initiation with fallback on first user gesture if restricted by browser
+      const startPlay = () => {
+        const p = v1.play();
+        if (p !== undefined) {
+          p.catch(() => {
+            const unlock = () => {
+              v1.play();
+              window.removeEventListener('click', unlock);
+              window.removeEventListener('touchstart', unlock);
+              window.removeEventListener('scroll', unlock);
+            };
+            window.addEventListener('click', unlock, { once: true });
+            window.addEventListener('touchstart', unlock, { once: true });
+            window.addEventListener('scroll', unlock, { once: true });
+          });
+        }
+      };
+      startPlay();
+
+      function monitorCrossfade(sourceVid, targetVid) {
+        sourceVid.addEventListener('timeupdate', () => {
+          if (!sourceVid.duration || isNaN(sourceVid.duration) || sourceVid.duration < 1.6) return;
+          const timeLeft = sourceVid.duration - sourceVid.currentTime;
+          
+          if (timeLeft <= 0.65 && !isCrossfading && timeLeft > 0.1) {
+            isCrossfading = true;
+            targetVid.currentTime = 0;
+            const playPromise = targetVid.play();
+            if (playPromise !== undefined) {
+              playPromise.then(() => {
+                targetVid.style.opacity = '1';
+                sourceVid.style.opacity = '0';
+                setTimeout(() => {
+                  sourceVid.pause();
+                  sourceVid.currentTime = 0;
+                  const temp = activeVideo;
+                  activeVideo = nextVideo;
+                  nextVideo = temp;
+                  isCrossfading = false;
+                }, 600);
+              }).catch(() => {
+                isCrossfading = false;
+              });
+            }
+          }
+        });
+      }
+
+      monitorCrossfade(v1, v2);
+      monitorCrossfade(v2, v1);
+    })();
+  </script>
+</body>
+</html>
