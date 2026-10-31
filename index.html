@@ -693,7 +693,195 @@
 
       </div>
 
-      <!-- SEAMLESS LEFT-TO-RIGHT INFINITE AUTO-SCROLLING SLIDER -->
+      <!-- CINEMATIC LUXURY AUTOMOTIVE POSTER SHOWCASE (Inspired by Porsche GT3 RS Reference Poster) -->
+      <div class="max-w-[1240px] mx-auto px-4 sm:px-6 mb-16 sm:mb-20">
+        
+        <!-- Interactive Vehicle Selector Pills -->
+        <div class="flex items-center justify-center mb-8">
+          <div class="inline-flex p-1.5 rounded-full bg-white border border-hairline shadow-sm overflow-x-auto max-w-full">
+            <button onclick="switchEditorialCar('taycan')" id="editorialBtn-taycan" class="editorial-car-btn px-4 sm:px-5 py-2 rounded-full text-xs font-bold bg-ink text-white transition shadow-sm whitespace-nowrap">
+              Porsche Taycan 4S
+            </button>
+            <button onclick="switchEditorialCar('s-class')" id="editorialBtn-s-class" class="editorial-car-btn px-4 sm:px-5 py-2 rounded-full text-xs font-semibold text-inkSecondary hover:text-ink transition whitespace-nowrap">
+              Mercedes S-Class 450
+            </button>
+            <button onclick="switchEditorialCar('bmw-7')" id="editorialBtn-bmw-7" class="editorial-car-btn px-4 sm:px-5 py-2 rounded-full text-xs font-semibold text-inkSecondary hover:text-ink transition whitespace-nowrap">
+              BMW 740Li M-Sport
+            </button>
+            <button onclick="switchEditorialCar('range-rover')" id="editorialBtn-range-rover" class="editorial-car-btn px-4 sm:px-5 py-2 rounded-full text-xs font-semibold text-inkSecondary hover:text-ink transition whitespace-nowrap">
+              Range Rover Autobiography
+            </button>
+            <button onclick="switchEditorialCar('prado')" id="editorialBtn-prado" class="editorial-car-btn px-4 sm:px-5 py-2 rounded-full text-xs font-semibold text-inkSecondary hover:text-ink transition whitespace-nowrap">
+              Land Cruiser Prado
+            </button>
+          </div>
+        </div>
+
+        <!-- Poster Box Container -->
+        <div class="relative bg-white rounded-[32px] sm:rounded-[44px] border border-hairline shadow-2xl overflow-hidden transition-all duration-500" id="editorialPosterCard">
+          
+          <!-- 1. DARK CINEMATIC ANGLED PANELS STAGE (Top Half) -->
+          <div class="relative h-[340px] sm:h-[460px] md:h-[530px] bg-[#0A0B0E] overflow-hidden">
+            
+            <!-- Vignette & Studio Lighting -->
+            <div class="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/80 via-black/40 to-transparent z-10 pointer-events-none"></div>
+
+            <!-- Top Editorial Header & Navigation Bar -->
+            <div class="absolute top-5 sm:top-6 inset-x-5 sm:inset-x-8 z-20 flex items-center justify-between text-white pointer-events-auto">
+              <div class="flex items-center gap-2.5 sm:gap-3">
+                <span class="px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[10px] sm:text-[11px] font-mono font-bold tracking-widest text-white uppercase shadow-sm">
+                  VELORA CAMPAIGN • EDITION 2024
+                </span>
+                <span id="editorialIndexBadge" class="hidden sm:inline-block text-xs font-mono text-white/70">
+                  SPEC NO. 01 / 05
+                </span>
+              </div>
+
+              <!-- Next / Previous Controls -->
+              <div class="flex items-center gap-2">
+                <button onclick="prevEditorialCar()" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/15 hover:bg-white text-white hover:text-ink border border-white/25 backdrop-blur-md flex items-center justify-center transition-all duration-200 shadow-md hover:scale-105" aria-label="Previous Vehicle">
+                  <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                </button>
+                <button onclick="nextEditorialCar()" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/15 hover:bg-white text-white hover:text-ink border border-white/25 backdrop-blur-md flex items-center justify-center transition-all duration-200 shadow-md hover:scale-105" aria-label="Next Vehicle">
+                  <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- 3 ANGLED BACKGROUND DETAIL PANELS WITH DIAGONAL WHITE LINES (Reference Match) -->
+            <div class="absolute inset-0 flex items-stretch overflow-hidden -mx-8 sm:-mx-16 pointer-events-none select-none">
+              
+              <!-- Panel 1: Front / Headlight -->
+              <div class="relative flex-1 h-full overflow-hidden transform -skew-x-[14deg] border-r-[2.5px] border-white shadow-[0_0_15px_rgba(255,255,255,0.45)] origin-top bg-neutral-900">
+                <img id="editorialPanel1" 
+                     src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=800&q=80" 
+                     alt="Front Headlight Detail" 
+                     class="w-[145%] h-[125%] object-cover transform skew-x-[14deg] -translate-x-[15%] filter contrast-110 brightness-90 transition-all duration-700 ease-out">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/30"></div>
+                <div class="absolute bottom-16 left-8 z-10 hidden md:block transform skew-x-[14deg]">
+                  <span class="text-[9px] font-mono tracking-widest text-white/50 uppercase block">OPTIC ARCHITECTURE</span>
+                  <span class="text-xs font-bold text-white tracking-wide">Matrix Laser System</span>
+                </div>
+              </div>
+
+              <!-- Panel 2: Rear Lightbar / Tail Lamp -->
+              <div class="relative flex-1 h-full overflow-hidden transform -skew-x-[14deg] border-r-[2.5px] border-white shadow-[0_0_15px_rgba(255,255,255,0.45)] origin-top bg-neutral-900">
+                <img id="editorialPanel2" 
+                     src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" 
+                     alt="Rear Tail Lamp Detail" 
+                     class="w-[145%] h-[125%] object-cover transform skew-x-[14deg] -translate-x-[15%] filter contrast-110 brightness-95 transition-all duration-700 ease-out">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/25"></div>
+                <div class="absolute bottom-16 left-8 z-10 hidden md:block transform skew-x-[14deg]">
+                  <span class="text-[9px] font-mono tracking-widest text-white/50 uppercase block">AERODYNAMIC TRAIL</span>
+                  <span class="text-xs font-bold text-white tracking-wide">Continuous Light Blade</span>
+                </div>
+              </div>
+
+              <!-- Panel 3: Wing / Side Aero -->
+              <div class="relative flex-1 h-full overflow-hidden transform -skew-x-[14deg] origin-top bg-neutral-900">
+                <img id="editorialPanel3" 
+                     src="https://images.unsplash.com/photo-1611859266238-4b98091d9d9b?auto=format&fit=crop&w=800&q=80" 
+                     alt="Aerodynamic Profile Detail" 
+                     class="w-[145%] h-[125%] object-cover transform skew-x-[14deg] -translate-x-[15%] filter contrast-110 brightness-90 transition-all duration-700 ease-out">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/30"></div>
+                <div class="absolute bottom-16 left-8 z-10 hidden md:block transform skew-x-[14deg]">
+                  <span class="text-[9px] font-mono tracking-widest text-white/50 uppercase block">AERO PROFILING</span>
+                  <span class="text-xs font-bold text-white tracking-wide">Dynamic Flow Contour</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Transition Gradient from Dark Panels to Clean White Content Area -->
+            <div class="absolute inset-x-0 bottom-0 h-32 sm:h-44 bg-gradient-to-t from-white via-white/85 to-transparent z-10 pointer-events-none"></div>
+
+            <!-- Hero Foreground Vehicle Overlapping the Boundary -->
+            <div class="absolute inset-x-0 bottom-0 z-20 flex items-center justify-center px-4 pointer-events-auto">
+              <div id="editorialCarStage" class="relative w-full max-w-[760px] sm:max-w-[840px] transition-all duration-700 transform hover:scale-[1.015]">
+                <img id="editorialHeroImg" 
+                     src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=1200&q=80" 
+                     alt="Porsche Taycan 4S" 
+                     class="w-full h-auto max-h-[260px] sm:max-h-[360px] md:max-h-[390px] object-contain drop-shadow-[0_28px_40px_rgba(0,0,0,0.55)] transition-all duration-500">
+                <!-- Ground Contact Shadow -->
+                <div class="w-[85%] h-8 sm:h-12 bg-ink/35 rounded-[50%] blur-xl mx-auto -mt-3 sm:-mt-5 pointer-events-none"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- 2. CLEAN WHITE EDITORIAL CONTENT AREA (Bottom Half) -->
+          <div class="relative z-20 pt-6 sm:pt-8 pb-10 sm:pb-14 px-6 sm:px-12 text-center bg-white">
+            
+            <!-- Large Editorial Vehicle Designation -->
+            <div class="space-y-1 sm:space-y-2">
+              <div class="inline-flex items-center gap-2">
+                <span id="editorialCategoryText" class="text-[10px] sm:text-xs font-bold tracking-[0.25em] text-electric uppercase">
+                  ELECTRIC GRAND TOURER
+                </span>
+              </div>
+              <h3 class="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-ink flex items-center justify-center gap-3 flex-wrap">
+                <span id="editorialBrandText">PORSCHE</span> 
+                <span id="editorialModelText" class="font-extralight italic font-serif tracking-normal">TAYCAN 4S</span>
+              </h3>
+            </div>
+
+            <!-- Editorial Campaign Narrative -->
+            <p id="editorialDescText" class="text-xs sm:text-sm md:text-base text-inkSecondary max-w-2xl mx-auto mt-3 sm:mt-4 leading-relaxed font-normal">
+              Porsche has translated their race-bred aerodynamics into whisper-quiet electric composure. Dual permanent magnet synchronous motors deliver 530 hp with instantaneous surge, while three-chamber adaptive air suspension effortlessly glides across Dhaka's premier corridors.
+            </p>
+
+            <!-- Refined Horizontal Specifications Strip (Exact Reference Poster Style) -->
+            <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 lg:gap-8 pt-6 pb-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-ink border-t border-hairline max-w-4xl mx-auto mt-6 sm:mt-8">
+              <div>
+                <span class="text-inkSecondary font-medium text-[11px] sm:text-xs">ENGINE: </span>
+                <span id="editorialSpecEngine" class="text-ink font-extrabold">DUAL MAGNET EV</span>
+              </div>
+              <span class="text-neutral-300 hidden sm:inline">|</span>
+              <div>
+                <span class="text-inkSecondary font-medium text-[11px] sm:text-xs">POWER: </span>
+                <span id="editorialSpecPower" class="text-ink font-extrabold">390 kW / 530 HP</span>
+              </div>
+              <span class="text-neutral-300 hidden sm:inline">|</span>
+              <div>
+                <span class="text-inkSecondary font-medium text-[11px] sm:text-xs">TRANSMISSION: </span>
+                <span id="editorialSpecTrans" class="text-ink font-extrabold">2-SPEED GT AUTO</span>
+              </div>
+              <span class="text-neutral-300 hidden sm:inline">|</span>
+              <div>
+                <span class="text-inkSecondary font-medium text-[11px] sm:text-xs">CAPACITY: </span>
+                <span id="editorialSpecCapacity" class="text-ink font-extrabold">4 VIP SEATS</span>
+              </div>
+            </div>
+
+            <!-- Action CTAs -->
+            <div class="mt-8 flex items-center justify-center gap-4 flex-wrap">
+              <button onclick="exploreCurrentEditorialCar()" class="group inline-flex items-center gap-3 pl-7 pr-2.5 py-3 rounded-full bg-ink text-white font-bold text-xs sm:text-sm hover:bg-neutral-800 transition shadow-pill hover:shadow-xl">
+                <span>Explore This Car</span>
+                <span class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-electric transition duration-300">
+                  <i data-lucide="arrow-up-right" class="w-4 h-4 text-white"></i>
+                </span>
+              </button>
+
+              <button onclick="bookCurrentEditorialCar()" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-pageAlt hover:bg-neutral-200 border border-hairline text-ink font-bold text-xs sm:text-sm transition">
+                <span>Reserve with Chauffeur</span>
+                <i data-lucide="calendar" class="w-4 h-4 text-inkSecondary"></i>
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- EDITORIAL MARQUEE GALLERY DIVIDER -->
+      <div class="max-w-[1280px] mx-auto px-4 sm:px-6 mb-6 text-center">
+        <div class="inline-flex items-center gap-3 text-xs font-bold tracking-widest text-inkSecondary uppercase">
+          <span class="h-[1px] w-12 bg-hairline"></span>
+          <span>CONTINUOUS MOTION REEL • 8 CURATED EDITIONS</span>
+          <span class="h-[1px] w-12 bg-hairline"></span>
+        </div>
+      </div>
       <div class="slider-viewport-mask">
         <div class="auto-marquee-track">
           
@@ -984,537 +1172,13 @@
         </div>
       </div>
 
-      <!-- LUXURY AUTOMOTIVE SHOWCASE GRID (Aston Martin Valkyrie inspired aesthetic) -->
-      <div class="max-w-[1280px] mx-auto px-4 sm:px-6 mt-14 sm:mt-20">
-        
-        <!-- Filter Bar Header -->
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 sm:mb-10 pb-5 border-b border-hairline">
-          <div>
-            <div class="inline-flex items-center gap-2 text-[11px] font-bold tracking-widest text-electric uppercase mb-1">
-              <span>CURATED FLEET SHOWCASE</span>
-              <span class="w-1.5 h-1.5 rounded-full bg-electric animate-pulse"></span>
-            </div>
-            <h3 class="text-xl sm:text-2xl font-extrabold text-ink tracking-tight">Select any vehicle to inspect interactive specifications</h3>
-          </div>
-          
-          <!-- Category Filter Pills -->
-          <div class="inline-flex p-1.5 rounded-full bg-white border border-hairline shadow-sm overflow-x-auto max-w-full">
-            <button onclick="filterShowcaseFleet('all')" id="fleetFilter-all" class="fleet-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-ink text-white transition shadow-sm whitespace-nowrap">
-              All Fleet (8)
-            </button>
-            <button onclick="filterShowcaseFleet('sedan')" id="fleetFilter-sedan" class="fleet-filter-btn px-4 py-2 rounded-full text-xs font-semibold text-inkSecondary hover:text-ink transition whitespace-nowrap">
-              Sedans (3)
-            </button>
-            <button onclick="filterShowcaseFleet('suv')" id="fleetFilter-suv" class="fleet-filter-btn px-4 py-2 rounded-full text-xs font-semibold text-inkSecondary hover:text-ink transition whitespace-nowrap">
-              SUVs & VIP (3)
-            </button>
-            <button onclick="filterShowcaseFleet('ev')" id="fleetFilter-ev" class="fleet-filter-btn px-4 py-2 rounded-full text-xs font-semibold text-inkSecondary hover:text-ink transition whitespace-nowrap">
-              Electric (2)
-            </button>
-          </div>
-        </div>
-
-        <!-- 8 Showcase Luxury Car Cards Grid -->
-        <div id="showcaseFleetGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
-          
-          <!-- Card 1: Mercedes S-Class 450 -->
-          <div class="showcase-car-card group bg-white rounded-[26px] p-5 sm:p-6 border border-hairline shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between cursor-pointer relative overflow-hidden" 
-               data-category="sedan" 
-               onclick="openCarDetailsModal('s-class')">
-            <div class="absolute top-0 inset-x-0 h-1 bg-transparent group-hover:bg-gradient-to-r group-hover:from-electric group-hover:to-blue-400 transition-all duration-300"></div>
-            
-            <div class="flex items-center justify-between gap-2 mb-3">
-              <span class="px-2.5 py-1 rounded-full bg-pageAlt border border-hairline text-[10px] font-extrabold text-ink uppercase tracking-wider">
-                Flagship Sedan
-              </span>
-              <div class="text-right">
-                <span class="text-sm font-extrabold text-ink">৳ 18,000</span>
-                <span class="text-[10px] text-inkSecondary block leading-none">/ day</span>
-              </div>
-            </div>
-
-            <div class="relative w-full aspect-[16/10] my-2 overflow-hidden rounded-2xl bg-gradient-to-b from-pageAlt/80 to-pageAlt flex items-center justify-center p-2">
-              <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80" 
-                   alt="Mercedes-Benz S-Class 450" 
-                   class="w-full h-full object-cover rounded-xl group-hover:scale-108 transition-transform duration-500">
-              <div class="absolute inset-0 bg-ink/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-            </div>
-
-            <div class="space-y-1.5 mt-2">
-              <div class="flex items-center justify-between">
-                <span class="text-[10px] font-bold text-electric uppercase tracking-wider">Mercedes-Benz</span>
-                <span class="text-[11px] font-mono text-inkSecondary">2024</span>
-              </div>
-              <h4 class="text-base sm:text-lg font-extrabold text-ink tracking-tight group-hover:text-electric transition-colors">
-                S-Class 450 4MATIC
-              </h4>
-              <p class="text-xs text-inkSecondary line-clamp-2 leading-relaxed">
-                Airmatic adaptive suspension, executive massage recliners, and double-acoustic soundproof isolation.
-              </p>
-            </div>
-
-            <div class="grid grid-cols-3 gap-2 py-3 my-3 border-y border-hairline text-center">
-              <div class="bg-pageAlt/70 rounded-xl py-1.5 px-1">
-                <span class="text-[10px] text-inkSecondary block uppercase font-medium">Seats</span>
-                <span class="text-xs font-bold text-ink">4 VIP</span>
-              </div>
-              <div class="bg-pageAlt/70 rounded-xl py-1.5 px-1">
-                <span class="text-[10px] text-inkSecondary block uppercase font-medium">Power</span>
-                <span class="text-xs font-bold text-ink">362 hp</span>
-              </div>
-              <div class="bg-pageAlt/70 rounded-xl py-1.5 px-1">
-                <span class="text-[10px] text-inkSecondary block uppercase font-medium">Gearbox</span>
-                <span class="text-xs font-bold text-ink truncate block">9G-Tronic</span>
-              </div>
-            </div>
-
-            <div class="flex items-center justify-between pt-1">
-              <span class="text-xs font-extrabold text-ink group-hover:text-electric flex items-center gap-1.5 transition-colors">
-                <span>Explore Details</span>
-                <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
-              </span>
-              <span class="w-8 h-8 rounded-full bg-pageAlt border border-hairline flex items-center justify-center text-ink group-hover:bg-ink group-hover:text-white transition-all duration-300">
-                <i data-lucide="chevron-right" class="w-4 h-4"></i>
-              </span>
-            </div>
-          </div>
-
-          <!-- Card 2: Toyota Land Cruiser Prado TX -->
-          <div class="showcase-car-card group bg-white rounded-[26px] p-5 sm:p-6 border border-hairline shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between cursor-pointer relative overflow-hidden" 
-               data-category="suv" 
-               onclick="openCarDetailsModal('prado')">
-            <div class="absolute top-0 inset-x-0 h-1 bg-transparent group-hover:bg-gradient-to-r group-hover:from-electric group-hover:to-blue-400 transition-all duration-300"></div>
-            
-            <div class="flex items-center justify-between gap-2 mb-3">
-              <span class="px-2.5 py-1 rounded-full bg-pageAlt border border-hairline text-[10px] font-extrabold text-ink uppercase tracking-wider">
-                Prestige SUV
-              </span>
-              <div class="text-right">
-                <span class="text-sm font-extrabold text-ink">৳ 9,500</span>
-                <span class="text-[10px] text-inkSecondary block leading-none">/ day</span>
-              </div>
-            </div>
-
-            <div class="relative w-full aspect-[16/10] my-2 overflow-hidden rounded-2xl bg-gradient-to-b from-pageAlt/80 to-pageAlt flex items-center justify-center p-2">
-              <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" 
-                   alt="Toyota Land Cruiser Prado TX" 
-                   class="w-full h-full object-cover rounded-xl group-hover:scale-108 transition-transform duration-500">
-              <div class="absolute inset-0 bg-ink/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-            </div>
-
-            <div class="space-y-1.5 mt-2">
-              <div class="flex items-center justify-between">
-                <span class="text-[10px] font-bold text-electric uppercase tracking-wider">Toyota</span>
-                <span class="text-[11px] font-mono text-inkSecondary">2024</span>
-              </div>
-              <h4 class="text-base sm:text-lg font-extrabold text-ink tracking-tight group-hover:text-electric transition-colors">
-                Land Cruiser Prado TX
-              </h4>
-              <p class="text-xs text-inkSecondary line-clamp-2 leading-relaxed">
-                High-clearance 4WD commanding stance with 7 executive seats engineered for expressway durability.
-              </p>
-            </div>
-
-            <div class="grid grid-cols-3 gap-2 py-3 my-3 border-y border-hairline text-center">
-              <div class="bg-pageAlt/70 rounded-xl py-1.5 px-1">
-                <span class="text-[10px] text-inkSecondary block uppercase font-medium">Seats</span>
-                <span class="text-xs font-bold text-ink">7 Seats</span>
-              </div>
-              <div class="bg-pageAlt/70 rounded-xl py-1.5 px-1">
-                <span class="text-[10px] text-inkSecondary block uppercase font-medium">Power</span>
-                <span class="text-xs font-bold text-ink">204 hp</span>
-              </div>
-              <div class="bg-pageAlt/70 rounded-xl py-1.5 px-1">
-                <span class="text-[10px] text-inkSecondary block uppercase font-medium">Drive</span>
-                <span class="text-xs font-bold text-ink truncate block">Full 4WD</span>
-              </div>
-            </div>
-
-            <div class="flex items-center justify-between pt-1">
-              <span class="text-xs font-extrabold text-ink group-hover:text-electric flex items-center gap-1.5 transition-colors">
-                <span>Explore Details</span>
-                <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
-              </span>
-              <span class="w-8 h-8 rounded-full bg-pageAlt border border-hairline flex items-center justify-center text-ink group-hover:bg-ink group-hover:text-white transition-all duration-300">
-                <i data-lucide="chevron-right" class="w-4 h-4"></i>
-              </span>
-            </div>
-          </div>
-
-          <!-- Card 3: Porsche Taycan 4S -->
-          <div class="showcase-car-card group bg-white rounded-[26px] p-5 sm:p-6 border border-hairline shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between cursor-pointer relative overflow-hidden" 
-               data-category="ev" 
-               onclick="openCarDetailsModal('taycan')">
-            <div class="absolute top-0 inset-x-0 h-1 bg-transparent group-hover:bg-gradient-to-r group-hover:from-electric group-hover:to-blue-400 transition-all duration-300"></div>
-            
-            <div class="flex items-center justify-between gap-2 mb-3">
-              <span class="px-2.5 py-1 rounded-full bg-pageAlt border border-hairline text-[10px] font-extrabold text-ink uppercase tracking-wider">
-                Electric GT
-              </span>
-              <div class="text-right">
-                <span class="text-sm font-extrabold text-ink">৳ 16,000</span>
-                <span class="text-[10px] text-inkSecondary block leading-none">/ day</span>
-              </div>
-            </div>
-
-            <div class="relative w-full aspect-[16/10] my-2 overflow-hidden rounded-2xl bg-gradient-to-b from-pageAlt/80 to-pageAlt flex items-center justify-center p-2">
-              <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=800&q=80" 
-                   alt="Porsche Taycan 4S" 
-                   class="w-full h-full object-cover rounded-xl group-hover:scale-108 transition-transform duration-500">
-              <div class="absolute inset-0 bg-ink/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-            </div>
-
-            <div class="space-y-1.5 mt-2">
-              <div class="flex items-center justify-between">
-                <span class="text-[10px] font-bold text-electric uppercase tracking-wider">Porsche</span>
-                <span class="text-[11px] font-mono text-inkSecondary">2024</span>
-              </div>
-              <h4 class="text-base sm:text-lg font-extrabold text-ink tracking-tight group-hover:text-electric transition-colors">
-                Taycan 4S Electric
-              </h4>
-              <p class="text-xs text-inkSecondary line-clamp-2 leading-relaxed">
-                800V dual-motor instant surge, whisper-silent zero-emission glide, and curved digital cockpit.
-              </p>
-            </div>
-
-            <div class="grid grid-cols-3 gap-2 py-3 my-3 border-y border-hairline text-center">
-              <div class="bg-pageAlt/70 rounded-xl py-1.5 px-1">
-                <span class="text-[10px] text-inkSecondary block uppercase font-medium">Seats</span>
-                <span class="text-xs font-bold text-ink">4 Seats</span>
-              </div>
-              <div class="bg-pageAlt/70 rounded-xl py-1.5 px-1">
-                <span class="text-[10px] text-inkSecondary block uppercase font-medium">Power</span>
-                <span class="text-xs font-bold text-ink">530 hp</span>
-              </div>
-              <div class="bg-pageAlt/70 rounded-xl py-1.5 px-1">
-                <span class="text-[10px] text-inkSecondary block uppercase font-medium">0-100</span>
-                <span class="text-xs font-bold text-ink truncate block">4.0 sec</span>
-              </div>
-            </div>
-
-            <div class="flex items-center justify-between pt-1">
-              <span class="text-xs font-extrabold text-ink group-hover:text-electric flex items-center gap-1.5 transition-colors">
-                <span>Explore Details</span>
-                <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
-              </span>
-              <span class="w-8 h-8 rounded-full bg-pageAlt border border-hairline flex items-center justify-center text-ink group-hover:bg-ink group-hover:text-white transition-all duration-300">
-                <i data-lucide="chevron-right" class="w-4 h-4"></i>
-              </span>
-            </div>
-          </div>
-
-          <!-- Card 4: Mercedes-Benz E-Class -->
-          <div class="showcase-car-card group bg-white rounded-[26px] p-5 sm:p-6 border border-hairline shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between cursor-pointer relative overflow-hidden" 
-               data-category="sedan" 
-               onclick="openCarDetailsModal('e-class')">
-            <div class="absolute top-0 inset-x-0 h-1 bg-transparent group-hover:bg-gradient-to-r group-hover:from-electric group-hover:to-blue-400 transition-all duration-300"></div>
-            
-            <div class="flex items-center justify-between gap-2 mb-3">
-              <span class="px-2.5 py-1 rounded-full bg-pageAlt border border-hairline text-[10px] font-extrabold text-ink uppercase tracking-wider">
-                Corporate Sedan
-              </span>
-              <div class="text-right">
-                <span class="text-sm font-extrabold text-ink">৳ 6,500</span>
-                <span class="text-[10px] text-inkSecondary block leading-none">/ day</span>
-              </div>
-            </div>
-
-            <div class="relative w-full aspect-[16/10] my-2 overflow-hidden rounded-2xl bg-gradient-to-b from-pageAlt/80 to-pageAlt flex items-center justify-center p-2">
-              <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80" 
-                   alt="Mercedes-Benz E-Class" 
-                   class="w-full h-full object-cover rounded-xl group-hover:scale-108 transition-transform duration-500">
-              <div class="absolute inset-0 bg-ink/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-            </div>
-
-            <div class="space-y-1.5 mt-2">
-              <div class="flex items-center justify-between">
-                <span class="text-[10px] font-bold text-electric uppercase tracking-wider">Mercedes-Benz</span>
-                <span class="text-[11px] font-mono text-inkSecondary">2024</span>
-              </div>
-              <h4 class="text-base sm:text-lg font-extrabold text-ink tracking-tight group-hover:text-electric transition-colors">
-                E-Class 300 Exclusive
-              </h4>
-              <p class="text-xs text-inkSecondary line-clamp-2 leading-relaxed">
-                Quiet saloon cabin, Agility Control damping, and dual widescreen MBUX for boardroom meetings.
-              </p>
-            </div>
-
-            <div class="grid grid-cols-3 gap-2 py-3 my-3 border-y border-hairline text-center">
-              <div class="bg-pageAlt/70 rounded-xl py-1.5 px-1">
-                <span class="text-[10px] text-inkSecondary block uppercase font-medium">Seats</span>
-                <span class="text-xs font-bold text-ink">5 Seats</span>
-              </div>
-              <div class="bg-pageAlt/70 rounded-xl py-1.5 px-1">
-                <span class="text-[10px] text-inkSecondary block uppercase font-medium">Power</span>
-                <span class="text-xs font-bold text-ink">258 hp</span>
-              </div>
-              <div class="bg-pageAlt/70 rounded-xl py-1.5 px-1">
-                <span class="text-[10px] text-inkSecondary block uppercase font-medium">Gearbox</span>
-                <span class="text-xs font-bold text-ink truncate block">9G-Tronic</span>
-              </div>
-            </div>
-
-            <div class="flex items-center justify-between pt-1">
-              <span class="text-xs font-extrabold text-ink group-hover:text-electric flex items-center gap-1.5 transition-colors">
-                <span>Explore Details</span>
-                <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
-              </span>
-              <span class="w-8 h-8 rounded-full bg-pageAlt border border-hairline flex items-center justify-center text-ink group-hover:bg-ink group-hover:text-white transition-all duration-300">
-                <i data-lucide="chevron-right" class="w-4 h-4"></i>
-              </span>
-            </div>
-          </div>
-
-          <!-- Card 5: Toyota Alphard VIP Royal Lounge -->
-          <div class="showcase-car-card group bg-white rounded-[26px] p-5 sm:p-6 border border-hairline shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between cursor-pointer relative overflow-hidden" 
-               data-category="suv" 
-               onclick="openCarDetailsModal('alphard')">
-            <div class="absolute top-0 inset-x-0 h-1 bg-transparent group-hover:bg-gradient-to-r group-hover:from-electric group-hover:to-blue-400 transition-all duration-300"></div>
-            
-            <div class="flex items-center justify-between gap-2 mb-3">
-              <span class="px-2.5 py-1 rounded-full bg-pageAlt border border-hairline text-[10px] font-extrabold text-ink uppercase tracking-wider">
-                VIP Lounge
-              </span>
-              <div class="text-right">
-                <span class="text-sm font-extrabold text-ink">৳ 8,000</span>
-                <span class="text-[10px] text-inkSecondary block leading-none">/ day</span>
-              </div>
-            </div>
-
-            <div class="relative w-full aspect-[16/10] my-2 overflow-hidden rounded-2xl bg-gradient-to-b from-pageAlt/80 to-pageAlt flex items-center justify-center p-2">
-              <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80" 
-                   alt="Toyota Alphard VIP Lounge" 
-                   class="w-full h-full object-cover rounded-xl group-hover:scale-108 transition-transform duration-500">
-              <div class="absolute inset-0 bg-ink/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-            </div>
-
-            <div class="space-y-1.5 mt-2">
-              <div class="flex items-center justify-between">
-                <span class="text-[10px] font-bold text-electric uppercase tracking-wider">Toyota</span>
-                <span class="text-[11px] font-mono text-inkSecondary">2024</span>
-              </div>
-              <h4 class="text-base sm:text-lg font-extrabold text-ink tracking-tight group-hover:text-electric transition-colors">
-                Alphard VIP Royal Lounge
-              </h4>
-              <p class="text-xs text-inkSecondary line-clamp-2 leading-relaxed">
-                First-class motorized ottoman captain chairs, privacy partitions, and quiet executive cabin.
-              </p>
-            </div>
-
-            <div class="grid grid-cols-3 gap-2 py-3 my-3 border-y border-hairline text-center">
-              <div class="bg-pageAlt/70 rounded-xl py-1.5 px-1">
-                <span class="text-[10px] text-inkSecondary block uppercase font-medium">Seats</span>
-                <span class="text-xs font-bold text-ink">7 VIP</span>
-              </div>
-              <div class="bg-pageAlt/70 rounded-xl py-1.5 px-1">
-                <span class="text-[10px] text-inkSecondary block uppercase font-medium">Power</span>
-                <span class="text-xs font-bold text-ink">246 hp</span>
-              </div>
-              <div class="bg-pageAlt/70 rounded-xl py-1.5 px-1">
-                <span class="text-[10px] text-inkSecondary block uppercase font-medium">Drive</span>
-                <span class="text-xs font-bold text-ink truncate block">E-Four AWD</span>
-              </div>
-            </div>
-
-            <div class="flex items-center justify-between pt-1">
-              <span class="text-xs font-extrabold text-ink group-hover:text-electric flex items-center gap-1.5 transition-colors">
-                <span>Explore Details</span>
-                <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
-              </span>
-              <span class="w-8 h-8 rounded-full bg-pageAlt border border-hairline flex items-center justify-center text-ink group-hover:bg-ink group-hover:text-white transition-all duration-300">
-                <i data-lucide="chevron-right" class="w-4 h-4"></i>
-              </span>
-            </div>
-          </div>
-
-          <!-- Card 6: Range Rover Vogue Autobiography -->
-          <div class="showcase-car-card group bg-white rounded-[26px] p-5 sm:p-6 border border-hairline shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between cursor-pointer relative overflow-hidden" 
-               data-category="suv" 
-               onclick="openCarDetailsModal('range-rover')">
-            <div class="absolute top-0 inset-x-0 h-1 bg-transparent group-hover:bg-gradient-to-r group-hover:from-electric group-hover:to-blue-400 transition-all duration-300"></div>
-            
-            <div class="flex items-center justify-between gap-2 mb-3">
-              <span class="px-2.5 py-1 rounded-full bg-pageAlt border border-hairline text-[10px] font-extrabold text-ink uppercase tracking-wider">
-                Flagship Luxury SUV
-              </span>
-              <div class="text-right">
-                <span class="text-sm font-extrabold text-ink">৳ 22,000</span>
-                <span class="text-[10px] text-inkSecondary block leading-none">/ day</span>
-              </div>
-            </div>
-
-            <div class="relative w-full aspect-[16/10] my-2 overflow-hidden rounded-2xl bg-gradient-to-b from-pageAlt/80 to-pageAlt flex items-center justify-center p-2">
-              <img src="https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=800&q=80" 
-                   alt="Range Rover Vogue Autobiography" 
-                   class="w-full h-full object-cover rounded-xl group-hover:scale-108 transition-transform duration-500">
-              <div class="absolute inset-0 bg-ink/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-            </div>
-
-            <div class="space-y-1.5 mt-2">
-              <div class="flex items-center justify-between">
-                <span class="text-[10px] font-bold text-electric uppercase tracking-wider">Land Rover</span>
-                <span class="text-[11px] font-mono text-inkSecondary">2024</span>
-              </div>
-              <h4 class="text-base sm:text-lg font-extrabold text-ink tracking-tight group-hover:text-electric transition-colors">
-                Range Rover Autobiography
-              </h4>
-              <p class="text-xs text-inkSecondary line-clamp-2 leading-relaxed">
-                Electronic air suspension, semi-aniline executive leather, and headrest noise cancellation.
-              </p>
-            </div>
-
-            <div class="grid grid-cols-3 gap-2 py-3 my-3 border-y border-hairline text-center">
-              <div class="bg-pageAlt/70 rounded-xl py-1.5 px-1">
-                <span class="text-[10px] text-inkSecondary block uppercase font-medium">Seats</span>
-                <span class="text-xs font-bold text-ink">5 Seats</span>
-              </div>
-              <div class="bg-pageAlt/70 rounded-xl py-1.5 px-1">
-                <span class="text-[10px] text-inkSecondary block uppercase font-medium">Power</span>
-                <span class="text-xs font-bold text-ink">523 hp</span>
-              </div>
-              <div class="bg-pageAlt/70 rounded-xl py-1.5 px-1">
-                <span class="text-[10px] text-inkSecondary block uppercase font-medium">Engine</span>
-                <span class="text-xs font-bold text-ink truncate block">4.4L V8</span>
-              </div>
-            </div>
-
-            <div class="flex items-center justify-between pt-1">
-              <span class="text-xs font-extrabold text-ink group-hover:text-electric flex items-center gap-1.5 transition-colors">
-                <span>Explore Details</span>
-                <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
-              </span>
-              <span class="w-8 h-8 rounded-full bg-pageAlt border border-hairline flex items-center justify-center text-ink group-hover:bg-ink group-hover:text-white transition-all duration-300">
-                <i data-lucide="chevron-right" class="w-4 h-4"></i>
-              </span>
-            </div>
-          </div>
-
-          <!-- Card 7: BMW 7 Series 740Li M-Sport -->
-          <div class="showcase-car-card group bg-white rounded-[26px] p-5 sm:p-6 border border-hairline shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between cursor-pointer relative overflow-hidden" 
-               data-category="sedan" 
-               onclick="openCarDetailsModal('bmw-7')">
-            <div class="absolute top-0 inset-x-0 h-1 bg-transparent group-hover:bg-gradient-to-r group-hover:from-electric group-hover:to-blue-400 transition-all duration-300"></div>
-            
-            <div class="flex items-center justify-between gap-2 mb-3">
-              <span class="px-2.5 py-1 rounded-full bg-pageAlt border border-hairline text-[10px] font-extrabold text-ink uppercase tracking-wider">
-                Executive Flagship
-              </span>
-              <div class="text-right">
-                <span class="text-sm font-extrabold text-ink">৳ 17,500</span>
-                <span class="text-[10px] text-inkSecondary block leading-none">/ day</span>
-              </div>
-            </div>
-
-            <div class="relative w-full aspect-[16/10] my-2 overflow-hidden rounded-2xl bg-gradient-to-b from-pageAlt/80 to-pageAlt flex items-center justify-center p-2">
-              <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80" 
-                   alt="BMW 7 Series 740Li" 
-                   class="w-full h-full object-cover rounded-xl group-hover:scale-108 transition-transform duration-500">
-              <div class="absolute inset-0 bg-ink/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-            </div>
-
-            <div class="space-y-1.5 mt-2">
-              <div class="flex items-center justify-between">
-                <span class="text-[10px] font-bold text-electric uppercase tracking-wider">BMW</span>
-                <span class="text-[11px] font-mono text-inkSecondary">2024</span>
-              </div>
-              <h4 class="text-base sm:text-lg font-extrabold text-ink tracking-tight group-hover:text-electric transition-colors">
-                7 Series 740Li M-Sport
-              </h4>
-              <p class="text-xs text-inkSecondary line-clamp-2 leading-relaxed">
-                Illuminated Iconic Glow grille, 31.3-inch 8K theater screen, and Bowers & Wilkins diamond acoustics.
-              </p>
-            </div>
-
-            <div class="grid grid-cols-3 gap-2 py-3 my-3 border-y border-hairline text-center">
-              <div class="bg-pageAlt/70 rounded-xl py-1.5 px-1">
-                <span class="text-[10px] text-inkSecondary block uppercase font-medium">Seats</span>
-                <span class="text-xs font-bold text-ink">4 VIP</span>
-              </div>
-              <div class="bg-pageAlt/70 rounded-xl py-1.5 px-1">
-                <span class="text-[10px] text-inkSecondary block uppercase font-medium">Power</span>
-                <span class="text-xs font-bold text-ink">375 hp</span>
-              </div>
-              <div class="bg-pageAlt/70 rounded-xl py-1.5 px-1">
-                <span class="text-[10px] text-inkSecondary block uppercase font-medium">0-100</span>
-                <span class="text-xs font-bold text-ink truncate block">5.4 sec</span>
-              </div>
-            </div>
-
-            <div class="flex items-center justify-between pt-1">
-              <span class="text-xs font-extrabold text-ink group-hover:text-electric flex items-center gap-1.5 transition-colors">
-                <span>Explore Details</span>
-                <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
-              </span>
-              <span class="w-8 h-8 rounded-full bg-pageAlt border border-hairline flex items-center justify-center text-ink group-hover:bg-ink group-hover:text-white transition-all duration-300">
-                <i data-lucide="chevron-right" class="w-4 h-4"></i>
-              </span>
-            </div>
-          </div>
-
-          <!-- Card 8: Tesla Model 3 Long Range -->
-          <div class="showcase-car-card group bg-white rounded-[26px] p-5 sm:p-6 border border-hairline shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between cursor-pointer relative overflow-hidden" 
-               data-category="ev" 
-               onclick="openCarDetailsModal('tesla-3')">
-            <div class="absolute top-0 inset-x-0 h-1 bg-transparent group-hover:bg-gradient-to-r group-hover:from-electric group-hover:to-blue-400 transition-all duration-300"></div>
-            
-            <div class="flex items-center justify-between gap-2 mb-3">
-              <span class="px-2.5 py-1 rounded-full bg-pageAlt border border-hairline text-[10px] font-extrabold text-ink uppercase tracking-wider">
-                High-Tech EV
-              </span>
-              <div class="text-right">
-                <span class="text-sm font-extrabold text-ink">৳ 14,000</span>
-                <span class="text-[10px] text-inkSecondary block leading-none">/ day</span>
-              </div>
-            </div>
-
-            <div class="relative w-full aspect-[16/10] my-2 overflow-hidden rounded-2xl bg-gradient-to-b from-pageAlt/80 to-pageAlt flex items-center justify-center p-2">
-              <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=800&q=80" 
-                   alt="Tesla Model 3 Long Range" 
-                   class="w-full h-full object-cover rounded-xl group-hover:scale-108 transition-transform duration-500">
-              <div class="absolute inset-0 bg-ink/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-            </div>
-
-            <div class="space-y-1.5 mt-2">
-              <div class="flex items-center justify-between">
-                <span class="text-[10px] font-bold text-electric uppercase tracking-wider">Tesla</span>
-                <span class="text-[11px] font-mono text-inkSecondary">2024</span>
-              </div>
-              <h4 class="text-base sm:text-lg font-extrabold text-ink tracking-tight group-hover:text-electric transition-colors">
-                Model 3 Long Range AWD
-              </h4>
-              <p class="text-xs text-inkSecondary line-clamp-2 leading-relaxed">
-                All-glass panoramic roof, acoustic glazing, minimalist interior, and agile dual-motor EV acceleration.
-              </p>
-            </div>
-
-            <div class="grid grid-cols-3 gap-2 py-3 my-3 border-y border-hairline text-center">
-              <div class="bg-pageAlt/70 rounded-xl py-1.5 px-1">
-                <span class="text-[10px] text-inkSecondary block uppercase font-medium">Seats</span>
-                <span class="text-xs font-bold text-ink">5 Seats</span>
-              </div>
-              <div class="bg-pageAlt/70 rounded-xl py-1.5 px-1">
-                <span class="text-[10px] text-inkSecondary block uppercase font-medium">Power</span>
-                <span class="text-xs font-bold text-ink">425 hp</span>
-              </div>
-              <div class="bg-pageAlt/70 rounded-xl py-1.5 px-1">
-                <span class="text-[10px] text-inkSecondary block uppercase font-medium">0-100</span>
-                <span class="text-xs font-bold text-ink truncate block">4.2 sec</span>
-              </div>
-            </div>
-
-            <div class="flex items-center justify-between pt-1">
-              <span class="text-xs font-extrabold text-ink group-hover:text-electric flex items-center gap-1.5 transition-colors">
-                <span>Explore Details</span>
-                <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
-              </span>
-              <span class="w-8 h-8 rounded-full bg-pageAlt border border-hairline flex items-center justify-center text-ink group-hover:bg-ink group-hover:text-white transition-all duration-300">
-                <i data-lucide="chevron-right" class="w-4 h-4"></i>
-              </span>
-            </div>
-          </div>
-
-        </div>
-
+      <!-- QUICK DISPATCH ACTION BAR BELOW THE REEL -->
+      <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
+        <span class="text-xs text-inkSecondary font-medium">Click any vehicle in the reel or poster above to inspect technical specifications</span>
+        <button onclick="openBookingDrawer()" class="px-5 py-2 rounded-full bg-white border border-hairline hover:bg-neutral-100 text-ink font-bold text-xs transition shadow-sm inline-flex items-center gap-1.5">
+          <span>Instant Chauffeur Dispatch</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-electric"></i>
+        </button>
       </div>
 
     </section>
@@ -3680,6 +3344,210 @@
           card.classList.add('hidden');
         }
       });
+    }
+
+    // ----------------------------------------------------
+    // EDITORIAL LUXURY AUTOMOTIVE POSTER SHOWCASE CONTROLLER
+    // (Inspired by Porsche GT3 RS Campaign Poster)
+    // ----------------------------------------------------
+    const editorialCarsList = ['taycan', 's-class', 'bmw-7', 'range-rover', 'prado'];
+    let currentEditorialIndex = 0;
+
+    const editorialShowcaseData = {
+      'taycan': {
+        carKey: 'taycan',
+        brand: 'PORSCHE',
+        model: 'TAYCAN 4S',
+        category: 'ELECTRIC GRAND TOURER',
+        desc: "Porsche has translated their race-bred aerodynamics into whisper-quiet electric composure. Dual permanent magnet synchronous motors deliver 530 hp with instantaneous surge, while three-chamber adaptive air suspension effortlessly glides across Dhaka's premier corridors.",
+        panels: {
+          front: 'https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=800&q=80',
+          rear: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80',
+          side: 'https://images.unsplash.com/photo-1611859266238-4b98091d9d9b?auto=format&fit=crop&w=800&q=80'
+        },
+        heroImg: 'https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=1200&q=80',
+        specs: {
+          engine: 'DUAL MAGNET EV',
+          power: '390 kW / 530 HP',
+          transmission: '2-SPEED GT AUTO',
+          capacity: '4 VIP SEATS'
+        }
+      },
+      's-class': {
+        carKey: 's-class',
+        brand: 'MERCEDES-BENZ',
+        model: 'S-CLASS 450',
+        category: 'FLAGSHIP LUXURY SEDAN',
+        desc: 'The definitive benchmark of automotive sanctuary. Featuring intelligent Airmatic damping, double-laminated acoustic glazing, and executive rear recliners with hot-stone massage for diplomats and corporate leaders.',
+        panels: {
+          front: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80',
+          rear: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=800&q=80',
+          side: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80'
+        },
+        heroImg: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=80',
+        specs: {
+          engine: '3.0L TURBO I-6 + EQ',
+          power: '270 kW / 362 HP',
+          transmission: '9G-TRONIC 9-SPEED',
+          capacity: '4 EXECUTIVE VIP'
+        }
+      },
+      'bmw-7': {
+        carKey: 'bmw-7',
+        brand: 'BMW',
+        model: '740Li M-SPORT',
+        category: 'EXECUTIVE FLAGSHIP SEDAN',
+        desc: 'Forwardism sculpted into metal. The Iconic Glow illuminated kidney grille and Swarovski crystal optics announce your arrival, while the rear 31.3-inch 8K Theatre Screen and Bowers & Wilkins audio create an unmatched private salon.',
+        panels: {
+          front: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80',
+          rear: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80',
+          side: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=800&q=80'
+        },
+        heroImg: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=80',
+        specs: {
+          engine: '3.0L TWINPOWER TURBO',
+          power: '280 kW / 375 HP',
+          transmission: '8-SPEED STEPTRONIC',
+          capacity: '4 VIP SEATS'
+        }
+      },
+      'range-rover': {
+        carKey: 'range-rover',
+        brand: 'RANGE ROVER',
+        model: 'AUTOBIOGRAPHY',
+        category: 'ULTRA-LUXURY FLAGSHIP SUV',
+        desc: 'The undisputed royal sovereign of SUVs. Seamless flush exterior styling achieves sublime aerodynamic refinement, while electronic air suspension and headrest active noise cancellation shield passengers from the pulse of the metropolis.',
+        panels: {
+          front: 'https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=800&q=80',
+          rear: 'https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80',
+          side: 'https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=800&q=80'
+        },
+        heroImg: 'https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=1200&q=80',
+        specs: {
+          engine: '4.4L TWIN-TURBO V8',
+          power: '390 kW / 523 HP',
+          transmission: 'ZF 8-SPEED AUTO',
+          capacity: '5 EXECUTIVE'
+        }
+      },
+      'prado': {
+        carKey: 'prado',
+        brand: 'LAND CRUISER',
+        model: 'PRADO TX',
+        category: 'PRESTIGE EXECUTIVE SUV',
+        desc: 'Engineered to withstand challenging monsoon rains, high-speed expressways, and inter-district state journeys. 220mm ground clearance and 500 Nm high-torque diesel powertrain ensure absolute reliability with 7-seat luxury comfort.',
+        panels: {
+          front: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80',
+          rear: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80',
+          side: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=800&q=80'
+        },
+        heroImg: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80',
+        specs: {
+          engine: '2.8L D-4D DIESEL',
+          power: '150 kW / 204 HP',
+          transmission: '6-SPEED SUPER ECT',
+          capacity: '7 SEATS'
+        }
+      }
+    };
+
+    function switchEditorialCar(carKey) {
+      const idx = editorialCarsList.indexOf(carKey);
+      if (idx !== -1) currentEditorialIndex = idx;
+      renderEditorialCar(carKey);
+    }
+
+    function nextEditorialCar() {
+      currentEditorialIndex = (currentEditorialIndex + 1) % editorialCarsList.length;
+      renderEditorialCar(editorialCarsList[currentEditorialIndex]);
+    }
+
+    function prevEditorialCar() {
+      currentEditorialIndex = (currentEditorialIndex - 1 + editorialCarsList.length) % editorialCarsList.length;
+      renderEditorialCar(editorialCarsList[currentEditorialIndex]);
+    }
+
+    function renderEditorialCar(carKey) {
+      const data = editorialShowcaseData[carKey] || editorialShowcaseData['taycan'];
+      const card = document.getElementById('editorialPosterCard');
+      
+      // Update buttons
+      document.querySelectorAll('.editorial-car-btn').forEach(btn => {
+        btn.classList.remove('bg-ink', 'text-white', 'shadow-sm', 'font-bold');
+        btn.classList.add('text-inkSecondary', 'font-semibold');
+      });
+      const activeBtn = document.getElementById(`editorialBtn-${carKey}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('text-inkSecondary', 'font-semibold');
+        activeBtn.classList.add('bg-ink', 'text-white', 'shadow-sm', 'font-bold');
+      }
+
+      // Smooth cinematic fade
+      if (card) {
+        card.style.opacity = '0.35';
+        card.style.transform = 'scale(0.992)';
+      }
+
+      setTimeout(() => {
+        // Panels
+        const p1 = document.getElementById('editorialPanel1');
+        const p2 = document.getElementById('editorialPanel2');
+        const p3 = document.getElementById('editorialPanel3');
+        const hero = document.getElementById('editorialHeroImg');
+
+        if (p1) p1.src = data.panels.front;
+        if (p2) p2.src = data.panels.rear;
+        if (p3) p3.src = data.panels.side;
+        if (hero) {
+          hero.src = data.heroImg;
+          hero.alt = `${data.brand} ${data.model}`;
+        }
+
+        // Typography
+        const brand = document.getElementById('editorialBrandText');
+        const model = document.getElementById('editorialModelText');
+        const cat = document.getElementById('editorialCategoryText');
+        const desc = document.getElementById('editorialDescText');
+        const badge = document.getElementById('editorialIndexBadge');
+
+        if (brand) brand.innerText = data.brand;
+        if (model) model.innerText = data.model;
+        if (cat) cat.innerText = data.category;
+        if (desc) desc.innerText = data.desc;
+        if (badge) badge.innerText = `SPEC NO. 0${currentEditorialIndex + 1} / 05`;
+
+        // Specs
+        const eng = document.getElementById('editorialSpecEngine');
+        const pwr = document.getElementById('editorialSpecPower');
+        const trs = document.getElementById('editorialSpecTrans');
+        const cap = document.getElementById('editorialSpecCapacity');
+
+        if (eng) eng.innerText = data.specs.engine;
+        if (pwr) pwr.innerText = data.specs.power;
+        if (trs) trs.innerText = data.specs.transmission;
+        if (cap) cap.innerText = data.specs.capacity;
+
+        if (card) {
+          card.style.opacity = '1';
+          card.style.transform = 'scale(1)';
+        }
+      }, 180);
+    }
+
+    function exploreCurrentEditorialCar() {
+      const currentKey = editorialCarsList[currentEditorialIndex] || 'taycan';
+      openCarDetailsModal(currentKey);
+    }
+
+    function bookCurrentEditorialCar() {
+      const currentKey = editorialCarsList[currentEditorialIndex] || 'taycan';
+      const showcaseData = carShowcaseData[currentKey];
+      const select = document.getElementById('modalCarSelect');
+      if (select && showcaseData) {
+        select.value = showcaseData.price.toString();
+        updateDrawerPrice();
+      }
+      openBookingDrawer();
     }
 
     // Sticky Glass Navbar Blur Enhancement on Scroll
