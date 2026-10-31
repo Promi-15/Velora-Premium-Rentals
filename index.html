@@ -6,10 +6,10 @@
   <title>Velora Drive — Premium Car Rental & Chauffeur Service | Dhaka</title>
   <meta name="description" content="Arrive in style. Book in minutes. Premium car rental and professional chauffeur service across Dhaka, Bangladesh.">
 
-  <!-- Google Fonts: Manrope + Instrument Serif (Italic) -->
+  <!-- Google Fonts: Manrope (Primary UI) + Cormorant Garamond (Display / Headings) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -33,8 +33,9 @@
             electricGlow: 'rgba(47, 91, 255, 0.25)',
           },
           fontFamily: {
-            sans: ['Manrope', 'sans-serif'],
-            serif: ['"Instrument Serif"', 'serif'],
+            sans: ['Manrope', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
           },
           boxShadow: {
             'glass': '0 8px 32px 0 rgba(14, 15, 18, 0.06)',
@@ -63,10 +64,28 @@
       color: #ffffff;
     }
 
+    /* STRICT GLOBAL ENFORCEMENT: Absolutely NO italic typography anywhere */
+    *, *::before, *::after {
+      font-style: normal !important;
+    }
+
+    /* Cormorant Garamond Display Serif (Upright Only: 400, 500, 600) */
+    .font-serif, .font-display, .font-serif-display {
+      font-family: 'Cormorant Garamond', Georgia, serif !important;
+      font-style: normal !important;
+    }
+
+    /* Legacy alias mapped safely to upright Cormorant Garamond */
     .font-serif-italic {
-      font-family: 'Instrument Serif', serif;
-      font-style: italic;
-      font-weight: 400;
+      font-family: 'Cormorant Garamond', Georgia, serif !important;
+      font-style: normal !important;
+      font-weight: 500 !important;
+    }
+
+    /* Primary Manrope UI Sans */
+    .font-sans {
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+      font-style: normal !important;
     }
 
     /* Glass Effect (white 40-55%, blur 18-24px, 1px white border, soft shadow) */
@@ -486,10 +505,10 @@
             <span>Premium car rental · Dhaka</span>
           </div>
 
-          <!-- Headline: Manrope 88-96px desktop / 44px mobile, tight tracking, Instrument Serif italic "style." -->
-          <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-[92px] font-extrabold tracking-tight text-white leading-[1.0] select-none">
+          <!-- Headline: Cormorant Garamond 96px desktop / 44px mobile, tight tracking, upright "style." -->
+          <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-[96px] font-medium tracking-tight text-white leading-[1.0] select-none font-serif">
             <span class="block animate-hero-line-1">Arrive in</span>
-            <span class="block font-serif-italic font-normal italic tracking-normal text-white animate-hero-line-2 mt-0.5 sm:mt-1">style.</span>
+            <span class="block font-serif font-normal not-italic tracking-normal text-white animate-hero-line-2 mt-0.5 sm:mt-1">style.</span>
           </h1>
 
           <!-- Subtext: 18px white at 75% opacity, max-w-[460px] -->
@@ -624,8 +643,8 @@
             <span>VELORA PHILOSOPHY</span>
           </div>
 
-          <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-ink leading-[1.15]">
-            Moving through Dhaka should feel effortless, dignified, and undeniably <span class="font-serif-italic font-normal tracking-normal text-ink">refined.</span>
+          <h2 class="text-3xl sm:text-5xl font-medium tracking-tight text-ink leading-[1.15] font-serif">
+            Moving through Dhaka should feel effortless, dignified, and undeniably <span class="font-serif font-medium not-italic tracking-normal text-ink">refined.</span>
           </h2>
 
           <p class="text-inkSecondary text-base sm:text-lg leading-relaxed">
@@ -674,8 +693,8 @@
           <span class="text-electric font-mono">/ 03</span>
           <span>EXECUTIVE FLEET SHOWCASE</span>
         </div>
-        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-ink">
-          Engineered for pure <span class="font-serif-italic font-normal tracking-normal text-ink">comfort.</span>
+        <h2 class="text-3xl sm:text-5xl font-medium tracking-tight text-ink font-serif">
+          Engineered for pure <span class="font-serif font-medium not-italic tracking-normal text-ink">comfort.</span>
         </h2>
         <p class="text-inkSecondary text-sm sm:text-base mt-2 max-w-xl mx-auto">
           Explore our handpicked fleet of prestige vehicles and executive sedans in Dhaka. Driven by certified chauffeurs for your daily commute, airport transfer, or VIP event. Select any vehicle to inspect its full campaign showcase.
@@ -711,7 +730,7 @@
 
               <!-- Model & Price Label -->
               <div class="absolute bottom-4 left-15 right-3 text-right">
-                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">S-Class 450</span>
+                <span class="text-sm font-semibold text-white block drop-shadow-sm leading-none font-serif tracking-wide">S-Class 450</span>
                 <span class="text-[10px] text-white/80 font-medium">৳ 18,000/day</span>
               </div>
             </div>
@@ -728,7 +747,7 @@
               </div>
 
               <div class="absolute bottom-4 left-15 right-3 text-right">
-                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">Prado TX</span>
+                <span class="text-sm font-semibold text-white block drop-shadow-sm leading-none font-serif tracking-wide">Prado TX</span>
                 <span class="text-[10px] text-white/80 font-medium">৳ 9,500/day</span>
               </div>
             </div>
@@ -745,7 +764,7 @@
               </div>
 
               <div class="absolute bottom-4 left-15 right-3 text-right">
-                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">Taycan 4S</span>
+                <span class="text-sm font-semibold text-white block drop-shadow-sm leading-none font-serif tracking-wide">Taycan 4S</span>
                 <span class="text-[10px] text-white/80 font-medium">৳ 16,000/day</span>
               </div>
             </div>
@@ -762,7 +781,7 @@
               </div>
 
               <div class="absolute bottom-4 left-15 right-3 text-right">
-                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">E-Class 300</span>
+                <span class="text-sm font-semibold text-white block drop-shadow-sm leading-none font-serif tracking-wide">E-Class 300</span>
                 <span class="text-[10px] text-white/80 font-medium">৳ 6,500/day</span>
               </div>
             </div>
@@ -779,7 +798,7 @@
               </div>
 
               <div class="absolute bottom-4 left-15 right-3 text-right">
-                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">Alphard VIP</span>
+                <span class="text-sm font-semibold text-white block drop-shadow-sm leading-none font-serif tracking-wide">Alphard VIP</span>
                 <span class="text-[10px] text-white/80 font-medium">৳ 8,000/day</span>
               </div>
             </div>
@@ -796,7 +815,7 @@
               </div>
 
               <div class="absolute bottom-4 left-15 right-3 text-right">
-                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">Range Rover</span>
+                <span class="text-sm font-semibold text-white block drop-shadow-sm leading-none font-serif tracking-wide">Range Rover</span>
                 <span class="text-[10px] text-white/80 font-medium">৳ 22,000/day</span>
               </div>
             </div>
@@ -813,7 +832,7 @@
               </div>
 
               <div class="absolute bottom-4 left-15 right-3 text-right">
-                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">BMW 740Li</span>
+                <span class="text-sm font-semibold text-white block drop-shadow-sm leading-none font-serif tracking-wide">BMW 740Li</span>
                 <span class="text-[10px] text-white/80 font-medium">৳ 17,500/day</span>
               </div>
             </div>
@@ -830,7 +849,7 @@
               </div>
 
               <div class="absolute bottom-4 left-15 right-3 text-right">
-                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">Tesla 3</span>
+                <span class="text-sm font-semibold text-white block drop-shadow-sm leading-none font-serif tracking-wide">Tesla 3</span>
                 <span class="text-[10px] text-white/80 font-medium">৳ 14,000/day</span>
               </div>
             </div>
@@ -852,7 +871,7 @@
               </div>
 
               <div class="absolute bottom-4 left-15 right-3 text-right">
-                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">S-Class 450</span>
+                <span class="text-sm font-semibold text-white block drop-shadow-sm leading-none font-serif tracking-wide">S-Class 450</span>
                 <span class="text-[10px] text-white/80 font-medium">৳ 18,000/day</span>
               </div>
             </div>
@@ -869,7 +888,7 @@
               </div>
 
               <div class="absolute bottom-4 left-15 right-3 text-right">
-                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">Prado TX</span>
+                <span class="text-sm font-semibold text-white block drop-shadow-sm leading-none font-serif tracking-wide">Prado TX</span>
                 <span class="text-[10px] text-white/80 font-medium">৳ 9,500/day</span>
               </div>
             </div>
@@ -886,7 +905,7 @@
               </div>
 
               <div class="absolute bottom-4 left-15 right-3 text-right">
-                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">Taycan 4S</span>
+                <span class="text-sm font-semibold text-white block drop-shadow-sm leading-none font-serif tracking-wide">Taycan 4S</span>
                 <span class="text-[10px] text-white/80 font-medium">৳ 16,000/day</span>
               </div>
             </div>
@@ -903,7 +922,7 @@
               </div>
 
               <div class="absolute bottom-4 left-15 right-3 text-right">
-                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">E-Class 300</span>
+                <span class="text-sm font-semibold text-white block drop-shadow-sm leading-none font-serif tracking-wide">E-Class 300</span>
                 <span class="text-[10px] text-white/80 font-medium">৳ 6,500/day</span>
               </div>
             </div>
@@ -920,7 +939,7 @@
               </div>
 
               <div class="absolute bottom-4 left-15 right-3 text-right">
-                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">Alphard VIP</span>
+                <span class="text-sm font-semibold text-white block drop-shadow-sm leading-none font-serif tracking-wide">Alphard VIP</span>
                 <span class="text-[10px] text-white/80 font-medium">৳ 8,000/day</span>
               </div>
             </div>
@@ -937,7 +956,7 @@
               </div>
 
               <div class="absolute bottom-4 left-15 right-3 text-right">
-                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">Range Rover</span>
+                <span class="text-sm font-semibold text-white block drop-shadow-sm leading-none font-serif tracking-wide">Range Rover</span>
                 <span class="text-[10px] text-white/80 font-medium">৳ 22,000/day</span>
               </div>
             </div>
@@ -954,7 +973,7 @@
               </div>
 
               <div class="absolute bottom-4 left-15 right-3 text-right">
-                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">BMW 740Li</span>
+                <span class="text-sm font-semibold text-white block drop-shadow-sm leading-none font-serif tracking-wide">BMW 740Li</span>
                 <span class="text-[10px] text-white/80 font-medium">৳ 17,500/day</span>
               </div>
             </div>
@@ -971,7 +990,7 @@
               </div>
 
               <div class="absolute bottom-4 left-15 right-3 text-right">
-                <span class="text-xs font-extrabold text-white block drop-shadow-sm leading-none">Tesla 3</span>
+                <span class="text-sm font-semibold text-white block drop-shadow-sm leading-none font-serif tracking-wide">Tesla 3</span>
                 <span class="text-[10px] text-white/80 font-medium">৳ 14,000/day</span>
               </div>
             </div>
@@ -1014,8 +1033,8 @@
               <span class="text-electric font-mono">/ 04</span>
               <span>SUSTAINABLE PRESTIGE • ZERO EMISSIONS</span>
             </div>
-            <h2 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-ink leading-[1.05]">
-              Powering Dhaka’s <span class="font-serif-italic font-normal tracking-normal text-ink">silent</span> revolution.
+            <h2 class="text-4xl sm:text-6xl font-medium tracking-tight text-ink leading-[1.05] font-serif">
+              Powering Dhaka’s <span class="font-serif font-medium not-italic tracking-normal text-ink">silent</span> revolution.
             </h2>
             <p class="text-inkSecondary text-base sm:text-lg max-w-xl leading-relaxed">
               Quiet, vibration-free executive transit with zero tailpipe emissions. Powered by dedicated 180 kW private supercharger bays across Gulshan-2, Banani, and Hazrat Shahjalal International Airport.
@@ -1234,8 +1253,8 @@
               <span class="text-electric font-mono">/ 04</span>
               <span>BESPOKE MOBILITY</span>
             </div>
-            <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-ink">
-              Crafted for <span class="font-serif-italic font-normal tracking-normal text-ink">every</span> occasion.
+            <h2 class="text-3xl sm:text-5xl font-medium tracking-tight text-ink font-serif">
+              Crafted for <span class="font-serif font-medium not-italic tracking-normal text-ink">every</span> occasion.
             </h2>
           </div>
 
@@ -1313,8 +1332,8 @@
             <span class="text-electric font-mono">/ 05</span>
             <span>SEAMLESS WORKFLOW</span>
           </div>
-          <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-ink">
-            Simple steps to your <span class="font-serif-italic font-normal tracking-normal text-ink">journey.</span>
+          <h2 class="text-3xl sm:text-5xl font-medium tracking-tight text-ink font-serif">
+            Simple steps to your <span class="font-serif font-medium not-italic tracking-normal text-ink">journey.</span>
           </h2>
         </div>
 
@@ -1370,8 +1389,8 @@
           <span class="text-electric font-mono">/ 06</span>
           <span>TRANSPARENT TARIFFS</span>
         </div>
-        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-ink">
-          Clear pricing, zero <span class="font-serif-italic font-normal tracking-normal text-ink">ambiguity.</span>
+        <h2 class="text-3xl sm:text-5xl font-medium tracking-tight text-ink font-serif">
+          Clear pricing, zero <span class="font-serif font-medium not-italic tracking-normal text-ink">ambiguity.</span>
         </h2>
         <p class="text-inkSecondary text-sm sm:text-base mt-2">All rates fixed in Bangladeshi Taka (৳). Chauffeur and fuel policy itemized.</p>
       </div>
@@ -1530,8 +1549,8 @@
             <span class="text-electric font-mono">/ 07</span>
             <span>CLARITY & ASSURANCE</span>
           </div>
-          <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-ink">
-            Frequently Asked <span class="font-serif-italic font-normal tracking-normal text-ink">Questions</span>
+          <h2 class="text-3xl sm:text-5xl font-medium tracking-tight text-ink font-serif">
+            Frequently Asked <span class="font-serif font-medium not-italic tracking-normal text-ink">Questions</span>
           </h2>
         </div>
 
@@ -1624,8 +1643,8 @@
               <span>Available 24/7 across Dhaka</span>
             </div>
 
-            <h2 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
-              Ready to <span class="font-serif-italic font-normal tracking-normal text-white">ride?</span>
+            <h2 class="text-4xl sm:text-6xl font-medium tracking-tight text-white leading-tight font-serif">
+              Ready to <span class="font-serif font-medium not-italic tracking-normal text-white">ride?</span>
             </h2>
 
             <p class="text-white/70 text-base sm:text-lg max-w-lg leading-relaxed">
@@ -1840,9 +1859,9 @@
                 ELECTRIC GRAND TOURER
               </span>
             </div>
-            <h3 class="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-ink flex items-center justify-center gap-3 flex-wrap">
+            <h3 class="text-3xl sm:text-5xl md:text-6xl font-semibold uppercase tracking-tight text-ink flex items-center justify-center gap-3 flex-wrap font-serif">
               <span id="modalBrandText">PORSCHE</span> 
-              <span id="modalModelText" class="font-extralight italic font-serif tracking-normal">TAYCAN 4S</span>
+              <span id="modalModelText" class="font-normal font-serif tracking-normal">TAYCAN 4S</span>
             </h3>
           </div>
 
