@@ -327,6 +327,44 @@
       border-radius: 40px;
       overflow: hidden;
     }
+
+    /* Vertical Typographic Watermark (Image 1 Style) */
+    .vertical-watermark {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+    }
+
+    /* Diagonal Slash Architectural Banner (Image 1 Style) */
+    .diagonal-slash-bar {
+      transform: skewX(-24deg);
+      transform-origin: center;
+    }
+
+    /* Interactive Hotspot Node & Ripple */
+    .hotspot-pulse-node {
+      position: relative;
+    }
+    .hotspot-pulse-node::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 9999px;
+      background: rgba(47, 91, 255, 0.4);
+      animation: hotspotPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+    @keyframes hotspotPing {
+      75%, 100% {
+        transform: scale(2.2);
+        opacity: 0;
+      }
+    }
+
+    /* Floor Reflection Shadow Effect */
+    .car-mirror-shadow {
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+    }
   </style>
 </head>
 <body id="appBody" class="bg-white text-ink antialiased">
@@ -390,13 +428,15 @@
           </a>
 
           <!-- Centre: Nav Menu Links with subtle underline hover (Desktop) -->
-          <div class="hidden md:flex items-center space-x-7 text-sm font-medium text-white/80">
+          <div class="hidden md:flex items-center space-x-5 lg:space-x-6 text-sm font-medium text-white/80">
             <a href="#fleet" class="hover:text-white transition py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-white hover:after:w-full after:transition-all">Fleet</a>
-            <a href="#electric-network" class="hover:text-white transition py-1 relative flex items-center gap-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-electric hover:after:w-full after:transition-all">
-              <span>Electric Hub</span>
+            <a href="#atelier" class="hover:text-white transition py-1 relative flex items-center gap-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-electric hover:after:w-full after:transition-all">
+              <span>Atelier</span>
               <span class="w-1.5 h-1.5 rounded-full bg-electric animate-pulse"></span>
             </a>
+            <a href="#electric-network" class="hover:text-white transition py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-white hover:after:w-full after:transition-all">Electric Hub</a>
             <a href="#services" class="hover:text-white transition py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-white hover:after:w-full after:transition-all">Services</a>
+            <a href="#flagship-spec" class="hover:text-white transition py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-white hover:after:w-full after:transition-all">Blueprint</a>
             <a href="#how-it-works" class="hover:text-white transition py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-white hover:after:w-full after:transition-all">How it works</a>
             <a href="#pricing" class="hover:text-white transition py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-white hover:after:w-full after:transition-all">Pricing</a>
             <a href="#faq" class="hover:text-white transition py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-white hover:after:w-full after:transition-all">FAQ</a>
@@ -425,11 +465,16 @@
         <div id="mobileGlassDropdown" class="hidden md:hidden max-w-[1200px] mx-auto mt-2 hero-glass-nav rounded-3xl p-5 space-y-3 pointer-events-auto shadow-2xl">
           <div class="flex flex-col space-y-3 text-sm font-medium text-white/90">
             <a href="#fleet" onclick="toggleMobileNavMenu()" class="px-3 py-2 rounded-xl hover:bg-white/10 transition">Fleet</a>
+            <a href="#atelier" onclick="toggleMobileNavMenu()" class="px-3 py-2 rounded-xl hover:bg-white/10 transition flex items-center justify-between">
+              <span>Bespoke Atelier</span>
+              <span class="w-2 h-2 rounded-full bg-electric"></span>
+            </a>
             <a href="#electric-network" onclick="toggleMobileNavMenu()" class="px-3 py-2 rounded-xl hover:bg-white/10 transition flex items-center justify-between">
               <span>Electric Hub</span>
               <span class="w-2 h-2 rounded-full bg-electric"></span>
             </a>
             <a href="#services" onclick="toggleMobileNavMenu()" class="px-3 py-2 rounded-xl hover:bg-white/10 transition">Services</a>
+            <a href="#flagship-spec" onclick="toggleMobileNavMenu()" class="px-3 py-2 rounded-xl hover:bg-white/10 transition">Blueprint Spec</a>
             <a href="#how-it-works" onclick="toggleMobileNavMenu()" class="px-3 py-2 rounded-xl hover:bg-white/10 transition">How it works</a>
             <a href="#pricing" onclick="toggleMobileNavMenu()" class="px-3 py-2 rounded-xl hover:bg-white/10 transition">Pricing</a>
             <a href="#faq" onclick="toggleMobileNavMenu()" class="px-3 py-2 rounded-xl hover:bg-white/10 transition">FAQ</a>
@@ -1026,6 +1071,242 @@
 
     </section>
 
+    <!-- 3.1 VELORA BESPOKE ATELIER & INTERACTIVE 360° CONFIGURATOR (Inspired by Images 2 & 3) -->
+    <section id="atelier" class="py-24 sm:py-32 relative bg-pageAlt/60 border-b border-hairline overflow-hidden">
+      <!-- Ambient Grid Background -->
+      <div class="absolute inset-0 hero-grid-lines pointer-events-none opacity-40"></div>
+
+      <div class="max-w-[1280px] mx-auto px-4 sm:px-6 relative z-10">
+        
+        <!-- Section Header with Mode Tabs -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 sm:mb-16">
+          <div class="space-y-3">
+            <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-ink uppercase">
+              <span class="text-electric font-mono">/ 03.1</span>
+              <span>VELORA BESPOKE ATELIER</span>
+            </div>
+            <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-ink leading-[1.1]">
+              Precision Anatomy. <span class="font-serif-italic font-normal tracking-normal text-ink">Unrivaled luxury.</span>
+            </h2>
+            <p class="text-inkSecondary text-sm sm:text-base max-w-xl">
+              Inspect the aerodynamic architecture, acoustic isolation, and bespoke powertrain of Velora’s flagship executive vehicles.
+            </p>
+          </div>
+
+          <!-- Feature Category Selector (Image 2 style) -->
+          <div class="inline-flex p-1.5 rounded-full bg-white border border-hairline shadow-sm self-start lg:self-auto overflow-x-auto max-w-full">
+            <button id="atelierTab-perf" onclick="setAtelierMode('perf')" class="atelier-tab-btn px-4 sm:px-5 py-2 rounded-full text-xs font-bold bg-ink text-white transition shadow-sm whitespace-nowrap">
+              Performance
+            </button>
+            <button id="atelierTab-cabin" onclick="setAtelierMode('cabin')" class="atelier-tab-btn px-4 sm:px-5 py-2 rounded-full text-xs font-semibold text-inkSecondary hover:text-ink transition whitespace-nowrap">
+              Chauffeur Cabin
+            </button>
+            <button id="atelierTab-acoustic" onclick="setAtelierMode('acoustic')" class="atelier-tab-btn px-4 sm:px-5 py-2 rounded-full text-xs font-semibold text-inkSecondary hover:text-ink transition whitespace-nowrap">
+              Acoustic Isolation
+            </button>
+            <button id="atelierTab-armor" onclick="setAtelierMode('armor')" class="atelier-tab-btn px-4 sm:px-5 py-2 rounded-full text-xs font-semibold text-inkSecondary hover:text-ink transition whitespace-nowrap">
+              Safety & Armor
+            </button>
+          </div>
+        </div>
+
+        <!-- STAGE: Car Visual + 360 Orbital Ring + Interactive Hotspot Callout Pins (Image 2 & 3 style) -->
+        <div class="relative bg-white rounded-[32px] sm:rounded-[36px] border border-hairline shadow-sm p-6 sm:p-12 min-h-[540px] flex flex-col justify-between overflow-hidden">
+          
+          <!-- Top Row inside card: Model Badge + Finish Selector -->
+          <div class="flex flex-wrap items-center justify-between gap-4 relative z-20">
+            <div>
+              <div class="flex items-center gap-2">
+                <span id="atelierModelName" class="text-xl sm:text-2xl font-extrabold text-ink tracking-tight">Velora S-Class Grand Chauffeur</span>
+                <span class="w-2 h-2 rounded-full bg-electric animate-pulse"></span>
+              </div>
+              <p id="atelierColorLabel" class="text-xs text-inkSecondary mt-0.5 font-medium">Bespoke Finish: <span class="text-ink font-semibold">Obsidian Black Metallic</span></p>
+            </div>
+
+            <!-- Color Swatches (Image 2 style) -->
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-bold text-ink uppercase tracking-wider hidden sm:inline">Color Palette</span>
+              <div class="flex items-center gap-2 p-1.5 rounded-full bg-pageAlt border border-hairline">
+                <button onclick="changeAtelierColor('black', 'Obsidian Black Metallic', 'https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1200&q=80')" class="atelier-color-btn w-6 h-6 rounded-full bg-neutral-900 border-2 border-electric ring-2 ring-electric/30 transition transform hover:scale-110" title="Obsidian Black"></button>
+                <button onclick="changeAtelierColor('silver', 'Selenite Silver Spec', 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=80')" class="atelier-color-btn w-6 h-6 rounded-full bg-slate-300 border-2 border-white transition transform hover:scale-110" title="Selenite Silver"></button>
+                <button onclick="changeAtelierColor('white', 'Arctic White Pearl', 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=80')" class="atelier-color-btn w-6 h-6 rounded-full bg-white border border-neutral-300 transition transform hover:scale-110" title="Arctic White"></button>
+                <button onclick="changeAtelierColor('blue', 'Electric Sapphire', 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80')" class="atelier-color-btn w-6 h-6 rounded-full bg-[#2F5BFF] border-2 border-white transition transform hover:scale-110" title="Electric Sapphire"></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Central Car Display with 360 Orbit & Ground Shadow -->
+          <div class="relative py-12 sm:py-16 flex items-center justify-center my-auto min-h-[360px] z-10">
+            
+            <!-- Giant Faint Typographic Watermark (Image 1 & 4 reference) -->
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden opacity-[0.035]">
+              <span class="font-extrabold text-[120px] sm:text-[220px] lg:text-[280px] tracking-tighter text-ink leading-none uppercase">
+                ATELIER
+              </span>
+            </div>
+
+            <!-- 360° Floor Ring & Orbital Arcs (Image 3 reference) -->
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <!-- Solid inner floor ellipse -->
+              <div class="w-[88%] sm:w-[680px] h-[220px] sm:h-[260px] rounded-[50%] border border-ink/[0.10] ellipse-orbit absolute bottom-2 sm:bottom-4"></div>
+              <!-- Dashed outer accent ring -->
+              <div class="w-[96%] sm:w-[760px] h-[280px] sm:h-[310px] rounded-[50%] border border-dashed border-electric/30 ellipse-orbit absolute bottom-0 sm:bottom-2"></div>
+              <!-- Soft Ground Ellipse Shadow -->
+              <div class="w-[78%] sm:w-[580px] h-12 bg-ink/20 rounded-full blur-2xl absolute bottom-6 sm:bottom-10"></div>
+            </div>
+
+            <!-- Orbital Navigation Controls (< > Buttons on the Ring, Image 3 style) -->
+            <div class="absolute bottom-4 inset-x-0 flex items-center justify-center gap-3 z-30 pointer-events-auto">
+              <button onclick="rotateAtelierAngle('prev')" class="w-9 h-9 rounded-full bg-white/80 hover:bg-white text-ink border border-hairline flex items-center justify-center shadow-md hover:scale-110 transition" aria-label="Previous Perspective">
+                <i data-lucide="chevron-left" class="w-4 h-4"></i>
+              </button>
+              <div class="px-3.5 py-1 rounded-full bg-ink text-white text-[11px] font-bold tracking-wider uppercase shadow-pill flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-electric animate-pulse"></span>
+                <span id="atelierAngleLabel">360° Studio Angle 01</span>
+              </div>
+              <button onclick="rotateAtelierAngle('next')" class="w-9 h-9 rounded-full bg-white/80 hover:bg-white text-ink border border-hairline flex items-center justify-center shadow-md hover:scale-110 transition" aria-label="Next Perspective">
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <!-- High-Res Side-Profile Vehicle Cutout -->
+            <div class="relative z-20 w-full max-w-[720px] transition-all duration-700">
+              <img id="atelierCarVisual" 
+                   src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1200&q=80" 
+                   alt="Velora Executive Atelier Showcase" 
+                   class="w-full h-auto object-contain drop-shadow-[0_24px_36px_rgba(14,15,18,0.22)] rounded-2xl filter contrast-105 transition-all duration-500">
+            </div>
+
+            <!-- HOTSPOT 1: Front Active Aerodynamics (Image 2 style) -->
+            <div class="absolute top-[22%] left-[12%] sm:left-[18%] z-30 group cursor-pointer">
+              <div class="hotspot-pulse-node w-6 h-6 rounded-full bg-ink text-white border border-white flex items-center justify-center text-xs font-bold shadow-lg transition-transform group-hover:scale-125">
+                <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+              </div>
+              <!-- Leader line and glass tooltip card -->
+              <div class="absolute bottom-8 left-0 sm:-left-12 w-64 glass-floating rounded-2xl p-3.5 shadow-glass opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 z-40 transform translate-y-2 group-hover:translate-y-0">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-[10px] font-extrabold uppercase tracking-wider text-electric">Active Aerodynamics</span>
+                  <span class="text-[10px] text-inkSecondary font-mono">01</span>
+                </div>
+                <h5 class="text-xs font-bold text-ink mb-1">Laser Matrix & Aero Intakes</h5>
+                <p class="text-[11px] text-inkSecondary leading-relaxed">Dynamic adaptive cooling flaps adjust airflow for highway stability and battery/engine temperature control.</p>
+              </div>
+            </div>
+
+            <!-- HOTSPOT 2: Powertrain & Hybrid Core (Image 2 style) -->
+            <div class="absolute bottom-[35%] left-[26%] sm:left-[32%] z-30 group cursor-pointer">
+              <div class="hotspot-pulse-node w-6 h-6 rounded-full bg-ink text-white border border-white flex items-center justify-center text-xs font-bold shadow-lg transition-transform group-hover:scale-125">
+                <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+              </div>
+              <div class="absolute bottom-8 left-0 sm:-left-16 w-64 glass-floating rounded-2xl p-3.5 shadow-glass opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 z-40 transform translate-y-2 group-hover:translate-y-0">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-[10px] font-extrabold uppercase tracking-wider text-electric">Twin-Turbo Propulsion</span>
+                  <span class="text-[10px] text-inkSecondary font-mono">02</span>
+                </div>
+                <h5 class="text-xs font-bold text-ink mb-1">4.0L Bi-Turbo Hybrid Core</h5>
+                <p class="text-[11px] text-inkSecondary leading-relaxed">843 hp dual-engine architecture capable of silent electric glide inside diplomatic residential areas.</p>
+              </div>
+            </div>
+
+            <!-- HOTSPOT 3: Soundproof Acoustic Glass (Image 2 style) -->
+            <div class="absolute top-[18%] right-[32%] sm:right-[38%] z-30 group cursor-pointer">
+              <div class="hotspot-pulse-node w-6 h-6 rounded-full bg-ink text-white border border-white flex items-center justify-center text-xs font-bold shadow-lg transition-transform group-hover:scale-125">
+                <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+              </div>
+              <div class="absolute bottom-8 left-0 sm:-left-16 w-64 glass-floating rounded-2xl p-3.5 shadow-glass opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 z-40 transform translate-y-2 group-hover:translate-y-0">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-[10px] font-extrabold uppercase tracking-wider text-electric">Acoustic Shield</span>
+                  <span class="text-[10px] text-inkSecondary font-mono">03</span>
+                </div>
+                <h5 class="text-xs font-bold text-ink mb-1">Double-Laminated 38dB Glass</h5>
+                <p class="text-[11px] text-inkSecondary leading-relaxed">Blocks Dhaka ambient street noise for private conversations, secure phone meetings, and uninterrupted rest.</p>
+              </div>
+            </div>
+
+            <!-- HOTSPOT 4: Executive Lounger Cabin (Image 2 style) -->
+            <div class="absolute bottom-[38%] right-[16%] sm:right-[22%] z-30 group cursor-pointer">
+              <div class="hotspot-pulse-node w-6 h-6 rounded-full bg-ink text-white border border-white flex items-center justify-center text-xs font-bold shadow-lg transition-transform group-hover:scale-125">
+                <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+              </div>
+              <div class="absolute bottom-8 right-0 sm:-right-8 w-64 glass-floating rounded-2xl p-3.5 shadow-glass opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 z-40 transform translate-y-2 group-hover:translate-y-0">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-[10px] font-extrabold uppercase tracking-wider text-electric">Chauffeur Luxury</span>
+                  <span class="text-[10px] text-inkSecondary font-mono">04</span>
+                </div>
+                <h5 class="text-xs font-bold text-ink mb-1">First-Class Nappa Recliner</h5>
+                <p class="text-[11px] text-inkSecondary leading-relaxed">43.5° recline posture with hot-stone massage, motorized calf support, and fold-out executive writing desk.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Feature Highlights Telemetry Bar (Directly Inspired by Image 2 Bottom Row) -->
+          <div class="relative z-20 pt-6 border-t border-hairline">
+            <div class="text-[11px] font-bold uppercase tracking-wider text-inkSecondary mb-3 flex items-center justify-between">
+              <span>Telemetry Highlights</span>
+              <span class="text-electric font-mono">Real-Time Spec Verification</span>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+              
+              <!-- Card 1: Passenger Capacity (with preview thumb, Image 2 style) -->
+              <div class="p-3 sm:p-4 rounded-2xl bg-pageAlt/80 border border-hairline flex items-center gap-3">
+                <img src="https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=200&q=80" alt="Cabin preview" class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl object-cover border border-white shadow-sm flex-shrink-0">
+                <div>
+                  <span class="text-[10px] font-bold text-inkSecondary uppercase block">Capacity</span>
+                  <div class="text-base sm:text-lg font-extrabold text-ink leading-tight">4 <span class="text-xs font-medium text-inkSecondary">VIP Seats</span></div>
+                  <span class="text-[10px] text-electric font-semibold">Executive Lounge</span>
+                </div>
+              </div>
+
+              <!-- Card 2: Engine -->
+              <div class="p-3 sm:p-4 rounded-2xl bg-pageAlt/80 border border-hairline">
+                <div class="flex items-center justify-between mb-0.5">
+                  <span class="text-[10px] font-bold text-inkSecondary uppercase">Engine</span>
+                  <i data-lucide="gauge" class="w-3.5 h-3.5 text-electric"></i>
+                </div>
+                <div id="atelierEngineSpec" class="text-sm sm:text-base font-extrabold text-ink">4.0L Bi-Turbo</div>
+                <span class="text-[10px] text-inkSecondary">843 hp @ 6,500 rpm</span>
+              </div>
+
+              <!-- Card 3: Transmission -->
+              <div class="p-3 sm:p-4 rounded-2xl bg-pageAlt/80 border border-hairline">
+                <div class="flex items-center justify-between mb-0.5">
+                  <span class="text-[10px] font-bold text-inkSecondary uppercase">Transmission</span>
+                  <i data-lucide="zap" class="w-3.5 h-3.5 text-electric"></i>
+                </div>
+                <div id="atelierTransSpec" class="text-sm sm:text-base font-extrabold text-ink">9-Speed Dual</div>
+                <span class="text-[10px] text-inkSecondary">Paddle Speedshift</span>
+              </div>
+
+              <!-- Card 4: Acceleration -->
+              <div class="p-3 sm:p-4 rounded-2xl bg-pageAlt/80 border border-hairline">
+                <div class="flex items-center justify-between mb-0.5">
+                  <span class="text-[10px] font-bold text-inkSecondary uppercase">0–100 km/h</span>
+                  <i data-lucide="timer" class="w-3.5 h-3.5 text-electric"></i>
+                </div>
+                <div id="atelierAccelSpec" class="text-base sm:text-lg font-extrabold text-ink leading-tight">2.9 <span class="text-xs font-normal text-inkSecondary">sec</span></div>
+                <span class="text-[10px] text-emerald-600 font-semibold">Launch Control</span>
+              </div>
+
+              <!-- Card 5: Top Speed -->
+              <div class="p-3 sm:p-4 rounded-2xl bg-pageAlt/80 border border-hairline col-span-2 md:col-span-1">
+                <div class="flex items-center justify-between mb-0.5">
+                  <span class="text-[10px] font-bold text-inkSecondary uppercase">Cruising V-Max</span>
+                  <i data-lucide="compass" class="w-3.5 h-3.5 text-electric"></i>
+                </div>
+                <div id="atelierTopSpeedSpec" class="text-base sm:text-lg font-extrabold text-ink leading-tight">320 <span class="text-xs font-normal text-inkSecondary">km/h</span></div>
+                <span class="text-[10px] text-inkSecondary">Highway Electronic Limit</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
     <!-- NEW SECTION: THE ELECTRIC ERA (Inspired by reference with clean modern glass aesthetics & Dhaka EV context) -->
     <section id="electric-network" class="py-24 sm:py-32 relative overflow-hidden bg-gradient-to-b from-white via-[#F4F6FC] to-white border-b border-hairline">
       
@@ -1331,6 +1612,153 @@
             </div>
 
           </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4.1 THE FLAGSHIP SPEC BLUEPRINT: EDITORIAL SPLIT SHOWCASE (Inspired by Images 1 & 4) -->
+    <section id="flagship-spec" class="py-24 sm:py-32 relative bg-ink text-white overflow-hidden border-t border-white/10">
+      
+      <!-- Architectural Diagonal Speed Slash & Dual-Tone Split (Image 1 & 4 style) -->
+      <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <!-- Diagonal Slash Bar in Electric Blue / Deep Gradient -->
+        <div class="absolute -top-32 -bottom-32 left-[38%] w-[180px] bg-gradient-to-b from-electric via-electricHover to-transparent opacity-30 diagonal-slash-bar blur-sm"></div>
+        <div class="absolute -top-32 -bottom-32 left-[39.5%] w-[140px] bg-electric/20 diagonal-slash-bar"></div>
+        <!-- Right-side subtle carbon texture grid -->
+        <div class="absolute inset-0 hero-grid-lines-dark opacity-15"></div>
+      </div>
+
+      <div class="max-w-[1280px] mx-auto px-4 sm:px-6 relative z-10">
+        
+        <!-- Top Poster Header (Image 1 style) -->
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-8 border-b border-white/10 text-xs text-white/60 uppercase font-mono tracking-widest">
+          <div class="flex items-center gap-3">
+            <span class="px-2.5 py-1 rounded-full bg-white/10 text-white font-bold text-[10px]">POSTER NO. 101</span>
+            <span>VELORA ATELIER EDITIONS</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-electric animate-ping"></span>
+            <span class="text-white font-bold">V12 FLAGSHIP SPECIFICATION</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center pt-10 sm:pt-14 relative">
+          
+          <!-- Left Column (5 cols): Close-up Macro Cutout & Narrative (Image 1 style) -->
+          <div class="lg:col-span-5 space-y-6 relative">
+            
+            <!-- Aggressive macro perspective crop (Breaking the boundary, Image 1 style) -->
+            <div class="relative rounded-3xl overflow-hidden border border-white/15 bg-neutral-900 shadow-2xl group">
+              <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=900&q=80" 
+                   alt="Velora V12 Sculpted Tail and Diffuser" 
+                   class="w-full h-56 sm:h-64 object-cover filter brightness-95 group-hover:scale-105 transition duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              
+              <!-- Badge on crop -->
+              <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] font-mono uppercase text-electric block font-bold">Aero Carbon Diffuser</span>
+                  <span class="text-sm font-extrabold text-white">Quad Titanium Exhaust</span>
+                </div>
+                <div class="px-2.5 py-1 rounded-full bg-white/20 backdrop-blur-md text-[10px] font-bold text-white">
+                  SPEC 01
+                </div>
+              </div>
+            </div>
+
+            <!-- Headline & Statement with Italic Serif Accent -->
+            <div>
+              <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-white/50 uppercase mb-2 font-mono">
+                <span>/ 05.1 COLLECTOR'S PROTOCOL</span>
+              </div>
+              <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
+                Sculpted for speed. <br>
+                Tailored for <span class="font-serif-italic font-normal italic tracking-normal text-white">distinction.</span>
+              </h2>
+            </div>
+
+            <!-- Editorial Spec Telemetry Bracket (Directly Inspired by Image 1) -->
+            <div class="relative p-5 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-md">
+              <div class="flex items-center justify-between text-[10px] font-mono text-white/50 mb-2">
+                <span>[ ATELIER DIRECTIVE ]</span>
+                <span class="text-electric">DHAKA MOTORWAY CERTIFIED</span>
+              </div>
+              <p class="text-xs sm:text-sm text-white/80 leading-relaxed font-mono uppercase tracking-wide">
+                THE VELORA V12 COMBINES BREATHTAKING ACCELERATION WITH ZERO-VIBRATION CHAUFFEUR DIGNITY. ENGINEERED WITH HIGHWAY RACETRACK DNA, BUILT FOR THOSE WHO DEMAND UNCOMPROMISED EXCELLENCE.
+              </p>
+            </div>
+
+            <!-- Action Button -->
+            <div class="pt-2 flex items-center gap-4">
+              <button onclick="openBookingDrawer()" class="group flex items-center gap-2 pl-6 pr-2 py-2.5 rounded-full bg-white text-ink font-semibold text-xs sm:text-sm hover:bg-neutral-100 transition shadow-lg">
+                <span>Reserve Flagship Spec</span>
+                <span class="w-8 h-8 rounded-full bg-ink text-white flex items-center justify-center group-hover:bg-electric transition duration-300">
+                  <i data-lucide="arrow-right" class="w-4 h-4 text-white"></i>
+                </span>
+              </button>
+              <span class="text-xs text-white/60 font-mono">৳ 22,000 / Day All-Inclusive</span>
+            </div>
+
+          </div>
+
+          <!-- Right Column (7 cols): Giant Vertical Watermark + Precision Side-Profile Cutout + Telemetry Matrix (Image 1 & 4 style) -->
+          <div class="lg:col-span-7 relative min-h-[460px] flex flex-col justify-between">
+            
+            <!-- Giant Vertical Typographic Watermark (Image 1 "R8 V10" style) -->
+            <div class="absolute right-0 top-0 bottom-0 pointer-events-none select-none flex items-center justify-end overflow-hidden opacity-[0.07] z-0">
+              <span class="font-extrabold text-[120px] sm:text-[180px] lg:text-[220px] tracking-tight text-white leading-none vertical-watermark">
+                V12 S-SPEC
+              </span>
+            </div>
+
+            <!-- Main Precision Side Car Visual with Mirror Floor Reflection -->
+            <div class="relative z-10 py-8 my-auto">
+              <div class="w-full transform hover:scale-[1.02] transition duration-700 ease-out">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" 
+                     alt="Velora V12 Flagship Side Profile" 
+                     class="w-full h-auto object-contain drop-shadow-[0_25px_35px_rgba(0,0,0,0.8)] filter brightness-105 contrast-110">
+              </div>
+
+              <!-- Mirror floor reflection layer -->
+              <div class="w-full h-16 opacity-30 transform scale-y-[-0.6] blur-sm car-mirror-shadow pointer-events-none -mt-4">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" 
+                     alt="Reflection" 
+                     class="w-full h-auto object-contain">
+              </div>
+            </div>
+
+            <!-- Technical Spec Row with Thin Dividers (Image 1 Spec Row style) -->
+            <div class="relative z-10 mt-6 pt-6 border-t border-white/15 grid grid-cols-2 sm:grid-cols-4 gap-4">
+              
+              <div class="space-y-1">
+                <span class="text-[10px] font-mono uppercase text-white/50 block">ENGINE:</span>
+                <div class="text-sm font-extrabold text-white tracking-tight">6.0L TWIN-TURBO V12</div>
+                <span class="text-[10px] text-white/60">Hand-Built AMG Spec</span>
+              </div>
+
+              <div class="space-y-1 border-l border-white/10 pl-3">
+                <span class="text-[10px] font-mono uppercase text-white/50 block">OUTPUT:</span>
+                <div class="text-sm font-extrabold text-white tracking-tight">740 HP / 1000 NM</div>
+                <span class="text-[10px] text-electric font-semibold">Immediate Torque</span>
+              </div>
+
+              <div class="space-y-1 border-l border-white/10 pl-3">
+                <span class="text-[10px] font-mono uppercase text-white/50 block">0–100 KM/H:</span>
+                <div class="text-sm font-extrabold text-white tracking-tight">3.2 SECONDS</div>
+                <span class="text-[10px] text-white/60">All-Wheel Drive (AWD)</span>
+              </div>
+
+              <div class="space-y-1 border-l border-white/10 pl-3">
+                <span class="text-[10px] font-mono uppercase text-white/50 block">TOP SPEED:</span>
+                <div class="text-sm font-extrabold text-white tracking-tight">330 KM/H</div>
+                <span class="text-[10px] text-white/60">Air-Suspension Dampers</span>
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
 
       </div>
@@ -2214,6 +2642,108 @@
       monitorCrossfade(v1, v2);
       monitorCrossfade(v2, v1);
     })();
+
+    // Atelier Configurator Controller (Images 2 & 3 Interactive Features)
+    const atelierAngles = [
+      { label: '360° Studio Angle 01', img: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1200&q=80' },
+      { label: '360° Dynamic Front 3/4', img: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=80' },
+      { label: '360° Track Aero Profile', img: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80' }
+    ];
+    let currentAngleIndex = 0;
+
+    function rotateAtelierAngle(dir) {
+      if (dir === 'next') {
+        currentAngleIndex = (currentAngleIndex + 1) % atelierAngles.length;
+      } else {
+        currentAngleIndex = (currentAngleIndex - 1 + atelierAngles.length) % atelierAngles.length;
+      }
+      const data = atelierAngles[currentAngleIndex];
+      const img = document.getElementById('atelierCarVisual');
+      const label = document.getElementById('atelierAngleLabel');
+      if (img) {
+        img.style.opacity = '0.3';
+        img.style.transform = 'scale(0.97)';
+        setTimeout(() => {
+          img.src = data.img;
+          img.style.opacity = '1';
+          img.style.transform = 'scale(1)';
+        }, 180);
+      }
+      if (label) label.innerText = data.label;
+    }
+
+    function changeAtelierColor(id, name, imgSrc) {
+      const img = document.getElementById('atelierCarVisual');
+      const label = document.getElementById('atelierColorLabel');
+      document.querySelectorAll('.atelier-color-btn').forEach(btn => {
+        btn.classList.remove('border-electric', 'ring-2', 'ring-electric/30');
+      });
+      if (window.event && window.event.currentTarget) {
+        window.event.currentTarget.classList.add('border-electric', 'ring-2', 'ring-electric/30');
+      }
+      if (label) label.innerHTML = `Bespoke Finish: <span class="text-ink font-semibold">${name}</span>`;
+      if (img && imgSrc) {
+        img.style.opacity = '0.3';
+        setTimeout(() => {
+          img.src = imgSrc;
+          img.style.opacity = '1';
+        }, 150);
+      }
+    }
+
+    const atelierModes = {
+      perf: {
+        engine: '4.0L Bi-Turbo',
+        trans: '9-Speed Dual',
+        accel: '2.9',
+        topSpeed: '320'
+      },
+      cabin: {
+        engine: 'Whisper Silent',
+        trans: 'Comfort Float',
+        accel: 'Smooth',
+        topSpeed: 'Air Suspension'
+      },
+      acoustic: {
+        engine: 'Sound Suppression',
+        trans: 'Confidential Zone',
+        accel: '< 35 dB',
+        topSpeed: 'Cabin Decibels'
+      },
+      armor: {
+        engine: 'BR6 Run-Flat Core',
+        trans: 'High-Torque EV',
+        accel: 'Reinforced',
+        topSpeed: '240'
+      }
+    };
+
+    function setAtelierMode(mode) {
+      document.querySelectorAll('.atelier-tab-btn').forEach(btn => {
+        btn.classList.remove('bg-ink', 'text-white', 'shadow-sm', 'font-bold');
+        btn.classList.add('text-inkSecondary', 'font-semibold');
+      });
+      const activeBtn = document.getElementById(`atelierTab-${mode}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('text-inkSecondary', 'font-semibold');
+        activeBtn.classList.add('bg-ink', 'text-white', 'shadow-sm', 'font-bold');
+      }
+      const data = atelierModes[mode];
+      if (!data) return;
+      const eng = document.getElementById('atelierEngineSpec');
+      const trs = document.getElementById('atelierTransSpec');
+      const acc = document.getElementById('atelierAccelSpec');
+      const top = document.getElementById('atelierTopSpeedSpec');
+      if (eng) eng.innerText = data.engine;
+      if (trs) trs.innerText = data.trans;
+      if (acc) acc.innerHTML = `${data.accel} <span class="text-xs font-normal text-inkSecondary">sec</span>`;
+      if (top) top.innerHTML = `${data.topSpeed} <span class="text-xs font-normal text-inkSecondary">km/h</span>`;
+    }
+
+    // Refresh icons on load
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) lucide.createIcons();
+    });
   </script>
 </body>
 </html>
