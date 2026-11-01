@@ -17,6 +17,14 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
+  <!-- React Bits CircularCarousel Component Styles -->
+  <link rel="stylesheet" href="./CircularCarousel.css">
+
+  <!-- React 18 & ReactDOM 18 for CircularCarousel -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="./CircularCarousel.js"></script>
+
   <script>
     tailwind.config = {
       theme: {
@@ -727,7 +735,7 @@
       </div>
     </section>
 
-        <!-- 3. FLEET SHOWCASE: 7-CARD 3D CURVED CAROUSEL (Cinematic Landscape Gallery) -->
+    <!-- 3. FLEET SHOWCASE: REACT BITS 3D CIRCULAR CAROUSEL -->
     <section id="fleet" class="py-20 sm:py-28 bg-[#090a0d] text-white border-y border-white/10 relative overflow-hidden select-none">
       
       <!-- Ambient Studio Radial Lighting & Depth Perspective Elements -->
@@ -737,7 +745,7 @@
       </div>
 
       <!-- Section Header -->
-      <div class="max-w-[1280px] mx-auto px-4 sm:px-6 text-center relative z-20 mb-6 sm:mb-10">
+      <div class="max-w-[1280px] mx-auto px-4 sm:px-6 text-center relative z-20 mb-4 sm:mb-8">
         <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-neutral-400 uppercase mb-3">
           <span class="text-electric font-mono">/ 03</span>
           <span>EXECUTIVE FLEET SHOWCASE</span>
@@ -746,171 +754,25 @@
           Engineered for pure <span class="font-serif font-medium not-italic tracking-normal text-white">comfort.</span>
         </h2>
         <p class="text-neutral-400 text-sm sm:text-base mt-3 max-w-xl mx-auto font-sans leading-relaxed">
-          Explore our handpicked fleet of 7 prestige luxury vehicles in Dhaka. Click any card to center it or inspect its technical specifications.
+          Spin through our handpicked fleet of 8 flagship luxury vehicles in Dhaka. Drag or swipe around the cylinder, or click any card to inspect full technical specifications.
         </p>
       </div>
 
-      <!-- 3D CURVED CAROUSEL STAGE VIEWPORT -->
-      <div class="relative w-full max-w-[1550px] mx-auto px-2 sm:px-4 z-20">
-        
-        <!-- Left & Right Floating Navigation Controls -->
-        <button id="curvedPrevBtn" aria-label="Previous Car" class="absolute left-2 sm:left-4 md:left-8 top-[42%] -translate-y-1/2 z-40 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-white/10 hover:bg-white/25 active:scale-95 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transition shadow-2xl cursor-pointer">
-          <i data-lucide="chevron-left" class="w-5 h-5 sm:w-6 sm:h-6 text-white"></i>
-        </button>
+      <!-- React Bits 3D Circular Carousel Mount -->
+      <div class="relative w-full max-w-[1350px] mx-auto px-2 sm:px-4 z-20">
+        <div id="circular-carousel-mount" style="width: 100%; height: 560px; position: relative;"></div>
 
-        <button id="curvedNextBtn" aria-label="Next Car" class="absolute right-2 sm:right-4 md:right-8 top-[42%] -translate-y-1/2 z-40 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-white/10 hover:bg-white/25 active:scale-95 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transition shadow-2xl cursor-pointer">
-          <i data-lucide="chevron-right" class="w-5 h-5 sm:w-6 sm:h-6 text-white"></i>
-        </button>
-
-        <!-- 3D Perspective Stage -->
-        <div id="curvedStage" class="curved-stage-viewport">
-          <div id="curvedCarouselTrack" class="curved-carousel-track">
-            
-            <!-- Card 0: Mercedes-Benz S-Class -->
-            <div class="curved-card group" data-index="0" data-carkey="s-class">
-              <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=85" 
-                   alt="Mercedes-Benz S-Class" 
-                   class="w-full h-full object-cover pointer-events-none select-none transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none"></div>
-              <div class="absolute bottom-3 left-4 right-4 flex items-end justify-between pointer-events-none">
-                <div>
-                  <span class="text-[9px] font-mono tracking-widest uppercase text-electric block leading-none mb-1">MERCEDES-BENZ</span>
-                  <h4 class="text-white font-serif font-medium text-sm sm:text-base tracking-wide drop-shadow leading-tight">S-Class 450</h4>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 1: BMW 7 Series -->
-            <div class="curved-card group" data-index="1" data-carkey="bmw-7">
-              <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=85" 
-                   alt="BMW 7 Series" 
-                   class="w-full h-full object-cover pointer-events-none select-none transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none"></div>
-              <div class="absolute bottom-3 left-4 right-4 flex items-end justify-between pointer-events-none">
-                <div>
-                  <span class="text-[9px] font-mono tracking-widest uppercase text-electric block leading-none mb-1">BMW</span>
-                  <h4 class="text-white font-serif font-medium text-sm sm:text-base tracking-wide drop-shadow leading-tight">740Li M-Sport</h4>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 2: Audi A8 -->
-            <div class="curved-card group" data-index="2" data-carkey="audi-a8">
-              <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1200&q=85" 
-                   alt="Audi A8" 
-                   class="w-full h-full object-cover pointer-events-none select-none transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none"></div>
-              <div class="absolute bottom-3 left-4 right-4 flex items-end justify-between pointer-events-none">
-                <div>
-                  <span class="text-[9px] font-mono tracking-widest uppercase text-electric block leading-none mb-1">AUDI</span>
-                  <h4 class="text-white font-serif font-medium text-sm sm:text-base tracking-wide drop-shadow leading-tight">A8 L Quattro</h4>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 3: Toyota Land Cruiser -->
-            <div class="curved-card group" data-index="3" data-carkey="prado">
-              <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=85" 
-                   alt="Toyota Land Cruiser" 
-                   class="w-full h-full object-cover pointer-events-none select-none transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none"></div>
-              <div class="absolute bottom-3 left-4 right-4 flex items-end justify-between pointer-events-none">
-                <div>
-                  <span class="text-[9px] font-mono tracking-widest uppercase text-electric block leading-none mb-1">TOYOTA</span>
-                  <h4 class="text-white font-serif font-medium text-sm sm:text-base tracking-wide drop-shadow leading-tight">Land Cruiser 300</h4>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 4: Porsche Panamera -->
-            <div class="curved-card group" data-index="4" data-carkey="taycan">
-              <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85" 
-                   alt="Porsche Panamera" 
-                   class="w-full h-full object-cover pointer-events-none select-none transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none"></div>
-              <div class="absolute bottom-3 left-4 right-4 flex items-end justify-between pointer-events-none">
-                <div>
-                  <span class="text-[9px] font-mono tracking-widest uppercase text-electric block leading-none mb-1">PORSCHE</span>
-                  <h4 class="text-white font-serif font-medium text-sm sm:text-base tracking-wide drop-shadow leading-tight">Panamera GTS</h4>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 5: Range Rover Autobiography -->
-            <div class="curved-card group" data-index="5" data-carkey="range-rover">
-              <img src="https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=1200&q=85" 
-                   alt="Range Rover Autobiography" 
-                   class="w-full h-full object-cover pointer-events-none select-none transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none"></div>
-              <div class="absolute bottom-3 left-4 right-4 flex items-end justify-between pointer-events-none">
-                <div>
-                  <span class="text-[9px] font-mono tracking-widest uppercase text-electric block leading-none mb-1">LAND ROVER</span>
-                  <h4 class="text-white font-serif font-medium text-sm sm:text-base tracking-wide drop-shadow leading-tight">Range Rover</h4>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 6: Tesla Model S -->
-            <div class="curved-card group" data-index="6" data-carkey="tesla-3">
-              <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=1200&q=85" 
-                   alt="Tesla Model S" 
-                   class="w-full h-full object-cover pointer-events-none select-none transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none"></div>
-              <div class="absolute bottom-3 left-4 right-4 flex items-end justify-between pointer-events-none">
-                <div>
-                  <span class="text-[9px] font-mono tracking-widest uppercase text-electric block leading-none mb-1">TESLA</span>
-                  <h4 class="text-white font-serif font-medium text-sm sm:text-base tracking-wide drop-shadow leading-tight">Model S Plaid</h4>
-                </div>
-              </div>
-            </div>
-
-          </div>
+        <!-- Action Buttons Below Carousel -->
+        <div class="flex flex-wrap items-center justify-center gap-3 mt-4 sm:mt-6 text-center">
+          <button id="inspectActiveCarBtn" class="px-6 py-2.5 rounded-full bg-white hover:bg-neutral-200 active:scale-95 text-ink font-bold text-xs tracking-wide transition shadow-lg inline-flex items-center gap-2 cursor-pointer font-sans">
+            <span>Inspect Active Vehicle</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-electric"></i>
+          </button>
+          <button onclick="openBookingDrawer()" class="px-6 py-2.5 rounded-full bg-electric hover:bg-blue-600 active:scale-95 text-white font-bold text-xs tracking-wide transition shadow-lg shadow-electric/25 inline-flex items-center gap-2 cursor-pointer font-sans">
+            <span>Reserve with Chauffeur</span>
+            <i data-lucide="calendar" class="w-3.5 h-3.5 text-white"></i>
+          </button>
         </div>
-
-        <!-- ACTIVE CAR INFORMATION AREA BELOW THE 3D CAROUSEL -->
-        <div class="max-w-[760px] mx-auto text-center px-4 mt-6 sm:mt-8 space-y-3 relative z-20">
-          
-          <!-- Category, Year & Daily Rate Pill -->
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[11px] font-medium text-white/90">
-            <span id="curvedCarYear" class="font-mono text-electric font-semibold">2024</span>
-            <span class="text-white/30">â€¢</span>
-            <span id="curvedCarCategory" class="uppercase tracking-widest text-neutral-300 font-sans">FLAGSHIP LUXURY SEDAN</span>
-            <span class="text-white/30">â€¢</span>
-            <span id="curvedCarPrice" class="font-sans font-bold text-white">à§³ 18,000 / day</span>
-          </div>
-
-          <!-- Car Brand & Model Title in Cormorant Garamond (Upright) -->
-          <h3 id="curvedCarTitle" class="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-white font-serif leading-tight">
-            Mercedes-Benz S-Class 450
-          </h3>
-
-          <!-- Short Luxury-Focused Description in Manrope -->
-          <p id="curvedCarDesc" class="text-neutral-400 text-xs sm:text-sm md:text-base max-w-xl mx-auto font-sans leading-relaxed">
-            The definitive benchmark of automotive sanctuary. Featuring intelligent Airmatic damping, double-laminated acoustic glazing, and executive rear recliners for diplomats and corporate leaders.
-          </p>
-
-          <!-- Rates and Action CTAs -->
-          <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
-            <!-- Explore Details Button (Opens existing modal) -->
-            <button id="curvedExploreBtn" class="px-6 py-2.5 rounded-full bg-white hover:bg-neutral-200 active:scale-95 text-ink font-bold text-xs tracking-wide transition shadow-lg inline-flex items-center gap-2 cursor-pointer font-sans">
-              <span>Explore Details</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-electric"></i>
-            </button>
-
-            <!-- Reserve Chauffeur Button -->
-            <button onclick="openBookingDrawer()" class="px-6 py-2.5 rounded-full bg-electric hover:bg-blue-600 active:scale-95 text-white font-bold text-xs tracking-wide transition shadow-lg shadow-electric/25 inline-flex items-center gap-2 cursor-pointer font-sans">
-              <span>Reserve with Chauffeur</span>
-              <i data-lucide="calendar" class="w-3.5 h-3.5 text-white"></i>
-            </button>
-          </div>
-
-          <!-- Dot Pagination Indicator -->
-          <div id="curvedDots" class="flex items-center justify-center gap-1.5 pt-3">
-            <!-- 7 dots populated by JS -->
-          </div>
-
-        </div>
-
       </div>
 
     </section>
@@ -2746,390 +2608,110 @@
       monitorCrossfade(v2, v1);
     })();
 
-        // 3D Cinematic 7-Card Curved Carousel Controller (Exact Landscape Perspective Gallery)
-    function initCurvedCarGallery() {
-      const stage = document.getElementById('curvedStage');
-      const track = document.getElementById('curvedCarouselTrack');
-      const cards = Array.from(document.querySelectorAll('.curved-card'));
-      const dotsContainer = document.getElementById('curvedDots');
-      const prevBtn = document.getElementById('curvedPrevBtn');
-      const nextBtn = document.getElementById('curvedNextBtn');
-      const exploreBtn = document.getElementById('curvedExploreBtn');
+        // React Bits CircularCarousel Integration for Executive Fleet Showcase
+    function initCircularFleetCarousel() {
+      const mountEl = document.getElementById('circular-carousel-mount');
+      if (!mountEl || !window.React || !window.ReactDOM || !window.CircularCarousel) return;
 
-      const titleEl = document.getElementById('curvedCarTitle');
-      const yearEl = document.getElementById('curvedCarYear');
-      const categoryEl = document.getElementById('curvedCarCategory');
-      const descEl = document.getElementById('curvedCarDesc');
-      const priceEl = document.getElementById('curvedCarPrice');
-
-      if (!stage || !track || cards.length === 0) return;
-
-      const numCards = 7;
-      let currentIndex = 0;
-      let isHovered = false;
-      let autoTimer = null;
-
-      // 7 Luxury Car Profiles (Strictly 7 authentic vehicles as specified)
-      const carsMeta = [
+      const carItems = [
         {
-          key: 's-class',
-          brand: 'Mercedes-Benz',
-          model: 'S-Class 450',
-          year: '2024',
-          category: 'FLAGSHIP LUXURY SEDAN',
-          price: 'à§³ 18,000 / day',
-          desc: "The definitive benchmark of automotive sanctuary. Featuring intelligent Airmatic damping, double-laminated acoustic glazing, and executive rear recliners for diplomats and corporate leaders."
+          carKey: 's-class',
+          src: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=900&q=80&auto=format&fit=crop',
+          alt: 'Mercedes-Benz S-Class 450',
+          title: 'Mercedes-Benz S-Class 450',
+          subtitle: 'à§³ 18,000 / day â€¢ Executive Sanctuary'
         },
         {
-          key: 'bmw-7',
-          brand: 'BMW',
-          model: '740Li M-Sport',
-          year: '2024',
-          category: 'EXECUTIVE FLAGSHIP',
-          price: 'à§³ 17,500 / day',
-          desc: "Commanding executive authority synthesized with track-bred agility. The illuminated Iconic Glow kidney grille meets an opulent lounge with a 31.3-inch 8K theater screen."
+          carKey: 'bmw-7',
+          src: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&q=80&auto=format&fit=crop',
+          alt: 'BMW 7 Series 740Li',
+          title: 'BMW 740Li M-Sport',
+          subtitle: 'à§³ 17,500 / day â€¢ 31.3" Theater Lounge'
         },
         {
-          key: 'audi-a8',
-          brand: 'Audi',
-          model: 'A8 L Quattro',
-          year: '2024',
-          category: 'PRESTIGE EXECUTIVE SALOON',
-          price: 'à§³ 16,500 / day',
-          desc: "Pioneering technological composure and executive serenity. Predictive active suspension, OLED dynamic lighting blades, and tailored Valcona leather recliners."
+          carKey: 'audi-a8',
+          src: 'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=900&q=80&auto=format&fit=crop',
+          alt: 'Audi A8 L Quattro',
+          title: 'Audi A8 L Quattro',
+          subtitle: 'à§³ 16,500 / day â€¢ Predictive Active Suspension'
         },
         {
-          key: 'prado',
-          brand: 'Toyota',
-          model: 'Land Cruiser 300',
-          year: '2024',
-          category: 'PRESIDENTIAL 4X4 SUV',
-          price: 'à§³ 12,000 / day',
-          desc: "Legendary bulletproof reliability combined with presidential cabin luxury, engineered to effortlessly conquer all road conditions across Bangladesh with commanding poise."
+          carKey: 'prado',
+          src: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=900&q=80&auto=format&fit=crop',
+          alt: 'Toyota Land Cruiser 300',
+          title: 'Toyota Land Cruiser 300',
+          subtitle: 'à§³ 12,000 / day â€¢ Presidential 4x4'
         },
         {
-          key: 'taycan',
-          brand: 'Porsche',
-          model: 'Panamera GTS',
-          year: '2024',
-          category: 'GRAND TOURING SALOON',
-          price: 'à§³ 19,000 / day',
-          desc: "Pure sports car DNA elevated into four-door limousine refinement. Adaptive air suspension with PASM delivers exhilarating performance and serene highway cruising."
+          carKey: 'taycan',
+          src: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=900&q=80&auto=format&fit=crop',
+          alt: 'Porsche Panamera GTS',
+          title: 'Porsche Panamera GTS',
+          subtitle: 'à§³ 19,000 / day â€¢ Grand Touring Saloon'
         },
         {
-          key: 'range-rover',
-          brand: 'Range Rover',
-          model: 'Autobiography LWB',
-          year: '2024',
-          category: 'FLAGSHIP LUXURY SUV',
-          price: 'à§³ 22,000 / day',
-          desc: "Peerless British craftsmanship with whisper-quiet cabin isolation, Executive Class rear seating, and effortless all-terrain majesty."
+          carKey: 'range-rover',
+          src: 'https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=900&q=80&auto=format&fit=crop',
+          alt: 'Range Rover Autobiography',
+          title: 'Range Rover Autobiography',
+          subtitle: 'à§³ 22,000 / day â€¢ British Flagship Luxury'
         },
         {
-          key: 'tesla-3',
-          brand: 'Tesla',
-          model: 'Model S Plaid',
-          year: '2024',
-          category: 'AERO ELECTRIC FLAGSHIP',
-          price: 'à§³ 15,000 / day',
-          desc: "The pinnacle of electric acceleration and futuristic silence. Full panoramic glass roof, acoustic noise cancellation, and zero tailpipe emissions."
+          carKey: 'tesla-3',
+          src: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=900&q=80&auto=format&fit=crop',
+          alt: 'Tesla Model S Plaid',
+          title: 'Tesla Model S Plaid',
+          subtitle: 'à§³ 15,000 / day â€¢ Tri-Motor Silent Acceleration'
+        },
+        {
+          carKey: 'alphard',
+          src: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=900&q=80&auto=format&fit=crop',
+          alt: 'Toyota Alphard VIP Lounge',
+          title: 'Toyota Alphard VIP Lounge',
+          subtitle: 'à§³ 8,000 / day â€¢ First-Class Captain Recliners'
         }
       ];
 
-      // Build dot navigation
-      if (dotsContainer) {
-        dotsContainer.innerHTML = '';
-        carsMeta.forEach((item, idx) => {
-          const dot = document.createElement('button');
-          dot.className = h-2 rounded-full transition-all duration-500 ;
-          dot.setAttribute('aria-label', Select  );
-          dot.onclick = (e) => {
-            e.stopPropagation();
-            goToCard(idx);
-          };
-          dotsContainer.appendChild(dot);
-        });
-      }
+      let activeCarIndex = 0;
 
-      // Responsive geometry config
-      function getLayoutConfig() {
-        const w = window.innerWidth;
-        if (w <= 640) {
-          // Mobile: 3 visible cards (center + offset Â±1)
-          return {
-            s1: 135,
-            s2: 240,
-            s3: 340,
-            sc0: 1.0,
-            sc1: 0.78,
-            sc2: 0.60,
-            sc3: 0.45,
-            tz0: 50,
-            tz1: -60,
-            tz2: -150,
-            tz3: -230,
-            ry1: 20,
-            ry2: 34,
-            ry3: 45,
-            maxOffset: 1
-          };
-        } else if (w <= 1024) {
-          // Tablet: 5 visible cards (center + offset Â±1, Â±2)
-          return {
-            s1: 185,
-            s2: 340,
-            s3: 460,
-            sc0: 1.0,
-            sc1: 0.84,
-            sc2: 0.70,
-            sc3: 0.55,
-            tz0: 65,
-            tz1: -50,
-            tz2: -140,
-            tz3: -220,
-            ry1: 18,
-            ry2: 32,
-            ry3: 44,
-            maxOffset: 2
-          };
-        } else {
-          // Desktop: ALL 7 CARDS VISIBLE with continuous overlap & edge cropping
-          return {
-            s1: 230,
-            s2: 430,
-            s3: 610,
-            sc0: 1.0,     // Center card: 400px x 270px
-            sc1: 0.85,    // Adjacent: ~340px x 240px
-            sc2: 0.725,   // Further: ~290px x 210px
-            sc3: 0.625,   // Outer: ~250px x 180px
-            tz0: 80,
-            tz1: -40,
-            tz2: -150,
-            tz3: -260,
-            ry1: 18,
-            ry2: 32,
-            ry3: 44,
-            maxOffset: 3  // Show all -3 to +3 (7 cards!)
-          };
-        }
-      }
-
-      // Update 3D card positions
-      function updatePositions() {
-        const cfg = getLayoutConfig();
-
-        cards.forEach((card, i) => {
-          let offset = i - currentIndex;
-          // Shortest circular wrap for 7 cards (-3, -2, -1, 0, 1, 2, 3)
-          if (offset > 3) offset -= 7;
-          if (offset < -3) offset += 7;
-
-          let tx = 0;
-          let tz = 0;
-          let ry = 0;
-          let scale = 1;
-          let opacity = 1;
-          let filter = 'brightness(1)';
-          let zIndex = 10;
-
-          if (offset === 0) {
-            // Center Focus Card (Closer, larger, highest z-index)
-            tx = 0;
-            tz = cfg.tz0;
-            ry = 0;
-            scale = cfg.sc0;
-            opacity = 1.0;
-            filter = 'brightness(1.05) contrast(1.02)';
-            zIndex = 50;
-            card.classList.add('is-center');
-          } else if (offset === -1) {
-            // Left 1
-            tx = -cfg.s1;
-            tz = cfg.tz1;
-            ry = cfg.ry1;
-            scale = cfg.sc1;
-            opacity = 0.88;
-            filter = 'brightness(0.85)';
-            zIndex = 40;
-            card.classList.remove('is-center');
-          } else if (offset === 1) {
-            // Right 1
-            tx = cfg.s1;
-            tz = cfg.tz1;
-            ry = -cfg.ry1;
-            scale = cfg.sc1;
-            opacity = 0.88;
-            filter = 'brightness(0.85)';
-            zIndex = 40;
-            card.classList.remove('is-center');
-          } else if (offset === -2) {
-            // Left 2
-            tx = -cfg.s2;
-            tz = cfg.tz2;
-            ry = cfg.ry2;
-            scale = cfg.sc2;
-            opacity = cfg.maxOffset >= 2 ? 0.68 : 0;
-            filter = 'brightness(0.70)';
-            zIndex = 30;
-            card.classList.remove('is-center');
-          } else if (offset === 2) {
-            // Right 2
-            tx = cfg.s2;
-            tz = cfg.tz2;
-            ry = -cfg.ry2;
-            scale = cfg.sc2;
-            opacity = cfg.maxOffset >= 2 ? 0.68 : 0;
-            filter = 'brightness(0.70)';
-            zIndex = 30;
-            card.classList.remove('is-center');
-          } else if (offset === -3) {
-            // Left 3 (Outer edge, partially cropped on desktop)
-            tx = -cfg.s3;
-            tz = cfg.tz3;
-            ry = cfg.ry3;
-            scale = cfg.sc3;
-            opacity = cfg.maxOffset >= 3 ? 0.45 : 0;
-            filter = 'brightness(0.55)';
-            zIndex = 20;
-            card.classList.remove('is-center');
-          } else if (offset === 3) {
-            // Right 3 (Outer edge, partially cropped on desktop)
-            tx = cfg.s3;
-            tz = cfg.tz3;
-            ry = -cfg.ry3;
-            scale = cfg.sc3;
-            opacity = cfg.maxOffset >= 3 ? 0.45 : 0;
-            filter = 'brightness(0.55)';
-            zIndex = 20;
-            card.classList.remove('is-center');
-          }
-
-          card.style.transform = 	ranslateX(px) translateZ(px) rotateY(deg) scale();
-          card.style.opacity = opacity;
-          card.style.filter = filter;
-          card.style.zIndex = zIndex;
-          card.style.pointerEvents = opacity > 0.1 ? 'auto' : 'none';
-        });
-
-        // Update active car details with smooth text transition
-        const cur = carsMeta[currentIndex];
-        if (cur) {
-          if (titleEl) titleEl.innerText = ${cur.brand} ;
-          if (yearEl) yearEl.innerText = cur.year;
-          if (categoryEl) categoryEl.innerText = cur.category;
-          if (descEl) descEl.innerText = cur.desc;
-          if (priceEl) priceEl.innerText = cur.price;
-        }
-
-        // Update dot indicators
-        if (dotsContainer) {
-          const dots = dotsContainer.children;
-          for (let d = 0; d < dots.length; d++) {
-            if (d === currentIndex) {
-              dots[d].className = 'h-2 w-6 rounded-full bg-electric transition-all duration-500';
-            } else {
-              dots[d].className = 'h-2 w-2 rounded-full bg-white/30 hover:bg-white/60 transition-all duration-500';
+      const root = ReactDOM.createRoot(mountEl);
+      root.render(
+        React.createElement(window.CircularCarousel, {
+          items: carItems,
+          preset: 'cylinder',
+          intro: 'rise',
+          cardWidth: 220,
+          aspectRatio: 1,
+          speed: 14,
+          captions: true,
+          depthFade: 0.55,
+          fadeColor: '#090a0d',
+          cornerRadius: 14,
+          onItemClick: function (item) {
+            if (item && item.carKey && typeof openCarDetailsModal === 'function') {
+              openCarDetailsModal(item.carKey);
             }
+          },
+          onChange: function (idx) {
+            activeCarIndex = idx;
           }
-        }
-      }
+        })
+      );
 
-      function goToCard(idx) {
-        currentIndex = ((idx % numCards) + numCards) % numCards;
-        updatePositions();
-      }
-
-      // Card click handling
-      cards.forEach((card, idx) => {
-        card.addEventListener('click', (e) => {
-          if (idx === currentIndex) {
-            // Center card clicked -> open details modal
-            const carKey = card.getAttribute('data-carkey') || carsMeta[currentIndex].key;
-            openCarDetailsModal(carKey);
-          } else {
-            // Side card clicked -> smoothly transition to center
-            goToCard(idx);
+      const inspectBtn = document.getElementById('inspectActiveCarBtn');
+      if (inspectBtn) {
+        inspectBtn.onclick = function () {
+          const item = carItems[activeCarIndex];
+          if (item && item.carKey && typeof openCarDetailsModal === 'function') {
+            openCarDetailsModal(item.carKey);
           }
-        });
-      });
-
-      // Navigation Buttons
-      if (prevBtn) {
-        prevBtn.onclick = () => goToCard(currentIndex - 1);
-      }
-      if (nextBtn) {
-        nextBtn.onclick = () => goToCard(currentIndex + 1);
-      }
-      if (exploreBtn) {
-        exploreBtn.onclick = () => {
-          const carKey = carsMeta[currentIndex].key;
-          openCarDetailsModal(carKey);
         };
       }
-
-      // Drag / Swipe Gestures
-      let startX = 0;
-      let isDragging = false;
-
-      stage.addEventListener('pointerdown', (e) => {
-        startX = e.clientX;
-        isDragging = true;
-      });
-
-      stage.addEventListener('pointerup', (e) => {
-        if (!isDragging) return;
-        isDragging = false;
-        const delta = e.clientX - startX;
-        if (delta > 40) {
-          goToCard(currentIndex - 1);
-        } else if (delta < -40) {
-          goToCard(currentIndex + 1);
-        }
-      });
-
-      stage.addEventListener('pointercancel', () => { isDragging = false; });
-
-      // Auto rotation with hover pause
-      function startAutoPlay() {
-        stopAutoPlay();
-        autoTimer = setInterval(() => {
-          if (!isHovered) {
-            goToCard(currentIndex + 1);
-          }
-        }, 5000);
-      }
-
-      function stopAutoPlay() {
-        if (autoTimer) clearInterval(autoTimer);
-      }
-
-      stage.addEventListener('mouseenter', () => { isHovered = true; });
-      stage.addEventListener('mouseleave', () => { isHovered = false; });
-
-      window.addEventListener('resize', () => {
-        updatePositions();
-      });
-
-      // Keyboard left/right arrow navigation
-      window.addEventListener('keydown', (e) => {
-        const modal = document.getElementById('carDetailsModal');
-        if (modal && !modal.classList.contains('hidden')) return;
-
-        if (e.key === 'ArrowLeft') {
-          goToCard(currentIndex - 1);
-        } else if (e.key === 'ArrowRight') {
-          goToCard(currentIndex + 1);
-        }
-      });
-
-      // Initial layout pass
-      updatePositions();
-      startAutoPlay();
     }
 
-    // Refresh icons and initialize curved carousel on load
+    // Initialize circular fleet carousel and icons on DOM load
     document.addEventListener('DOMContentLoaded', () => {
-      initCurvedCarGallery();
+      initCircularFleetCarousel();
       if (window.lucide) lucide.createIcons();
     });
   </script>
