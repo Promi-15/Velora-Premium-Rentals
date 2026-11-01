@@ -278,32 +278,29 @@
       border-radius: 50%;
     }
 
-    /* 3D Cinematic Car Card Carousel (Coverflow-style visual composition) */
+    /* 3D Cinematic Curved Car Showcase (7 Landscape Cards in Perspective) */
     :root {
-      --coverflow-w: 350px;
-      --coverflow-h: 450px;
-      --coverflow-spacing: 270px;
+      --curved-card-w: 400px;
+      --curved-card-h: 270px;
     }
     @media (max-width: 1024px) {
       :root {
-        --coverflow-w: 290px;
-        --coverflow-h: 380px;
-        --coverflow-spacing: 200px;
+        --curved-card-w: 340px;
+        --curved-card-h: 230px;
       }
     }
     @media (max-width: 640px) {
       :root {
-        --coverflow-w: 230px;
-        --coverflow-h: 310px;
-        --coverflow-spacing: 140px;
+        --curved-card-w: 290px;
+        --curved-card-h: 195px;
       }
     }
 
-    .coverflow-stage-viewport {
-      perspective: 1300px;
+    .curved-stage-viewport {
+      perspective: 1400px;
       perspective-origin: 50% 50%;
       width: 100%;
-      height: 480px;
+      height: 350px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -314,53 +311,56 @@
       overflow: hidden;
     }
     @media (min-width: 640px) {
-      .coverflow-stage-viewport {
-        height: 520px;
+      .curved-stage-viewport {
+        height: 390px;
       }
     }
     @media (min-width: 1024px) {
-      .coverflow-stage-viewport {
-        height: 560px;
+      .curved-stage-viewport {
+        height: 440px;
       }
     }
 
-    .coverflow-track {
+    .curved-carousel-track {
       position: relative;
-      width: var(--coverflow-w);
-      height: var(--coverflow-h);
+      width: var(--curved-card-w);
+      height: var(--curved-card-h);
       transform-style: preserve-3d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .coverflow-card {
+    .curved-card {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      border-radius: 16px;
+      border-radius: 14px;
       overflow: hidden;
-      background: #0f1015;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.75), 0 0 20px rgba(0, 0, 0, 0.5);
+      background: #0d0e12;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.5);
       cursor: pointer;
       transform-style: preserve-3d;
       backface-visibility: hidden;
-      transition: transform 0.65s cubic-bezier(0.2, 0.8, 0.25, 1), 
-                  opacity 0.65s cubic-bezier(0.2, 0.8, 0.25, 1), 
-                  filter 0.65s cubic-bezier(0.2, 0.8, 0.25, 1),
-                  border-color 0.3s ease,
-                  box-shadow 0.3s ease;
+      transition: transform 800ms cubic-bezier(0.22, 1, 0.36, 1), 
+                  opacity 800ms cubic-bezier(0.22, 1, 0.36, 1), 
+                  filter 800ms cubic-bezier(0.22, 1, 0.36, 1),
+                  border-color 400ms ease,
+                  box-shadow 400ms ease;
       will-change: transform, opacity, filter;
     }
 
-    .coverflow-card:hover {
-      border-color: rgba(255, 255, 255, 0.7) !important;
-      box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.85), 0 0 35px rgba(255, 255, 255, 0.15) !important;
+    .curved-card:hover {
+      border-color: rgba(255, 255, 255, 0.65) !important;
+      box-shadow: 0 28px 60px -10px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 255, 255, 0.15) !important;
     }
 
-    .coverflow-card.is-center {
+    .curved-card.is-center {
       border-color: rgba(255, 255, 255, 0.35);
-      box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.9), 0 0 40px rgba(56, 189, 248, 0.12);
+      box-shadow: 0 30px 65px -12px rgba(0, 0, 0, 0.95), 0 0 35px rgba(56, 189, 248, 0.14);
     }
 
     /* Custom scrollbar */
@@ -727,15 +727,13 @@
       </div>
     </section>
 
-        <!-- 3. FLEET SHOWCASE: 3D CINEMATIC CAR CARD CAROUSEL (Coverflow Perspective Composition) -->
+        <!-- 3. FLEET SHOWCASE: 7-CARD 3D CURVED CAROUSEL (Cinematic Landscape Gallery) -->
     <section id="fleet" class="py-20 sm:py-28 bg-[#090a0d] text-white border-y border-white/10 relative overflow-hidden select-none">
       
-      <!-- Ambient Dark Cinematic Atmosphere & Perspective Lighting -->
+      <!-- Ambient Studio Radial Lighting & Depth Perspective Elements -->
       <div class="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden">
-        <!-- Center Spotlight Glow -->
-        <div class="w-[900px] h-[550px] bg-gradient-to-b from-blue-950/20 via-slate-900/25 to-transparent rounded-full blur-3xl opacity-60"></div>
-        <!-- Floor depth ellipse -->
-        <div class="w-[800px] sm:w-[1100px] h-32 bg-black/90 rounded-full blur-2xl absolute bottom-10 left-1/2 -translate-x-1/2"></div>
+        <div class="w-[950px] h-[550px] bg-gradient-to-b from-blue-950/20 via-slate-900/25 to-transparent rounded-full blur-3xl opacity-60"></div>
+        <div class="w-[850px] sm:w-[1200px] h-32 bg-black/90 rounded-full blur-2xl absolute bottom-12 left-1/2 -translate-x-1/2"></div>
       </div>
 
       <!-- Section Header -->
@@ -748,167 +746,120 @@
           Engineered for pure <span class="font-serif font-medium not-italic tracking-normal text-white">comfort.</span>
         </h2>
         <p class="text-neutral-400 text-sm sm:text-base mt-3 max-w-xl mx-auto font-sans leading-relaxed">
-          Explore our handpicked fleet of prestige vehicles and executive sedans in Dhaka. Click any vehicle to bring it to focus or launch its full-screen campaign showcase.
+          Explore our handpicked fleet of 7 prestige luxury vehicles in Dhaka. Click any card to center it or inspect its technical specifications.
         </p>
       </div>
 
-      <!-- 3D COVERFLOW STAGE VIEWPORT -->
-      <div class="relative w-full max-w-[1400px] mx-auto px-2 sm:px-6 z-20">
+      <!-- 3D CURVED CAROUSEL STAGE VIEWPORT -->
+      <div class="relative w-full max-w-[1550px] mx-auto px-2 sm:px-4 z-20">
         
-        <!-- Left & Right Sleek Floating Navigation Buttons -->
-        <button id="coverflowPrevBtn" aria-label="Previous Car" class="absolute left-2 sm:left-6 md:left-8 top-[38%] -translate-y-1/2 z-40 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-white/10 hover:bg-white/25 active:scale-95 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transition shadow-2xl cursor-pointer">
+        <!-- Left & Right Floating Navigation Controls -->
+        <button id="curvedPrevBtn" aria-label="Previous Car" class="absolute left-2 sm:left-4 md:left-8 top-[42%] -translate-y-1/2 z-40 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-white/10 hover:bg-white/25 active:scale-95 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transition shadow-2xl cursor-pointer">
           <i data-lucide="chevron-left" class="w-5 h-5 sm:w-6 sm:h-6 text-white"></i>
         </button>
 
-        <button id="coverflowNextBtn" aria-label="Next Car" class="absolute right-2 sm:right-6 md:right-8 top-[38%] -translate-y-1/2 z-40 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-white/10 hover:bg-white/25 active:scale-95 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transition shadow-2xl cursor-pointer">
+        <button id="curvedNextBtn" aria-label="Next Car" class="absolute right-2 sm:right-4 md:right-8 top-[42%] -translate-y-1/2 z-40 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-white/10 hover:bg-white/25 active:scale-95 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transition shadow-2xl cursor-pointer">
           <i data-lucide="chevron-right" class="w-5 h-5 sm:w-6 sm:h-6 text-white"></i>
         </button>
 
         <!-- 3D Perspective Stage -->
-        <div id="coverflowStage" class="coverflow-stage-viewport">
-          <div id="coverflowTrack" class="coverflow-track">
+        <div id="curvedStage" class="curved-stage-viewport">
+          <div id="curvedCarouselTrack" class="curved-carousel-track">
             
-            <!-- Card 0: Porsche Taycan 4S -->
-            <div class="coverflow-card group" data-index="0" data-carkey="taycan">
-              <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=80" 
-                   alt="Porsche Taycan 4S" 
+            <!-- Card 0: Mercedes-Benz S-Class -->
+            <div class="curved-card group" data-index="0" data-carkey="s-class">
+              <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=85" 
+                   alt="Mercedes-Benz S-Class" 
                    class="w-full h-full object-cover pointer-events-none select-none transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent pointer-events-none"></div>
-              
-              <!-- Clean Minimal Corner Watermark -->
-              <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between pointer-events-none">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none"></div>
+              <div class="absolute bottom-3 left-4 right-4 flex items-end justify-between pointer-events-none">
                 <div>
-                  <span class="text-[10px] font-mono tracking-widest uppercase text-electric block">PORSCHE</span>
-                  <h4 class="text-white font-serif font-medium text-base sm:text-lg tracking-wide drop-shadow leading-snug">Taycan 4S</h4>
-                </div>
-                <div class="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity">
-                  <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-white"></i>
+                  <span class="text-[9px] font-mono tracking-widest uppercase text-electric block leading-none mb-1">MERCEDES-BENZ</span>
+                  <h4 class="text-white font-serif font-medium text-sm sm:text-base tracking-wide drop-shadow leading-tight">S-Class 450</h4>
                 </div>
               </div>
             </div>
 
-            <!-- Card 1: Mercedes-Benz S-Class 450 -->
-            <div class="coverflow-card group" data-index="1" data-carkey="s-class">
-              <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1000&q=80" 
-                   alt="Mercedes-Benz S-Class 450" 
+            <!-- Card 1: BMW 7 Series -->
+            <div class="curved-card group" data-index="1" data-carkey="bmw-7">
+              <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=85" 
+                   alt="BMW 7 Series" 
                    class="w-full h-full object-cover pointer-events-none select-none transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent pointer-events-none"></div>
-              
-              <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between pointer-events-none">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none"></div>
+              <div class="absolute bottom-3 left-4 right-4 flex items-end justify-between pointer-events-none">
                 <div>
-                  <span class="text-[10px] font-mono tracking-widest uppercase text-electric block">MERCEDES-BENZ</span>
-                  <h4 class="text-white font-serif font-medium text-base sm:text-lg tracking-wide drop-shadow leading-snug">S-Class 450</h4>
-                </div>
-                <div class="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity">
-                  <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-white"></i>
+                  <span class="text-[9px] font-mono tracking-widest uppercase text-electric block leading-none mb-1">BMW</span>
+                  <h4 class="text-white font-serif font-medium text-sm sm:text-base tracking-wide drop-shadow leading-tight">740Li M-Sport</h4>
                 </div>
               </div>
             </div>
 
-            <!-- Card 2: BMW 7 Series 740Li -->
-            <div class="coverflow-card group" data-index="2" data-carkey="bmw-7">
-              <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1000&q=80" 
-                   alt="BMW 7 Series 740Li" 
+            <!-- Card 2: Audi A8 -->
+            <div class="curved-card group" data-index="2" data-carkey="audi-a8">
+              <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1200&q=85" 
+                   alt="Audi A8" 
                    class="w-full h-full object-cover pointer-events-none select-none transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent pointer-events-none"></div>
-              
-              <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between pointer-events-none">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none"></div>
+              <div class="absolute bottom-3 left-4 right-4 flex items-end justify-between pointer-events-none">
                 <div>
-                  <span class="text-[10px] font-mono tracking-widest uppercase text-electric block">BMW</span>
-                  <h4 class="text-white font-serif font-medium text-base sm:text-lg tracking-wide drop-shadow leading-snug">740Li M-Sport</h4>
-                </div>
-                <div class="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity">
-                  <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-white"></i>
+                  <span class="text-[9px] font-mono tracking-widest uppercase text-electric block leading-none mb-1">AUDI</span>
+                  <h4 class="text-white font-serif font-medium text-sm sm:text-base tracking-wide drop-shadow leading-tight">A8 L Quattro</h4>
                 </div>
               </div>
             </div>
 
-            <!-- Card 3: Range Rover Autobiography -->
-            <div class="coverflow-card group" data-index="3" data-carkey="range-rover">
-              <img src="https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=1000&q=80" 
+            <!-- Card 3: Toyota Land Cruiser -->
+            <div class="curved-card group" data-index="3" data-carkey="prado">
+              <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=85" 
+                   alt="Toyota Land Cruiser" 
+                   class="w-full h-full object-cover pointer-events-none select-none transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none"></div>
+              <div class="absolute bottom-3 left-4 right-4 flex items-end justify-between pointer-events-none">
+                <div>
+                  <span class="text-[9px] font-mono tracking-widest uppercase text-electric block leading-none mb-1">TOYOTA</span>
+                  <h4 class="text-white font-serif font-medium text-sm sm:text-base tracking-wide drop-shadow leading-tight">Land Cruiser 300</h4>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4: Porsche Panamera -->
+            <div class="curved-card group" data-index="4" data-carkey="taycan">
+              <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85" 
+                   alt="Porsche Panamera" 
+                   class="w-full h-full object-cover pointer-events-none select-none transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none"></div>
+              <div class="absolute bottom-3 left-4 right-4 flex items-end justify-between pointer-events-none">
+                <div>
+                  <span class="text-[9px] font-mono tracking-widest uppercase text-electric block leading-none mb-1">PORSCHE</span>
+                  <h4 class="text-white font-serif font-medium text-sm sm:text-base tracking-wide drop-shadow leading-tight">Panamera GTS</h4>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 5: Range Rover Autobiography -->
+            <div class="curved-card group" data-index="5" data-carkey="range-rover">
+              <img src="https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=1200&q=85" 
                    alt="Range Rover Autobiography" 
                    class="w-full h-full object-cover pointer-events-none select-none transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent pointer-events-none"></div>
-              
-              <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between pointer-events-none">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none"></div>
+              <div class="absolute bottom-3 left-4 right-4 flex items-end justify-between pointer-events-none">
                 <div>
-                  <span class="text-[10px] font-mono tracking-widest uppercase text-electric block">LAND ROVER</span>
-                  <h4 class="text-white font-serif font-medium text-base sm:text-lg tracking-wide drop-shadow leading-snug">Range Rover</h4>
-                </div>
-                <div class="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity">
-                  <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-white"></i>
+                  <span class="text-[9px] font-mono tracking-widest uppercase text-electric block leading-none mb-1">LAND ROVER</span>
+                  <h4 class="text-white font-serif font-medium text-sm sm:text-base tracking-wide drop-shadow leading-tight">Range Rover</h4>
                 </div>
               </div>
             </div>
 
-            <!-- Card 4: Toyota Land Cruiser Prado TX -->
-            <div class="coverflow-card group" data-index="4" data-carkey="prado">
-              <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1000&q=80" 
-                   alt="Toyota Land Cruiser Prado TX" 
+            <!-- Card 6: Tesla Model S -->
+            <div class="curved-card group" data-index="6" data-carkey="tesla-3">
+              <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=1200&q=85" 
+                   alt="Tesla Model S" 
                    class="w-full h-full object-cover pointer-events-none select-none transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent pointer-events-none"></div>
-              
-              <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between pointer-events-none">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none"></div>
+              <div class="absolute bottom-3 left-4 right-4 flex items-end justify-between pointer-events-none">
                 <div>
-                  <span class="text-[10px] font-mono tracking-widest uppercase text-electric block">TOYOTA</span>
-                  <h4 class="text-white font-serif font-medium text-base sm:text-lg tracking-wide drop-shadow leading-snug">Prado TX</h4>
-                </div>
-                <div class="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity">
-                  <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-white"></i>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 5: Toyota Alphard VIP Royal Lounge -->
-            <div class="coverflow-card group" data-index="5" data-carkey="alphard">
-              <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1000&q=80" 
-                   alt="Toyota Alphard VIP Lounge" 
-                   class="w-full h-full object-cover pointer-events-none select-none transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent pointer-events-none"></div>
-              
-              <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between pointer-events-none">
-                <div>
-                  <span class="text-[10px] font-mono tracking-widest uppercase text-electric block">TOYOTA</span>
-                  <h4 class="text-white font-serif font-medium text-base sm:text-lg tracking-wide drop-shadow leading-snug">Alphard VIP</h4>
-                </div>
-                <div class="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity">
-                  <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-white"></i>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 6: Mercedes-Benz E-Class Avantgarde -->
-            <div class="coverflow-card group" data-index="6" data-carkey="e-class">
-              <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1000&q=80" 
-                   alt="Mercedes-Benz E-Class" 
-                   class="w-full h-full object-cover pointer-events-none select-none transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent pointer-events-none"></div>
-              
-              <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between pointer-events-none">
-                <div>
-                  <span class="text-[10px] font-mono tracking-widest uppercase text-electric block">MERCEDES-BENZ</span>
-                  <h4 class="text-white font-serif font-medium text-base sm:text-lg tracking-wide drop-shadow leading-snug">E-Class 300</h4>
-                </div>
-                <div class="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity">
-                  <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-white"></i>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 7: Tesla Model 3 Long Range -->
-            <div class="coverflow-card group" data-index="7" data-carkey="tesla-3">
-              <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=1000&q=80" 
-                   alt="Tesla Model 3 Long Range" 
-                   class="w-full h-full object-cover pointer-events-none select-none transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent pointer-events-none"></div>
-              
-              <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between pointer-events-none">
-                <div>
-                  <span class="text-[10px] font-mono tracking-widest uppercase text-electric block">TESLA</span>
-                  <h4 class="text-white font-serif font-medium text-base sm:text-lg tracking-wide drop-shadow leading-snug">Model 3</h4>
-                </div>
-                <div class="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity">
-                  <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-white"></i>
+                  <span class="text-[9px] font-mono tracking-widest uppercase text-electric block leading-none mb-1">TESLA</span>
+                  <h4 class="text-white font-serif font-medium text-sm sm:text-base tracking-wide drop-shadow leading-tight">Model S Plaid</h4>
                 </div>
               </div>
             </div>
@@ -916,50 +867,46 @@
           </div>
         </div>
 
-        <!-- DEDICATED CAR INFORMATION AREA BELOW THE 3D CAROUSEL -->
-        <div class="max-w-[780px] mx-auto text-center px-4 mt-6 sm:mt-8 space-y-3 relative z-20">
+        <!-- ACTIVE CAR INFORMATION AREA BELOW THE 3D CAROUSEL -->
+        <div class="max-w-[760px] mx-auto text-center px-4 mt-6 sm:mt-8 space-y-3 relative z-20">
           
-          <!-- Category & Specs Pill -->
+          <!-- Category, Year & Daily Rate Pill -->
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[11px] font-medium text-white/90">
-            <span id="coverflowCategory" class="uppercase tracking-widest text-electric font-mono">ELECTRIC GRAND TOURER</span>
+            <span id="curvedCarYear" class="font-mono text-electric font-semibold">2024</span>
             <span class="text-white/30">â€¢</span>
-            <span id="coverflowSpecs" class="font-sans text-neutral-300">Dual Magnet EV â€¢ 530 HP</span>
+            <span id="curvedCarCategory" class="uppercase tracking-widest text-neutral-300 font-sans">FLAGSHIP LUXURY SEDAN</span>
+            <span class="text-white/30">â€¢</span>
+            <span id="curvedCarPrice" class="font-sans font-bold text-white">à§³ 18,000 / day</span>
           </div>
 
           <!-- Car Brand & Model Title in Cormorant Garamond (Upright) -->
-          <h3 id="coverflowTitle" class="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-white font-serif leading-tight">
-            Porsche Taycan 4S
+          <h3 id="curvedCarTitle" class="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-white font-serif leading-tight">
+            Mercedes-Benz S-Class 450
           </h3>
 
-          <!-- Refined Short Description in Manrope -->
-          <p id="coverflowDesc" class="text-neutral-400 text-xs sm:text-sm md:text-base max-w-xl mx-auto font-sans leading-relaxed">
-            Porsche has translated their race-bred aerodynamics into whisper-quiet electric composure. Dual permanent magnet synchronous motors deliver 530 hp with instantaneous surge across Dhaka.
+          <!-- Short Luxury-Focused Description in Manrope -->
+          <p id="curvedCarDesc" class="text-neutral-400 text-xs sm:text-sm md:text-base max-w-xl mx-auto font-sans leading-relaxed">
+            The definitive benchmark of automotive sanctuary. Featuring intelligent Airmatic damping, double-laminated acoustic glazing, and executive rear recliners for diplomats and corporate leaders.
           </p>
 
           <!-- Rates and Action CTAs -->
           <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
-            <div class="px-4 py-2.5 rounded-full bg-white/5 border border-white/10 text-white font-sans text-xs">
-              <span class="text-neutral-400 text-[10px] uppercase tracking-wider block sm:inline mr-1">Chauffeur Rate:</span>
-              <span id="coverflowPrice" class="font-bold text-white text-sm">à§³ 16,000</span>
-              <span class="text-neutral-400 text-[11px]">/ day</span>
-            </div>
-
-            <!-- Minimal Explore Details interaction (opens existing modal) -->
-            <button id="coverflowExploreBtn" class="px-6 py-2.5 rounded-full bg-white hover:bg-neutral-200 active:scale-95 text-ink font-bold text-xs tracking-wide transition shadow-lg inline-flex items-center gap-2 cursor-pointer font-sans">
+            <!-- Explore Details Button (Opens existing modal) -->
+            <button id="curvedExploreBtn" class="px-6 py-2.5 rounded-full bg-white hover:bg-neutral-200 active:scale-95 text-ink font-bold text-xs tracking-wide transition shadow-lg inline-flex items-center gap-2 cursor-pointer font-sans">
               <span>Explore Details</span>
               <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-electric"></i>
             </button>
 
-            <!-- Booking Dispatch CTA -->
+            <!-- Reserve Chauffeur Button -->
             <button onclick="openBookingDrawer()" class="px-6 py-2.5 rounded-full bg-electric hover:bg-blue-600 active:scale-95 text-white font-bold text-xs tracking-wide transition shadow-lg shadow-electric/25 inline-flex items-center gap-2 cursor-pointer font-sans">
-              <span>Reserve Chauffeur</span>
+              <span>Reserve with Chauffeur</span>
               <i data-lucide="calendar" class="w-3.5 h-3.5 text-white"></i>
             </button>
           </div>
 
           <!-- Dot Pagination Indicator -->
-          <div id="coverflowDots" class="flex items-center justify-center gap-1.5 pt-3">
-            <!-- 8 dots populated by JS -->
+          <div id="curvedDots" class="flex items-center justify-center gap-1.5 pt-3">
+            <!-- 7 dots populated by JS -->
           </div>
 
         </div>
@@ -2281,7 +2228,39 @@
           { name: 'Emerald Green', hex: '#064E3B', border: '#047857' }
         ]
       },
-      'bmw-7': {
+            'audi-a8': {
+        carKey: 'audi-a8',
+        brand: 'AUDI',
+        model: 'A8 L QUATTRO',
+        category: 'PRESTIGE EXECUTIVE SALOON',
+        year: '2024',
+        price: 16500,
+        priceFormatted: 'à§³ 16,500',
+        desc: 'Pioneering technological composure and executive serenity. Predictive active suspension, OLED dynamic lighting blades, and tailored Valcona leather recliners engineered for Dhaka dignitaries.',
+        panels: {
+          front: 'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=800&q=80',
+          rear: 'https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80',
+          side: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80'
+        },
+        panelTags: {
+          tag1: 'Digital Matrix OLED Optic',
+          tag2: 'Continuous Dynamic Light Blade',
+          tag3: 'Predictive Active Suspension'
+        },
+        heroImg: 'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1200&q=80',
+        specs: {
+          engine: '3.0L TFSI TURBO V6',
+          power: '250 kW / 335 HP',
+          transmission: '8-SPEED TIPTRONIC',
+          capacity: '4 VIP SEATS'
+        },
+        colors: [
+          { name: 'Mythos Black', hex: '#0D0E12', border: '#262626' },
+          { name: 'Glacier White', hex: '#F9FAFB', border: '#D1D5DB' },
+          { name: 'Daytona Grey', hex: '#4B5563', border: '#374151' }
+        ]
+      },
+'bmw-7': {
         carKey: 'bmw-7',
         brand: 'BMW',
         model: '740Li M-SPORT',
@@ -2767,112 +2746,103 @@
       monitorCrossfade(v2, v1);
     })();
 
-        // 3D Cinematic Coverflow Carousel Controller (Reference Image Composition)
-    function initCinematicCoverflow() {
-      const stage = document.getElementById('coverflowStage');
-      const track = document.getElementById('coverflowTrack');
-      const cards = Array.from(document.querySelectorAll('.coverflow-card'));
-      const dotsContainer = document.getElementById('coverflowDots');
-      const prevBtn = document.getElementById('coverflowPrevBtn');
-      const nextBtn = document.getElementById('coverflowNextBtn');
-      const exploreBtn = document.getElementById('coverflowExploreBtn');
-      
-      const titleEl = document.getElementById('coverflowTitle');
-      const categoryEl = document.getElementById('coverflowCategory');
-      const specsEl = document.getElementById('coverflowSpecs');
-      const descEl = document.getElementById('coverflowDesc');
-      const priceEl = document.getElementById('coverflowPrice');
+        // 3D Cinematic 7-Card Curved Carousel Controller (Exact Landscape Perspective Gallery)
+    function initCurvedCarGallery() {
+      const stage = document.getElementById('curvedStage');
+      const track = document.getElementById('curvedCarouselTrack');
+      const cards = Array.from(document.querySelectorAll('.curved-card'));
+      const dotsContainer = document.getElementById('curvedDots');
+      const prevBtn = document.getElementById('curvedPrevBtn');
+      const nextBtn = document.getElementById('curvedNextBtn');
+      const exploreBtn = document.getElementById('curvedExploreBtn');
+
+      const titleEl = document.getElementById('curvedCarTitle');
+      const yearEl = document.getElementById('curvedCarYear');
+      const categoryEl = document.getElementById('curvedCarCategory');
+      const descEl = document.getElementById('curvedCarDesc');
+      const priceEl = document.getElementById('curvedCarPrice');
 
       if (!stage || !track || cards.length === 0) return;
 
-      const numCards = cards.length;
+      const numCards = 7;
       let currentIndex = 0;
       let isHovered = false;
       let autoTimer = null;
 
-      // Real vehicle data linked to existing carShowcaseData
-      const fleetMeta = [
-        {
-          key: 'taycan',
-          brand: 'PORSCHE',
-          model: 'Taycan 4S',
-          category: 'ELECTRIC GRAND TOURER',
-          specs: 'Dual Magnet EV â€¢ 530 HP â€¢ 2-Speed GT',
-          price: 'à§³ 16,000',
-          desc: "Porsche has translated their race-bred aerodynamics into whisper-quiet electric composure. Dual permanent magnet motors deliver 530 hp with instantaneous surge, gliding effortlessly across Dhaka's premier corridors."
-        },
+      // 7 Luxury Car Profiles (Strictly 7 authentic vehicles as specified)
+      const carsMeta = [
         {
           key: 's-class',
-          brand: 'MERCEDES-BENZ',
+          brand: 'Mercedes-Benz',
           model: 'S-Class 450',
+          year: '2024',
           category: 'FLAGSHIP LUXURY SEDAN',
-          specs: '3.0L Turbo I-6 EQ â€¢ 362 HP â€¢ 9G-Tronic',
-          price: 'à§³ 18,000',
+          price: 'à§³ 18,000 / day',
           desc: "The definitive benchmark of automotive sanctuary. Featuring intelligent Airmatic damping, double-laminated acoustic glazing, and executive rear recliners for diplomats and corporate leaders."
         },
         {
           key: 'bmw-7',
           brand: 'BMW',
           model: '740Li M-Sport',
+          year: '2024',
           category: 'EXECUTIVE FLAGSHIP',
-          specs: '3.0L TwinPower â€¢ 375 HP â€¢ Steptronic',
-          price: 'à§³ 17,500',
+          price: 'à§³ 17,500 / day',
           desc: "Commanding executive authority synthesized with track-bred agility. The illuminated Iconic Glow kidney grille meets an opulent lounge with a 31.3-inch 8K theater screen."
         },
         {
-          key: 'range-rover',
-          brand: 'LAND ROVER',
-          model: 'Range Rover Autobiography',
-          category: 'FLAGSHIP LUXURY SUV',
-          specs: '4.4L Twin-Turbo V8 â€¢ 523 HP â€¢ Dynamic Air',
-          price: 'à§³ 22,000',
-          desc: "Peerless British craftsmanship with whisper-quiet cabin isolation, Executive Class rear seating, and effortless all-terrain majesty."
+          key: 'audi-a8',
+          brand: 'Audi',
+          model: 'A8 L Quattro',
+          year: '2024',
+          category: 'PRESTIGE EXECUTIVE SALOON',
+          price: 'à§³ 16,500 / day',
+          desc: "Pioneering technological composure and executive serenity. Predictive active suspension, OLED dynamic lighting blades, and tailored Valcona leather recliners."
         },
         {
           key: 'prado',
-          brand: 'TOYOTA',
-          model: 'Land Cruiser Prado TX',
-          category: 'EXECUTIVE 4X4 SUV',
-          specs: '2.8L Turbo Diesel â€¢ 201 HP â€¢ Full 4WD',
-          price: 'à§³ 9,500',
-          desc: "Legendary reliability with an elevated commanding posture, tailored for seamless VIP transfers and long-range security across Bangladesh."
+          brand: 'Toyota',
+          model: 'Land Cruiser 300',
+          year: '2024',
+          category: 'PRESIDENTIAL 4X4 SUV',
+          price: 'à§³ 12,000 / day',
+          desc: "Legendary bulletproof reliability combined with presidential cabin luxury, engineered to effortlessly conquer all road conditions across Bangladesh with commanding poise."
         },
         {
-          key: 'alphard',
-          brand: 'TOYOTA',
-          model: 'Alphard VIP Lounge',
-          category: 'FIRST CLASS ROYAL LOUNGE',
-          specs: '2.5L Hybrid AWD â€¢ 247 HP â€¢ E-CVT',
-          price: 'à§³ 8,000',
-          desc: "Private aviation luxury on four wheels. Dual power ottoman captain recliners with personal ambient reading lights and whisper-soft suspension."
+          key: 'taycan',
+          brand: 'Porsche',
+          model: 'Panamera GTS',
+          year: '2024',
+          category: 'GRAND TOURING SALOON',
+          price: 'à§³ 19,000 / day',
+          desc: "Pure sports car DNA elevated into four-door limousine refinement. Adaptive air suspension with PASM delivers exhilarating performance and serene highway cruising."
         },
         {
-          key: 'e-class',
-          brand: 'MERCEDES-BENZ',
-          model: 'E-Class 300',
-          category: 'EXECUTIVE BUSINESS SEDAN',
-          specs: '2.0L Turbo Inline-4 â€¢ 255 HP â€¢ 9G-Tronic',
-          price: 'à§³ 6,500',
-          desc: "Agile executive transport blending progressive digital cockpit architecture with effortless chauffeur-driven refinement for daily meetings."
+          key: 'range-rover',
+          brand: 'Range Rover',
+          model: 'Autobiography LWB',
+          year: '2024',
+          category: 'FLAGSHIP LUXURY SUV',
+          price: 'à§³ 22,000 / day',
+          desc: "Peerless British craftsmanship with whisper-quiet cabin isolation, Executive Class rear seating, and effortless all-terrain majesty."
         },
         {
           key: 'tesla-3',
-          brand: 'TESLA',
-          model: 'Model 3 Long Range',
-          category: 'AERO ELECTRIC SEDAN',
-          specs: 'Dual Motor AWD â€¢ 430 HP â€¢ Single-Speed',
-          price: 'à§³ 14,000',
-          desc: "Ultra-aerodynamic silhouette with panoramic acoustic glass canopy and silent, instantaneous highway acceleration for modern executives."
+          brand: 'Tesla',
+          model: 'Model S Plaid',
+          year: '2024',
+          category: 'AERO ELECTRIC FLAGSHIP',
+          price: 'à§³ 15,000 / day',
+          desc: "The pinnacle of electric acceleration and futuristic silence. Full panoramic glass roof, acoustic noise cancellation, and zero tailpipe emissions."
         }
       ];
 
       // Build dot navigation
       if (dotsContainer) {
         dotsContainer.innerHTML = '';
-        fleetMeta.forEach((item, idx) => {
+        carsMeta.forEach((item, idx) => {
           const dot = document.createElement('button');
-          dot.className = h-2 rounded-full transition-all duration-400 ;
-          dot.setAttribute('aria-label', Select );
+          dot.className = h-2 rounded-full transition-all duration-500 ;
+          dot.setAttribute('aria-label', Select  );
           dot.onclick = (e) => {
             e.stopPropagation();
             goToCard(idx);
@@ -2881,25 +2851,78 @@
         });
       }
 
-      // Responsive spacing calculation
-      function getSpacing() {
+      // Responsive geometry config
+      function getLayoutConfig() {
         const w = window.innerWidth;
-        if (w <= 640) return 140;
-        if (w <= 1024) return 200;
-        return 270;
+        if (w <= 640) {
+          // Mobile: 3 visible cards (center + offset Â±1)
+          return {
+            s1: 135,
+            s2: 240,
+            s3: 340,
+            sc0: 1.0,
+            sc1: 0.78,
+            sc2: 0.60,
+            sc3: 0.45,
+            tz0: 50,
+            tz1: -60,
+            tz2: -150,
+            tz3: -230,
+            ry1: 20,
+            ry2: 34,
+            ry3: 45,
+            maxOffset: 1
+          };
+        } else if (w <= 1024) {
+          // Tablet: 5 visible cards (center + offset Â±1, Â±2)
+          return {
+            s1: 185,
+            s2: 340,
+            s3: 460,
+            sc0: 1.0,
+            sc1: 0.84,
+            sc2: 0.70,
+            sc3: 0.55,
+            tz0: 65,
+            tz1: -50,
+            tz2: -140,
+            tz3: -220,
+            ry1: 18,
+            ry2: 32,
+            ry3: 44,
+            maxOffset: 2
+          };
+        } else {
+          // Desktop: ALL 7 CARDS VISIBLE with continuous overlap & edge cropping
+          return {
+            s1: 230,
+            s2: 430,
+            s3: 610,
+            sc0: 1.0,     // Center card: 400px x 270px
+            sc1: 0.85,    // Adjacent: ~340px x 240px
+            sc2: 0.725,   // Further: ~290px x 210px
+            sc3: 0.625,   // Outer: ~250px x 180px
+            tz0: 80,
+            tz1: -40,
+            tz2: -150,
+            tz3: -260,
+            ry1: 18,
+            ry2: 32,
+            ry3: 44,
+            maxOffset: 3  // Show all -3 to +3 (7 cards!)
+          };
+        }
       }
 
-      // Update 3D Coverflow positioning
-      function updateCoverflow() {
-        const spacing = getSpacing();
+      // Update 3D card positions
+      function updatePositions() {
+        const cfg = getLayoutConfig();
 
         cards.forEach((card, i) => {
           let offset = i - currentIndex;
-          // Cyclic wrapping for shortest arc
-          if (offset > numCards / 2) offset -= numCards;
-          if (offset < -numCards / 2) offset += numCards;
-
-          const absOffset = Math.abs(offset);
+          // Shortest circular wrap for 7 cards (-3, -2, -1, 0, 1, 2, 3)
+          if (offset > 3) offset -= 7;
+          if (offset < -3) offset += 7;
 
           let tx = 0;
           let tz = 0;
@@ -2910,83 +2933,74 @@
           let zIndex = 10;
 
           if (offset === 0) {
-            // Main Focus Center Card (Larger, forward, sharp)
+            // Center Focus Card (Closer, larger, highest z-index)
             tx = 0;
-            tz = 60;
+            tz = cfg.tz0;
             ry = 0;
-            scale = 1.0;
+            scale = cfg.sc0;
             opacity = 1.0;
             filter = 'brightness(1.05) contrast(1.02)';
             zIndex = 50;
             card.classList.add('is-center');
           } else if (offset === -1) {
-            // Immediate Left
-            tx = -spacing;
-            tz = -100;
-            ry = 26; // subtle Y-axis rotation facing inward
-            scale = 0.85;
-            opacity = 0.84;
-            filter = 'brightness(0.82)';
+            // Left 1
+            tx = -cfg.s1;
+            tz = cfg.tz1;
+            ry = cfg.ry1;
+            scale = cfg.sc1;
+            opacity = 0.88;
+            filter = 'brightness(0.85)';
             zIndex = 40;
             card.classList.remove('is-center');
           } else if (offset === 1) {
-            // Immediate Right
-            tx = spacing;
-            tz = -100;
-            ry = -26; // subtle Y-axis rotation facing inward
-            scale = 0.85;
-            opacity = 0.84;
-            filter = 'brightness(0.82)';
+            // Right 1
+            tx = cfg.s1;
+            tz = cfg.tz1;
+            ry = -cfg.ry1;
+            scale = cfg.sc1;
+            opacity = 0.88;
+            filter = 'brightness(0.85)';
             zIndex = 40;
             card.classList.remove('is-center');
           } else if (offset === -2) {
-            // Second Left
-            tx = -spacing * 1.85;
-            tz = -220;
-            ry = 44;
-            scale = 0.72;
-            opacity = 0.58;
-            filter = 'brightness(0.65)';
+            // Left 2
+            tx = -cfg.s2;
+            tz = cfg.tz2;
+            ry = cfg.ry2;
+            scale = cfg.sc2;
+            opacity = cfg.maxOffset >= 2 ? 0.68 : 0;
+            filter = 'brightness(0.70)';
             zIndex = 30;
             card.classList.remove('is-center');
           } else if (offset === 2) {
-            // Second Right
-            tx = spacing * 1.85;
-            tz = -220;
-            ry = -44;
-            scale = 0.72;
-            opacity = 0.58;
-            filter = 'brightness(0.65)';
+            // Right 2
+            tx = cfg.s2;
+            tz = cfg.tz2;
+            ry = -cfg.ry2;
+            scale = cfg.sc2;
+            opacity = cfg.maxOffset >= 2 ? 0.68 : 0;
+            filter = 'brightness(0.70)';
             zIndex = 30;
             card.classList.remove('is-center');
           } else if (offset === -3) {
-            // Outer Left Edge
-            tx = -spacing * 2.55;
-            tz = -340;
-            ry = 58;
-            scale = 0.60;
-            opacity = 0.28;
-            filter = 'brightness(0.48)';
+            // Left 3 (Outer edge, partially cropped on desktop)
+            tx = -cfg.s3;
+            tz = cfg.tz3;
+            ry = cfg.ry3;
+            scale = cfg.sc3;
+            opacity = cfg.maxOffset >= 3 ? 0.45 : 0;
+            filter = 'brightness(0.55)';
             zIndex = 20;
             card.classList.remove('is-center');
           } else if (offset === 3) {
-            // Outer Right Edge
-            tx = spacing * 2.55;
-            tz = -340;
-            ry = -58;
-            scale = 0.60;
-            opacity = 0.28;
-            filter = 'brightness(0.48)';
+            // Right 3 (Outer edge, partially cropped on desktop)
+            tx = cfg.s3;
+            tz = cfg.tz3;
+            ry = -cfg.ry3;
+            scale = cfg.sc3;
+            opacity = cfg.maxOffset >= 3 ? 0.45 : 0;
+            filter = 'brightness(0.55)';
             zIndex = 20;
-            card.classList.remove('is-center');
-          } else {
-            // Behind / Hidden
-            tx = (offset > 0 ? 1 : -1) * spacing * 3.2;
-            tz = -460;
-            ry = (offset > 0 ? -1 : 1) * 70;
-            scale = 0.5;
-            opacity = 0;
-            zIndex = 10;
             card.classList.remove('is-center');
           }
 
@@ -2994,53 +3008,52 @@
           card.style.opacity = opacity;
           card.style.filter = filter;
           card.style.zIndex = zIndex;
-          card.style.pointerEvents = opacity > 0.15 ? 'auto' : 'none';
+          card.style.pointerEvents = opacity > 0.1 ? 'auto' : 'none';
         });
 
-        // Update info panel
-        const activeData = fleetMeta[currentIndex];
-        if (activeData) {
-          if (titleEl) titleEl.innerText = ${activeData.brand} ;
-          if (categoryEl) categoryEl.innerText = activeData.category;
-          if (specsEl) specsEl.innerText = activeData.specs;
-          if (descEl) descEl.innerText = activeData.desc;
-          if (priceEl) priceEl.innerText = activeData.price;
+        // Update active car details with smooth text transition
+        const cur = carsMeta[currentIndex];
+        if (cur) {
+          if (titleEl) titleEl.innerText = ${cur.brand} ;
+          if (yearEl) yearEl.innerText = cur.year;
+          if (categoryEl) categoryEl.innerText = cur.category;
+          if (descEl) descEl.innerText = cur.desc;
+          if (priceEl) priceEl.innerText = cur.price;
         }
 
-        // Update dots
+        // Update dot indicators
         if (dotsContainer) {
           const dots = dotsContainer.children;
           for (let d = 0; d < dots.length; d++) {
             if (d === currentIndex) {
-              dots[d].className = 'h-2 w-6 rounded-full bg-electric transition-all duration-400';
+              dots[d].className = 'h-2 w-6 rounded-full bg-electric transition-all duration-500';
             } else {
-              dots[d].className = 'h-2 w-2 rounded-full bg-white/30 hover:bg-white/60 transition-all duration-400';
+              dots[d].className = 'h-2 w-2 rounded-full bg-white/30 hover:bg-white/60 transition-all duration-500';
             }
           }
         }
       }
 
-      // Smooth jump to card index
       function goToCard(idx) {
         currentIndex = ((idx % numCards) + numCards) % numCards;
-        updateCoverflow();
+        updatePositions();
       }
 
-      // Card click handler
+      // Card click handling
       cards.forEach((card, idx) => {
         card.addEventListener('click', (e) => {
           if (idx === currentIndex) {
-            // Center card clicked -> open existing modal
-            const carKey = card.getAttribute('data-carkey') || fleetMeta[currentIndex].key;
+            // Center card clicked -> open details modal
+            const carKey = card.getAttribute('data-carkey') || carsMeta[currentIndex].key;
             openCarDetailsModal(carKey);
           } else {
-            // Side card clicked -> smoothly bring to center
+            // Side card clicked -> smoothly transition to center
             goToCard(idx);
           }
         });
       });
 
-      // Controls
+      // Navigation Buttons
       if (prevBtn) {
         prevBtn.onclick = () => goToCard(currentIndex - 1);
       }
@@ -3049,44 +3062,44 @@
       }
       if (exploreBtn) {
         exploreBtn.onclick = () => {
-          const carKey = fleetMeta[currentIndex].key;
+          const carKey = carsMeta[currentIndex].key;
           openCarDetailsModal(carKey);
         };
       }
 
-      // Drag and Swipe Gesture Support
-      let touchStartX = 0;
-      let isSwiping = false;
+      // Drag / Swipe Gestures
+      let startX = 0;
+      let isDragging = false;
 
       stage.addEventListener('pointerdown', (e) => {
-        touchStartX = e.clientX;
-        isSwiping = true;
+        startX = e.clientX;
+        isDragging = true;
       });
 
       stage.addEventListener('pointerup', (e) => {
-        if (!isSwiping) return;
-        isSwiping = false;
-        const diffX = e.clientX - touchStartX;
-        if (diffX > 45) {
+        if (!isDragging) return;
+        isDragging = false;
+        const delta = e.clientX - startX;
+        if (delta > 40) {
           goToCard(currentIndex - 1);
-        } else if (diffX < -45) {
+        } else if (delta < -40) {
           goToCard(currentIndex + 1);
         }
       });
 
-      stage.addEventListener('pointercancel', () => { isSwiping = false; });
+      stage.addEventListener('pointercancel', () => { isDragging = false; });
 
-      // Auto-rotation with pause on hover
-      function startAutoTimer() {
-        stopAutoTimer();
+      // Auto rotation with hover pause
+      function startAutoPlay() {
+        stopAutoPlay();
         autoTimer = setInterval(() => {
           if (!isHovered) {
             goToCard(currentIndex + 1);
           }
-        }, 4800);
+        }, 5000);
       }
 
-      function stopAutoTimer() {
+      function stopAutoPlay() {
         if (autoTimer) clearInterval(autoTimer);
       }
 
@@ -3094,13 +3107,13 @@
       stage.addEventListener('mouseleave', () => { isHovered = false; });
 
       window.addEventListener('resize', () => {
-        updateCoverflow();
+        updatePositions();
       });
 
       // Keyboard left/right arrow navigation
       window.addEventListener('keydown', (e) => {
         const modal = document.getElementById('carDetailsModal');
-        if (modal && !modal.classList.contains('hidden')) return; // ignore when modal is active
+        if (modal && !modal.classList.contains('hidden')) return;
 
         if (e.key === 'ArrowLeft') {
           goToCard(currentIndex - 1);
@@ -3109,14 +3122,14 @@
         }
       });
 
-      // Initialize
-      updateCoverflow();
-      startAutoTimer();
+      // Initial layout pass
+      updatePositions();
+      startAutoPlay();
     }
 
-    // Refresh icons and initialize 3D Coverflow on load
+    // Refresh icons and initialize curved carousel on load
     document.addEventListener('DOMContentLoaded', () => {
-      initCinematicCoverflow();
+      initCurvedCarGallery();
       if (window.lucide) lucide.createIcons();
     });
   </script>
