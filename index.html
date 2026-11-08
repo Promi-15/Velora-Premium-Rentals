@@ -22,12 +22,14 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- React Bits CircularCarousel Component Styles -->
-  <link rel="stylesheet" href="./CircularCarousel.css?v=4">
+  <link rel="stylesheet" href="./CircularCarousel.css?v=5">
 
-  <!-- React 18 & ReactDOM 18 for CircularCarousel -->
-  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="./CircularCarousel.js?v=4"></script>
+  <!-- React 18 & ReactDOM 18 for CircularCarousel (with CDN fallback) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+  <script>window.React || document.write('<script src="https://unpkg.com/react@18/umd/react.production.min.js"><\/script>')</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+  <script>window.ReactDOM || document.write('<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"><\/script>')</script>
+  <script src="./CircularCarousel.js?v=5"></script>
 
   <script>
     tailwind.config = {
@@ -2247,7 +2249,7 @@
       const time = document.getElementById('bookTime')?.value || '';
       const modalPickup = document.getElementById('modalPickupInput');
       if (modalPickup) {
-        modalPickup.value = pickup + (dropoff ৳ ` ➔ ${dropoff}` : '') + (time ৳ ` [${time}]` : '');
+        modalPickup.value = pickup + (dropoff ? ` ➔ ${dropoff}` : "") + (time ? ` [${time}]` : "");
       }
       const modalDate = document.getElementById('modalDateInput');
       if (modalDate) modalDate.value = date;
@@ -2265,9 +2267,9 @@
       const activeClass = 'py-2 sm:py-2.5 rounded-full text-center transition-all duration-200 bg-white text-[#0B0E14] font-bold shadow-md';
       const inactiveClass = 'py-2 sm:py-2.5 rounded-full text-center transition-all duration-200 text-white/75 hover:text-white hover:bg-white/10';
 
-      if (tabDist) tabDist.className = mode === 'distance' ৳ activeClass : inactiveClass;
-      if (tabHour) tabHour.className = mode === 'hourly' ৳ activeClass : inactiveClass;
-      if (tabFlat) tabFlat.className = mode === 'flat' ৳ activeClass : inactiveClass;
+      if (tabDist) tabDist.className = mode === 'distance' ? activeClass : inactiveClass;
+      if (tabHour) tabHour.className = mode === 'hourly' ? activeClass : inactiveClass;
+      if (tabFlat) tabFlat.className = mode === 'flat' ? activeClass : inactiveClass;
 
       const dropDist = document.getElementById('containerStudioDropoffDistance');
       const dropHour = document.getElementById('containerStudioDropoffHourly');
@@ -2298,7 +2300,7 @@
       // Pre-fill drawer inputs
       const modalPickup = document.getElementById('modalPickupInput');
       if (modalPickup) {
-        modalPickup.value = pickup + (destination ৳ ` ➔ ${destination}` : '') + (time ৳ ` [${time}]` : '');
+        modalPickup.value = pickup + (destination ? ` ➔ ${destination}` : "") + (time ? ` [${time}]` : "");
       }
       
       const modalDate = document.getElementById('modalDateInput');
@@ -3002,7 +3004,7 @@
           data.gallery.forEach((g, i) => {
             const btn = document.createElement('button');
             btn.type = 'button';
-            btn.className = `px-3 py-1 rounded-full text-[11px] font-semibold transition ${i === 0 ৳ 'bg-black text-white shadow-xs' : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'}`;
+            btn.className = `px-3 py-1 rounded-full text-[11px] font-semibold transition ${i === 0 ? 'bg-black text-white shadow-xs' : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'}`;
             btn.textContent = g.label || `Angle ${i + 1}`;
             btn.onclick = () => {
               document.querySelectorAll('#amGalleryThumbnails button').forEach(b => {
@@ -3039,7 +3041,7 @@
             const btn = document.createElement('button');
             btn.type = 'button';
             btn.title = col.name;
-            btn.className = `w-6 h-6 rounded-full border-2 transition-transform hover:scale-110 shadow-xs ${cIdx === 0 ৳ 'ring-2 ring-black ring-offset-2' : ''}`;
+            btn.className = `w-6 h-6 rounded-full border-2 transition-transform hover:scale-110 shadow-xs ${cIdx === 0 ? 'ring-2 ring-black ring-offset-2' : ''}`;
             btn.style.backgroundColor = col.hex;
             btn.style.borderColor = col.border || '#cbd5e1';
             btn.onclick = () => {
@@ -3129,6 +3131,7 @@
       }
     }
 
+    window.openCarDetailsModal = function(carKey) { openCarDetailsModal(carKey); };
     function openCarDetailsModal(carKey) {
       renderModalContent(carKey);
 
@@ -3333,9 +3336,17 @@
     })();
 
         // React Bits CircularCarousel Integration for Executive Fleet Showcase
+    let carouselInitAttempts = 0;
     function initCircularFleetCarousel() {
       const mountEl = document.getElementById('circular-carousel-mount');
-      if (!mountEl || !window.React || !window.ReactDOM || !window.CircularCarousel) return;
+      if (!mountEl) return;
+      if (!window.React || !window.ReactDOM || !window.CircularCarousel) {
+        if (carouselInitAttempts < 60) {
+          carouselInitAttempts++;
+          setTimeout(initCircularFleetCarousel, 80);
+        }
+        return;
+      }
 
       const carItems = [
         {
@@ -3423,11 +3434,16 @@
       );
     }
 
-    // Initialize circular fleet carousel and icons on DOM load
-    document.addEventListener('DOMContentLoaded', () => {
+    // Initialize circular fleet carousel and icons with robust ready-state check
+    function startVeloraApp() {
       initCircularFleetCarousel();
       if (window.lucide) lucide.createIcons();
-    });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', startVeloraApp);
+    } else {
+      startVeloraApp();
+    }
   </script>
 </body>
 </html>
