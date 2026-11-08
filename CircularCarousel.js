@@ -892,7 +892,54 @@
                     'aria-label': `${item.title || item.alt || `Image ${index + 1}`}, ${index + 1} of ${count}`
                   },
                   tiles.map(tile => renderTile(item, tile, false, index)),
-                  layout.backfaces && tiles.map(tile => renderTile(item, tile, true, index))
+                  layout.backfaces && tiles.map(tile => renderTile(item, tile, true, index)),
+                  React.createElement(
+                    'div',
+                    {
+                      className: 'circular-carousel__card-overlay',
+                      style: {
+                        left: -cardW / 2,
+                        top: -cardH / 2,
+                        width: cardW,
+                        height: cardH,
+                        borderRadius: `${Math.max(0, cornerRadius)}px`
+                      }
+                    },
+                    React.createElement(
+                      'button',
+                      {
+                        type: 'button',
+                        className: 'circular-carousel__glass-btn',
+                        'aria-label': `Show details for ${item.title || item.alt || 'vehicle'}`,
+                        onClick: e => {
+                          e.stopPropagation();
+                          if (item && item.carKey && typeof window.openCarDetailsModal === 'function') {
+                            window.openCarDetailsModal(item.carKey);
+                          }
+                        }
+                      },
+                      React.createElement('span', { className: 'circular-carousel__glass-btn-text' }, 'Show Details'),
+                      React.createElement(
+                        'span',
+                        { className: 'circular-carousel__glass-btn-icon' },
+                        React.createElement(
+                          'svg',
+                          {
+                            width: '13',
+                            height: '13',
+                            viewBox: '0 0 24 24',
+                            fill: 'none',
+                            stroke: 'currentColor',
+                            strokeWidth: '2.5',
+                            strokeLinecap: 'round',
+                            strokeLinejoin: 'round'
+                          },
+                          React.createElement('path', { d: 'M5 12h14' }),
+                          React.createElement('path', { d: 'm12 5 7 7-7 7' })
+                        )
+                      )
+                    )
+                  )
                 )
               )
             )
