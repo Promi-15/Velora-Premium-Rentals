@@ -1811,18 +1811,22 @@
           <!-- Background Subtle Gradient Halo -->
           <div class="absolute inset-0 bg-radial from-neutral-200/40 via-transparent to-transparent rounded-full blur-2xl pointer-events-none -z-10"></div>
 
-          <!-- Main Vehicle Display -->
-          <div class="relative w-full flex items-center justify-center">
-            <img id="amMainCarImg" 
-                 src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=85" 
-                 alt="Velora Fleet Vehicle" 
-                 class="max-h-[220px] sm:max-h-[270px] lg:max-h-[310px] w-auto max-w-full object-contain filter contrast-[1.03] drop-shadow-[0_18px_24px_rgba(0,0,0,0.20)] transition-all duration-300">
+          <!-- Main Vehicle Display (Uniform Sized Presentation Card) -->
+          <div class="relative w-full max-w-[700px] lg:max-w-[760px] h-[210px] sm:h-[260px] lg:h-[295px] flex items-center justify-center mx-auto">
             
+            <div class="relative w-full h-full rounded-[22px] overflow-hidden bg-gradient-to-b from-neutral-100 to-neutral-200/70 border border-neutral-200/80 shadow-[0_16px_40px_rgba(0,0,0,0.12)]">
+              <img id="amMainCarImg" 
+                   src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&h=675&q=85" 
+                   alt="Velora Fleet Vehicle" 
+                   class="w-full h-full object-cover filter contrast-[1.03] transition-all duration-300">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none"></div>
+            </div>
+
             <!-- Floor Contact Shadow -->
-            <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-[85%] h-6 bg-black/20 rounded-[100%] blur-lg pointer-events-none"></div>
+            <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-[90%] h-6 bg-black/20 rounded-[100%] blur-xl pointer-events-none"></div>
 
             <!-- PIN 1: Aerodynamics / Rear Wing -->
-            <div id="amPin1" class="absolute top-[8%] left-[2%] hidden md:flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/80 shadow-md transition-all hover:scale-105 z-20">
+            <div id="amPin1" class="absolute -top-3 -left-2 sm:left-0 hidden md:flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/90 shadow-lg transition-all hover:scale-105 z-20">
               <span class="w-2.5 h-2.5 rounded-full bg-black ring-4 ring-black/15 shrink-0"></span>
               <div class="text-left">
                 <span id="amPinTitle1" class="font-bold text-[11px] text-neutral-900 block leading-tight">Digital Light System</span>
@@ -1831,7 +1835,7 @@
             </div>
 
             <!-- PIN 2: Roof / Acoustic Glazing -->
-            <div id="amPin2" class="absolute top-[2%] right-[8%] hidden md:flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/80 shadow-md transition-all hover:scale-105 z-20">
+            <div id="amPin2" class="absolute -top-3 -right-2 sm:right-0 hidden md:flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/90 shadow-lg transition-all hover:scale-105 z-20">
               <span class="w-2.5 h-2.5 rounded-full bg-black ring-4 ring-black/15 shrink-0"></span>
               <div class="text-left">
                 <span id="amPinTitle2" class="font-bold text-[11px] text-neutral-900 block leading-tight">Acoustic Glazing</span>
@@ -1840,7 +1844,7 @@
             </div>
 
             <!-- PIN 3: Powertrain / Front -->
-            <div id="amPin3" class="absolute bottom-[18%] left-[4%] hidden md:flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/80 shadow-md transition-all hover:scale-105 z-20">
+            <div id="amPin3" class="absolute -bottom-3 -left-2 sm:left-2 hidden md:flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/90 shadow-lg transition-all hover:scale-105 z-20">
               <span class="w-2.5 h-2.5 rounded-full bg-black ring-4 ring-black/15 shrink-0"></span>
               <div class="text-left">
                 <span id="amPinTitle3" class="font-bold text-[11px] text-neutral-900 block leading-tight">3.0L Turbo I-6</span>
@@ -1849,7 +1853,7 @@
             </div>
 
             <!-- PIN 4: Chassis / Air Suspension -->
-            <div id="amPin4" class="absolute bottom-[12%] right-[4%] hidden md:flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/80 shadow-md transition-all hover:scale-105 z-20">
+            <div id="amPin4" class="absolute -bottom-3 -right-2 sm:right-2 hidden md:flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/90 shadow-lg transition-all hover:scale-105 z-20">
               <span class="w-2.5 h-2.5 rounded-full bg-black ring-4 ring-black/15 shrink-0"></span>
               <div class="text-left">
                 <span id="amPinTitle4" class="font-bold text-[11px] text-neutral-900 block leading-tight">Airmatic Damping</span>
@@ -1921,7 +1925,7 @@
               <div id="amSpecCapacityVal" class="text-xl sm:text-2xl font-black text-neutral-900 leading-tight">4</div>
               <div class="text-[10px] text-neutral-500 font-medium">VIP Recliners</div>
             </div>
-            <img id="amSpecSeatImg" src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=160&q=80" alt="Executive Interior" class="w-12 h-14 object-cover rounded-xl shadow-inner">
+            <img id="amSpecSeatImg" src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=200&h=200&q=80" alt="Executive Interior" class="w-14 h-14 object-cover rounded-xl shadow-inner shrink-0">
           </div>
 
           <!-- Card 2: Engine & Power -->
@@ -2385,11 +2389,11 @@
         price: 18000,
         priceFormatted: '৳ 18,000',
         desc: 'The definitive benchmark of automotive sanctuary. Featuring intelligent Airmatic damping, double-laminated acoustic glazing, and executive rear recliners for corporate leaders.',
-        heroImg: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=85',
+        heroImg: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&h=675&q=85',
         gallery: [
-          { label: 'Profile', src: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=85' },
-          { label: 'Front 3/4', src: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1200&q=85' },
-          { label: 'Interior', src: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=85' }
+          { label: 'Profile', src: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&h=675&q=85' },
+          { label: 'Front 3/4', src: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1200&h=675&q=85' },
+          { label: 'Interior', src: 'https://images.unsplash.com/photo-1594502184342-2e12f877aa73?auto=format&fit=crop&w=1200&h=675&q=85' }
         ],
         pins: {
           performance: {
@@ -2429,7 +2433,7 @@
         },
         specs: {
           capacity: '4',
-          seatImg: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=160&q=80',
+          seatImg: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=200&h=200&q=80',
           power: '362 hp',
           engine: '3.0L Turbo I-6',
           transmission: '9G-Tronic',
@@ -2452,11 +2456,11 @@
         price: 17500,
         priceFormatted: '৳ 17,500',
         desc: 'Commanding executive authority synthesized with track-bred agility. The illuminated Iconic Glow kidney grille meets an opulent lounge with a 31.3-inch 8K theater screen.',
-        heroImg: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=85',
+        heroImg: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&h=675&q=85',
         gallery: [
-          { label: 'Profile', src: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=85' },
-          { label: 'Front 3/4', src: 'https://images.unsplash.com/photo-1556189250-72ba954cfc2b?auto=format&fit=crop&w=1200&q=85' },
-          { label: 'Lounge', src: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1200&q=85' }
+          { label: 'Profile', src: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&h=675&q=85' },
+          { label: 'Front 3/4', src: 'https://images.unsplash.com/photo-1556189250-72ba954cfc2b?auto=format&fit=crop&w=1200&h=675&q=85' },
+          { label: 'Lounge', src: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1200&h=675&q=85' }
         ],
         pins: {
           performance: {
@@ -2496,7 +2500,7 @@
         },
         specs: {
           capacity: '4',
-          seatImg: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=160&q=80',
+          seatImg: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=200&h=200&q=80',
           power: '375 hp',
           engine: '3.0L TwinPower Turbo',
           transmission: '8-Speed Steptronic',
@@ -2518,10 +2522,10 @@
         price: 16500,
         priceFormatted: '৳ 16,500',
         desc: 'Pioneering technological composure and executive serenity. Predictive active suspension, OLED dynamic lighting blades, and tailored Valcona leather recliners.',
-        heroImg: 'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1200&q=85',
+        heroImg: 'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1200&h=675&q=85',
         gallery: [
-          { label: 'Profile', src: 'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1200&q=85' },
-          { label: 'Front 3/4', src: 'https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1200&q=85' }
+          { label: 'Profile', src: 'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1200&h=675&q=85' },
+          { label: 'Front 3/4', src: 'https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1200&h=675&q=85' }
         ],
         pins: {
           performance: {
@@ -2561,7 +2565,7 @@
         },
         specs: {
           capacity: '4',
-          seatImg: 'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=160&q=80',
+          seatImg: 'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=200&h=200&q=80',
           power: '335 hp',
           engine: '3.0L TFSI Turbo V6',
           transmission: '8-Speed Tiptronic',
@@ -2583,10 +2587,10 @@
         price: 16000,
         priceFormatted: '৳ 16,000',
         desc: 'Porsche has translated their race-bred aerodynamics into whisper-quiet electric composure. Dual permanent magnet synchronous motors deliver 530 hp with instantaneous surge.',
-        heroImg: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85',
+        heroImg: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&h=675&q=85',
         gallery: [
-          { label: 'Profile', src: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85' },
-          { label: 'Front 3/4', src: 'https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=1200&q=85' }
+          { label: 'Profile', src: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&h=675&q=85' },
+          { label: 'Front 3/4', src: 'https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=1200&h=675&q=85' }
         ],
         pins: {
           performance: {
@@ -2626,7 +2630,7 @@
         },
         specs: {
           capacity: '4',
-          seatImg: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=160&q=80',
+          seatImg: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=200&h=200&q=80',
           power: '530 hp',
           engine: 'Dual Synchronous EV',
           transmission: '2-Speed GT Auto',
@@ -2648,10 +2652,10 @@
         price: 22000,
         priceFormatted: '৳ 22,000',
         desc: 'Unrivaled prestige, peerless refinement, and effortless poise. High-clearance electronic air suspension with dynamic response floats across varying surfaces.',
-        heroImg: 'https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=1200&q=85',
+        heroImg: 'https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=1200&h=675&q=85',
         gallery: [
-          { label: 'Profile', src: 'https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=1200&q=85' },
-          { label: 'Front 3/4', src: 'https://images.unsplash.com/photo-1541348263662-e0c8de4259ba?auto=format&fit=crop&w=1200&q=85' }
+          { label: 'Profile', src: 'https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=1200&h=675&q=85' },
+          { label: 'Front 3/4', src: 'https://images.unsplash.com/photo-1541348263662-e0c8de4259ba?auto=format&fit=crop&w=1200&h=675&q=85' }
         ],
         pins: {
           performance: {
@@ -2691,7 +2695,7 @@
         },
         specs: {
           capacity: '5',
-          seatImg: 'https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=160&q=80',
+          seatImg: 'https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=200&h=200&q=80',
           power: '523 hp',
           engine: '4.4L Twin-Turbo V8',
           transmission: '8-Speed ZF Auto',
@@ -2713,10 +2717,10 @@
         price: 9500,
         priceFormatted: '৳ 9,500',
         desc: 'Renowned high-clearance reliability engineered to conquer monsoon downpours, inter-district executive delegations, and high-security convoys with unwavering poise.',
-        heroImg: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=85',
+        heroImg: 'https://images.unsplash.com/photo-1594502184342-2e12f877aa73?auto=format&fit=crop&w=1200&h=675&q=85',
         gallery: [
-          { label: 'Profile', src: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=85' },
-          { label: 'Front 3/4', src: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=85' }
+          { label: 'Profile', src: 'https://images.unsplash.com/photo-1594502184342-2e12f877aa73?auto=format&fit=crop&w=1200&h=675&q=85' },
+          { label: 'Front 3/4', src: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&h=675&q=85' }
         ],
         pins: {
           performance: {
@@ -2756,7 +2760,7 @@
         },
         specs: {
           capacity: '7',
-          seatImg: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=160&q=80',
+          seatImg: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=200&h=200&q=80',
           power: '204 hp',
           engine: '2.8L D-4D Turbo Diesel',
           transmission: '6-Speed Super ECT',
@@ -2777,10 +2781,10 @@
         price: 6500,
         priceFormatted: '৳ 6,500',
         desc: 'Understated elegance and consummate balance. Engineered with dual digital widescreen cockpit, ambient acoustic sealing, and smooth agility for corporate summits.',
-        heroImg: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1200&q=85',
+        heroImg: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1200&h=675&q=85',
         gallery: [
-          { label: 'Profile', src: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1200&q=85' },
-          { label: 'Front 3/4', src: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=85' }
+          { label: 'Profile', src: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1200&h=675&q=85' },
+          { label: 'Front 3/4', src: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&h=675&q=85' }
         ],
         pins: {
           performance: {
@@ -2820,7 +2824,7 @@
         },
         specs: {
           capacity: '4',
-          seatImg: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=160&q=80',
+          seatImg: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=200&h=200&q=80',
           power: '255 hp',
           engine: '2.0L Turbo 4-Cyl',
           transmission: '9G-Tronic',
@@ -2841,10 +2845,10 @@
         price: 8000,
         priceFormatted: '৳ 8,000',
         desc: 'Private aviation luxury on four wheels. Dual Ottoman captain recliners, personal stowaway writing desks, and privacy glass create a moving boardroom for VIP dignitaries.',
-        heroImg: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1200&q=85',
+        heroImg: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1200&h=675&q=85',
         gallery: [
-          { label: 'Profile', src: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1200&q=85' },
-          { label: 'Lounge', src: 'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=85' }
+          { label: 'Profile', src: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1200&h=675&q=85' },
+          { label: 'Lounge', src: 'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&h=675&q=85' }
         ],
         pins: {
           performance: {
@@ -2884,7 +2888,7 @@
         },
         specs: {
           capacity: '6',
-          seatImg: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=160&q=80',
+          seatImg: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=200&h=200&q=80',
           power: '247 hp',
           engine: '2.5L Hybrid E-Four',
           transmission: 'E-CVT Seamless',
@@ -2905,10 +2909,10 @@
         price: 15000,
         priceFormatted: '৳ 15,000',
         desc: 'Instant electric torque and minimalist elegance. Complete panoramic glass canopy, ultra-quiet zero-emission drivetrain, and next-generation safety architecture.',
-        heroImg: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=1200&q=85',
+        heroImg: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=1200&h=675&q=85',
         gallery: [
-          { label: 'Profile', src: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=1200&q=85' },
-          { label: 'Front 3/4', src: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=85' }
+          { label: 'Profile', src: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=1200&h=675&q=85' },
+          { label: 'Front 3/4', src: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&h=675&q=85' }
         ],
         pins: {
           performance: {
@@ -2948,7 +2952,7 @@
         },
         specs: {
           capacity: '5',
-          seatImg: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=160&q=80',
+          seatImg: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=200&h=200&q=80',
           power: '1,020 hp',
           engine: 'Tri-Motor All-Electric',
           transmission: 'Direct Drive 1-Speed',
@@ -3379,7 +3383,7 @@
         },
         {
           carKey: 'prado',
-          src: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=900&q=80&auto=format&fit=crop',
+          src: 'https://images.unsplash.com/photo-1594502184342-2e12f877aa73?w=900&q=80&auto=format&fit=crop',
           alt: 'Toyota Land Cruiser 300',
           title: 'Toyota Land Cruiser 300',
           subtitle: '৳ 12,000 / day • Presidential 4x4'
