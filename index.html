@@ -22,14 +22,14 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- React Bits CircularCarousel Component Styles -->
-  <link rel="stylesheet" href="./CircularCarousel.css?v=5">
+  <link rel="stylesheet" href="./CircularCarousel.css?v=6">
 
   <!-- React 18 & ReactDOM 18 for CircularCarousel (with CDN fallback) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
   <script>window.React || document.write('<script src="https://unpkg.com/react@18/umd/react.production.min.js"><\/script>')</script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
   <script>window.ReactDOM || document.write('<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"><\/script>')</script>
-  <script src="./CircularCarousel.js?v=5"></script>
+  <script src="./CircularCarousel.js?v=6"></script>
 
   <script>
     tailwind.config = {
@@ -3131,24 +3131,30 @@
       }
     }
 
-    window.openCarDetailsModal = function(carKey) { openCarDetailsModal(carKey); };
     function openCarDetailsModal(carKey) {
-      renderModalContent(carKey);
+      try {
+        renderModalContent(carKey);
+      } catch (err) {
+        console.warn('renderModalContent error:', err);
+      }
 
       const modal = document.getElementById('carDetailsModal');
       const modalBox = document.getElementById('carDetailsModalBox');
       if (modal && modalBox) {
         modal.classList.remove('hidden');
+        modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
 
-        requestAnimationFrame(() => {
+        setTimeout(() => {
           modal.classList.remove('opacity-0');
           modalBox.classList.remove('scale-95');
           modalBox.classList.add('scale-100');
-        });
+        }, 15);
       }
 
-      if (window.lucide) lucide.createIcons();
+      if (window.lucide) {
+        try { lucide.createIcons(); } catch (e) {}
+      }
     }
 
     function switchModalCar(carKey) {
@@ -3174,6 +3180,7 @@
       modalBox.classList.add('scale-95');
       setTimeout(() => {
         modal.classList.add('hidden');
+        modal.style.display = 'none';
         document.body.style.overflow = '';
       }, 250);
     }

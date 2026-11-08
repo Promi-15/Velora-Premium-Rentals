@@ -911,7 +911,17 @@
                         type: 'button',
                         className: 'circular-carousel__glass-btn',
                         'aria-label': `Show details for ${item.title || item.alt || 'vehicle'}`,
+                        onPointerDown: e => {
+                          e.stopPropagation();
+                        },
+                        onMouseDown: e => {
+                          e.stopPropagation();
+                        },
+                        onTouchStart: e => {
+                          e.stopPropagation();
+                        },
                         onClick: e => {
+                          e.preventDefault();
                           e.stopPropagation();
                           if (item && item.carKey && typeof window.openCarDetailsModal === 'function') {
                             window.openCarDetailsModal(item.carKey);
