@@ -1083,6 +1083,277 @@
       </div>
     </section>
 
+    <!-- 4.5. PREMIUM CAR BOOKING STUDIO (Glassmorphism & Vehicle Photography) -->
+    <section id="booking-studio" class="py-20 sm:py-28 bg-[#F7F8FA] border-b border-hairline relative overflow-hidden">
+      <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header & Section Intro -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 gap-6">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-hairline shadow-xs text-xs font-semibold tracking-wider text-ink uppercase mb-3.5">
+              <span class="w-2 h-2 rounded-full bg-electric animate-pulse"></span>
+              <span>PREMIUM CHAUFFEUR BOOKING</span>
+            </div>
+            <h2 class="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-ink font-serif leading-[1.1]">
+              Your Journey, <span class="font-serif font-bold text-ink">Your Way.</span>
+            </h2>
+            <p class="text-inkSecondary text-base sm:text-lg mt-3.5 leading-relaxed font-roboto">
+              From airport transfers to city rides and long-distance journeys, experience effortless travel with VELORA.
+            </p>
+          </div>
+
+          <!-- Subtle Trust Indicators -->
+          <div class="flex flex-wrap items-center gap-2.5 sm:gap-3.5 text-xs sm:text-sm font-medium text-inkSecondary">
+            <div class="flex items-center gap-2 px-3.5 py-2 rounded-full bg-white border border-hairline shadow-xs">
+              <i data-lucide="shield-check" class="w-4 h-4 text-electric"></i>
+              <span class="text-ink font-semibold">Professional Drivers</span>
+            </div>
+            <div class="flex items-center gap-2 px-3.5 py-2 rounded-full bg-white border border-hairline shadow-xs">
+              <i data-lucide="sparkles" class="w-4 h-4 text-electric"></i>
+              <span class="text-ink font-semibold">Premium Vehicles</span>
+            </div>
+            <div class="flex items-center gap-2 px-3.5 py-2 rounded-full bg-white border border-hairline shadow-xs">
+              <i data-lucide="clock" class="w-4 h-4 text-electric"></i>
+              <span class="text-ink font-semibold">Reliable Service</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Automotive Studio Showcase Stage -->
+        <div class="relative rounded-[32px] sm:rounded-[40px] bg-gradient-to-b from-[#F9FAFC] via-[#ECEFF4] to-[#E5E9F0] border border-white/80 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.08)] overflow-hidden p-6 sm:p-10 lg:p-12">
+          
+          <!-- Subtle Studio Lighting Accents (Radial Glows + Horizon floor) -->
+          <div class="absolute inset-0 pointer-events-none">
+            <!-- Overhead Studio Spotlight -->
+            <div class="absolute -top-32 left-1/4 w-[650px] h-[500px] bg-white/70 rounded-full blur-3xl opacity-80"></div>
+            <!-- Electric Blue Ambient Glow in background -->
+            <div class="absolute top-1/2 left-1/3 -translate-y-1/2 w-[500px] h-[350px] bg-electric/[0.05] rounded-full blur-[100px]"></div>
+            <!-- Studio Ground Vignette & Horizon Shadow -->
+            <div class="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#DCE0E8]/70 via-[#E8ECF2]/30 to-transparent"></div>
+          </div>
+
+          <!-- Content Grid: Vehicle Stage (Left) & Glassmorphism Booking Panel (Right) -->
+          <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+            
+            <!-- Left / Center: Vehicle Photography with Floating Badges & Model Switcher -->
+            <div class="lg:col-span-7 flex flex-col justify-between min-h-[380px] sm:min-h-[460px] relative">
+              
+              <!-- Vehicle Tag & Interactive Switcher -->
+              <div class="flex flex-wrap items-center justify-between gap-3 z-10">
+                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-white/90 shadow-xs text-xs font-semibold text-ink">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  <span id="bookingStudioCarBadge">Flagship Luxury SUV &bull; Executive Tier</span>
+                </div>
+                
+                <!-- Vehicle Selector Tabs (Switch car live) -->
+                <div class="flex items-center gap-1.5 p-1 rounded-full bg-white/75 backdrop-blur-md border border-hairline shadow-xs">
+                  <button type="button" onclick="switchBookingCar('suv')" id="btnCarSUV" class="px-3.5 py-1 rounded-full text-xs font-bold transition bg-ink text-white shadow-xs">SUV</button>
+                  <button type="button" onclick="switchBookingCar('sedan')" id="btnCarSedan" class="px-3.5 py-1 rounded-full text-xs font-semibold text-inkSecondary hover:text-ink transition">Sedan</button>
+                  <button type="button" onclick="switchBookingCar('ev')" id="btnCarEV" class="px-3.5 py-1 rounded-full text-xs font-semibold text-inkSecondary hover:text-ink transition">EV Plaid</button>
+                </div>
+              </div>
+
+              <!-- Main Vehicle Photo Showcase with Realistic Contact Shadow -->
+              <div class="relative my-4 sm:my-6 flex items-center justify-center">
+                
+                <!-- Soft realistic contact shadow under car -->
+                <div class="absolute -bottom-4 sm:-bottom-6 left-1/2 -translate-x-1/2 w-[88%] h-12 bg-black/35 rounded-[100%] blur-xl pointer-events-none"></div>
+                <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-[72%] h-6 bg-black/45 rounded-[100%] blur-md pointer-events-none"></div>
+
+                <!-- Vehicle Image -->
+                <img id="bookingStudioCarImg" 
+                     src="https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=1400&q=85" 
+                     alt="Velora Luxury Chauffeur Vehicle" 
+                     class="w-full max-h-[340px] sm:max-h-[420px] object-cover rounded-2xl sm:rounded-3xl shadow-xl transition-all duration-500 filter brightness-[0.98] contrast-[1.03]">
+              </div>
+
+              <!-- Car Details Pill Row -->
+              <div class="flex flex-wrap items-center gap-2 sm:gap-3 text-xs text-ink font-medium z-10 pt-2">
+                <span id="bookingStudioCarName" class="font-bold text-sm text-ink">Range Rover Autobiography SV</span>
+                <span class="text-inkSecondary">&bull;</span>
+                <span id="bookingStudioCarRate" class="text-electric font-semibold">৳ 18,500 / day</span>
+                <span class="text-inkSecondary">&bull;</span>
+                <span class="text-inkSecondary">Chauffeur Included</span>
+                <span class="text-inkSecondary">&bull;</span>
+                <span class="text-inkSecondary">Complimentary Wi-Fi</span>
+              </div>
+            </div>
+
+            <!-- Right: Floating Glassmorphism Booking Panel -->
+            <div class="lg:col-span-5 relative">
+              
+              <!-- Subtle decorative glass halo behind card -->
+              <div class="absolute -inset-1 bg-gradient-to-r from-white/30 via-electric/20 to-white/10 rounded-[32px] blur-xl opacity-60 pointer-events-none"></div>
+
+              <!-- The Floating Dark Glass Panel -->
+              <div class="relative bg-[#0E0F12]/85 backdrop-blur-2xl border border-white/20 rounded-[28px] sm:rounded-[32px] p-6 sm:p-7 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.25)] text-white">
+                
+                <!-- Panel Header / Title -->
+                <div class="flex items-center justify-between mb-5 pb-3 border-b border-white/10">
+                  <div>
+                    <h3 class="text-lg sm:text-xl font-bold font-serif text-white tracking-wide">Instant Reservation</h3>
+                    <p class="text-xs text-white/60 font-roboto mt-0.5">Customized executive chauffeur dispatch</p>
+                  </div>
+                  <div class="w-8 h-8 rounded-full bg-white/10 border border-white/15 flex items-center justify-center">
+                    <i data-lucide="compass" class="w-4 h-4 text-white"></i>
+                  </div>
+                </div>
+
+                <!-- 1. Selectable Booking Options (Distance / Hourly / Flat Rate) -->
+                <div class="mb-5">
+                  <div class="grid grid-cols-3 p-1 rounded-2xl bg-white/[0.08] border border-white/15 backdrop-blur-md text-xs font-semibold">
+                    <button type="button" 
+                            id="studioTabDistance" 
+                            onclick="setBookingStudioMode('distance')" 
+                            class="py-2.5 px-3 rounded-xl transition-all duration-200 text-center bg-white text-ink font-bold shadow-md">
+                      Distance
+                    </button>
+                    <button type="button" 
+                            id="studioTabHourly" 
+                            onclick="setBookingStudioMode('hourly')" 
+                            class="py-2.5 px-3 rounded-xl transition-all duration-200 text-center text-white/75 hover:text-white hover:bg-white/10">
+                      Hourly
+                    </button>
+                    <button type="button" 
+                            id="studioTabFlat" 
+                            onclick="setBookingStudioMode('flat')" 
+                            class="py-2.5 px-3 rounded-xl transition-all duration-200 text-center text-white/75 hover:text-white hover:bg-white/10">
+                      Flat Rate
+                    </button>
+                  </div>
+                </div>
+
+                <!-- 2. Form Fields (Pickup, Drop-off / Duration, Date, Time) -->
+                <form id="studioBookingForm" onsubmit="handleStudioBookingSubmit(event)" class="space-y-3.5">
+                  
+                  <!-- Field 1: Pickup Location -->
+                  <div>
+                    <label class="block text-[11px] font-semibold uppercase tracking-wider text-white/70 mb-1.5 flex items-center justify-between">
+                      <span id="labelStudioPickup">Pickup Location</span>
+                      <span class="text-[10px] text-electric font-medium">Dhaka City &amp; DAC</span>
+                    </label>
+                    <div class="group relative flex items-center rounded-xl bg-white/[0.06] hover:bg-white/[0.09] focus-within:bg-white/[0.12] border border-white/15 focus-within:border-white/40 transition duration-200 px-3.5 py-3">
+                      <i data-lucide="map-pin" class="w-4 h-4 text-electric shrink-0 mr-3"></i>
+                      <input type="text" 
+                             id="studioPickupInput" 
+                             required 
+                             placeholder="Enter pickup address or airport" 
+                             value="Hazrat Shahjalal International Airport (DAC)"
+                             class="w-full bg-transparent text-xs sm:text-sm text-white placeholder-white/40 outline-none font-sans">
+                    </div>
+                  </div>
+
+                  <!-- Field 2: Dynamic Drop-off / Duration / Package -->
+                  <div>
+                    <label class="block text-[11px] font-semibold uppercase tracking-wider text-white/70 mb-1.5 flex items-center justify-between">
+                      <span id="labelStudioDropoff">Drop-off Location</span>
+                      <span id="hintStudioDropoff" class="text-[10px] text-white/50">Destination</span>
+                    </label>
+                    
+                    <!-- Mode: Distance (Standard Text Input) -->
+                    <div id="containerStudioDropoffText" class="group relative flex items-center rounded-xl bg-white/[0.06] hover:bg-white/[0.09] focus-within:bg-white/[0.12] border border-white/15 focus-within:border-white/40 transition duration-200 px-3.5 py-3">
+                      <i data-lucide="navigation" class="w-4 h-4 text-electric shrink-0 mr-3"></i>
+                      <input type="text" 
+                             id="studioDropoffInput" 
+                             placeholder="Enter destination (e.g. Gulshan-2, Banani)" 
+                             value="Gulshan-2 Diplomatic Zone, Dhaka"
+                             class="w-full bg-transparent text-xs sm:text-sm text-white placeholder-white/40 outline-none font-sans">
+                    </div>
+
+                    <!-- Mode: Hourly (Select Duration) -->
+                    <div id="containerStudioHourlySelect" class="hidden relative flex items-center rounded-xl bg-white/[0.06] hover:bg-white/[0.09] focus-within:bg-white/[0.12] border border-white/15 focus-within:border-white/40 transition duration-200 px-3.5 py-3">
+                      <i data-lucide="hourglass" class="w-4 h-4 text-electric shrink-0 mr-3"></i>
+                      <select id="studioHourlySelect" class="w-full bg-transparent text-xs sm:text-sm text-white outline-none font-sans cursor-pointer [&>option]:text-ink [&>option]:bg-white">
+                        <option value="4 Hours">4 Hours (Half Day Executive Chauffeur)</option>
+                        <option value="8 Hours" selected>8 Hours (Full Day VIP Mobility)</option>
+                        <option value="12 Hours">12 Hours (All-Day Executive Standby)</option>
+                        <option value="24 Hours">24 Hours (Overnight Full Dedication)</option>
+                      </select>
+                    </div>
+
+                    <!-- Mode: Flat Rate (Select Pre-Negotiated Route) -->
+                    <div id="containerStudioFlatSelect" class="hidden relative flex items-center rounded-xl bg-white/[0.06] hover:bg-white/[0.09] focus-within:bg-white/[0.12] border border-white/15 focus-within:border-white/40 transition duration-200 px-3.5 py-3">
+                      <i data-lucide="tag" class="w-4 h-4 text-electric shrink-0 mr-3"></i>
+                      <select id="studioFlatSelect" class="w-full bg-transparent text-xs sm:text-sm text-white outline-none font-sans cursor-pointer [&>option]:text-ink [&>option]:bg-white">
+                        <option value="Airport ➔ Gulshan/Banani (Flat ৳3,500)" selected>Airport ➔ Gulshan/Banani (Flat ৳3,500)</option>
+                        <option value="Airport ➔ Dhanmondi/Motijheel (Flat ৳4,200)">Airport ➔ Dhanmondi/Motijheel (Flat ৳4,200)</option>
+                        <option value="Dhaka ➔ Padma Bridge Tour (Flat ৳8,500)">Dhaka ➔ Padma Bridge Tour (Flat ৳8,500)</option>
+                        <option value="Dhaka ➔ Gazipur Industrial (Flat ৳6,000)">Dhaka ➔ Gazipur Industrial (Flat ৳6,000)</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Field 3 & 4: Date and Time Grid -->
+                  <div class="grid grid-cols-2 gap-3">
+                    <!-- Pickup Date -->
+                    <div>
+                      <label class="block text-[11px] font-semibold uppercase tracking-wider text-white/70 mb-1.5">
+                        Pickup Date
+                      </label>
+                      <div class="group relative flex items-center rounded-xl bg-white/[0.06] hover:bg-white/[0.09] focus-within:bg-white/[0.12] border border-white/15 focus-within:border-white/40 transition duration-200 px-3 py-3">
+                        <i data-lucide="calendar" class="w-4 h-4 text-white/60 shrink-0 mr-2"></i>
+                        <input type="date" 
+                               id="studioDateInput" 
+                               required 
+                               class="w-full bg-transparent text-xs sm:text-sm text-white placeholder-white/40 outline-none font-sans [color-scheme:dark]">
+                      </div>
+                    </div>
+
+                    <!-- Pickup Time -->
+                    <div>
+                      <label class="block text-[11px] font-semibold uppercase tracking-wider text-white/70 mb-1.5">
+                        Pickup Time
+                      </label>
+                      <div class="group relative flex items-center rounded-xl bg-white/[0.06] hover:bg-white/[0.09] focus-within:bg-white/[0.12] border border-white/15 focus-within:border-white/40 transition duration-200 px-3 py-3">
+                        <i data-lucide="clock" class="w-4 h-4 text-white/60 shrink-0 mr-2"></i>
+                        <input type="time" 
+                               id="studioTimeInput" 
+                               required 
+                               value="10:00"
+                               class="w-full bg-transparent text-xs sm:text-sm text-white placeholder-white/40 outline-none font-sans [color-scheme:dark]">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 3. Prominent CTA Button: "Book Your Ride" -->
+                  <div class="pt-2">
+                    <button type="submit" 
+                            class="w-full py-4 px-6 rounded-2xl bg-white hover:bg-neutral-100 text-ink font-bold text-sm sm:text-base tracking-wide transition duration-300 shadow-[0_12px_28px_rgba(255,255,255,0.18)] hover:shadow-[0_16px_36px_rgba(255,255,255,0.28)] flex items-center justify-center gap-3 group active:scale-[0.99]">
+                      <span class="tracking-tight">Book Your Ride</span>
+                      <span class="w-7 h-7 rounded-full bg-ink text-white flex items-center justify-center group-hover:bg-electric transition duration-300">
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                      </span>
+                    </button>
+                  </div>
+
+                  <!-- Mini Trust Badges inside Form Card -->
+                  <div class="pt-2 flex items-center justify-between text-[11px] text-white/60 border-t border-white/10 mt-3">
+                    <span class="flex items-center gap-1.5">
+                      <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400"></i>
+                      <span>Guaranteed On-Time</span>
+                    </span>
+                    <span class="flex items-center gap-1.5">
+                      <i data-lucide="shield" class="w-3.5 h-3.5 text-electric"></i>
+                      <span>Vetted Chauffeurs</span>
+                    </span>
+                    <span class="flex items-center gap-1.5">
+                      <i data-lucide="credit-card" class="w-3.5 h-3.5 text-white/70"></i>
+                      <span>Zero Hidden Fees</span>
+                    </span>
+                  </div>
+
+                </form>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
     <!-- 5. HOW IT WORKS (White rounded sheet with 3 columns, vertical dividers, 01/02/03, dashed curve) -->
     <section id="how-it-works" class="py-24 bg-pageAlt border-y border-hairline">
       <div class="max-w-[1280px] mx-auto px-4 sm:px-6">
@@ -1788,6 +2059,8 @@
     const today = new Date().toISOString().split('T')[0];
     document.getElementById('bookDate').value = today;
     document.getElementById('modalDateInput').value = today;
+    const studioDateInit = document.getElementById('studioDateInput');
+    if (studioDateInit) studioDateInit.value = today;
 
     // Viewport Mode Switcher (Desktop 1440px vs Mobile 390px)
     function setViewport(mode) {
@@ -1938,6 +2211,141 @@
       if (days === 3) total = Math.round(total * 0.95);
       if (days === 7) total = Math.round(total * 0.85);
       document.getElementById('modalCalculatedTotal').innerText = `৳ ${total.toLocaleString()}`;
+    }
+
+    // Studio Booking Section Controller
+    let currentStudioMode = 'distance';
+    const STUDIO_CARS = {
+      suv: {
+        name: 'Range Rover Autobiography SV',
+        badge: 'Flagship Luxury SUV &bull; Executive Tier',
+        rate: '৳ 18,500 / day',
+        img: 'https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=1400&q=85',
+        carSelectVal: '18500'
+      },
+      sedan: {
+        name: 'BMW 7 Series 740Li M-Sport',
+        badge: 'Presidential Saloon &bull; Theater Lounge',
+        rate: '৳ 17,500 / day',
+        img: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1400&q=85',
+        carSelectVal: '17500'
+      },
+      ev: {
+        name: 'Tesla Model S Plaid Tri-Motor',
+        badge: 'Next-Gen EV &bull; Carbon Stealth',
+        rate: '৳ 15,000 / day',
+        img: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=1400&q=85',
+        carSelectVal: '15000'
+      }
+    };
+    let activeStudioCar = 'suv';
+
+    function switchBookingCar(carType) {
+      if (!STUDIO_CARS[carType]) return;
+      activeStudioCar = carType;
+      const car = STUDIO_CARS[carType];
+      
+      const img = document.getElementById('bookingStudioCarImg');
+      if (img) {
+        img.style.opacity = '0';
+        setTimeout(() => {
+          img.src = car.img;
+          img.style.opacity = '1';
+        }, 150);
+      }
+      
+      const nameEl = document.getElementById('bookingStudioCarName');
+      if (nameEl) nameEl.textContent = car.name;
+      
+      const badgeEl = document.getElementById('bookingStudioCarBadge');
+      if (badgeEl) badgeEl.innerHTML = car.badge;
+      
+      const rateEl = document.getElementById('bookingStudioCarRate');
+      if (rateEl) rateEl.textContent = car.rate;
+
+      ['suv', 'sedan', 'ev'].forEach(type => {
+        const btn = document.getElementById('btnCar' + type.toUpperCase());
+        if (btn) {
+          if (type === carType) {
+            btn.className = 'px-3.5 py-1 rounded-full text-xs font-bold transition bg-ink text-white shadow-xs';
+          } else {
+            btn.className = 'px-3.5 py-1 rounded-full text-xs font-semibold text-inkSecondary hover:text-ink transition';
+          }
+        }
+      });
+    }
+
+    function setBookingStudioMode(mode) {
+      currentStudioMode = mode;
+      const tabDist = document.getElementById('studioTabDistance');
+      const tabHour = document.getElementById('studioTabHourly');
+      const tabFlat = document.getElementById('studioTabFlat');
+
+      const activeClass = 'py-2.5 px-3 rounded-xl transition-all duration-200 text-center bg-white text-ink font-bold shadow-md';
+      const inactiveClass = 'py-2.5 px-3 rounded-xl transition-all duration-200 text-center text-white/75 hover:text-white hover:bg-white/10';
+
+      if (tabDist) tabDist.className = mode === 'distance' ? activeClass : inactiveClass;
+      if (tabHour) tabHour.className = mode === 'hourly' ? activeClass : inactiveClass;
+      if (tabFlat) tabFlat.className = mode === 'flat' ? activeClass : inactiveClass;
+
+      const dropTextContainer = document.getElementById('containerStudioDropoffText');
+      const dropHourContainer = document.getElementById('containerStudioHourlySelect');
+      const dropFlatContainer = document.getElementById('containerStudioFlatSelect');
+      const labelDrop = document.getElementById('labelStudioDropoff');
+      const hintDrop = document.getElementById('hintStudioDropoff');
+
+      if (mode === 'distance') {
+        if (dropTextContainer) dropTextContainer.classList.remove('hidden');
+        if (dropHourContainer) dropHourContainer.classList.add('hidden');
+        if (dropFlatContainer) dropFlatContainer.classList.add('hidden');
+        if (labelDrop) labelDrop.textContent = 'Drop-off Location';
+        if (hintDrop) hintDrop.textContent = 'Destination';
+      } else if (mode === 'hourly') {
+        if (dropTextContainer) dropTextContainer.classList.add('hidden');
+        if (dropHourContainer) dropHourContainer.classList.remove('hidden');
+        if (dropFlatContainer) dropFlatContainer.classList.add('hidden');
+        if (labelDrop) labelDrop.textContent = 'Duration / Standby';
+        if (hintDrop) hintDrop.textContent = 'Hourly Standby';
+      } else if (mode === 'flat') {
+        if (dropTextContainer) dropTextContainer.classList.add('hidden');
+        if (dropHourContainer) dropHourContainer.classList.add('hidden');
+        if (dropFlatContainer) dropFlatContainer.classList.remove('hidden');
+        if (labelDrop) labelDrop.textContent = 'Select Flat Route';
+        if (hintDrop) hintDrop.textContent = 'Fixed Fare';
+      }
+      lucide.createIcons();
+    }
+
+    function handleStudioBookingSubmit(e) {
+      e.preventDefault();
+      const pickup = document.getElementById('studioPickupInput')?.value || '';
+      const date = document.getElementById('studioDateInput')?.value || '';
+      const time = document.getElementById('studioTimeInput')?.value || '';
+      
+      let destination = '';
+      if (currentStudioMode === 'distance') {
+        destination = document.getElementById('studioDropoffInput')?.value || '';
+      } else if (currentStudioMode === 'hourly') {
+        destination = document.getElementById('studioHourlySelect')?.value || '';
+      } else if (currentStudioMode === 'flat') {
+        destination = document.getElementById('studioFlatSelect')?.value || '';
+      }
+
+      // Pre-fill drawer inputs
+      const modalPickup = document.getElementById('modalPickupInput');
+      if (modalPickup) {
+        modalPickup.value = pickup + (destination ? ` ➔ ${destination}` : '') + (time ? ` [${time}]` : '');
+      }
+      
+      const modalDate = document.getElementById('modalDateInput');
+      if (modalDate) modalDate.value = date;
+
+      const carSelect = document.getElementById('modalCarSelect');
+      if (carSelect && STUDIO_CARS[activeStudioCar]) {
+        carSelect.value = STUDIO_CARS[activeStudioCar].carSelectVal;
+      }
+
+      openBookingDrawer();
     }
 
     function handleHeroSearch(e) {
