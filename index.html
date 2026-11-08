@@ -6,14 +6,14 @@
   <title>Velora Drive — Premium Car Rental & Chauffeur Service | Dhaka</title>
   <meta name="description" content="Arrive in style. Book in minutes. Premium car rental and professional chauffeur service across Dhaka, Bangladesh.">
 
-  <!-- Redaction Display Typeface (jsDelivr / Fontsource) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/redaction@5.3.0/700.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/redaction@5.3.0/400.min.css">
+  <!-- Google Fonts: Roboto Bold for Titles + Inter for Body & UI -->
 
-  <!-- Google Fonts: Manrope (Primary UI) + Roboto (Subheadings) -->
+
+
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -45,11 +45,13 @@
             electricGlow: 'rgba(47, 91, 255, 0.25)',
           },
           fontFamily: {
-            sans: ['Manrope', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'sans-serif'],
+            inter: ['Inter', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'sans-serif'],
+            title: ['Roboto', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'sans-serif'],
             subheading: ['Roboto', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'sans-serif'],
             roboto: ['Roboto', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'sans-serif'],
-            serif: ['"Redaction"', 'Georgia', 'serif'],
-            display: ['"Redaction"', 'Georgia', 'serif'],
+            serif: ['Roboto', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'sans-serif'],
+            display: ['Roboto', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'sans-serif'],
           },
           boxShadow: {
             'glass': '0 8px 32px 0 rgba(14, 15, 18, 0.06)',
@@ -67,7 +69,7 @@
     body {
       background-color: #FFFFFF;
       color: #0E0F12;
-      font-family: 'Manrope', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       overflow-x: hidden;
       selection-background-color: #2F5BFF;
       selection-color: #ffffff;
@@ -83,54 +85,34 @@
       font-style: normal !important;
     }
 
-    /* Redaction @font-face Direct Fallbacks */
-    @font-face {
-      font-family: 'Redaction';
-      font-style: normal;
-      font-weight: 700;
-      font-display: swap;
-      src: url('https://cdn.jsdelivr.net/fontsource/fonts/redaction@5.3.0/latin-700-normal.woff2') format('woff2'),
-           url('https://cdn.jsdelivr.net/fontsource/fonts/redaction@5.3.0/latin-700-normal.woff') format('woff');
-    }
-    @font-face {
-      font-family: 'Redaction';
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url('https://cdn.jsdelivr.net/fontsource/fonts/redaction@5.3.0/latin-400-normal.woff2') format('woff2'),
-           url('https://cdn.jsdelivr.net/fontsource/fonts/redaction@5.3.0/latin-400-normal.woff') format('woff');
-    }
-
-    /* Redaction Display Typography: All Titles Bold (700) */
+    /* ALL TITLES & HEADINGS: Roboto Bold (700) */
+    h1, h2, h3, h4, h5, h6,
     .font-serif, .font-display, .font-serif-display,
-    h1, h2, h3, h4,
-    .title-bold,
+    .title-bold, .font-title,
     h1.font-serif, h2.font-serif, h3.font-serif,
-    h1 .font-serif, h2 .font-serif, h3 .font-serif {
-      font-family: 'Redaction', Georgia, serif !important;
-      font-weight: 700 !important;
-      font-style: normal !important;
-    }
-
-    /* Legacy alias mapped safely to upright Redaction Bold */
+    h1 .font-serif, h2 .font-serif, h3 .font-serif,
     .font-serif-italic {
-      font-family: 'Redaction', Georgia, serif !important;
-      font-style: normal !important;
-      font-weight: 700 !important;
-    }
-
-    /* Subheadings Typography: Roboto */
-    .font-subheading,
-    .font-roboto,
-    .section-desc,
-    p.subheading {
       font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+      font-weight: 700 !important;
       font-style: normal !important;
     }
 
-    /* Primary Manrope UI Sans */
-    .font-sans {
-      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    /* ALL OTHER TEXT (Body, Paragraphs, UI, Subheadings, Buttons, Inputs, Spans): Inter */
+    body,
+    p,
+    a,
+    button,
+    input,
+    select,
+    textarea,
+    label,
+    li,
+    .font-sans,
+    .font-inter,
+    .font-roboto,
+    .font-subheading,
+    .section-desc {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
       font-style: normal !important;
     }
 
