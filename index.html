@@ -2225,32 +2225,7 @@
       if (modalDate) modalDate.value = date;
 
       openBookingDrawer();
-    } else if (currentHeroMode === 'hourly') {
-        destination = document.getElementById('heroHourlyDuration')?.value || '';
-      } else if (currentHeroMode === 'flat') {
-        destination = document.getElementById('heroFlatRoute')?.value || '';
-      }
-
-      // Pre-fill drawer inputs
-      const modalPickup = document.getElementById('modalPickupInput');
-      if (modalPickup) {
-        modalPickup.value = pickup + (destination ? ` ➔ ${destination}` : '') + (time ? ` [${time}]` : '');
-      }
-      
-      const modalDate = document.getElementById('modalDateInput');
-      if (modalDate) modalDate.value = date;
-
-      openBookingDrawer();
     }
-
-    // Initialize Hero Date Input to today's date
-    document.addEventListener('DOMContentLoaded', function() {
-      const heroDate = document.getElementById('heroPickupDate');
-      if (heroDate && !heroDate.value) {
-        const today = new Date().toISOString().split('T')[0];
-        heroDate.value = today;
-      }
-    });
 
     function handleDrawerSubmit(e) {
       e.preventDefault();
