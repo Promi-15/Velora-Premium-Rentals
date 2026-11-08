@@ -1723,173 +1723,253 @@
 
   </div>
 
-  <!-- 4. FULL-SCREEN LUXURY AUTOMOTIVE CAMPAIGN SHOWCASE (Inspired by Porsche GT3 RS Poster) -->
-  <div id="carDetailsModal" class="fixed inset-0 z-[120] bg-ink/85 backdrop-blur-xl flex items-center justify-center p-2 sm:p-4 md:p-6 overflow-y-auto hidden opacity-0 transition-opacity duration-300">
+<!-- 4. FULL-VIEWPORT ASTON MARTIN STYLE VEHICLE CONFIGURATOR / DETAILS SHOWCASE MODAL -->
+  <div id="carDetailsModal" class="fixed inset-0 z-[120] bg-black/60 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 md:p-6 hidden opacity-0 transition-opacity duration-300">
     
     <!-- Backdrop dismiss overlay -->
     <div class="fixed inset-0 -z-10" onclick="closeCarDetailsModal()"></div>
 
-    <!-- Spacious Full-Viewport Modal Box (Poster Style) -->
-    <div id="carDetailsModalBox" class="relative bg-white text-ink w-full max-w-[1340px] min-h-[85vh] max-h-[94vh] rounded-[32px] sm:rounded-[44px] border border-white/20 shadow-[0_30px_90px_rgba(0,0,0,0.6)] flex flex-col justify-between overflow-y-auto transform scale-95 transition-all duration-300">
+    <!-- Self-Contained Showroom Box (96vw x 92vh, No Vertical Scrolling on Desktop) -->
+    <div id="carDetailsModalBox" class="relative bg-[#FAFAFC] text-[#0E0F12] w-full max-w-[1540px] h-[92vh] max-h-[920px] min-h-[640px] rounded-[32px] sm:rounded-[38px] border border-white/80 shadow-[0_25px_80px_rgba(0,0,0,0.35)] flex flex-col justify-between overflow-hidden transform scale-95 transition-all duration-300 p-4 sm:p-6 lg:p-7 select-none">
       
-      <!-- 1. DARK CINEMATIC ANGLED PANELS STAGE (Upper Section) -->
-      <div class="relative h-[340px] sm:h-[440px] md:h-[500px] bg-[#0A0B0E] overflow-hidden flex-shrink-0">
+      <!-- 1. TOP HEADER NAVIGATION BAR -->
+      <header class="flex items-center justify-between h-12 pb-3 border-b border-neutral-200/70 shrink-0 z-30">
         
-        <!-- Top Editorial Navigation Bar -->
-        <div class="absolute top-4 sm:top-6 inset-x-4 sm:inset-x-8 z-30 flex items-center justify-between text-white pointer-events-auto">
-          <div class="flex items-center gap-2.5 sm:gap-4">
-            <span class="px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[10px] sm:text-[11px] font-mono font-bold tracking-widest text-white uppercase shadow-sm">
-              VELORA CAMPAIGN • EDITION 2024
-            </span>
-            <span id="modalSpecBadge" class="text-xs font-mono text-white/70 hidden sm:inline-block">
-              SPEC NO. 01 / 08
-            </span>
-          </div>
-
-          <!-- Quick Selector Navigation Pills (Desktop) -->
-          <div class="hidden lg:inline-flex p-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 overflow-x-auto max-w-xl">
-            <button onclick="switchModalCar('taycan')" id="modalNavBtn-taycan" class="modal-nav-btn px-3 py-1 rounded-full text-xs font-bold bg-white text-ink transition shadow-sm">Taycan</button>
-            <button onclick="switchModalCar('s-class')" id="modalNavBtn-s-class" class="modal-nav-btn px-3 py-1 rounded-full text-xs font-semibold text-white/70 hover:text-white transition">S-Class</button>
-            <button onclick="switchModalCar('bmw-7')" id="modalNavBtn-bmw-7" class="modal-nav-btn px-3 py-1 rounded-full text-xs font-semibold text-white/70 hover:text-white transition">BMW 7</button>
-            <button onclick="switchModalCar('range-rover')" id="modalNavBtn-range-rover" class="modal-nav-btn px-3 py-1 rounded-full text-xs font-semibold text-white/70 hover:text-white transition">Range Rover</button>
-            <button onclick="switchModalCar('prado')" id="modalNavBtn-prado" class="modal-nav-btn px-3 py-1 rounded-full text-xs font-semibold text-white/70 hover:text-white transition">Prado</button>
-            <button onclick="switchModalCar('e-class')" id="modalNavBtn-e-class" class="modal-nav-btn px-3 py-1 rounded-full text-xs font-semibold text-white/70 hover:text-white transition">E-Class</button>
-            <button onclick="switchModalCar('alphard')" id="modalNavBtn-alphard" class="modal-nav-btn px-3 py-1 rounded-full text-xs font-semibold text-white/70 hover:text-white transition">Alphard</button>
-            <button onclick="switchModalCar('tesla-3')" id="modalNavBtn-tesla-3" class="modal-nav-btn px-3 py-1 rounded-full text-xs font-semibold text-white/70 hover:text-white transition">Tesla 3</button>
-          </div>
-
-          <!-- Controls: Prev, Next & Close (X) -->
-          <div class="flex items-center gap-2">
-            <button onclick="prevModalCar()" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/15 hover:bg-white text-white hover:text-ink border border-white/25 backdrop-blur-md flex items-center justify-center transition-all duration-200 shadow-md hover:scale-105" aria-label="Previous Vehicle">
-              <i data-lucide="chevron-left" class="w-4 h-4"></i>
-            </button>
-            <button onclick="nextModalCar()" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/15 hover:bg-white text-white hover:text-ink border border-white/25 backdrop-blur-md flex items-center justify-center transition-all duration-200 shadow-md hover:scale-105" aria-label="Next Vehicle">
-              <i data-lucide="chevron-right" class="w-4 h-4"></i>
-            </button>
-            <button onclick="closeCarDetailsModal()" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/20 hover:bg-white text-white hover:text-ink border border-white/30 backdrop-blur-md flex items-center justify-center transition-all duration-200 shadow-md hover:scale-105 ml-2" aria-label="Close vehicle showcase">
-              <i data-lucide="x" class="w-4 h-4"></i>
-            </button>
-          </div>
+        <!-- Left: Velora Logo & Configurator Badge -->
+        <div class="flex items-center gap-3 sm:gap-4">
+          <img src="./logo.png" alt="Velora" class="h-6 sm:h-7 w-auto object-contain">
+          <span class="h-4 w-[1px] bg-neutral-300 hidden sm:block"></span>
+          <span class="px-3 py-1 rounded-full bg-neutral-100 text-[10px] sm:text-[11px] font-semibold text-neutral-600 hidden sm:inline-block">
+            Fleet Configurator
+          </span>
+          <span id="amHeaderCategory" class="text-xs font-bold text-electric hidden md:inline-block tracking-wider uppercase">
+            FLAGSHIP LUXURY SALOON
+          </span>
         </div>
 
-        <!-- 3 ANGLED BACKGROUND DETAIL PANELS WITH CRISP WHITE DIAGONAL SEPARATORS -->
-        <div class="absolute inset-0 flex items-stretch overflow-hidden -mx-8 sm:-mx-16 pointer-events-none select-none">
-          
-          <!-- Panel 1: Front / Headlight -->
-          <div class="relative flex-1 h-full overflow-hidden transform -skew-x-[14deg] border-r-[2.5px] border-white shadow-[0_0_15px_rgba(255,255,255,0.45)] origin-top bg-neutral-900">
-            <img id="modalPanel1" 
-                 src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=800&q=80" 
-                 alt="Front Headlight Detail" 
-                 class="w-[145%] h-[125%] object-cover transform skew-x-[14deg] -translate-x-[15%] filter contrast-110 brightness-90 transition-all duration-700 ease-out">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/30"></div>
-            <div class="absolute bottom-16 left-8 z-10 hidden md:block transform skew-x-[14deg]">
-              <span class="text-[9px] font-mono tracking-widest text-white/50 uppercase block">OPTIC ARCHITECTURE</span>
-              <span id="modalPanelTag1" class="text-xs font-bold text-white tracking-wide">Matrix Laser System</span>
-            </div>
-          </div>
-
-          <!-- Panel 2: Rear Lightbar / Tail Lamp -->
-          <div class="relative flex-1 h-full overflow-hidden transform -skew-x-[14deg] border-r-[2.5px] border-white shadow-[0_0_15px_rgba(255,255,255,0.45)] origin-top bg-neutral-900">
-            <img id="modalPanel2" 
-                 src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" 
-                 alt="Rear Tail Lamp Detail" 
-                 class="w-[145%] h-[125%] object-cover transform skew-x-[14deg] -translate-x-[15%] filter contrast-110 brightness-95 transition-all duration-700 ease-out">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/25"></div>
-            <div class="absolute bottom-16 left-8 z-10 hidden md:block transform skew-x-[14deg]">
-              <span class="text-[9px] font-mono tracking-widest text-white/50 uppercase block">AERODYNAMIC TRAIL</span>
-              <span id="modalPanelTag2" class="text-xs font-bold text-white tracking-wide">Continuous Light Blade</span>
-            </div>
-          </div>
-
-          <!-- Panel 3: Wing / Side Aero -->
-          <div class="relative flex-1 h-full overflow-hidden transform -skew-x-[14deg] origin-top bg-neutral-900">
-            <img id="modalPanel3" 
-                 src="https://images.unsplash.com/photo-1611859266238-4b98091d9d9b?auto=format&fit=crop&w=800&q=80" 
-                 alt="Aerodynamic Profile Detail" 
-                 class="w-[145%] h-[125%] object-cover transform skew-x-[14deg] -translate-x-[15%] filter contrast-110 brightness-90 transition-all duration-700 ease-out">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/30"></div>
-            <div class="absolute bottom-16 left-8 z-10 hidden md:block transform skew-x-[14deg]">
-              <span class="text-[9px] font-mono tracking-widest text-white/50 uppercase block">AERO PROFILING</span>
-              <span id="modalPanelTag3" class="text-xs font-bold text-white tracking-wide">Dynamic Flow Contour</span>
-            </div>
-          </div>
-
+        <!-- Centre: Navigation Pills (Desktop) -->
+        <div class="hidden md:flex items-center gap-1 p-1 rounded-full bg-neutral-100/90 border border-neutral-200/60 text-xs font-semibold">
+          <button type="button" class="px-4 py-1 rounded-full bg-black text-white shadow-xs">Showroom</button>
+          <button type="button" onclick="setCarModalTab('performance')" class="px-3.5 py-1 rounded-full text-neutral-600 hover:text-black hover:bg-white/80 transition">Performance</button>
+          <button type="button" onclick="setCarModalTab('luxury')" class="px-3.5 py-1 rounded-full text-neutral-600 hover:text-black hover:bg-white/80 transition">Interior Lounge</button>
+          <button type="button" onclick="setCarModalTab('chauffeur')" class="px-3.5 py-1 rounded-full text-neutral-600 hover:text-black hover:bg-white/80 transition">Chauffeur Service</button>
         </div>
 
-      </div>
+        <!-- Right: Model Index & Prev / Next / Close Buttons -->
+        <div class="flex items-center gap-2">
+          <span id="amModalCounter" class="text-xs font-mono font-bold text-neutral-500 mr-1 sm:mr-2">01 / 08</span>
+          <button onclick="prevModalCar()" class="w-8 h-8 rounded-full border border-neutral-200 hover:bg-white hover:border-neutral-300 text-neutral-800 flex items-center justify-center transition shadow-2xs hover:scale-105" title="Previous vehicle (Left Arrow)">
+            <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          </button>
+          <button onclick="nextModalCar()" class="w-8 h-8 rounded-full border border-neutral-200 hover:bg-white hover:border-neutral-300 text-neutral-800 flex items-center justify-center transition shadow-2xs hover:scale-105" title="Next vehicle (Right Arrow)">
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </button>
+          <button onclick="closeCarDetailsModal()" class="w-8 h-8 rounded-full bg-neutral-200/80 hover:bg-neutral-300/80 text-neutral-800 flex items-center justify-center transition ml-1 hover:scale-105" title="Close modal (Esc)">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
 
-      <!-- 2. CLEAN WHITE EDITORIAL CONTENT AREA (Bottom Section) -->
-      <div class="relative z-20 pt-4 sm:pt-6 pb-8 sm:pb-10 px-6 sm:px-12 text-center bg-white flex-1 flex flex-col justify-between">
+      </header>
+
+      <!-- 2. MAIN VEHICLE SHOWCASE STAGE (Exact Aston Martin Composition) -->
+      <div class="relative flex-1 grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-6 items-center my-auto py-2 overflow-hidden">
         
-        <div>
-          <!-- Vehicle Designation -->
-          <div class="space-y-1 sm:space-y-2">
-            <div class="inline-flex items-center gap-2">
-              <span id="modalCategoryText" class="text-[10px] sm:text-xs font-bold tracking-[0.25em] text-electric uppercase">
-                ELECTRIC GRAND TOURER
-              </span>
+        <!-- LEFT COLUMN: Brand, Model, Vertical Category Tabs, Short Narrative -->
+        <div class="lg:col-span-3 flex flex-col justify-between h-full py-1 z-20">
+          <div>
+            <!-- Brand & Model Name -->
+            <div class="space-y-0.5">
+              <h2 id="amCarBrand" class="text-2xl sm:text-3xl lg:text-[34px] font-black tracking-tight text-neutral-900 font-roboto leading-tight">
+                Mercedes-Benz
+              </h2>
+              <div id="amCarModelYear" class="text-xs sm:text-sm font-semibold text-neutral-500">
+                S-Class 450 &middot; 2024
+              </div>
             </div>
-            <h3 class="text-3xl sm:text-5xl md:text-6xl font-semibold uppercase tracking-tight text-ink flex items-center justify-center gap-3 flex-wrap font-serif">
-              <span id="modalBrandText">PORSCHE</span> 
-              <span id="modalModelText" class="font-normal font-serif tracking-normal">TAYCAN 4S</span>
-            </h3>
+
+            <!-- Vertical Category Tabs (Matching Reference) -->
+            <div class="flex flex-row lg:flex-col gap-1.5 mt-4 sm:mt-6 overflow-x-auto pb-1 lg:pb-0">
+              <button type="button" onclick="setCarModalTab('performance')" id="amTabBtn-performance" class="am-tab-btn px-4 py-1.5 rounded-full text-xs font-bold text-center bg-black text-white shadow-xs transition shrink-0">Performance</button>
+              <button type="button" onclick="setCarModalTab('design')" id="amTabBtn-design" class="am-tab-btn px-4 py-1.5 rounded-full text-xs font-semibold text-center text-neutral-600 hover:text-black hover:bg-neutral-100 transition shrink-0">Design</button>
+              <button type="button" onclick="setCarModalTab('safety')" id="amTabBtn-safety" class="am-tab-btn px-4 py-1.5 rounded-full text-xs font-semibold text-center text-neutral-600 hover:text-black hover:bg-neutral-100 transition shrink-0">Safety</button>
+              <button type="button" onclick="setCarModalTab('luxury')" id="amTabBtn-luxury" class="am-tab-btn px-4 py-1.5 rounded-full text-xs font-semibold text-center text-neutral-600 hover:text-black hover:bg-neutral-100 transition shrink-0">Luxury</button>
+              <button type="button" onclick="setCarModalTab('chauffeur')" id="amTabBtn-chauffeur" class="am-tab-btn px-4 py-1.5 rounded-full text-xs font-semibold text-center text-neutral-600 hover:text-black hover:bg-neutral-100 transition shrink-0">Chauffeur</button>
+            </div>
           </div>
 
-          <!-- Editorial Campaign Narrative -->
-          <p id="modalDescText" class="text-xs sm:text-sm md:text-base text-inkSecondary max-w-3xl mx-auto mt-3 sm:mt-4 leading-relaxed font-normal">
-            Porsche has translated their race-bred aerodynamics into whisper-quiet electric composure. Dual permanent magnet synchronous motors deliver 530 hp with instantaneous surge, while three-chamber adaptive air suspension effortlessly glides across Dhaka's premier corridors.
+          <!-- Narrative Statement -->
+          <p id="amCarShortDesc" class="text-xs text-neutral-500 leading-relaxed hidden lg:block mt-auto font-sans pr-4">
+            The definitive benchmark of automotive sanctuary. Engineered with intelligent Airmatic damping and executive rear recliners for corporate leaders.
           </p>
-
-          <!-- Refined Horizontal Specifications Strip (Exact Reference Poster Style) -->
-          <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 lg:gap-8 pt-5 pb-1 text-xs sm:text-sm font-bold uppercase tracking-wider text-ink border-t border-hairline max-w-4xl mx-auto mt-5 sm:mt-6">
-            <div>
-              <span class="text-inkSecondary font-medium text-[11px] sm:text-xs">ENGINE: </span>
-              <span id="modalSpecEngine" class="text-ink font-extrabold">DUAL MAGNET EV</span>
-            </div>
-            <span class="text-neutral-300 hidden sm:inline">|</span>
-            <div>
-              <span class="text-inkSecondary font-medium text-[11px] sm:text-xs">POWER: </span>
-              <span id="modalSpecPower" class="text-ink font-extrabold">390 kW / 530 HP</span>
-            </div>
-            <span class="text-neutral-300 hidden sm:inline">|</span>
-            <div>
-              <span class="text-inkSecondary font-medium text-[11px] sm:text-xs">TRANSMISSION: </span>
-              <span id="modalSpecTrans" class="text-ink font-extrabold">2-SPEED GT AUTO</span>
-            </div>
-            <span class="text-neutral-300 hidden sm:inline">|</span>
-            <div>
-              <span class="text-inkSecondary font-medium text-[11px] sm:text-xs">CAPACITY: </span>
-              <span id="modalSpecCapacity" class="text-ink font-extrabold">4 VIP SEATS</span>
-            </div>
-          </div>
         </div>
 
-        <!-- Action & Booking Row -->
-        <div class="mt-6 pt-4 border-t border-hairline/60 flex flex-wrap items-center justify-between gap-4 max-w-5xl mx-auto w-full">
-          <!-- Available Finishes / Swatches -->
-          <div class="flex items-center gap-3">
-            <span class="text-[11px] font-bold text-inkSecondary uppercase tracking-wider">Finish:</span>
-            <div id="modalColorSwatches" class="flex items-center gap-2"></div>
-          </div>
+        <!-- CENTER STAGE: Large Vehicle Visual + Pinned Feature Badges + Angle Switcher -->
+        <div class="lg:col-span-6 relative flex flex-col items-center justify-center min-h-[260px] sm:min-h-[310px] lg:min-h-[350px]">
+          
+          <!-- Background Subtle Gradient Halo -->
+          <div class="absolute inset-0 bg-radial from-neutral-200/40 via-transparent to-transparent rounded-full blur-2xl pointer-events-none -z-10"></div>
 
-          <!-- Price & Book Button -->
-          <div class="flex items-center gap-4 sm:gap-6 ml-auto">
-            <div class="text-right">
-              <span class="text-[10px] font-bold text-inkSecondary uppercase tracking-wider block">Chauffeur Included</span>
-              <span id="modalCarPrice" class="text-xl sm:text-2xl font-black text-ink">৳ 16,000</span>
-              <span class="text-xs text-inkSecondary font-medium">/ day</span>
+          <!-- Main Vehicle Display -->
+          <div class="relative w-full flex items-center justify-center">
+            <img id="amMainCarImg" 
+                 src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=85" 
+                 alt="Velora Fleet Vehicle" 
+                 class="max-h-[220px] sm:max-h-[270px] lg:max-h-[310px] w-auto max-w-full object-contain filter contrast-[1.03] drop-shadow-[0_18px_24px_rgba(0,0,0,0.20)] transition-all duration-300">
+            
+            <!-- Floor Contact Shadow -->
+            <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-[85%] h-6 bg-black/20 rounded-[100%] blur-lg pointer-events-none"></div>
+
+            <!-- PIN 1: Aerodynamics / Rear Wing -->
+            <div id="amPin1" class="absolute top-[8%] left-[2%] hidden md:flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/80 shadow-md transition-all hover:scale-105 z-20">
+              <span class="w-2.5 h-2.5 rounded-full bg-black ring-4 ring-black/15 shrink-0"></span>
+              <div class="text-left">
+                <span id="amPinTitle1" class="font-bold text-[11px] text-neutral-900 block leading-tight">Digital Light System</span>
+                <span id="amPinDesc1" class="text-[9px] text-neutral-500 block leading-tight">1.3M micro-mirror matrix</span>
+              </div>
             </div>
 
-            <button onclick="handleModalBookThisCar()" class="group inline-flex items-center gap-3 pl-6 pr-2.5 py-3 rounded-full bg-ink text-white font-bold text-xs sm:text-sm hover:bg-neutral-800 transition shadow-pill hover:shadow-xl">
-              <span>Book This Car</span>
-              <span class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-electric transition duration-300">
-                <i data-lucide="arrow-right" class="w-4 h-4 text-white"></i>
-              </span>
-            </button>
+            <!-- PIN 2: Roof / Acoustic Glazing -->
+            <div id="amPin2" class="absolute top-[2%] right-[8%] hidden md:flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/80 shadow-md transition-all hover:scale-105 z-20">
+              <span class="w-2.5 h-2.5 rounded-full bg-black ring-4 ring-black/15 shrink-0"></span>
+              <div class="text-left">
+                <span id="amPinTitle2" class="font-bold text-[11px] text-neutral-900 block leading-tight">Acoustic Glazing</span>
+                <span id="amPinDesc2" class="text-[9px] text-neutral-500 block leading-tight">Double-laminated sound isolation</span>
+              </div>
+            </div>
+
+            <!-- PIN 3: Powertrain / Front -->
+            <div id="amPin3" class="absolute bottom-[18%] left-[4%] hidden md:flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/80 shadow-md transition-all hover:scale-105 z-20">
+              <span class="w-2.5 h-2.5 rounded-full bg-black ring-4 ring-black/15 shrink-0"></span>
+              <div class="text-left">
+                <span id="amPinTitle3" class="font-bold text-[11px] text-neutral-900 block leading-tight">3.0L Turbo I-6</span>
+                <span id="amPinDesc3" class="text-[9px] text-neutral-500 block leading-tight">EQ Boost instantaneous surge</span>
+              </div>
+            </div>
+
+            <!-- PIN 4: Chassis / Air Suspension -->
+            <div id="amPin4" class="absolute bottom-[12%] right-[4%] hidden md:flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/80 shadow-md transition-all hover:scale-105 z-20">
+              <span class="w-2.5 h-2.5 rounded-full bg-black ring-4 ring-black/15 shrink-0"></span>
+              <div class="text-left">
+                <span id="amPinTitle4" class="font-bold text-[11px] text-neutral-900 block leading-tight">Airmatic Damping</span>
+                <span id="amPinDesc4" class="text-[9px] text-neutral-500 block leading-tight">Continuous terrain smoothing</span>
+              </div>
+            </div>
+
           </div>
+
+          <!-- Compact Angle Switcher / Gallery Strip -->
+          <div id="amGalleryThumbnails" class="flex items-center gap-2 mt-3 z-20">
+            <!-- Dynamically populated buttons -->
+          </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN: Highlight Card & Finishes -->
+        <div class="lg:col-span-3 flex flex-col justify-between h-full py-1 z-20">
+          
+          <!-- Dark Highlight Card (Aston Martin Style) -->
+          <div class="rounded-2xl bg-[#0E0F12] text-white p-4 sm:p-5 shadow-lg border border-neutral-800">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="w-6 h-6 rounded-lg bg-white/10 flex items-center justify-center text-white">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+              </span>
+              <span id="amHighlightTitle" class="text-xs font-bold tracking-tight">Uncompromised Power</span>
+            </div>
+            <p id="amHighlightDesc" class="text-[11px] text-neutral-400 leading-relaxed font-sans">
+              A fusion of cutting-edge automotive engineering and bespoke Dhaka executive travel.
+            </p>
+          </div>
+
+          <!-- Chauffeur & VIP Status Card -->
+          <div class="my-2 p-3 rounded-xl bg-white border border-neutral-200/80 shadow-2xs flex items-center justify-between">
+            <span class="text-[10px] font-bold text-neutral-500 uppercase tracking-wider">Chauffeur Included</span>
+            <span class="text-[11px] font-bold text-emerald-600 flex items-center gap-1">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+              <span>English-Fluent VIP</span>
+            </span>
+          </div>
+
+          <!-- Colors / Finishes Swatches -->
+          <div class="pt-2 border-t border-neutral-200/80">
+            <div class="text-[11px] font-bold text-neutral-700 mb-2">Available Finishes</div>
+            <div id="amModalColorSwatches" class="flex items-center gap-2.5"></div>
+          </div>
+
         </div>
 
       </div>
+
+      <!-- 3. BOTTOM SPECIFICATIONS & FEATURE HIGHLIGHTS ROW -->
+      <footer class="pt-3 border-t border-neutral-200/80 shrink-0 z-30">
+        
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold text-neutral-800 uppercase tracking-wider">Feature Highlights</span>
+          <span class="text-[11px] font-medium text-neutral-500">Full Technical Portfolio &middot; Dhaka Dispatch</span>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3">
+          
+          <!-- Card 1: Passenger Capacity + Seat Visual -->
+          <div class="p-3 rounded-2xl bg-white border border-neutral-200/80 shadow-2xs flex items-center justify-between">
+            <div>
+              <div class="flex items-center gap-1.5 text-neutral-400 mb-0.5">
+                <i data-lucide="users" class="w-3.5 h-3.5"></i>
+                <span class="text-[10px] font-bold uppercase tracking-wider">Passenger</span>
+              </div>
+              <div id="amSpecCapacityVal" class="text-xl sm:text-2xl font-black text-neutral-900 leading-tight">4</div>
+              <div class="text-[10px] text-neutral-500 font-medium">VIP Recliners</div>
+            </div>
+            <img id="amSpecSeatImg" src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=160&q=80" alt="Executive Interior" class="w-12 h-14 object-cover rounded-xl shadow-inner">
+          </div>
+
+          <!-- Card 2: Engine & Power -->
+          <div class="p-3 rounded-2xl bg-white border border-neutral-200/80 shadow-2xs">
+            <div class="flex items-center gap-1.5 text-neutral-400 mb-0.5">
+              <i data-lucide="gauge" class="w-3.5 h-3.5"></i>
+              <span class="text-[10px] font-bold uppercase tracking-wider">Engine</span>
+            </div>
+            <div id="amSpecPowerVal" class="text-xl sm:text-2xl font-black text-neutral-900 leading-tight">362 hp</div>
+            <div id="amSpecEngineSub" class="text-[10px] text-neutral-500 font-medium truncate">3.0L Turbo I-6</div>
+          </div>
+
+          <!-- Card 3: Transmission & Acceleration -->
+          <div class="p-3 rounded-2xl bg-white border border-neutral-200/80 shadow-2xs">
+            <div class="flex items-center gap-1.5 text-neutral-400 mb-0.5">
+              <i data-lucide="cog" class="w-3.5 h-3.5"></i>
+              <span class="text-[10px] font-bold uppercase tracking-wider">Transmission</span>
+            </div>
+            <div id="amSpecTransVal" class="text-base sm:text-lg font-bold text-neutral-900 leading-tight">9G-Tronic</div>
+            <div class="text-[10px] text-neutral-500 font-medium">0-100: <span id="amSpecAccelVal" class="font-bold text-electric">4.9s</span></div>
+          </div>
+
+          <!-- Card 4: Top Speed & Performance -->
+          <div class="p-3 rounded-2xl bg-white border border-neutral-200/80 shadow-2xs">
+            <div class="flex items-center gap-1.5 text-neutral-400 mb-0.5">
+              <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+              <span class="text-[10px] font-bold uppercase tracking-wider">Top Speed</span>
+            </div>
+            <div id="amSpecSpeedVal" class="text-xl sm:text-2xl font-black text-neutral-900 leading-tight">250 km/h</div>
+            <div class="text-[10px] text-neutral-500 font-medium">Electronic Limiter</div>
+          </div>
+
+          <!-- Card 5: Rental Price & Immediate Booking CTA -->
+          <div class="col-span-2 sm:col-span-1 p-3 rounded-2xl bg-white border-2 border-neutral-900 shadow-xs flex flex-col justify-between">
+            <div class="flex items-baseline justify-between">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-neutral-500">Daily Rate</span>
+              <div>
+                <span id="amSpecPriceVal" class="text-lg sm:text-xl font-black text-neutral-900">৳ 18,000</span>
+                <span class="text-[10px] text-neutral-500 font-medium">/day</span>
+              </div>
+            </div>
+            <button type="button" onclick="handleModalBookThisCar()" class="w-full mt-1.5 py-2 px-3 rounded-xl bg-black hover:bg-neutral-800 text-white font-bold text-xs transition flex items-center justify-center gap-1.5 shadow-sm group">
+              <span>Book This Vehicle</span>
+              <i data-lucide="arrow-right" class="w-3 h-3 group-hover:translate-x-0.5 transition"></i>
+            </button>
+          </div>
+
+        </div>
+
+      </footer>
 
     </div>
   </div>
@@ -2167,7 +2247,7 @@
       const time = document.getElementById('bookTime')?.value || '';
       const modalPickup = document.getElementById('modalPickupInput');
       if (modalPickup) {
-        modalPickup.value = pickup + (dropoff ? ` ➔ ${dropoff}` : '') + (time ? ` [${time}]` : '');
+        modalPickup.value = pickup + (dropoff ৳ ` ➔ ${dropoff}` : '') + (time ৳ ` [${time}]` : '');
       }
       const modalDate = document.getElementById('modalDateInput');
       if (modalDate) modalDate.value = date;
@@ -2185,9 +2265,9 @@
       const activeClass = 'py-2 sm:py-2.5 rounded-full text-center transition-all duration-200 bg-white text-[#0B0E14] font-bold shadow-md';
       const inactiveClass = 'py-2 sm:py-2.5 rounded-full text-center transition-all duration-200 text-white/75 hover:text-white hover:bg-white/10';
 
-      if (tabDist) tabDist.className = mode === 'distance' ? activeClass : inactiveClass;
-      if (tabHour) tabHour.className = mode === 'hourly' ? activeClass : inactiveClass;
-      if (tabFlat) tabFlat.className = mode === 'flat' ? activeClass : inactiveClass;
+      if (tabDist) tabDist.className = mode === 'distance' ৳ activeClass : inactiveClass;
+      if (tabHour) tabHour.className = mode === 'hourly' ৳ activeClass : inactiveClass;
+      if (tabFlat) tabFlat.className = mode === 'flat' ৳ activeClass : inactiveClass;
 
       const dropDist = document.getElementById('containerStudioDropoffDistance');
       const dropHour = document.getElementById('containerStudioDropoffHourly');
@@ -2218,7 +2298,7 @@
       // Pre-fill drawer inputs
       const modalPickup = document.getElementById('modalPickupInput');
       if (modalPickup) {
-        modalPickup.value = pickup + (destination ? ` ➔ ${destination}` : '') + (time ? ` [${time}]` : '');
+        modalPickup.value = pickup + (destination ৳ ` ➔ ${destination}` : '') + (time ৳ ` [${time}]` : '');
       }
       
       const modalDate = document.getElementById('modalDateInput');
@@ -2286,72 +2366,73 @@
       }
     });
 
-        // ----------------------------------------------------
-    // FULL-SCREEN LUXURY AUTOMOTIVE CAMPAIGN SHOWCASE CONTROLLER
-    // (Inspired by Porsche GT3 RS Campaign Poster)
     // ----------------------------------------------------
-    const showcaseCarsList = ['taycan', 's-class', 'bmw-7', 'range-rover', 'prado', 'e-class', 'alphard', 'tesla-3'];
+    // ASTON MARTIN INSPIRED SELF-CONTAINED VEHICLE SHOWROOM CONTROLLER
+    // ----------------------------------------------------
+    const showcaseCarsList = ['s-class', 'bmw-7', 'audi-a8', 'taycan', 'range-rover', 'prado', 'e-class', 'alphard', 'tesla-3'];
     let currentModalIndex = 0;
+    let currentActiveTab = 'performance';
 
     const carShowcaseData = {
-      'taycan': {
-        carKey: 'taycan',
-        brand: 'PORSCHE',
-        model: 'TAYCAN 4S',
-        category: 'ELECTRIC GRAND TOURER',
-        year: '2024',
-        price: 16000,
-        priceFormatted: '৳ 16,000',
-        desc: "Porsche has translated their race-bred aerodynamics into whisper-quiet electric composure. Dual permanent magnet synchronous motors deliver 530 hp with instantaneous surge, while three-chamber adaptive air suspension effortlessly glides across Dhaka's premier corridors.",
-        panels: {
-          front: 'https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=800&q=80',
-          rear: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80',
-          side: 'https://images.unsplash.com/photo-1611859266238-4b98091d9d9b?auto=format&fit=crop&w=800&q=80'
-        },
-        panelTags: {
-          tag1: 'Matrix Laser System',
-          tag2: 'Continuous Light Blade',
-          tag3: 'Dynamic Flow Contour'
-        },
-        heroImg: 'https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=1200&q=80',
-        specs: {
-          engine: 'DUAL MAGNET EV',
-          power: '390 kW / 530 HP',
-          transmission: '2-SPEED GT AUTO',
-          capacity: '4 VIP SEATS'
-        },
-        colors: [
-          { name: 'Volcano Grey', hex: '#374151', border: '#4B5563' },
-          { name: 'Carrara White', hex: '#F9FAFB', border: '#D1D5DB' },
-          { name: 'Gentian Blue', hex: '#1E3A8A', border: '#1D4ED8' },
-          { name: 'Carmine Red', hex: '#991B1B', border: '#B91C1C' }
-        ]
-      },
       's-class': {
         carKey: 's-class',
-        brand: 'MERCEDES-BENZ',
-        model: 'S-CLASS 450',
-        category: 'FLAGSHIP LUXURY SEDAN',
+        brand: 'Mercedes-Benz',
+        model: 'S-Class 450',
         year: '2024',
+        category: 'FLAGSHIP LUXURY SALOON',
         price: 18000,
         priceFormatted: '৳ 18,000',
-        desc: 'The definitive benchmark of automotive sanctuary. Featuring intelligent Airmatic damping, double-laminated acoustic glazing, and executive rear recliners with hot-stone massage for diplomats and corporate leaders.',
-        panels: {
-          front: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80',
-          rear: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=800&q=80',
-          side: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80'
+        desc: 'The definitive benchmark of automotive sanctuary. Featuring intelligent Airmatic damping, double-laminated acoustic glazing, and executive rear recliners for corporate leaders.',
+        heroImg: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=85',
+        gallery: [
+          { label: 'Profile', src: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=85' },
+          { label: 'Front 3/4', src: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1200&q=85' },
+          { label: 'Interior', src: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=85' }
+        ],
+        pins: {
+          performance: {
+            pin1: { title: 'Digital Light 1.3M', desc: 'Micro-mirror adaptive optics' },
+            pin2: { title: 'Acoustic Glazing', desc: 'Double-laminated sound isolation' },
+            pin3: { title: '3.0L Turbo I-6', desc: '362 HP with EQ Boost surge' },
+            pin4: { title: 'Airmatic Damping', desc: 'Continuous terrain smoothing' }
+          },
+          design: {
+            pin1: { title: 'Aerodynamic Form', desc: 'Drag coefficient 0.22 Cd' },
+            pin2: { title: 'Panoramic Sunroof', desc: 'Thermal insulated dual glass' },
+            pin3: { title: '20" Forged Alloys', desc: 'Multi-spoke executive finish' },
+            pin4: { title: 'Seamless Handles', desc: 'Flush electric door handles' }
+          },
+          safety: {
+            pin1: { title: 'Pre-Safe Impulse', desc: 'Lateral impact body lift' },
+            pin2: { title: 'Driver Assistance', desc: 'Level 2+ autonomous suite' },
+            pin3: { title: 'Armored Flooring', desc: 'Reinforced ballistic cabin' },
+            pin4: { title: 'Active Brake Assist', desc: '360 radar & pedestrian scan' }
+          },
+          luxury: {
+            pin1: { title: 'Energizing Comfort', desc: 'Hot-stone massage recliners' },
+            pin2: { title: 'Burmester 4D Audio', desc: '31 speakers & seat exciters' },
+            pin3: { title: 'Air Balance Scent', desc: 'Ionized fragranced climate' },
+            pin4: { title: 'MBUX Tablet', desc: 'Rear armrest command console' }
+          },
+          chauffeur: {
+            pin1: { title: 'VIP Discretion', desc: 'Rear electric privacy curtains' },
+            pin2: { title: 'English Chauffeur', desc: 'Diplomatic security certified' },
+            pin3: { title: 'Executive Desk', desc: 'Fold-out stowable workstation' },
+            pin4: { title: 'High-Speed Wi-Fi', desc: 'Dual-SIM 5G secure hotspot' }
+          }
         },
-        panelTags: {
-          tag1: 'Digital Light 1.3M Micro-Mirrors',
-          tag2: '3D Geometric OLED Cluster',
-          tag3: 'Airmatic Executive Silhouette'
+        highlight: {
+          title: 'Uncompromised Power',
+          desc: 'A fusion of cutting-edge German master engineering and bespoke Dhaka executive travel.'
         },
-        heroImg: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=80',
         specs: {
-          engine: '3.0L TURBO I-6 + EQ',
-          power: '270 kW / 362 HP',
-          transmission: '9G-TRONIC AUTO',
-          capacity: '4 VIP SEATS'
+          capacity: '4',
+          seatImg: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=160&q=80',
+          power: '362 hp',
+          engine: '3.0L Turbo I-6',
+          transmission: '9G-Tronic',
+          accel: '4.9s',
+          topSpeed: '250 km/h'
         },
         colors: [
           { name: 'Obsidian Black', hex: '#0E0F12', border: '#262626' },
@@ -2360,31 +2441,130 @@
           { name: 'Emerald Green', hex: '#064E3B', border: '#047857' }
         ]
       },
-            'audi-a8': {
-        carKey: 'audi-a8',
-        brand: 'AUDI',
-        model: 'A8 L QUATTRO',
-        category: 'PRESTIGE EXECUTIVE SALOON',
+      'bmw-7': {
+        carKey: 'bmw-7',
+        brand: 'BMW',
+        model: '740Li M-Sport',
         year: '2024',
+        category: 'PRESIDENTIAL SALOON',
+        price: 17500,
+        priceFormatted: '৳ 17,500',
+        desc: 'Commanding executive authority synthesized with track-bred agility. The illuminated Iconic Glow kidney grille meets an opulent lounge with a 31.3-inch 8K theater screen.',
+        heroImg: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=85',
+        gallery: [
+          { label: 'Profile', src: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=85' },
+          { label: 'Front 3/4', src: 'https://images.unsplash.com/photo-1556189250-72ba954cfc2b?auto=format&fit=crop&w=1200&q=85' },
+          { label: 'Lounge', src: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1200&q=85' }
+        ],
+        pins: {
+          performance: {
+            pin1: { title: 'Iconic Glow Grille', desc: 'Contour-illuminated LED optic' },
+            pin2: { title: '31.3" Theater Display', desc: '8K ceiling panoramic screen' },
+            pin3: { title: 'TwinPower Turbo', desc: '375 HP inline-6 engine' },
+            pin4: { title: 'Executive Drive Pro', desc: 'Active roll stabilization' }
+          },
+          design: {
+            pin1: { title: 'Crystal Headlights', desc: 'Swarovski crystal optic lenses' },
+            pin2: { title: 'Two-Tone Body', desc: 'M-Sport bespoke finish' },
+            pin3: { title: '21" Aerodynamic M', desc: 'Diamond-turned light alloys' },
+            pin4: { title: 'Sculpted Silhouette', desc: 'Long wheelbase proportions' }
+          },
+          safety: {
+            pin1: { title: 'BMW Highway Assist', desc: 'Hands-off guided driving' },
+            pin2: { title: 'Active Protection', desc: 'Emergency cabin pre-tension' },
+            pin3: { title: 'Run-Flat Tires', desc: 'Reinforced emergency transit' },
+            pin4: { title: '360 Parking Pro', desc: 'Automated reverse assistant' }
+          },
+          luxury: {
+            pin1: { title: 'Executive Lounge', desc: 'Continuous rear leg extension' },
+            pin2: { title: 'Interaction Bar', desc: 'Dynamic backlit glass cockpit' },
+            pin3: { title: 'Bowers & Wilkins', desc: 'Diamond 4D 1,965W audio' },
+            pin4: { title: 'Automatic Doors', desc: 'Soft-close electric entry' }
+          },
+          chauffeur: {
+            pin1: { title: 'Theater Mode', desc: 'Auto blinds & ambient dimming' },
+            pin2: { title: 'Touch Displays', desc: '5.5" door handle controllers' },
+            pin3: { title: 'English Chauffeur', desc: 'Executive security protocol' },
+            pin4: { title: 'Secure Hotspot', desc: 'Encrypted mobile Wi-Fi' }
+          }
+        },
+        highlight: {
+          title: 'Theater On Wheels',
+          desc: 'The ultimate traveling sanctuary with Amazon Fire TV and Bowers & Wilkins Diamond surround.'
+        },
+        specs: {
+          capacity: '4',
+          seatImg: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=160&q=80',
+          power: '375 hp',
+          engine: '3.0L TwinPower Turbo',
+          transmission: '8-Speed Steptronic',
+          accel: '5.1s',
+          topSpeed: '250 km/h'
+        },
+        colors: [
+          { name: 'Carbon Black', hex: '#111827', border: '#374151' },
+          { name: 'Mineral White', hex: '#F9FAFB', border: '#E5E7EB' },
+          { name: 'Tanzanite Blue', hex: '#1E3A8A', border: '#1D4ED8' }
+        ]
+      },
+      'audi-a8': {
+        carKey: 'audi-a8',
+        brand: 'Audi',
+        model: 'A8 L Quattro',
+        year: '2024',
+        category: 'PRESTIGE EXECUTIVE SALOON',
         price: 16500,
         priceFormatted: '৳ 16,500',
-        desc: 'Pioneering technological composure and executive serenity. Predictive active suspension, OLED dynamic lighting blades, and tailored Valcona leather recliners engineered for Dhaka dignitaries.',
-        panels: {
-          front: 'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=800&q=80',
-          rear: 'https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80',
-          side: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80'
+        desc: 'Pioneering technological composure and executive serenity. Predictive active suspension, OLED dynamic lighting blades, and tailored Valcona leather recliners.',
+        heroImg: 'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1200&q=85',
+        gallery: [
+          { label: 'Profile', src: 'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1200&q=85' },
+          { label: 'Front 3/4', src: 'https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1200&q=85' }
+        ],
+        pins: {
+          performance: {
+            pin1: { title: 'Digital Matrix OLED', desc: 'Dynamic directional projection' },
+            pin2: { title: 'Valcona Recliner', desc: 'Heated foot massage cradle' },
+            pin3: { title: '3.0L TFSI V6', desc: '335 HP turbocharged surge' },
+            pin4: { title: 'Predictive Chassis', desc: 'Electromechanical active levelling' }
+          },
+          design: {
+            pin1: { title: 'Singleframe Grille', desc: 'Chromed multi-faceted shield' },
+            pin2: { title: 'OLED Light Blade', desc: 'Continuous rear lighting strip' },
+            pin3: { title: '20" Turbine Alloys', desc: 'Polished bi-color aerodynamic' },
+            pin4: { title: 'Aluminum Spaceframe', desc: 'ASF lightweight rigid shell' }
+          },
+          safety: {
+            pin1: { title: 'Quattro Permanent', desc: 'Self-locking center differential' },
+            pin2: { title: 'Pre Sense 360', desc: 'Automatic lateral pre-lift' },
+            pin3: { title: 'Laser Radar Lidar', desc: 'High-density laser scanners' },
+            pin4: { title: 'Night Vision Assist', desc: 'Infrared pedestrian warning' }
+          },
+          luxury: {
+            pin1: { title: 'Bang & Olufsen 3D', desc: '23 acoustic lens speakers' },
+            pin2: { title: 'Rear Seat Remote', desc: '5.7" OLED removable tablet' },
+            pin3: { title: 'Valcona Leather', desc: 'Perforated diamond quilting' },
+            pin4: { title: 'Matrix LED Reading', desc: 'Individually steered lights' }
+          },
+          chauffeur: {
+            pin1: { title: 'Executive Package', desc: 'Passenger seat fold-forward' },
+            pin2: { title: 'Acoustic Canopy', desc: 'Dual-pane insulated quietude' },
+            pin3: { title: 'English Chauffeur', desc: 'Vetted background & protocol' },
+            pin4: { title: 'Fast 5G Wi-Fi', desc: 'Continuous executive tethering' }
+          }
         },
-        panelTags: {
-          tag1: 'Digital Matrix OLED Optic',
-          tag2: 'Continuous Dynamic Light Blade',
-          tag3: 'Predictive Active Suspension'
+        highlight: {
+          title: 'Predictive Composure',
+          desc: 'Electromechanical suspension reads the asphalt ahead to eliminate road imperfections completely.'
         },
-        heroImg: 'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1200&q=80',
         specs: {
-          engine: '3.0L TFSI TURBO V6',
-          power: '250 kW / 335 HP',
-          transmission: '8-SPEED TIPTRONIC',
-          capacity: '4 VIP SEATS'
+          capacity: '4',
+          seatImg: 'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=160&q=80',
+          power: '335 hp',
+          engine: '3.0L TFSI Turbo V6',
+          transmission: '8-Speed Tiptronic',
+          accel: '5.6s',
+          topSpeed: '250 km/h'
         },
         colors: [
           { name: 'Mythos Black', hex: '#0D0E12', border: '#262626' },
@@ -2392,286 +2572,560 @@
           { name: 'Daytona Grey', hex: '#4B5563', border: '#374151' }
         ]
       },
-'bmw-7': {
-        carKey: 'bmw-7',
-        brand: 'BMW',
-        model: '740Li M-SPORT',
-        category: 'EXECUTIVE FLAGSHIP',
+      'taycan': {
+        carKey: 'taycan',
+        brand: 'Porsche',
+        model: 'Taycan 4S',
         year: '2024',
-        price: 17500,
-        priceFormatted: '৳ 17,500',
-        desc: 'Commanding executive authority synthesized with track-bred agility. The illuminated Iconic Glow kidney grille meets an opulent lounge with a 31.3-inch 8K theater screen and BMW Crystal Interaction Bar.',
-        panels: {
-          front: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80',
-          rear: 'https://images.unsplash.com/photo-1556189250-72ba954cfc2b?auto=format&fit=crop&w=800&q=80',
-          side: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80'
+        category: 'ELECTRIC GRAND TOURER',
+        price: 16000,
+        priceFormatted: '৳ 16,000',
+        desc: 'Porsche has translated their race-bred aerodynamics into whisper-quiet electric composure. Dual permanent magnet synchronous motors deliver 530 hp with instantaneous surge.',
+        heroImg: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85',
+        gallery: [
+          { label: 'Profile', src: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85' },
+          { label: 'Front 3/4', src: 'https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=1200&q=85' }
+        ],
+        pins: {
+          performance: {
+            pin1: { title: 'Adaptive Aero Wing', desc: '3-stage electric spoiler' },
+            pin2: { title: '800V Architecture', desc: 'Ultra-fast charge management' },
+            pin3: { title: 'Dual Magnet EV', desc: '530 HP instant torque surge' },
+            pin4: { title: 'Porsche 4D Chassis', desc: 'Adaptive air suspension & PASM' }
+          },
+          design: {
+            pin1: { title: 'Four-Point LED', desc: 'Floating glass headlamp modules' },
+            pin2: { title: 'Flyline Roof', desc: 'Classic Porsche coupe taper' },
+            pin3: { title: '21" Mission E Rims', desc: 'Lightweight forged aero rims' },
+            pin4: { title: 'Glass Lightband', desc: 'Three-dimensional Porsche script' }
+          },
+          safety: {
+            pin1: { title: 'Low Center Gravity', desc: 'Underfloor battery ballast' },
+            pin2: { title: 'Porsche Ceramic', desc: 'PCCB high-fade stopping' },
+            pin3: { title: 'Lane Keep Pro', desc: 'Active trajectory stabilization' },
+            pin4: { title: 'Surround View 3D', desc: 'Maneuvering collision radar' }
+          },
+          luxury: {
+            pin1: { title: 'Curved OLED Screen', desc: '16.8" free-standing instrument' },
+            pin2: { title: 'Burmester 3D High', desc: '1,455W studio-grade fidelity' },
+            pin3: { title: 'OLEA Tanned Leather', desc: 'Sustainable club interior' },
+            pin4: { title: 'Advanced 4-Zone', desc: 'Touchless air draft louvers' }
+          },
+          chauffeur: {
+            pin1: { title: 'Silent Acceleration', desc: 'Zero engine vibration travel' },
+            pin2: { title: 'Chauffeur Vetted', desc: 'EV certified smooth pilot' },
+            pin3: { title: 'Rear Touch Console', desc: 'Independent temperature control' },
+            pin4: { title: 'VIP Wi-Fi Hotspot', desc: 'High-speed executive link' }
+          }
         },
-        panelTags: {
-          tag1: 'Iconic Glow Crystal Lamps',
-          tag2: 'Slim L-Shaped LED Blades',
-          tag3: 'Extended Wheelbase Aero'
+        highlight: {
+          title: 'Electric Thoroughbred',
+          desc: 'Zero tailpipe emissions matched with uncompromising grand touring dynamics and executive calm.'
         },
-        heroImg: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=80',
         specs: {
-          engine: '3.0L TWINPOWER TURBO',
-          power: '280 kW / 375 HP',
-          transmission: '8-SPEED STEPTRONIC',
-          capacity: '4 VIP SEATS'
+          capacity: '4',
+          seatImg: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=160&q=80',
+          power: '530 hp',
+          engine: 'Dual Synchronous EV',
+          transmission: '2-Speed GT Auto',
+          accel: '4.0s',
+          topSpeed: '250 km/h'
         },
         colors: [
-          { name: 'Carbon Black', hex: '#111827', border: '#374151' },
-          { name: 'Mineral White', hex: '#F9FAFB', border: '#E5E7EB' },
-          { name: 'Brooklyn Grey', hex: '#9CA3AF', border: '#6B7280' },
-          { name: 'Tanzanite Blue', hex: '#1E3A8A', border: '#1D4ED8' }
+          { name: 'Volcano Grey', hex: '#374151', border: '#4B5563' },
+          { name: 'Carrara White', hex: '#F9FAFB', border: '#D1D5DB' },
+          { name: 'Gentian Blue', hex: '#1E3A8A', border: '#1D4ED8' }
         ]
       },
       'range-rover': {
         carKey: 'range-rover',
-        brand: 'RANGE ROVER',
-        model: 'AUTOBIOGRAPHY',
-        category: 'PRESIDENTIAL LUXURY SUV',
+        brand: 'Range Rover',
+        model: 'Autobiography SV',
         year: '2024',
+        category: 'PRESIDENTIAL LUXURY SUV',
         price: 22000,
         priceFormatted: '৳ 22,000',
-        desc: 'Unrivaled prestige, peerless refinement, and effortless poise. High-clearance electronic air suspension with dynamic response floats across varying surfaces while semi-aniline leather executive class seating guarantees tranquility.',
-        panels: {
-          front: 'https://images.unsplash.com/photo-1541348263662-e0c8de4259ba?auto=format&fit=crop&w=800&q=80',
-          rear: 'https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=800&q=80',
-          side: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80'
+        desc: 'Unrivaled prestige, peerless refinement, and effortless poise. High-clearance electronic air suspension with dynamic response floats across varying surfaces.',
+        heroImg: 'https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=1200&q=85',
+        gallery: [
+          { label: 'Profile', src: 'https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=1200&q=85' },
+          { label: 'Front 3/4', src: 'https://images.unsplash.com/photo-1541348263662-e0c8de4259ba?auto=format&fit=crop&w=1200&q=85' }
+        ],
+        pins: {
+          performance: {
+            pin1: { title: 'Floating Roofline', desc: 'Signature British profile' },
+            pin2: { title: 'Semi-Aniline Leather', desc: '24-way executive seating' },
+            pin3: { title: '4.4L Twin-Turbo V8', desc: '523 HP with 750 Nm torque' },
+            pin4: { title: 'All-Wheel Steering', desc: '7.3 deg rear axle maneuver' }
+          },
+          design: {
+            pin1: { title: 'Digital LED Lights', desc: '1.2M micro-mirrors beam' },
+            pin2: { title: 'Hidden Tail Lamps', desc: 'Gloss black vertical blades' },
+            pin3: { title: '23" Diamond Turned', desc: 'Forged styling 1075 wheels' },
+            pin4: { title: 'Flush Glazing', desc: 'Aero drag reduced to 0.30' }
+          },
+          safety: {
+            pin1: { title: 'Terrain Response 2', desc: 'Auto mud/monsoon adaptive' },
+            pin2: { title: 'Wade Sensing', desc: '900 mm water clearing level' },
+            pin3: { title: 'ClearSight Radar', desc: 'Ground-view hood projection' },
+            pin4: { title: 'Armored Underbody', desc: 'Reinforced rock & flood protection' }
+          },
+          luxury: {
+            pin1: { title: 'Executive SV Class', desc: 'Power deployable center table' },
+            pin2: { title: 'Meridian Signature', desc: '1,600W with headrest speakers' },
+            pin3: { title: 'Active Cancellation', desc: 'Headrest anti-noise emitters' },
+            pin4: { title: 'Chilled Champagne', desc: 'Integrated rear refrigerator' }
+          },
+          chauffeur: {
+            pin1: { title: 'Command Seating', desc: 'Unmatched elevated viewpoint' },
+            pin2: { title: 'Executive Chauffeur', desc: 'VIP escort & route specialist' },
+            pin3: { title: 'Electric Sunblinds', desc: 'Side & quarter glass privacy' },
+            pin4: { title: 'Satellite Hotspot', desc: 'Reliable cross-district 5G' }
+          }
         },
-        panelTags: {
-          tag1: 'Digital LED Projection Lights',
-          tag2: 'Hidden-Until-Lit Vertical Taillamps',
-          tag3: 'Floating Roof Architecture'
+        highlight: {
+          title: 'Peerless Command',
+          desc: 'The undisputed gold standard for state visits, diplomats, and high-security convoys.'
         },
-        heroImg: 'https://images.unsplash.com/photo-1541348263662-e0c8de4259ba?auto=format&fit=crop&w=1200&q=80',
         specs: {
-          engine: '4.4L TWIN-TURBO V8',
-          power: '390 kW / 523 HP',
-          transmission: '8-SPEED ZF AUTO',
-          capacity: '5 SEATS'
+          capacity: '5',
+          seatImg: 'https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=160&q=80',
+          power: '523 hp',
+          engine: '4.4L Twin-Turbo V8',
+          transmission: '8-Speed ZF Auto',
+          accel: '4.6s',
+          topSpeed: '250 km/h'
         },
         colors: [
           { name: 'Santorini Black', hex: '#0B0F19', border: '#1F2937' },
           { name: 'Fuji White', hex: '#F9FAFB', border: '#E5E7EB' },
-          { name: 'Eiger Grey', hex: '#4B5563', border: '#374151' },
-          { name: 'Lantau Bronze', hex: '#78350F', border: '#92400E' }
+          { name: 'Eiger Grey', hex: '#4B5563', border: '#374151' }
         ]
       },
       'prado': {
         carKey: 'prado',
-        brand: 'TOYOTA',
-        model: 'LAND CRUISER PRADO TX',
-        category: 'ALL-TERRAIN PRESTIGE SUV',
+        brand: 'Toyota',
+        model: 'Land Cruiser Prado TX',
         year: '2024',
+        category: 'ALL-TERRAIN PRESTIGE 4X4',
         price: 9500,
         priceFormatted: '৳ 9,500',
         desc: 'Renowned high-clearance reliability engineered to conquer monsoon downpours, inter-district executive delegations, and high-security convoys with unwavering poise.',
-        panels: {
-          front: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80',
-          rear: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80',
-          side: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=800&q=80'
+        heroImg: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=85',
+        gallery: [
+          { label: 'Profile', src: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=85' },
+          { label: 'Front 3/4', src: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=85' }
+        ],
+        pins: {
+          performance: {
+            pin1: { title: 'Heavy-Duty Chassis', desc: 'Reinforced ladder frame' },
+            pin2: { title: 'Triple-Zone Climate', desc: 'Nanoe air purification' },
+            pin3: { title: '2.8L Turbo Diesel', desc: '500 Nm high-torque range' },
+            pin4: { title: 'KDSS Suspension', desc: 'Kinetic dynamic balance' }
+          },
+          design: {
+            pin1: { title: 'Bi-Beam LED Lights', desc: 'Dual projector matrix lamps' },
+            pin2: { title: 'Tailgate Step', desc: 'Convenient delegation access' },
+            pin3: { title: '18" Rugged Alloys', desc: 'High-sidewall highway tires' },
+            pin4: { title: 'Roof Rails', desc: 'Stowage capacity ready' }
+          },
+          safety: {
+            pin1: { title: 'Full-Time 4WD', desc: 'Torsen LSD center diff' },
+            pin2: { title: 'Multi-Terrain ABS', desc: 'Optimized wet surface braking' },
+            pin3: { title: '7 SRS Airbags', desc: 'Curtain shield protection' },
+            pin4: { title: 'Downhill Assist', desc: 'DAC descent speed control' }
+          },
+          luxury: {
+            pin1: { title: 'Leather Upholstery', desc: 'Comfort-bolstered seating' },
+            pin2: { title: 'Cool Box Console', desc: 'Chilled executive refreshments' },
+            pin3: { title: 'JBL 14-Speaker Audio', desc: 'High-clarity road acoustics' },
+            pin4: { title: 'Power Third Row', desc: 'Fold-flat luggage floor' }
+          },
+          chauffeur: {
+            pin1: { title: 'Highway Specialist', desc: 'Padma Bridge & expressway' },
+            pin2: { title: 'Convoys Security', desc: 'Delegation pilot certified' },
+            pin3: { title: 'Privacy Tint Glass', desc: 'UV & thermal rejection' },
+            pin4: { title: 'Mobile Wi-Fi', desc: 'Continuous connectivity' }
+          }
         },
-        panelTags: {
-          tag1: 'Bi-Beam LED Projectors',
-          tag2: 'Reinforced Tailgate Light Blades',
-          tag3: 'Heavy-Duty 4WD Underbody'
+        highlight: {
+          title: 'Unstoppable Poise',
+          desc: 'The most trusted diplomat conveyance for travel beyond Dhaka onto national expressways.'
         },
-        heroImg: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80',
         specs: {
-          engine: '2.8L D-4D TURBO DIESEL',
-          power: '150 kW / 204 HP',
-          transmission: '6-SPEED SUPER ECT',
-          capacity: '7 SEATS'
+          capacity: '7',
+          seatImg: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=160&q=80',
+          power: '204 hp',
+          engine: '2.8L D-4D Turbo Diesel',
+          transmission: '6-Speed Super ECT',
+          accel: '9.9s',
+          topSpeed: '180 km/h'
         },
         colors: [
           { name: 'Pearl White', hex: '#F8FAFC', border: '#CBD5E1' },
-          { name: 'Attitude Black', hex: '#111827', border: '#374151' },
-          { name: 'Silver Metallic', hex: '#94A3B8', border: '#64748B' },
-          { name: 'Bronze Mica', hex: '#78350F', border: '#92400E' }
+          { name: 'Attitude Black', hex: '#111827', border: '#374151' }
         ]
       },
       'e-class': {
         carKey: 'e-class',
-        brand: 'MERCEDES-BENZ',
-        model: 'E-CLASS 300',
-        category: 'EXECUTIVE DIPLOMATIC SEDAN',
+        brand: 'Mercedes-Benz',
+        model: 'E-Class 300',
         year: '2024',
+        category: 'EXECUTIVE DIPLOMATIC SEDAN',
         price: 6500,
         priceFormatted: '৳ 6,500',
-        desc: 'Understated elegance and consummate balance. Engineered with dual digital widescreen cockpit, ambient acoustic sealing, and smooth agility for corporate summits across Gulshan and Banani.',
-        panels: {
-          front: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=800&q=80',
-          rear: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80',
-          side: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80'
+        desc: 'Understated elegance and consummate balance. Engineered with dual digital widescreen cockpit, ambient acoustic sealing, and smooth agility for corporate summits.',
+        heroImg: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1200&q=85',
+        gallery: [
+          { label: 'Profile', src: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1200&q=85' },
+          { label: 'Front 3/4', src: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=85' }
+        ],
+        pins: {
+          performance: {
+            pin1: { title: 'High Performance LED', desc: 'Adaptive highway beam' },
+            pin2: { title: 'MBUX Dual Cockpit', desc: 'Panoramic touch screen' },
+            pin3: { title: '2.0L Turbo 4-Cyl', desc: '255 HP smooth efficiency' },
+            pin4: { title: 'Agility Damping', desc: 'Selective mechanical balance' }
+          },
+          design: {
+            pin1: { title: 'Star Motif Grille', desc: 'Chromed Mercedes pattern' },
+            pin2: { title: 'Two-Section Taillamps', desc: 'Star badge internal optic' },
+            pin3: { title: '19" AMG Alloys', desc: 'Multi-spoke titanium silver' },
+            pin4: { title: 'Aero Profiling', desc: 'Sleek 0.23 Cd drag figure' }
+          },
+          safety: {
+            pin1: { title: 'Attention Assist', desc: 'Driver alertness monitoring' },
+            pin2: { title: 'Active Distance Pro', desc: 'Radar adaptive cruise' },
+            pin3: { title: 'Blind Spot Assist', desc: 'Radar blind spot warning' },
+            pin4: { title: 'Surround Radar', desc: '360 protective envelope' }
+          },
+          luxury: {
+            pin1: { title: 'Burmester Surround', desc: '13 high-performance speakers' },
+            pin2: { title: '64-Color Ambient', desc: 'Dynamic LED cabin lighting' },
+            pin3: { title: 'Artico Leather', desc: 'Supple executive seating' },
+            pin4: { title: 'Thermatic Climate', desc: 'Dual-zone independent cool' }
+          },
+          chauffeur: {
+            pin1: { title: 'Corporate Mobility', desc: 'Punctual Dhaka transit' },
+            pin2: { title: 'English Chauffeur', desc: 'Vetted background & attire' },
+            pin3: { title: 'Quiet Sanctuary', desc: 'Acoustic glass insulation' },
+            pin4: { title: 'Wi-Fi Hotspot', desc: 'Secure mobile hotspot' }
+          }
         },
-        panelTags: {
-          tag1: 'High-Performance LED Headlamps',
-          tag2: 'Two-Section Star Motif Taillights',
-          tag3: 'Refined Executive Aerodynamics'
+        highlight: {
+          title: 'Modern Executive',
+          desc: 'The quintessential corporate limousine for daily diplomacy across Gulshan and Banani.'
         },
-        heroImg: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1200&q=80',
         specs: {
-          engine: '2.0L TURBO 4-CYLINDER',
-          power: '190 kW / 255 HP',
-          transmission: '9G-TRONIC AUTO',
-          capacity: '4 VIP SEATS'
+          capacity: '4',
+          seatImg: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=160&q=80',
+          power: '255 hp',
+          engine: '2.0L Turbo 4-Cyl',
+          transmission: '9G-Tronic',
+          accel: '6.2s',
+          topSpeed: '250 km/h'
         },
         colors: [
           { name: 'Obsidian Black', hex: '#0B0F19', border: '#1F2937' },
-          { name: 'Polar White', hex: '#F9FAFB', border: '#E5E7EB' },
-          { name: 'High-Tech Silver', hex: '#CBD5E1', border: '#94A3B8' }
+          { name: 'Polar White', hex: '#F9FAFB', border: '#E5E7EB' }
         ]
       },
       'alphard': {
         carKey: 'alphard',
-        brand: 'TOYOTA',
-        model: 'ALPHARD ROYAL LOUNGE',
-        category: 'FIRST-CLASS VIP MPV',
+        brand: 'Toyota',
+        model: 'Alphard Royal Lounge',
         year: '2024',
+        category: 'FIRST-CLASS VIP MPV',
         price: 8000,
         priceFormatted: '৳ 8,000',
-        desc: 'Private aviation luxury on four wheels. Dual Ottoman captain recliners, personal stowaway writing desks, and privacy glass create a moving boardroom for VIP dignitaries and high-profile delegations.',
-        panels: {
-          front: 'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=800&q=80',
-          rear: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80',
-          side: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=800&q=80'
+        desc: 'Private aviation luxury on four wheels. Dual Ottoman captain recliners, personal stowaway writing desks, and privacy glass create a moving boardroom for VIP dignitaries.',
+        heroImg: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1200&q=85',
+        gallery: [
+          { label: 'Profile', src: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1200&q=85' },
+          { label: 'Lounge', src: 'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=85' }
+        ],
+        pins: {
+          performance: {
+            pin1: { title: 'Chrome Armor Grille', desc: 'Dominant VIP road presence' },
+            pin2: { title: 'Ottoman Recliners', desc: 'Power leg rests with massage' },
+            pin3: { title: '2.5L Hybrid E-Four', desc: 'Whisper-quiet dual motor' },
+            pin4: { title: 'Double Wishbone', desc: 'Anti-vibration rear subframe' }
+          },
+          design: {
+            pin1: { title: '3-Eye LED Lights', desc: 'Sequential cornering lamps' },
+            pin2: { title: 'Dual Moonroof', desc: 'Twin panoramic roof openings' },
+            pin3: { title: '18" Polished Alloys', desc: 'Acoustic resonance damping' },
+            pin4: { title: 'Power Sliding Doors', desc: 'Hands-free foot sensor open' }
+          },
+          safety: {
+            pin1: { title: 'Toyota Safety Sense', desc: 'Pre-collision millimeter wave' },
+            pin2: { title: 'Lane Tracing Pro', desc: 'Centering steering assist' },
+            pin3: { title: 'Digital Rear Mirror', desc: 'High-res camera live feed' },
+            pin4: { title: 'Panoramic Monitor', desc: '360 bird-eye parking view' }
+          },
+          luxury: {
+            pin1: { title: 'Royal Lounge Cabin', desc: 'Dual first-class recliners' },
+            pin2: { title: '13.3" Ceiling Display', desc: 'HDMI rear entertainment' },
+            pin3: { title: 'Stowaway Work Desk', desc: 'Leather writing tables' },
+            pin4: { title: '16-Color Ceiling LED', desc: 'Custom luxury ambiance' }
+          },
+          chauffeur: {
+            pin1: { title: 'Boardroom On Wheels', desc: 'Full business privacy glass' },
+            pin2: { title: 'VIP Discretion', desc: 'Chauffeur protocol trained' },
+            pin3: { title: 'Reading Spotlights', desc: 'Adjustable LED work lights' },
+            pin4: { title: 'Fast Wi-Fi Hotspot', desc: 'Dual-antenna connectivity' }
+          }
         },
-        panelTags: {
-          tag1: 'Chrome Armor Dynamic Grille',
-          tag2: 'Illuminated Wing Lightbar',
-          tag3: 'Ultra-Quiet Acoustic Glass'
+        highlight: {
+          title: 'Private Jet On Wheels',
+          desc: 'The ultimate conference lounge for executives conducting meetings between airports and offices.'
         },
-        heroImg: 'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80',
         specs: {
-          engine: '2.5L HYBRID E-FOUR',
-          power: '184 kW / 247 HP',
-          transmission: 'E-CVT SEAMLESS',
-          capacity: '6 VIP SEATS'
+          capacity: '6',
+          seatImg: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=160&q=80',
+          power: '247 hp',
+          engine: '2.5L Hybrid E-Four',
+          transmission: 'E-CVT Seamless',
+          accel: '8.5s',
+          topSpeed: '180 km/h'
         },
         colors: [
           { name: 'Burning Black', hex: '#18181B', border: '#27272A' },
-          { name: 'White Pearl', hex: '#F8FAFC', border: '#E2E8F0' },
-          { name: 'Graphite Metallic', hex: '#52525B', border: '#3F3F46' }
+          { name: 'White Pearl', hex: '#F8FAFC', border: '#E2E8F0' }
         ]
       },
       'tesla-3': {
         carKey: 'tesla-3',
-        brand: 'TESLA',
-        model: 'MODEL 3 PERFORMANCE',
-        category: 'AERO ELECTRIC SEDAN',
+        brand: 'Tesla',
+        model: 'Model S Plaid',
         year: '2024',
-        price: 14000,
-        priceFormatted: '৳ 14,000',
-        desc: 'Instant electric torque and minimalist elegance. Complete panoramic glass canopy, ultra-quiet zero-emission drivetrain, and next-generation safety architecture for the modern forward-thinking executive.',
-        panels: {
-          front: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=800&q=80',
-          rear: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80',
-          side: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80'
+        category: 'TRI-MOTOR STEALTH EV',
+        price: 15000,
+        priceFormatted: '৳ 15,000',
+        desc: 'Instant electric torque and minimalist elegance. Complete panoramic glass canopy, ultra-quiet zero-emission drivetrain, and next-generation safety architecture.',
+        heroImg: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=1200&q=85',
+        gallery: [
+          { label: 'Profile', src: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=1200&q=85' },
+          { label: 'Front 3/4', src: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=85' }
+        ],
+        pins: {
+          performance: {
+            pin1: { title: 'Carbon Rotor Motors', desc: 'Tri-motor all-wheel torque' },
+            pin2: { title: 'Panoramic Canopy', desc: 'Acoustic UV & infrared shield' },
+            pin3: { title: '1,020 HP Tri-Motor', desc: 'Sub-2.1s instantaneous launch' },
+            pin4: { title: 'Air Dampers', desc: 'Dynamic auto-adjusting aero' }
+          },
+          design: {
+            pin1: { title: 'Matrix LED Lights', desc: 'Adaptive curve illumination' },
+            pin2: { title: 'Glass Roof Canopy', desc: 'Seamless single-piece glass' },
+            pin3: { title: '21" Arachnid Alloys', desc: 'Staggered turbine aero rims' },
+            pin4: { title: 'Carbon Deck Spoiler', desc: 'Integrated high-speed stability' }
+          },
+          safety: {
+            pin1: { title: 'Rigid Battery Shell', desc: 'Structural crash protection' },
+            pin2: { title: 'Autopilot Hardware 4', desc: 'Full surround optical radar' },
+            pin3: { title: 'Active Emergency Stop', desc: 'High-speed automated avoidance' },
+            pin4: { title: 'Sentry Mode 360', desc: 'Live multi-camera security' }
+          },
+          luxury: {
+            pin1: { title: '17" Cinematic Screen', desc: '2200x1300 gaming console' },
+            pin2: { title: '22-Speaker 960W', desc: 'Active road noise reduction' },
+            pin3: { title: 'Rear Display', desc: '8" rear console entertainment' },
+            pin4: { title: 'Ventilated Seats', desc: 'Dual-zone wireless phone trays' }
+          },
+          chauffeur: {
+            pin1: { title: 'Zero Vibration Ride', desc: 'Whisper-quiet cabin isolation' },
+            pin2: { title: 'Tesla Certified Chauffeur', desc: 'EV specialist smooth pilot' },
+            pin3: { title: 'Pre-Conditioning', desc: 'Pre-cooled pristine interior' },
+            pin4: { title: 'Starlink Mobile Hotspot', desc: 'Constant gigabit telemetry' }
+          }
         },
-        panelTags: {
-          tag1: 'Adaptive LED Blade Optics',
-          tag2: 'Sculpted Diffuser & Red Lightbar',
-          tag3: 'All-Glass Canopy Contour'
+        highlight: {
+          title: 'Next-Gen Stealth',
+          desc: 'The fastest accelerating production car on Earth, chauffeured in silent serenity.'
         },
-        heroImg: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=1200&q=80',
         specs: {
-          engine: 'DUAL MOTOR AWD',
-          power: '335 kW / 450 HP',
-          transmission: 'DIRECT DRIVE 1-SPEED',
-          capacity: '5 SEATS'
+          capacity: '5',
+          seatImg: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=160&q=80',
+          power: '1,020 hp',
+          engine: 'Tri-Motor All-Electric',
+          transmission: 'Direct Drive 1-Speed',
+          accel: '2.1s',
+          topSpeed: '322 km/h'
         },
         colors: [
           { name: 'Solid Black', hex: '#09090B', border: '#27272A' },
-          { name: 'Pearl White Multi-Coat', hex: '#FAFAFA', border: '#E4E4E7' },
-          { name: 'Stealth Grey', hex: '#71717A', border: '#52525B' },
-          { name: 'Ultra Red', hex: '#991B1B', border: '#DC2626' }
+          { name: 'Pearl White', hex: '#FAFAFA', border: '#E4E4E7' },
+          { name: 'Stealth Grey', hex: '#71717A', border: '#52525B' }
         ]
       }
     };
 
     function renderModalContent(carKey) {
-      const data = carShowcaseData[carKey] || carShowcaseData['taycan'];
+      const data = carShowcaseData[carKey] || carShowcaseData['s-class'];
       const idx = showcaseCarsList.indexOf(carKey);
       if (idx !== -1) currentModalIndex = idx;
 
-      // Update Navigation pills
-      document.querySelectorAll('.modal-nav-btn').forEach(btn => {
-        btn.classList.remove('bg-white', 'text-ink', 'shadow-sm', 'font-bold');
-        btn.classList.add('text-white/70', 'font-semibold');
-      });
-      const activeNavBtn = document.getElementById(`modalNavBtn-${carKey}`);
-      if (activeNavBtn) {
-        activeNavBtn.classList.remove('text-white/70', 'font-semibold');
-        activeNavBtn.classList.add('bg-white', 'text-ink', 'shadow-sm', 'font-bold');
+      // Update counter
+      const counterEl = document.getElementById('amModalCounter');
+      if (counterEl) {
+        counterEl.textContent = `${String(currentModalIndex + 1).padStart(2, '0')} / ${String(showcaseCarsList.length).padStart(2, '0')}`;
       }
 
-      // Spec badge
-      const specBadge = document.getElementById('modalSpecBadge');
-      if (specBadge) specBadge.innerText = `SPEC NO. 0${currentModalIndex + 1} / 08`;
+      // Update header category
+      const catEl = document.getElementById('amHeaderCategory');
+      if (catEl) catEl.textContent = data.category || 'EXECUTIVE CHAUFFEUR FLEET';
 
-      // Panels with smooth transition
-      const p1 = document.getElementById('modalPanel1');
-      const p2 = document.getElementById('modalPanel2');
-      const p3 = document.getElementById('modalPanel3');
-      const t1 = document.getElementById('modalPanelTag1');
-      const t2 = document.getElementById('modalPanelTag2');
-      const t3 = document.getElementById('modalPanelTag3');
+      // Brand & Model
+      const brandEl = document.getElementById('amCarBrand');
+      if (brandEl) brandEl.textContent = data.brand;
 
-      [p1, p2, p3].forEach(p => {
-        if (p) p.style.opacity = '0.35';
-      });
+      const modelYearEl = document.getElementById('amCarModelYear');
+      if (modelYearEl) modelYearEl.innerHTML = `${data.model} &middot; ${data.year}`;
 
-      setTimeout(() => {
-        if (p1) { p1.src = data.panels.front; p1.style.opacity = '1'; }
-        if (p2) { p2.src = data.panels.rear; p2.style.opacity = '1'; }
-        if (p3) { p3.src = data.panels.side; p3.style.opacity = '1'; }
-      }, 120);
+      const descEl = document.getElementById('amCarShortDesc');
+      if (descEl) descEl.textContent = data.desc;
 
-      if (t1) t1.innerText = data.panelTags.tag1;
-      if (t2) t2.innerText = data.panelTags.tag2;
-      if (t3) t3.innerText = data.panelTags.tag3;
+      // Main image
+      const mainImg = document.getElementById('amMainCarImg');
+      if (mainImg) {
+        mainImg.style.opacity = '0';
+        mainImg.src = data.heroImg;
+        setTimeout(() => { mainImg.style.opacity = '1'; }, 100);
+      }
 
-      // Editorial Typography
-      const brand = document.getElementById('modalBrandText');
-      const model = document.getElementById('modalModelText');
-      const cat = document.getElementById('modalCategoryText');
-      const desc = document.getElementById('modalDescText');
-      const price = document.getElementById('modalCarPrice');
+      // Update Gallery Thumbnails
+      const thumbContainer = document.getElementById('amGalleryThumbnails');
+      if (thumbContainer) {
+        thumbContainer.innerHTML = '';
+        if (data.gallery && data.gallery.length > 0) {
+          data.gallery.forEach((g, i) => {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = `px-3 py-1 rounded-full text-[11px] font-semibold transition ${i === 0 ৳ 'bg-black text-white shadow-xs' : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'}`;
+            btn.textContent = g.label || `Angle ${i + 1}`;
+            btn.onclick = () => {
+              document.querySelectorAll('#amGalleryThumbnails button').forEach(b => {
+                b.className = 'px-3 py-1 rounded-full text-[11px] font-semibold transition bg-neutral-100 text-neutral-600 hover:bg-neutral-200';
+              });
+              btn.className = 'px-3 py-1 rounded-full text-[11px] font-semibold transition bg-black text-white shadow-xs';
+              if (mainImg) {
+                mainImg.style.opacity = '0';
+                mainImg.src = g.src;
+                setTimeout(() => { mainImg.style.opacity = '1'; }, 100);
+              }
+            };
+            thumbContainer.appendChild(btn);
+          });
+        }
+      }
 
-      if (brand) brand.innerText = data.brand;
-      if (model) model.innerText = data.model;
-      if (cat) cat.innerText = data.category;
-      if (desc) desc.innerText = data.desc;
-      if (price) price.innerText = data.priceFormatted;
+      // Update Pins based on active tab
+      updateModalPins(data, currentActiveTab);
 
-      // Specs
-      const eng = document.getElementById('modalSpecEngine');
-      const pwr = document.getElementById('modalSpecPower');
-      const trs = document.getElementById('modalSpecTrans');
-      const cap = document.getElementById('modalSpecCapacity');
+      // Highlight card
+      const hlTitle = document.getElementById('amHighlightTitle');
+      if (hlTitle && data.highlight) hlTitle.textContent = data.highlight.title;
 
-      if (eng) eng.innerText = data.specs.engine;
-      if (pwr) pwr.innerText = data.specs.power;
-      if (trs) trs.innerText = data.specs.transmission;
-      if (cap) cap.innerText = data.specs.capacity;
+      const hlDesc = document.getElementById('amHighlightDesc');
+      if (hlDesc && data.highlight) hlDesc.textContent = data.highlight.desc;
 
-      // Color Swatches
-      const swatchContainer = document.getElementById('modalColorSwatches');
-      if (swatchContainer && data.colors) {
+      // Color swatches
+      const swatchContainer = document.getElementById('amModalColorSwatches');
+      if (swatchContainer) {
         swatchContainer.innerHTML = '';
-        data.colors.forEach((col, cIdx) => {
-          const btn = document.createElement('button');
-          btn.className = `w-5 h-5 rounded-full transition transform hover:scale-125 cursor-pointer ${cIdx === 0 ? 'ring-2 ring-electric ring-offset-2' : ''}`;
-          btn.style.backgroundColor = col.hex;
-          btn.style.border = `1px solid ${col.border || '#cbd5e1'}`;
-          btn.title = col.name;
-          btn.onclick = () => {
-            swatchContainer.querySelectorAll('button').forEach(b => b.classList.remove('ring-2', 'ring-electric', 'ring-offset-2'));
-            btn.classList.add('ring-2', 'ring-electric', 'ring-offset-2');
-          };
-          swatchContainer.appendChild(btn);
-        });
+        if (data.colors && data.colors.length > 0) {
+          data.colors.forEach((col, cIdx) => {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.title = col.name;
+            btn.className = `w-6 h-6 rounded-full border-2 transition-transform hover:scale-110 shadow-xs ${cIdx === 0 ৳ 'ring-2 ring-black ring-offset-2' : ''}`;
+            btn.style.backgroundColor = col.hex;
+            btn.style.borderColor = col.border || '#cbd5e1';
+            btn.onclick = () => {
+              swatchContainer.querySelectorAll('button').forEach(b => b.classList.remove('ring-2', 'ring-black', 'ring-offset-2'));
+              btn.classList.add('ring-2', 'ring-black', 'ring-offset-2');
+            };
+            swatchContainer.appendChild(btn);
+          });
+        }
+      }
+
+      // Specifications row
+      if (data.specs) {
+        const capVal = document.getElementById('amSpecCapacityVal');
+        if (capVal) capVal.textContent = data.specs.capacity;
+
+        const seatImg = document.getElementById('amSpecSeatImg');
+        if (seatImg && data.specs.seatImg) seatImg.src = data.specs.seatImg;
+
+        const powerVal = document.getElementById('amSpecPowerVal');
+        if (powerVal) powerVal.textContent = data.specs.power;
+
+        const engineSub = document.getElementById('amSpecEngineSub');
+        if (engineSub) engineSub.textContent = data.specs.engine;
+
+        const transVal = document.getElementById('amSpecTransVal');
+        if (transVal) transVal.textContent = data.specs.transmission;
+
+        const accelVal = document.getElementById('amSpecAccelVal');
+        if (accelVal) accelVal.textContent = data.specs.accel;
+
+        const speedVal = document.getElementById('amSpecSpeedVal');
+        if (speedVal) speedVal.textContent = data.specs.topSpeed;
+      }
+
+      // Pricing
+      const priceVal = document.getElementById('amSpecPriceVal');
+      if (priceVal) priceVal.textContent = data.priceFormatted;
+
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function updateModalPins(data, tabKey) {
+      if (!data.pins) return;
+      const pinSet = data.pins[tabKey] || data.pins['performance'] || data.pins;
+      
+      const p1 = pinSet.pin1 || { title: 'Aerodynamic Form', desc: 'Engineered for poise' };
+      const p2 = pinSet.pin2 || { title: 'Acoustic Glazing', desc: 'Silent isolation' };
+      const p3 = pinSet.pin3 || { title: 'TwinPower Surge', desc: 'Instant electric assist' };
+      const p4 = pinSet.pin4 || { title: 'Active Damping', desc: 'Continuous balance' };
+
+      const t1 = document.getElementById('amPinTitle1');
+      const d1 = document.getElementById('amPinDesc1');
+      if (t1) t1.textContent = p1.title;
+      if (d1) d1.textContent = p1.desc;
+
+      const t2 = document.getElementById('amPinTitle2');
+      const d2 = document.getElementById('amPinDesc2');
+      if (t2) t2.textContent = p2.title;
+      if (d2) d2.textContent = p2.desc;
+
+      const t3 = document.getElementById('amPinTitle3');
+      const d3 = document.getElementById('amPinDesc3');
+      if (t3) t3.textContent = p3.title;
+      if (d3) d3.textContent = p3.desc;
+
+      const t4 = document.getElementById('amPinTitle4');
+      const d4 = document.getElementById('amPinDesc4');
+      if (t4) t4.textContent = p4.title;
+      if (d4) d4.textContent = p4.desc;
+    }
+
+    function setCarModalTab(tabKey) {
+      currentActiveTab = tabKey;
+      document.querySelectorAll('.am-tab-btn').forEach(btn => {
+        btn.className = 'am-tab-btn px-4 py-1.5 rounded-full text-xs font-semibold text-center text-neutral-600 hover:text-black hover:bg-neutral-100 transition shrink-0';
+      });
+      const activeBtn = document.getElementById(`amTabBtn-${tabKey}`);
+      if (activeBtn) {
+        activeBtn.className = 'am-tab-btn px-4 py-1.5 rounded-full text-xs font-bold text-center bg-black text-white shadow-xs transition shrink-0';
+      }
+
+      const currentKey = showcaseCarsList[currentModalIndex] || 's-class';
+      const data = carShowcaseData[currentKey];
+      if (data) {
+        updateModalPins(data, tabKey);
       }
     }
 
@@ -2722,7 +3176,7 @@
     }
 
     function handleModalBookThisCar() {
-      const currentKey = showcaseCarsList[currentModalIndex] || 'taycan';
+      const currentKey = showcaseCarsList[currentModalIndex] || 's-class';
       const data = carShowcaseData[currentKey];
       closeCarDetailsModal();
 
