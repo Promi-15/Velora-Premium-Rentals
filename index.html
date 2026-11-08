@@ -744,18 +744,6 @@
       <!-- React Bits 3D Circular Carousel Mount (Grand Scale) -->
       <div class="relative w-full max-w-[1900px] mx-auto px-2 sm:px-6 z-20">
         <div id="circular-carousel-mount" style="width: 100%; height: 850px; position: relative;"></div>
-
-        <!-- Action Buttons Below Carousel -->
-        <div class="flex flex-wrap items-center justify-center gap-3 mt-4 sm:mt-6 text-center">
-          <button id="inspectActiveCarBtn" class="px-6 py-2.5 rounded-full bg-white hover:bg-neutral-200 active:scale-95 text-ink font-bold text-xs tracking-wide transition shadow-lg inline-flex items-center gap-2 cursor-pointer font-sans">
-            <span>Inspect Active Vehicle</span>
-            <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-electric"></i>
-          </button>
-          <button onclick="openBookingDrawer()" class="px-6 py-2.5 rounded-full bg-electric hover:bg-blue-600 active:scale-95 text-white font-bold text-xs tracking-wide transition shadow-lg shadow-electric/25 inline-flex items-center gap-2 cursor-pointer font-sans">
-            <span>Reserve with Chauffeur</span>
-            <i data-lucide="calendar" class="w-3.5 h-3.5 text-white"></i>
-          </button>
-        </div>
       </div>
 
     </section>
@@ -2666,7 +2654,7 @@
           cardWidth: 440,
           aspectRatio: 1,
           speed: 14,
-          captions: true,
+          captions: false,
           depthFade: 0.55,
           fadeColor: '#090a0d',
           cornerRadius: 18,
@@ -2680,16 +2668,6 @@
           }
         })
       );
-
-      const inspectBtn = document.getElementById('inspectActiveCarBtn');
-      if (inspectBtn) {
-        inspectBtn.onclick = function () {
-          const item = carItems[activeCarIndex];
-          if (item && item.carKey && typeof openCarDetailsModal === 'function') {
-            openCarDetailsModal(item.carKey);
-          }
-        };
-      }
     }
 
     // Initialize circular fleet carousel and icons on DOM load

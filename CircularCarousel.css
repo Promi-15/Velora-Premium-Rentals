@@ -124,19 +124,7 @@
 }
 
 .circular-carousel__caption {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 22px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  padding: 0 16px;
-  color: inherit;
-  text-align: center;
-  pointer-events: none;
-  animation: circular-carousel-reveal 900ms ease both;
+  display: none !important;
 }
 
 .circular-carousel__title {
