@@ -899,26 +899,6 @@
           )
         )
       ),
-      captions &&
-        current &&
-        React.createElement(
-          'div',
-          { className: 'circular-carousel__caption', 'aria-hidden': 'true' },
-          React.createElement(
-            'span',
-            { key: active, className: 'circular-carousel__title' },
-            current.title || current.alt,
-            current.subtitle &&
-              React.createElement('span', { className: 'circular-carousel__subtitle' }, current.subtitle)
-          ),
-          React.createElement(
-            'span',
-            { className: 'circular-carousel__count' },
-            React.createElement(Digits, { value: active + 1 }),
-            React.createElement('span', { className: 'circular-carousel__slash' }, '/'),
-            React.createElement('span', null, String(count).padStart(2, '0'))
-          )
-        ),
       React.createElement(
         'div',
         { className: 'circular-carousel__live', 'aria-live': 'polite', 'aria-atomic': 'true' },
