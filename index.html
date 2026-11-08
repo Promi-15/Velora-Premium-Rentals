@@ -6,10 +6,14 @@
   <title>Velora Drive — Premium Car Rental & Chauffeur Service | Dhaka</title>
   <meta name="description" content="Arrive in style. Book in minutes. Premium car rental and professional chauffeur service across Dhaka, Bangladesh.">
 
-  <!-- Google Fonts: Manrope (Primary UI) + Cormorant Garamond (Display / Headings) -->
+  <!-- Redaction Display Typeface (jsDelivr / Fontsource) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/redaction@5.3.0/700.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/redaction@5.3.0/400.min.css">
+
+  <!-- Google Fonts: Manrope (Primary UI) + Roboto (Subheadings) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -42,8 +46,10 @@
           },
           fontFamily: {
             sans: ['Manrope', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
-            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-            display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            subheading: ['Roboto', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'sans-serif'],
+            roboto: ['Roboto', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'sans-serif'],
+            serif: ['"Redaction"', 'Georgia', 'serif'],
+            display: ['"Redaction"', 'Georgia', 'serif'],
           },
           boxShadow: {
             'glass': '0 8px 32px 0 rgba(14, 15, 18, 0.06)',
@@ -77,22 +83,49 @@
       font-style: normal !important;
     }
 
-    /* Cormorant Garamond Display Serif (Upright Only: 500, 600, 700) */
-    .font-serif, .font-display, .font-serif-display {
-      font-family: 'Cormorant Garamond', Georgia, serif !important;
-      font-style: normal !important;
+    /* Redaction @font-face Direct Fallbacks */
+    @font-face {
+      font-family: 'Redaction';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url('https://cdn.jsdelivr.net/fontsource/fonts/redaction@5.3.0/latin-700-normal.woff2') format('woff2'),
+           url('https://cdn.jsdelivr.net/fontsource/fonts/redaction@5.3.0/latin-700-normal.woff') format('woff');
+    }
+    @font-face {
+      font-family: 'Redaction';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('https://cdn.jsdelivr.net/fontsource/fonts/redaction@5.3.0/latin-400-normal.woff2') format('woff2'),
+           url('https://cdn.jsdelivr.net/fontsource/fonts/redaction@5.3.0/latin-400-normal.woff') format('woff');
     }
 
+    /* Redaction Display Typography: All Titles Bold (700) */
+    .font-serif, .font-display, .font-serif-display,
+    h1, h2, h3, h4,
+    .title-bold,
     h1.font-serif, h2.font-serif, h3.font-serif,
     h1 .font-serif, h2 .font-serif, h3 .font-serif {
-      font-weight: 600 !important;
+      font-family: 'Redaction', Georgia, serif !important;
+      font-weight: 700 !important;
+      font-style: normal !important;
     }
 
-    /* Legacy alias mapped safely to upright Cormorant Garamond */
+    /* Legacy alias mapped safely to upright Redaction Bold */
     .font-serif-italic {
-      font-family: 'Cormorant Garamond', Georgia, serif !important;
+      font-family: 'Redaction', Georgia, serif !important;
       font-style: normal !important;
-      font-weight: 500 !important;
+      font-weight: 700 !important;
+    }
+
+    /* Subheadings Typography: Roboto */
+    .font-subheading,
+    .font-roboto,
+    .section-desc,
+    p.subheading {
+      font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+      font-style: normal !important;
     }
 
     /* Primary Manrope UI Sans */
@@ -546,7 +579,7 @@
           </h1>
 
           <!-- Subtext: 18px white at 75% opacity, max-w-[460px] -->
-          <p class="text-white/75 text-base sm:text-lg font-normal max-w-[460px] leading-relaxed animate-hero-subtext">
+          <p class="text-white/75 text-base sm:text-lg font-normal max-w-[460px] leading-relaxed animate-hero-subtext font-roboto">
             Premium cars with professional chauffeurs, ready across Dhaka, 24/7. Book in minutes.
           </p>
 
@@ -673,7 +706,6 @@
         <!-- Left: Statement & Narrative -->
         <div class="lg:col-span-6 space-y-6">
           <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-ink uppercase">
-            <span class="text-electric font-mono">/ 02</span>
             <span>VELORA PHILOSOPHY</span>
           </div>
 
@@ -681,7 +713,7 @@
             Moving through Dhaka should feel effortless, dignified, and undeniably <span class="font-serif font-bold not-italic tracking-normal text-ink">refined.</span>
           </h2>
 
-          <p class="text-inkSecondary text-base sm:text-lg leading-relaxed">
+          <p class="text-inkSecondary text-base sm:text-lg leading-relaxed font-roboto">
             We conceived Velora Drive to solve the friction of traditional car hire in Bangladesh. By combining an impeccably maintained luxury fleet with certified, English-fluent chauffeurs and upfront pricing, we restore calm and punctuality to every journey.
           </p>
 
@@ -730,13 +762,12 @@
       <!-- Section Header -->
       <div class="max-w-[1280px] mx-auto px-4 sm:px-6 text-center relative z-20 mb-3 sm:mb-6">
         <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-neutral-400 uppercase mb-3">
-          <span class="text-electric font-mono">/ 03</span>
           <span>EXECUTIVE FLEET SHOWCASE</span>
         </div>
         <h2 class="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white font-serif">
           Engineered for pure <span class="font-serif font-bold not-italic tracking-normal text-white">comfort.</span>
         </h2>
-        <p class="text-neutral-400 text-sm sm:text-base mt-2.5 max-w-xl mx-auto font-sans leading-relaxed">
+        <p class="text-neutral-400 text-sm sm:text-base mt-2.5 max-w-xl mx-auto leading-relaxed font-roboto">
           Spin through our handpicked fleet of 8 flagship luxury vehicles in Dhaka. Drag or swipe around the cylinder, or click any card to inspect full technical specifications.
         </p>
       </div>
@@ -765,13 +796,12 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12 sm:mb-16">
           <div class="lg:col-span-7 space-y-4">
             <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-ink uppercase">
-              <span class="text-electric font-mono">/ 04</span>
               <span>SUSTAINABLE PRESTIGE • ZERO EMISSIONS</span>
             </div>
             <h2 class="text-4xl sm:text-6xl font-bold tracking-tight text-ink leading-[1.05] font-serif">
               Powering Dhaka’s <span class="font-serif font-bold not-italic tracking-normal text-ink">silent</span> revolution.
             </h2>
-            <p class="text-inkSecondary text-base sm:text-lg max-w-xl leading-relaxed">
+            <p class="text-inkSecondary text-base sm:text-lg max-w-xl leading-relaxed font-roboto">
               Quiet, vibration-free executive transit with zero tailpipe emissions. Powered by dedicated 180 kW private supercharger bays across Gulshan-2, Banani, and Hazrat Shahjalal International Airport.
             </p>
           </div>
@@ -985,7 +1015,6 @@
         <div class="lg:col-span-7 space-y-8">
           <div>
             <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-ink uppercase mb-2">
-              <span class="text-electric font-mono">/ 04</span>
               <span>BESPOKE MOBILITY</span>
             </div>
             <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-ink font-serif">
@@ -999,10 +1028,10 @@
             <!-- Row 1 -->
             <div class="py-6 flex items-center justify-between group cursor-pointer hover:bg-pageAlt/50 px-2 rounded-xl transition">
               <div class="flex items-center gap-6">
-                <span class="text-xs font-mono font-bold text-electric">/ 01</span>
+                <span class="text-xs font-mono font-bold text-electric">01</span>
                 <div>
                   <h3 class="text-lg sm:text-xl font-bold text-ink group-hover:text-electric transition">Airport VIP Transfer</h3>
-                  <p class="text-xs sm:text-sm text-inkSecondary mt-0.5">Flight-tracked meet & greet at Hazrat Shahjalal International Airport.</p>
+                  <p class="text-xs sm:text-sm text-inkSecondary mt-0.5 font-roboto">Flight-tracked meet & greet at Hazrat Shahjalal International Airport.</p>
                 </div>
               </div>
               <div class="w-10 h-10 rounded-full border border-hairline group-hover:border-electric group-hover:bg-electric flex items-center justify-center transition">
@@ -1013,10 +1042,10 @@
             <!-- Row 2 -->
             <div class="py-6 flex items-center justify-between group cursor-pointer hover:bg-pageAlt/50 px-2 rounded-xl transition">
               <div class="flex items-center gap-6">
-                <span class="text-xs font-mono font-bold text-electric">/ 02</span>
+                <span class="text-xs font-mono font-bold text-electric">02</span>
                 <div>
                   <h3 class="text-lg sm:text-xl font-bold text-ink group-hover:text-electric transition">Wedding & Ceremonial Fleet</h3>
-                  <p class="text-xs sm:text-sm text-inkSecondary mt-0.5">Floral-decorated luxury sedans & Land Cruisers for grand entrances.</p>
+                  <p class="text-xs sm:text-sm text-inkSecondary mt-0.5 font-roboto">Floral-decorated luxury sedans & Land Cruisers for grand entrances.</p>
                 </div>
               </div>
               <div class="w-10 h-10 rounded-full border border-hairline group-hover:border-electric group-hover:bg-electric flex items-center justify-center transition">
@@ -1027,10 +1056,10 @@
             <!-- Row 3 -->
             <div class="py-6 flex items-center justify-between group cursor-pointer hover:bg-pageAlt/50 px-2 rounded-xl transition">
               <div class="flex items-center gap-6">
-                <span class="text-xs font-mono font-bold text-electric">/ 03</span>
+                <span class="text-xs font-mono font-bold text-electric">03</span>
                 <div>
                   <h3 class="text-lg sm:text-xl font-bold text-ink group-hover:text-electric transition">Corporate & Diplomatic Retainers</h3>
-                  <p class="text-xs sm:text-sm text-inkSecondary mt-0.5">Monthly dedicated vehicles with NBR VAT-compliant corporate invoicing.</p>
+                  <p class="text-xs sm:text-sm text-inkSecondary mt-0.5 font-roboto">Monthly dedicated vehicles with NBR VAT-compliant corporate invoicing.</p>
                 </div>
               </div>
               <div class="w-10 h-10 rounded-full border border-hairline group-hover:border-electric group-hover:bg-electric flex items-center justify-center transition">
@@ -1041,10 +1070,10 @@
             <!-- Row 4 -->
             <div class="py-6 flex items-center justify-between group cursor-pointer hover:bg-pageAlt/50 px-2 rounded-xl transition">
               <div class="flex items-center gap-6">
-                <span class="text-xs font-mono font-bold text-electric">/ 04</span>
+                <span class="text-xs font-mono font-bold text-electric">04</span>
                 <div>
                   <h3 class="text-lg sm:text-xl font-bold text-ink group-hover:text-electric transition">Inter-District Highway Tours</h3>
-                  <p class="text-xs sm:text-sm text-inkSecondary mt-0.5">Smooth transit via Padma Bridge to Sreemangal, Chittagong, and Sylhet.</p>
+                  <p class="text-xs sm:text-sm text-inkSecondary mt-0.5 font-roboto">Smooth transit via Padma Bridge to Sreemangal, Chittagong, and Sylhet.</p>
                 </div>
               </div>
               <div class="w-10 h-10 rounded-full border border-hairline group-hover:border-electric group-hover:bg-electric flex items-center justify-center transition">
@@ -1064,7 +1093,6 @@
         
         <div class="text-center max-w-xl mx-auto mb-16">
           <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-ink uppercase mb-2">
-            <span class="text-electric font-mono">/ 05</span>
             <span>SEAMLESS WORKFLOW</span>
           </div>
           <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-ink font-serif">
@@ -1083,7 +1111,7 @@
                 01
               </div>
               <h3 class="text-xl font-bold text-ink">Choose your car</h3>
-              <p class="text-sm text-inkSecondary leading-relaxed">
+              <p class="text-sm text-inkSecondary leading-relaxed font-roboto">
                 Browse our curated sedans, high-clearance SUVs, VIP microbuses, or German flagships for your route.
               </p>
             </div>
@@ -1094,7 +1122,7 @@
                 02
               </div>
               <h3 class="text-xl font-bold text-ink">Pick date and place</h3>
-              <p class="text-sm text-inkSecondary leading-relaxed">
+              <p class="text-sm text-inkSecondary leading-relaxed font-roboto">
                 Specify your Dhaka pickup location or airport terminal. Receive driver credentials in under 2 minutes.
               </p>
             </div>
@@ -1105,7 +1133,7 @@
                 03
               </div>
               <h3 class="text-xl font-bold text-ink">Get picked up</h3>
-              <p class="text-sm text-inkSecondary leading-relaxed">
+              <p class="text-sm text-inkSecondary leading-relaxed font-roboto">
                 Your suited, vetted chauffeur arrives 15 minutes early. Sit back in air-conditioned comfort and arrive in style.
               </p>
             </div>
@@ -1121,13 +1149,12 @@
     <section id="pricing" class="py-24 sm:py-32 max-w-[1280px] mx-auto px-4 sm:px-6">
       <div class="text-center max-w-xl mx-auto mb-16">
         <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-ink uppercase mb-2">
-          <span class="text-electric font-mono">/ 06</span>
           <span>TRANSPARENT TARIFFS</span>
         </div>
         <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-ink font-serif">
           Clear pricing, zero <span class="font-serif font-bold not-italic tracking-normal text-ink">ambiguity.</span>
         </h2>
-        <p class="text-inkSecondary text-sm sm:text-base mt-2">All rates fixed in Bangladeshi Taka (৳). Chauffeur and fuel policy itemized.</p>
+        <p class="text-inkSecondary text-sm sm:text-base mt-2 font-roboto">All rates fixed in Bangladeshi Taka (৳). Chauffeur and fuel policy itemized.</p>
       </div>
 
       <!-- 3 Dark Cards Grid -->
@@ -1281,7 +1308,6 @@
         
         <div class="text-center mb-16">
           <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-ink uppercase mb-2">
-            <span class="text-electric font-mono">/ 07</span>
             <span>CLARITY & ASSURANCE</span>
           </div>
           <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-ink font-serif">
@@ -1382,7 +1408,7 @@
               Ready to <span class="font-serif font-bold not-italic tracking-normal text-white">ride?</span>
             </h2>
 
-            <p class="text-white/70 text-base sm:text-lg max-w-lg leading-relaxed">
+            <p class="text-white/70 text-base sm:text-lg max-w-lg leading-relaxed font-roboto">
               Arrive in style. Book in minutes. Our concierge team is standing by to confirm your vehicle and driver immediately.
             </p>
 
