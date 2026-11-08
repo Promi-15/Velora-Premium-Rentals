@@ -1169,102 +1169,106 @@
 
             <!-- FLOATING GLASSMORPISM BOOKING PANEL (Overlapping the vehicle on the right side) -->
             <div class="w-full max-w-[270px] sm:max-w-[290px] xl:max-w-[305px] relative z-30 lg:ml-auto">
-              <div class="rounded-[20px] sm:rounded-[22px] p-3 sm:p-3.5 backdrop-blur-[28px] bg-white/40 hover:bg-white/45 border border-white/70 shadow-[0_20px_50px_rgba(0,0,0,0.35),inset_0_1.5px_2px_rgba(255,255,255,0.9),0_8px_32px_rgba(255,255,255,0.2)] transition-all duration-300">
+              <div class="rounded-[20px] sm:rounded-[22px] p-3 sm:p-3.5 backdrop-blur-[28px] border shadow-[0_20px_50px_rgba(0,0,0,0.3),inset_0_1.5px_2px_rgba(255,255,255,1),0_8px_32px_rgba(255,255,255,0.25)] transition-all duration-300" style="background: rgba(255, 255, 255, 0.72) !important; border-color: rgba(255, 255, 255, 0.95) !important;">
                 
                 <form onsubmit="handleStudioBookingSubmit(event)" class="space-y-2">
                   
-                  <!-- Top 3 Selectable Booking Tabs (Distance | Hourly | Flat Rate) -->
-                  <div class="grid grid-cols-3 p-0.5 rounded-full bg-white/55 backdrop-blur-md border border-white/70 mb-2 text-[10.5px] sm:text-[11px] font-bold text-neutral-900 shadow-sm">
+                  <!-- Top 3 Selectable Booking Tabs (Distance | Hourly | Flat Rate) with Crisp Black Text -->
+                  <div class="grid grid-cols-3 p-0.5 rounded-full border mb-2 text-[10.5px] sm:text-[11px] font-bold shadow-sm" style="background: rgba(230, 235, 245, 0.75) !important; border-color: rgba(255, 255, 255, 0.9) !important;">
                     <button type="button" 
                             id="studioTabDistance" 
                             onclick="setBookingStudioMode('distance')" 
-                            class="py-1 sm:py-1.5 rounded-full text-center transition-all duration-200 bg-white text-black font-black shadow-sm">
+                            class="py-1 sm:py-1.5 rounded-full text-center transition-all duration-200 bg-white font-black shadow-sm"
+                            style="color: #000000 !important;">
                       Distance
                     </button>
                     <button type="button" 
                             id="studioTabHourly" 
                             onclick="setBookingStudioMode('hourly')" 
-                            class="py-1 sm:py-1.5 rounded-full text-center transition-all duration-200 text-neutral-800 hover:text-black hover:bg-white/40 font-bold">
+                            class="py-1 sm:py-1.5 rounded-full text-center transition-all duration-200 hover:bg-white/50 font-bold"
+                            style="color: #000000 !important;">
                       Hourly
                     </button>
                     <button type="button" 
                             id="studioTabFlat" 
                             onclick="setBookingStudioMode('flat')" 
-                            class="py-1 sm:py-1.5 rounded-full text-center transition-all duration-200 text-neutral-800 hover:text-black hover:bg-white/40 font-bold">
+                            class="py-1 sm:py-1.5 rounded-full text-center transition-all duration-200 hover:bg-white/50 font-bold"
+                            style="color: #000000 !important;">
                       Flat Rate
                     </button>
                   </div>
 
-                  <!-- 1. Pickup Location Input -->
-                  <div class="relative flex items-center rounded-xl bg-white/65 hover:bg-white/80 focus-within:bg-white/95 border border-white/85 focus-within:border-black/30 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),0_2px_6px_rgba(0,0,0,0.04)] transition duration-200 px-2.5 py-1.5 sm:py-2">
-                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-black shrink-0 mr-2"></i>
-                    <select id="studioPickupInput" class="w-full bg-transparent text-xs font-bold text-black focus:outline-none cursor-pointer appearance-none [&>option]:bg-white [&>option]:text-black pr-6">
-                      <option value="Hazrat Shahjalal Airport (DAC)" selected>Pickup: Hazrat Shahjalal Airport (DAC)</option>
-                      <option value="Gulshan 1 & 2">Pickup: Gulshan 1 & 2</option>
-                      <option value="Banani Commercial Hub">Pickup: Banani Commercial Hub</option>
-                      <option value="Dhanmondi / Satmasjid">Pickup: Dhanmondi / Satmasjid</option>
-                      <option value="Uttara Sector 3 & 4">Pickup: Uttara Sector 3 & 4</option>
-                      <option value="Bashundhara R/A">Pickup: Bashundhara R/A</option>
+                  <!-- 1. Pickup Location Input (Jet-Black Text & Black Icon) -->
+                  <div class="relative flex items-center rounded-xl border shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),0_2px_6px_rgba(0,0,0,0.04)] transition duration-200 px-2.5 py-1.5 sm:py-2" style="background: rgba(255, 255, 255, 0.88) !important; border-color: rgba(255, 255, 255, 1) !important;">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0 mr-2" style="color: #000000 !important; stroke: #000000 !important;"></i>
+                    <select id="studioPickupInput" class="w-full bg-transparent text-xs font-bold focus:outline-none cursor-pointer appearance-none pr-6" style="color: #000000 !important;">
+                      <option value="Hazrat Shahjalal Airport (DAC)" selected style="background-color: #ffffff; color: #000000;">Pickup: Hazrat Shahjalal Airport (DAC)</option>
+                      <option value="Gulshan 1 & 2" style="background-color: #ffffff; color: #000000;">Pickup: Gulshan 1 & 2</option>
+                      <option value="Banani Commercial Hub" style="background-color: #ffffff; color: #000000;">Pickup: Banani Commercial Hub</option>
+                      <option value="Dhanmondi / Satmasjid" style="background-color: #ffffff; color: #000000;">Pickup: Dhanmondi / Satmasjid</option>
+                      <option value="Uttara Sector 3 & 4" style="background-color: #ffffff; color: #000000;">Pickup: Uttara Sector 3 & 4</option>
+                      <option value="Bashundhara R/A" style="background-color: #ffffff; color: #000000;">Pickup: Bashundhara R/A</option>
                     </select>
-                    <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-neutral-800 pointer-events-none absolute right-3"></i>
+                    <i data-lucide="chevron-down" class="w-3.5 h-3.5 pointer-events-none absolute right-3" style="color: #000000 !important; stroke: #000000 !important;"></i>
                   </div>
 
-                  <!-- 2. Drop-off Location Input (Dynamic per Tab) -->
+                  <!-- 2. Drop-off Location Input (Dynamic per Tab) (Jet-Black Text & Black Icon) -->
                   <!-- Distance Mode -->
-                  <div id="containerStudioDropoffDistance" class="relative flex items-center rounded-xl bg-white/65 hover:bg-white/80 focus-within:bg-white/95 border border-white/85 focus-within:border-black/30 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),0_2px_6px_rgba(0,0,0,0.04)] transition duration-200 px-2.5 py-1.5 sm:py-2">
-                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-black shrink-0 mr-2"></i>
-                    <select id="studioDropoffInput" class="w-full bg-transparent text-xs font-bold text-black focus:outline-none cursor-pointer appearance-none [&>option]:bg-white [&>option]:text-black pr-6">
-                      <option value="Gulshan 2 Diplomatic Zone" selected>Drop-off: Gulshan 2 Diplomatic Zone</option>
-                      <option value="Hazrat Shahjalal Airport (DAC)">Drop-off: Airport (DAC Terminal 1 & 2)</option>
-                      <option value="Banani Club / Road 11">Drop-off: Banani Club / Road 11</option>
-                      <option value="Inter-District Highway Expressway">Drop-off: Expressway / Highway</option>
-                      <option value="Motijheel / Kawran Bazar C/A">Drop-off: Motijheel / Kawran Bazar C/A</option>
+                  <div id="containerStudioDropoffDistance" class="relative flex items-center rounded-xl border shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),0_2px_6px_rgba(0,0,0,0.04)] transition duration-200 px-2.5 py-1.5 sm:py-2" style="background: rgba(255, 255, 255, 0.88) !important; border-color: rgba(255, 255, 255, 1) !important;">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0 mr-2" style="color: #000000 !important; stroke: #000000 !important;"></i>
+                    <select id="studioDropoffInput" class="w-full bg-transparent text-xs font-bold focus:outline-none cursor-pointer appearance-none pr-6" style="color: #000000 !important;">
+                      <option value="Gulshan 2 Diplomatic Zone" selected style="background-color: #ffffff; color: #000000;">Drop-off: Gulshan 2 Diplomatic Zone</option>
+                      <option value="Hazrat Shahjalal Airport (DAC)" style="background-color: #ffffff; color: #000000;">Drop-off: Airport (DAC Terminal 1 & 2)</option>
+                      <option value="Banani Club / Road 11" style="background-color: #ffffff; color: #000000;">Drop-off: Banani Club / Road 11</option>
+                      <option value="Inter-District Highway Expressway" style="background-color: #ffffff; color: #000000;">Drop-off: Expressway / Highway</option>
+                      <option value="Motijheel / Kawran Bazar C/A" style="background-color: #ffffff; color: #000000;">Drop-off: Motijheel / Kawran Bazar C/A</option>
                     </select>
-                    <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-neutral-800 pointer-events-none absolute right-3"></i>
+                    <i data-lucide="chevron-down" class="w-3.5 h-3.5 pointer-events-none absolute right-3" style="color: #000000 !important; stroke: #000000 !important;"></i>
                   </div>
 
                   <!-- Hourly Mode (Duration) -->
-                  <div id="containerStudioDropoffHourly" class="hidden relative flex items-center rounded-xl bg-white/65 hover:bg-white/80 focus-within:bg-white/95 border border-white/85 focus-within:border-black/30 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),0_2px_6px_rgba(0,0,0,0.04)] transition duration-200 px-2.5 py-1.5 sm:py-2">
-                    <i data-lucide="clock-4" class="w-3.5 h-3.5 text-black shrink-0 mr-2"></i>
-                    <select id="studioHourlyDuration" class="w-full bg-transparent text-xs font-bold text-black focus:outline-none cursor-pointer appearance-none [&>option]:bg-white [&>option]:text-black pr-6">
-                      <option value="4 Hours Half-Day Standby">Standby: 4 Hours (Half-Day)</option>
-                      <option value="8 Hours Full Executive Day" selected>Standby: 8 Hours (Full Executive Day)</option>
-                      <option value="12 Hours Extended Convoys">Standby: 12 Hours (Extended Convoys)</option>
+                  <div id="containerStudioDropoffHourly" class="hidden relative flex items-center rounded-xl border shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),0_2px_6px_rgba(0,0,0,0.04)] transition duration-200 px-2.5 py-1.5 sm:py-2" style="background: rgba(255, 255, 255, 0.88) !important; border-color: rgba(255, 255, 255, 1) !important;">
+                    <i data-lucide="clock-4" class="w-3.5 h-3.5 shrink-0 mr-2" style="color: #000000 !important; stroke: #000000 !important;"></i>
+                    <select id="studioHourlyDuration" class="w-full bg-transparent text-xs font-bold focus:outline-none cursor-pointer appearance-none pr-6" style="color: #000000 !important;">
+                      <option value="4 Hours Half-Day Standby" style="background-color: #ffffff; color: #000000;">Standby: 4 Hours (Half-Day)</option>
+                      <option value="8 Hours Full Executive Day" selected style="background-color: #ffffff; color: #000000;">Standby: 8 Hours (Full Executive Day)</option>
+                      <option value="12 Hours Extended Convoys" style="background-color: #ffffff; color: #000000;">Standby: 12 Hours (Extended Convoys)</option>
                     </select>
-                    <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-neutral-800 pointer-events-none absolute right-3"></i>
+                    <i data-lucide="chevron-down" class="w-3.5 h-3.5 pointer-events-none absolute right-3" style="color: #000000 !important; stroke: #000000 !important;"></i>
                   </div>
 
                   <!-- Flat Rate Mode (Route Package) -->
-                  <div id="containerStudioDropoffFlat" class="hidden relative flex items-center rounded-xl bg-white/65 hover:bg-white/80 focus-within:bg-white/95 border border-white/85 focus-within:border-black/30 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),0_2px_6px_rgba(0,0,0,0.04)] transition duration-200 px-2.5 py-1.5 sm:py-2">
-                    <i data-lucide="navigation" class="w-3.5 h-3.5 text-black shrink-0 mr-2"></i>
-                    <select id="studioFlatRoute" class="w-full bg-transparent text-xs font-bold text-black focus:outline-none cursor-pointer appearance-none [&>option]:bg-white [&>option]:text-black pr-6">
-                      <option value="Airport VIP Transfer (Flat ৳ 4,500)" selected>Route: Airport VIP Transfer (Flat ৳ 4,500)</option>
-                      <option value="Dhaka ➔ Padma Bridge Express (৳ 9,500)">Route: Dhaka ➔ Padma Bridge Express (৳ 9,500)</option>
-                      <option value="Dhaka ➔ Sreemangal Resort Route (৳ 16,000)">Route: Dhaka ➔ Sreemangal Resort Route (৳ 16,000)</option>
+                  <div id="containerStudioDropoffFlat" class="hidden relative flex items-center rounded-xl border shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),0_2px_6px_rgba(0,0,0,0.04)] transition duration-200 px-2.5 py-1.5 sm:py-2" style="background: rgba(255, 255, 255, 0.88) !important; border-color: rgba(255, 255, 255, 1) !important;">
+                    <i data-lucide="navigation" class="w-3.5 h-3.5 shrink-0 mr-2" style="color: #000000 !important; stroke: #000000 !important;"></i>
+                    <select id="studioFlatRoute" class="w-full bg-transparent text-xs font-bold focus:outline-none cursor-pointer appearance-none pr-6" style="color: #000000 !important;">
+                      <option value="Airport VIP Transfer (Flat ৳ 4,500)" selected style="background-color: #ffffff; color: #000000;">Route: Airport VIP Transfer (Flat ৳ 4,500)</option>
+                      <option value="Dhaka ➔ Padma Bridge Express (৳ 9,500)" style="background-color: #ffffff; color: #000000;">Route: Dhaka ➔ Padma Bridge Express (৳ 9,500)</option>
+                      <option value="Dhaka ➔ Sreemangal Resort Route (৳ 16,000)" style="background-color: #ffffff; color: #000000;">Route: Dhaka ➔ Sreemangal Resort Route (৳ 16,000)</option>
                     </select>
-                    <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-neutral-800 pointer-events-none absolute right-3"></i>
+                    <i data-lucide="chevron-down" class="w-3.5 h-3.5 pointer-events-none absolute right-3" style="color: #000000 !important; stroke: #000000 !important;"></i>
                   </div>
 
-                  <!-- 3. Pickup Date Input -->
-                  <div class="relative flex items-center rounded-xl bg-white/65 hover:bg-white/80 focus-within:bg-white/95 border border-white/85 focus-within:border-black/30 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),0_2px_6px_rgba(0,0,0,0.04)] transition duration-200 px-2.5 py-1.5 sm:py-2">
-                    <i data-lucide="calendar" class="w-3.5 h-3.5 text-black shrink-0 mr-2"></i>
+                  <!-- 3. Pickup Date Input (Jet-Black Date Text & Black Calendar Icon) -->
+                  <div class="relative flex items-center rounded-xl border shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),0_2px_6px_rgba(0,0,0,0.04)] transition duration-200 px-2.5 py-1.5 sm:py-2" style="background: rgba(255, 255, 255, 0.88) !important; border-color: rgba(255, 255, 255, 1) !important;">
+                    <i data-lucide="calendar" class="w-3.5 h-3.5 shrink-0 mr-2" style="color: #000000 !important; stroke: #000000 !important;"></i>
                     <input type="date" 
                            id="studioPickupDate" 
                            required 
-                           class="w-full bg-transparent text-xs font-bold text-black focus:outline-none cursor-pointer font-sans [color-scheme:light]">
+                           class="w-full bg-transparent text-xs font-bold focus:outline-none cursor-pointer font-sans [color-scheme:light]"
+                           style="color: #000000 !important;">
                   </div>
 
-                  <!-- 4. Pickup Time Input -->
-                  <div class="relative flex items-center rounded-xl bg-white/65 hover:bg-white/80 focus-within:bg-white/95 border border-white/85 focus-within:border-black/30 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),0_2px_6px_rgba(0,0,0,0.04)] transition duration-200 px-2.5 py-1.5 sm:py-2">
-                    <i data-lucide="clock" class="w-3.5 h-3.5 text-black shrink-0 mr-2"></i>
-                    <select id="studioPickupTime" class="w-full bg-transparent text-xs font-bold text-black focus:outline-none cursor-pointer appearance-none [&>option]:bg-white [&>option]:text-black pr-6">
-                      <option value="09:00 AM">09:00 AM (Morning Departure)</option>
-                      <option value="11:30 AM" selected>11:30 AM (Executive Standby)</option>
-                      <option value="03:00 PM">03:00 PM (Afternoon Transit)</option>
-                      <option value="07:30 PM">07:30 PM (Evening Chauffeur)</option>
-                      <option value="11:45 PM">11:45 PM (Night Flight Express)</option>
+                  <!-- 4. Pickup Time Input (Jet-Black Time Text & Black Clock Icon) -->
+                  <div class="relative flex items-center rounded-xl border shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),0_2px_6px_rgba(0,0,0,0.04)] transition duration-200 px-2.5 py-1.5 sm:py-2" style="background: rgba(255, 255, 255, 0.88) !important; border-color: rgba(255, 255, 255, 1) !important;">
+                    <i data-lucide="clock" class="w-3.5 h-3.5 shrink-0 mr-2" style="color: #000000 !important; stroke: #000000 !important;"></i>
+                    <select id="studioPickupTime" class="w-full bg-transparent text-xs font-bold focus:outline-none cursor-pointer appearance-none pr-6" style="color: #000000 !important;">
+                      <option value="09:00 AM" style="background-color: #ffffff; color: #000000;">09:00 AM (Morning Departure)</option>
+                      <option value="11:30 AM" selected style="background-color: #ffffff; color: #000000;">11:30 AM (Executive Standby)</option>
+                      <option value="03:00 PM" style="background-color: #ffffff; color: #000000;">03:00 PM (Afternoon Transit)</option>
+                      <option value="07:30 PM" style="background-color: #ffffff; color: #000000;">07:30 PM (Evening Chauffeur)</option>
+                      <option value="11:45 PM" style="background-color: #ffffff; color: #000000;">11:45 PM (Night Flight Express)</option>
                     </select>
-                    <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-neutral-800 pointer-events-none absolute right-3"></i>
+                    <i data-lucide="chevron-down" class="w-3.5 h-3.5 pointer-events-none absolute right-3" style="color: #000000 !important; stroke: #000000 !important;"></i>
                   </div>
 
                   <!-- Large CTA Button: "Book Your Ride" -->
@@ -2261,11 +2265,20 @@
       const tabFlat = document.getElementById('studioTabFlat');
 
       const activeClass = 'py-1 sm:py-1.5 rounded-full text-center transition-all duration-200 bg-white text-black font-black shadow-sm';
-      const inactiveClass = 'py-1 sm:py-1.5 rounded-full text-center transition-all duration-200 text-neutral-800 hover:text-black hover:bg-white/40 font-bold';
+      const inactiveClass = 'py-1 sm:py-1.5 rounded-full text-center transition-all duration-200 text-black hover:text-black hover:bg-white/50 font-bold';
 
-      if (tabDist) tabDist.className = mode === 'distance' ? activeClass : inactiveClass;
-      if (tabHour) tabHour.className = mode === 'hourly' ? activeClass : inactiveClass;
-      if (tabFlat) tabFlat.className = mode === 'flat' ? activeClass : inactiveClass;
+      if (tabDist) {
+        tabDist.className = mode === 'distance' ? activeClass : inactiveClass;
+        tabDist.style.color = '#000000';
+      }
+      if (tabHour) {
+        tabHour.className = mode === 'hourly' ? activeClass : inactiveClass;
+        tabHour.style.color = '#000000';
+      }
+      if (tabFlat) {
+        tabFlat.className = mode === 'flat' ? activeClass : inactiveClass;
+        tabFlat.style.color = '#000000';
+      }
 
       const dropDist = document.getElementById('containerStudioDropoffDistance');
       const dropHour = document.getElementById('containerStudioDropoffHourly');
