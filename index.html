@@ -9,7 +9,7 @@
   <!-- Google Fonts: Manrope (Primary UI) + Cormorant Garamond (Display / Headings) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -77,10 +77,15 @@
       font-style: normal !important;
     }
 
-    /* Cormorant Garamond Display Serif (Upright Only: 400, 500, 600) */
+    /* Cormorant Garamond Display Serif (Upright Only: 500, 600, 700) */
     .font-serif, .font-display, .font-serif-display {
       font-family: 'Cormorant Garamond', Georgia, serif !important;
       font-style: normal !important;
+    }
+
+    h1.font-serif, h2.font-serif, h3.font-serif,
+    h1 .font-serif, h2 .font-serif, h3 .font-serif {
+      font-weight: 600 !important;
     }
 
     /* Legacy alias mapped safely to upright Cormorant Garamond */
@@ -439,30 +444,8 @@
 </head>
 <body id="appBody" class="bg-white text-ink antialiased">
 
-  <!-- TOP BAR: Viewport Switcher & Meta -->
-  <aside aria-label="Design Toolbar" class="bg-ink text-white py-2 px-4 text-xs z-50 relative border-b border-white/10">
-    <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <div class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-electric animate-pulse"></span>
-        <span class="font-medium tracking-wide">Velora Drive — Dhaka Executive Chauffeur & Fleet</span>
-      </div>
-      
-      <div class="flex items-center gap-2">
-        <span class="text-white/40 hidden sm:inline">Viewport:</span>
-        <button id="btnDesktopView" onclick="setViewport('desktop')" class="px-2.5 py-1 rounded-full bg-white/20 text-white font-medium hover:bg-white/30 transition text-[11px] flex items-center gap-1.5">
-          <i data-lucide="monitor" class="w-3.5 h-3.5"></i>
-          <span>Desktop (1440px)</span>
-        </button>
-        <button id="btnMobileView" onclick="setViewport('mobile')" class="px-2.5 py-1 rounded-full bg-white/10 text-white/70 font-medium hover:bg-white/20 hover:text-white transition text-[11px] flex items-center gap-1.5">
-          <i data-lucide="smartphone" class="w-3.5 h-3.5"></i>
-          <span>Mobile (390px)</span>
-        </button>
-      </div>
-    </div>
-  </aside>
-
-  <!-- ROOT CONTAINER (Allows switching to 390px Mobile View) -->
-  <div id="mainViewportWrapper" class="w-full transition-all duration-300">
+  <!-- ROOT CONTAINER -->
+  <div id="mainViewportWrapper" class="w-full">
 
     <!-- 1. HERO SECTION (Full-Screen 100vh Background Video, Pure Black #000, Full-Glass Floating Navbar, Glass Booking Bar) -->
     <header id="hero" class="relative w-full min-h-screen min-h-[720px] bg-black flex flex-col justify-between">
@@ -557,9 +540,9 @@
           </div>
 
           <!-- Headline: Cormorant Garamond 96px desktop / 44px mobile, tight tracking, upright "style." -->
-          <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-[96px] font-medium tracking-tight text-white leading-[1.0] select-none font-serif">
+          <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-[96px] font-bold tracking-tight text-white leading-[1.0] select-none font-serif">
             <span class="block animate-hero-line-1">Arrive in</span>
-            <span class="block font-serif font-normal not-italic tracking-normal text-white animate-hero-line-2 mt-0.5 sm:mt-1">style.</span>
+            <span class="block font-serif font-bold not-italic tracking-normal text-white animate-hero-line-2 mt-0.5 sm:mt-1">style.</span>
           </h1>
 
           <!-- Subtext: 18px white at 75% opacity, max-w-[460px] -->
@@ -694,8 +677,8 @@
             <span>VELORA PHILOSOPHY</span>
           </div>
 
-          <h2 class="text-3xl sm:text-5xl font-medium tracking-tight text-ink leading-[1.15] font-serif">
-            Moving through Dhaka should feel effortless, dignified, and undeniably <span class="font-serif font-medium not-italic tracking-normal text-ink">refined.</span>
+          <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-ink leading-[1.15] font-serif">
+            Moving through Dhaka should feel effortless, dignified, and undeniably <span class="font-serif font-bold not-italic tracking-normal text-ink">refined.</span>
           </h2>
 
           <p class="text-inkSecondary text-base sm:text-lg leading-relaxed">
@@ -750,8 +733,8 @@
           <span class="text-electric font-mono">/ 03</span>
           <span>EXECUTIVE FLEET SHOWCASE</span>
         </div>
-        <h2 class="text-3xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-white font-serif">
-          Engineered for pure <span class="font-serif font-medium not-italic tracking-normal text-white">comfort.</span>
+        <h2 class="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white font-serif">
+          Engineered for pure <span class="font-serif font-bold not-italic tracking-normal text-white">comfort.</span>
         </h2>
         <p class="text-neutral-400 text-sm sm:text-base mt-2.5 max-w-xl mx-auto font-sans leading-relaxed">
           Spin through our handpicked fleet of 8 flagship luxury vehicles in Dhaka. Drag or swipe around the cylinder, or click any card to inspect full technical specifications.
@@ -797,8 +780,8 @@
               <span class="text-electric font-mono">/ 04</span>
               <span>SUSTAINABLE PRESTIGE • ZERO EMISSIONS</span>
             </div>
-            <h2 class="text-4xl sm:text-6xl font-medium tracking-tight text-ink leading-[1.05] font-serif">
-              Powering Dhaka’s <span class="font-serif font-medium not-italic tracking-normal text-ink">silent</span> revolution.
+            <h2 class="text-4xl sm:text-6xl font-bold tracking-tight text-ink leading-[1.05] font-serif">
+              Powering Dhaka’s <span class="font-serif font-bold not-italic tracking-normal text-ink">silent</span> revolution.
             </h2>
             <p class="text-inkSecondary text-base sm:text-lg max-w-xl leading-relaxed">
               Quiet, vibration-free executive transit with zero tailpipe emissions. Powered by dedicated 180 kW private supercharger bays across Gulshan-2, Banani, and Hazrat Shahjalal International Airport.
@@ -1017,8 +1000,8 @@
               <span class="text-electric font-mono">/ 04</span>
               <span>BESPOKE MOBILITY</span>
             </div>
-            <h2 class="text-3xl sm:text-5xl font-medium tracking-tight text-ink font-serif">
-              Crafted for <span class="font-serif font-medium not-italic tracking-normal text-ink">every</span> occasion.
+            <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-ink font-serif">
+              Crafted for <span class="font-serif font-bold not-italic tracking-normal text-ink">every</span> occasion.
             </h2>
           </div>
 
@@ -1096,8 +1079,8 @@
             <span class="text-electric font-mono">/ 05</span>
             <span>SEAMLESS WORKFLOW</span>
           </div>
-          <h2 class="text-3xl sm:text-5xl font-medium tracking-tight text-ink font-serif">
-            Simple steps to your <span class="font-serif font-medium not-italic tracking-normal text-ink">journey.</span>
+          <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-ink font-serif">
+            Simple steps to your <span class="font-serif font-bold not-italic tracking-normal text-ink">journey.</span>
           </h2>
         </div>
 
@@ -1153,8 +1136,8 @@
           <span class="text-electric font-mono">/ 06</span>
           <span>TRANSPARENT TARIFFS</span>
         </div>
-        <h2 class="text-3xl sm:text-5xl font-medium tracking-tight text-ink font-serif">
-          Clear pricing, zero <span class="font-serif font-medium not-italic tracking-normal text-ink">ambiguity.</span>
+        <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-ink font-serif">
+          Clear pricing, zero <span class="font-serif font-bold not-italic tracking-normal text-ink">ambiguity.</span>
         </h2>
         <p class="text-inkSecondary text-sm sm:text-base mt-2">All rates fixed in Bangladeshi Taka (৳). Chauffeur and fuel policy itemized.</p>
       </div>
@@ -1313,8 +1296,8 @@
             <span class="text-electric font-mono">/ 07</span>
             <span>CLARITY & ASSURANCE</span>
           </div>
-          <h2 class="text-3xl sm:text-5xl font-medium tracking-tight text-ink font-serif">
-            Frequently Asked <span class="font-serif font-medium not-italic tracking-normal text-ink">Questions</span>
+          <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-ink font-serif">
+            Frequently Asked <span class="font-serif font-bold not-italic tracking-normal text-ink">Questions</span>
           </h2>
         </div>
 
@@ -1407,8 +1390,8 @@
               <span>Available 24/7 across Dhaka</span>
             </div>
 
-            <h2 class="text-4xl sm:text-6xl font-medium tracking-tight text-white leading-tight font-serif">
-              Ready to <span class="font-serif font-medium not-italic tracking-normal text-white">ride?</span>
+            <h2 class="text-4xl sm:text-6xl font-bold tracking-tight text-white leading-tight font-serif">
+              Ready to <span class="font-serif font-bold not-italic tracking-normal text-white">ride?</span>
             </h2>
 
             <p class="text-white/70 text-base sm:text-lg max-w-lg leading-relaxed">
