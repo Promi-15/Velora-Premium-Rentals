@@ -471,7 +471,7 @@
   <div id="mainViewportWrapper" class="w-full">
 
     <!-- 1. HERO SECTION (Full-Screen 100vh Background Video, Pure Black #000, Full-Glass Floating Navbar, Glass Booking Bar) -->
-    <header id="hero" class="relative w-full min-h-screen min-h-[720px] bg-black flex flex-col justify-between">
+    <header id="hero" class="relative w-full min-h-screen min-h-[720px] bg-black flex flex-col justify-between pt-24 sm:pt-28">
       
       <!-- HERO BACKGROUND VIDEO CONTAINER -->
       <div id="heroMediaContainer" class="absolute inset-0 w-full h-full pointer-events-none overflow-hidden bg-black z-0">
@@ -487,9 +487,9 @@
         <div class="absolute inset-0 hero-grid-lines-dark pointer-events-none opacity-25 z-[3]"></div>
       </div>
 
-      <!-- 1.1 FLOATING FULL-GLASS PILL NAVBAR (24px top, max-w-[1200px], h-[68px], sticky) -->
-      <div class="sticky top-6 z-40 w-full px-4 sm:px-6 pointer-events-none animate-hero-nav">
-        <nav id="heroGlassNavbar" class="pointer-events-auto max-w-[1200px] h-[68px] mx-auto hero-glass-nav rounded-full px-5 sm:px-7 flex items-center justify-between transition-all duration-300">
+      <!-- 1.1 FLOATING FULL-GLASS PILL NAVBAR (Permanently Fixed in Place, Never Moves) -->
+      <div class="fixed top-5 sm:top-6 left-0 right-0 z-50 w-full px-4 sm:px-6 pointer-events-none">
+        <nav id="heroGlassNavbar" class="pointer-events-auto max-w-[1200px] h-[68px] mx-auto hero-glass-nav rounded-full px-5 sm:px-7 flex items-center justify-between">
           
           <!-- Left: Velora Official Logo -->
           <a href="#" class="flex items-center group py-1" aria-label="Velora Drive Home">
