@@ -1775,246 +1775,335 @@
     <!-- Backdrop dismiss overlay -->
     <div class="fixed inset-0 -z-10" onclick="closeCarDetailsModal()"></div>
 
-    <!-- Self-Contained Showroom Box (96vw x 92vh, No Vertical Scrolling on Desktop) -->
-    <div id="carDetailsModalBox" class="relative bg-[#FAFAFC] text-[#0E0F12] w-full max-w-[1540px] h-[92vh] max-h-[920px] min-h-[640px] rounded-[32px] sm:rounded-[38px] border border-white/80 shadow-[0_25px_80px_rgba(0,0,0,0.35)] flex flex-col justify-between overflow-hidden transform scale-95 transition-all duration-300 p-4 sm:p-6 lg:p-7 select-none">
+    <!-- Self-Contained Showroom Box (Exact Aston Martin Valkyrie Configurator Experience) -->
+    <div id="carDetailsModalBox" class="relative bg-[#F6F7F9] text-[#0E0F12] w-full max-w-[1540px] h-[94vh] max-h-[940px] min-h-[640px] rounded-[28px] sm:rounded-[36px] border border-white/80 shadow-[0_30px_90px_rgba(0,0,0,0.35)] flex flex-col justify-between overflow-y-auto lg:overflow-hidden transform scale-95 transition-all duration-300 p-4 sm:p-6 lg:p-7 select-none">
       
-      <!-- 1. TOP HEADER NAVIGATION BAR -->
-      <header class="flex items-center justify-between h-12 pb-3 border-b border-neutral-200/70 shrink-0 z-30">
+      <!-- TOP BROWSER CHROME & CONFIGURATOR APP HEADER (Matching Reference Image) -->
+      <header class="w-full shrink-0 z-30 pb-3 border-b border-neutral-200/80">
         
-        <!-- Left: Velora Logo & Configurator Badge -->
-        <div class="flex items-center gap-3 sm:gap-4">
-          <img src="./logo.png" alt="Velora" class="h-6 sm:h-7 w-auto object-contain">
-          <span class="h-4 w-[1px] bg-neutral-300 hidden sm:block"></span>
-          <span class="px-3 py-1 rounded-full bg-neutral-100 text-[10px] sm:text-[11px] font-semibold text-neutral-600 hidden sm:inline-block">
-            Fleet Configurator
-          </span>
-          <span id="amHeaderCategory" class="text-xs font-bold text-electric hidden md:inline-block tracking-wider uppercase">
-            FLAGSHIP LUXURY SALOON
-          </span>
+        <!-- Browser Window URL Bar & Action Controls Strip -->
+        <div class="flex items-center justify-between mb-3 text-neutral-400">
+          <!-- Window Dots -->
+          <div class="flex items-center gap-1.5 w-24">
+            <span class="w-2.5 h-2.5 rounded-full bg-neutral-300/80"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-neutral-300/80"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-neutral-300/80"></span>
+          </div>
+
+          <!-- Centered URL Pill -->
+          <div class="px-5 py-1 rounded-full bg-white/90 border border-neutral-200/80 shadow-2xs text-[11px] font-mono text-neutral-600 flex items-center gap-2">
+            <i data-lucide="lock" class="w-3 h-3 text-emerald-600"></i>
+            <span>https://cars.config/velora-fleet</span>
+            <i data-lucide="rotate-cw" class="w-3 h-3 text-neutral-400 ml-1"></i>
+          </div>
+
+          <!-- Right Window Actions (Share, Previous / Next Vehicle, Close) -->
+          <div class="flex items-center justify-end gap-1.5 w-24">
+            <button onclick="prevModalCar()" class="w-7 h-7 rounded-full border border-neutral-200/90 hover:bg-white text-neutral-700 flex items-center justify-center transition shadow-2xs" title="Previous vehicle">
+              <i data-lucide="chevron-left" class="w-3.5 h-3.5"></i>
+            </button>
+            <button onclick="nextModalCar()" class="w-7 h-7 rounded-full border border-neutral-200/90 hover:bg-white text-neutral-700 flex items-center justify-center transition shadow-2xs" title="Next vehicle">
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+            <button onclick="closeCarDetailsModal()" class="w-7 h-7 rounded-full bg-neutral-200/80 hover:bg-neutral-300 text-neutral-800 flex items-center justify-center transition ml-1" title="Close (Esc)">
+              <i data-lucide="x" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
         </div>
 
-        <!-- Centre: Navigation Pills (Desktop) -->
-        <div class="hidden md:flex items-center gap-1 p-1 rounded-full bg-neutral-100/90 border border-neutral-200/60 text-xs font-semibold">
-          <button type="button" class="px-4 py-1 rounded-full bg-black text-white shadow-xs">Showroom</button>
-          <button type="button" onclick="setCarModalTab('performance')" class="px-3.5 py-1 rounded-full text-neutral-600 hover:text-black hover:bg-white/80 transition">Performance</button>
-          <button type="button" onclick="setCarModalTab('luxury')" class="px-3.5 py-1 rounded-full text-neutral-600 hover:text-black hover:bg-white/80 transition">Interior Lounge</button>
-          <button type="button" onclick="setCarModalTab('chauffeur')" class="px-3.5 py-1 rounded-full text-neutral-600 hover:text-black hover:bg-white/80 transition">Chauffeur Service</button>
-        </div>
+        <!-- Main Configurator Top Navigation Bar -->
+        <div class="flex items-center justify-between">
+          <!-- Left: Brand / Logo + Config Center -->
+          <div class="flex items-center gap-3">
+            <div class="flex items-baseline gap-1.5">
+              <span class="text-xl sm:text-2xl font-black tracking-tight text-neutral-900 font-sans">VELORA.</span>
+              <span class="text-[10px] font-bold text-neutral-500 uppercase tracking-widest hidden sm:inline-block">Cars Config Center</span>
+            </div>
+            <div class="hidden sm:flex items-center gap-1.5 ml-2">
+              <button class="w-8 h-8 rounded-full hover:bg-neutral-200/60 flex items-center justify-center text-neutral-600 transition" title="Grid View">
+                <i data-lucide="layout-grid" class="w-4 h-4"></i>
+              </button>
+              <button class="w-8 h-8 rounded-full hover:bg-neutral-200/60 flex items-center justify-center text-neutral-600 transition" title="Search Fleet">
+                <i data-lucide="search" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
 
-        <!-- Right: Model Index & Prev / Next / Close Buttons -->
-        <div class="flex items-center gap-2">
-          <span id="amModalCounter" class="text-xs font-mono font-bold text-neutral-500 mr-1 sm:mr-2">01 / 08</span>
-          <button onclick="prevModalCar()" class="w-8 h-8 rounded-full border border-neutral-200 hover:bg-white hover:border-neutral-300 text-neutral-800 flex items-center justify-center transition shadow-2xs hover:scale-105" title="Previous vehicle (Left Arrow)">
-            <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
-          </button>
-          <button onclick="nextModalCar()" class="w-8 h-8 rounded-full border border-neutral-200 hover:bg-white hover:border-neutral-300 text-neutral-800 flex items-center justify-center transition shadow-2xs hover:scale-105" title="Next vehicle (Right Arrow)">
-            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-          </button>
-          <button onclick="closeCarDetailsModal()" class="w-8 h-8 rounded-full bg-neutral-200/80 hover:bg-neutral-300/80 text-neutral-800 flex items-center justify-center transition ml-1 hover:scale-105" title="Close modal (Esc)">
-            <i data-lucide="x" class="w-4 h-4"></i>
-          </button>
+          <!-- Centre: Horizontal Navigation Pills (Matching Reference Image) -->
+          <div class="hidden md:flex items-center gap-1 p-1 rounded-full bg-neutral-200/60 border border-neutral-200 text-xs font-semibold">
+            <button type="button" class="px-5 py-1.5 rounded-full bg-black text-white shadow-xs font-bold">Models</button>
+            <button type="button" onclick="setCarModalTab('performance')" class="px-4 py-1.5 rounded-full text-neutral-600 hover:text-black hover:bg-white/70 transition">Services</button>
+            <button type="button" onclick="setCarModalTab('luxury')" class="px-4 py-1.5 rounded-full text-neutral-600 hover:text-black hover:bg-white/70 transition">Experience</button>
+            <button type="button" onclick="setCarModalTab('chauffeur')" class="px-4 py-1.5 rounded-full text-neutral-600 hover:text-black hover:bg-white/70 transition">Chauffeur</button>
+            <button type="button" onclick="handleModalBookThisCar()" class="px-4 py-1.5 rounded-full text-neutral-600 hover:text-black hover:bg-white/70 transition">Purchase</button>
+            <button type="button" class="px-4 py-1.5 rounded-full text-neutral-600 hover:text-black hover:bg-white/70 transition">Configurere</button>
+          </div>
+
+          <!-- Right: Profile & Counter -->
+          <div class="flex items-center gap-2">
+            <span id="amModalCounter" class="text-xs font-mono font-bold text-neutral-500 bg-white/80 border border-neutral-200/70 px-2.5 py-1 rounded-full shadow-2xs">01 / 08</span>
+            <button class="w-8 h-8 rounded-full border border-neutral-200 hover:bg-white flex items-center justify-center text-neutral-700 transition shadow-2xs">
+              <i data-lucide="user" class="w-4 h-4"></i>
+            </button>
+          </div>
         </div>
 
       </header>
 
-      <!-- 2. MAIN VEHICLE SHOWCASE STAGE (Exact Aston Martin Composition) -->
-      <div class="relative flex-1 grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-6 items-center my-auto py-2 overflow-hidden">
+      <!-- 2. MAIN VEHICLE SHOWCASE STAGE (Exact Aston Martin 3-Column Composition) -->
+      <div class="relative flex-1 grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 items-center my-auto py-2 overflow-hidden">
         
-        <!-- LEFT COLUMN: Brand, Model, Vertical Category Tabs, Short Narrative -->
-        <div class="lg:col-span-3 flex flex-col justify-between h-full py-1 z-20">
+        <!-- LEFT COLUMN: Vehicle Info & Vertical Feature Tabs -->
+        <div class="lg:col-span-3 flex flex-col justify-between h-full py-2 z-20">
           <div>
-            <!-- Brand & Model Name -->
+            <!-- Brand & Model Name (with Info Circle Icon) -->
             <div class="space-y-0.5">
-              <h2 id="amCarBrand" class="text-2xl sm:text-3xl lg:text-[34px] font-black tracking-tight text-neutral-900 font-roboto leading-tight">
-                Mercedes-Benz
-              </h2>
-              <div id="amCarModelYear" class="text-xs sm:text-sm font-semibold text-neutral-500">
-                S-Class 450 &middot; 2024
+              <div class="flex items-center gap-2">
+                <h2 id="amCarBrand" class="text-2xl sm:text-3xl lg:text-[34px] font-black tracking-tight text-neutral-900 leading-tight font-sans">
+                  Aston Martin
+                </h2>
+                <button class="w-5 h-5 rounded-full border border-neutral-300 text-neutral-400 hover:text-neutral-800 flex items-center justify-center text-[10px] font-serif italic transition" title="Vehicle Overview">
+                  i
+                </button>
+              </div>
+              <div id="amCarModelYear" class="text-xs sm:text-sm font-semibold text-neutral-400">
+                Valkyrie &middot; 2022
               </div>
             </div>
 
-            <!-- Vertical Category Tabs (Matching Reference) -->
-            <div class="flex flex-row lg:flex-col gap-1.5 mt-4 sm:mt-6 overflow-x-auto pb-1 lg:pb-0">
-              <button type="button" onclick="setCarModalTab('performance')" id="amTabBtn-performance" class="am-tab-btn px-4 py-1.5 rounded-full text-xs font-bold text-center bg-black text-white shadow-xs transition shrink-0">Performance</button>
-              <button type="button" onclick="setCarModalTab('design')" id="amTabBtn-design" class="am-tab-btn px-4 py-1.5 rounded-full text-xs font-semibold text-center text-neutral-600 hover:text-black hover:bg-neutral-100 transition shrink-0">Design</button>
-              <button type="button" onclick="setCarModalTab('safety')" id="amTabBtn-safety" class="am-tab-btn px-4 py-1.5 rounded-full text-xs font-semibold text-center text-neutral-600 hover:text-black hover:bg-neutral-100 transition shrink-0">Safety</button>
-              <button type="button" onclick="setCarModalTab('luxury')" id="amTabBtn-luxury" class="am-tab-btn px-4 py-1.5 rounded-full text-xs font-semibold text-center text-neutral-600 hover:text-black hover:bg-neutral-100 transition shrink-0">Luxury</button>
-              <button type="button" onclick="setCarModalTab('chauffeur')" id="amTabBtn-chauffeur" class="am-tab-btn px-4 py-1.5 rounded-full text-xs font-semibold text-center text-neutral-600 hover:text-black hover:bg-neutral-100 transition shrink-0">Chauffeur</button>
+            <!-- Vertical Feature Navigation Tabs (Exact Black Active Pill Style) -->
+            <div class="flex flex-row lg:flex-col gap-2 mt-5 sm:mt-7 overflow-x-auto pb-1 lg:pb-0">
+              <button type="button" onclick="setCarModalTab('performance')" id="amTabBtn-performance" class="am-tab-btn px-5 py-2 rounded-full text-xs font-bold text-left bg-black text-white shadow-xs transition shrink-0">Performance</button>
+              <button type="button" onclick="setCarModalTab('design')" id="amTabBtn-design" class="am-tab-btn px-5 py-2 rounded-full text-xs font-semibold text-left text-neutral-600 hover:text-black hover:bg-white/80 transition shrink-0">Design</button>
+              <button type="button" onclick="setCarModalTab('safety')" id="amTabBtn-safety" class="am-tab-btn px-5 py-2 rounded-full text-xs font-semibold text-left text-neutral-600 hover:text-black hover:bg-white/80 transition shrink-0">Safety</button>
+              <button type="button" onclick="setCarModalTab('luxury')" id="amTabBtn-luxury" class="am-tab-btn px-5 py-2 rounded-full text-xs font-semibold text-left text-neutral-600 hover:text-black hover:bg-white/80 transition shrink-0">Luxury</button>
+              <button type="button" onclick="setCarModalTab('chauffeur')" id="amTabBtn-chauffeur" class="am-tab-btn px-5 py-2 rounded-full text-xs font-semibold text-left text-neutral-600 hover:text-black hover:bg-white/80 transition shrink-0">Chauffeur</button>
             </div>
           </div>
 
-          <!-- Narrative Statement -->
+          <!-- Subtle Vehicle Narrative Note -->
           <p id="amCarShortDesc" class="text-xs text-neutral-500 leading-relaxed hidden lg:block mt-auto font-sans pr-4">
-            The definitive benchmark of automotive sanctuary. Engineered with intelligent Airmatic damping and executive rear recliners for corporate leaders.
+            The definitive benchmark of automotive sanctuary. Engineered with intelligent damping and executive comfort.
           </p>
         </div>
 
-        <!-- CENTER STAGE: Large Vehicle Visual + Pinned Feature Badges + Angle Switcher -->
-        <div class="lg:col-span-6 relative flex flex-col items-center justify-center min-h-[260px] sm:min-h-[310px] lg:min-h-[350px]">
+        <!-- CENTER STAGE: Large Central Vehicle + 5 Strategic Floating Feature Cards -->
+        <div class="lg:col-span-6 relative flex flex-col items-center justify-center min-h-[300px] sm:min-h-[360px] lg:min-h-[400px]">
           
-          <!-- Background Subtle Gradient Halo -->
-          <div class="absolute inset-0 bg-radial from-neutral-200/40 via-transparent to-transparent rounded-full blur-2xl pointer-events-none -z-10"></div>
+          <!-- Subtle Soft Halo behind car -->
+          <div class="absolute inset-0 bg-radial from-neutral-200/50 via-transparent to-transparent rounded-full blur-3xl pointer-events-none -z-10"></div>
 
-          <!-- Main Vehicle Display (Uniform Sized Presentation Card) -->
-          <div class="relative w-full max-w-[700px] lg:max-w-[760px] h-[210px] sm:h-[260px] lg:h-[295px] flex items-center justify-center mx-auto">
+          <!-- Vehicle Visual Container -->
+          <div class="relative w-full max-w-[760px] lg:max-w-[820px] h-[240px] sm:h-[300px] lg:h-[340px] flex items-center justify-center mx-auto">
             
-            <div class="relative w-full h-full rounded-[22px] overflow-hidden bg-gradient-to-b from-neutral-100 to-neutral-200/70 border border-neutral-200/80 shadow-[0_16px_40px_rgba(0,0,0,0.12)]">
+            <!-- Car Image Display (Transparent / Studio Presentation) -->
+            <div class="relative w-full h-full flex items-center justify-center">
               <img id="amMainCarImg" 
                    src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&h=675&q=85" 
                    alt="Velora Fleet Vehicle" 
-                   class="w-full h-full object-cover filter contrast-[1.03] transition-all duration-300">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none"></div>
+                   class="max-w-full max-h-full object-contain filter contrast-[1.04] transition-all duration-500 select-none drop-shadow-[0_20px_35px_rgba(0,0,0,0.18)]">
             </div>
 
             <!-- Floor Contact Shadow -->
-            <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-[90%] h-6 bg-black/20 rounded-[100%] blur-xl pointer-events-none"></div>
+            <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-[85%] h-6 bg-black/20 rounded-[100%] blur-xl pointer-events-none"></div>
 
-            <!-- PIN 1: Aerodynamics / Rear Wing -->
-            <div id="amPin1" class="absolute -top-3 -left-2 sm:left-0 hidden md:flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/90 shadow-lg transition-all hover:scale-105 z-20">
+            <!-- FLOATING FEATURE CARD 1 (Top Left / Rear Aerodynamics) -->
+            <div id="amPin1" class="absolute top-[8%] left-[6%] hidden md:flex items-center gap-2.5 px-3.5 py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 z-20 max-w-[210px]">
               <span class="w-2.5 h-2.5 rounded-full bg-black ring-4 ring-black/15 shrink-0"></span>
               <div class="text-left">
-                <span id="amPinTitle1" class="font-bold text-[11px] text-neutral-900 block leading-tight">Digital Light System</span>
-                <span id="amPinDesc1" class="text-[9px] text-neutral-500 block leading-tight">1.3M micro-mirror matrix</span>
+                <span id="amPinTitle1" class="font-bold text-[11px] text-neutral-900 block leading-tight">Aerodynamic Design</span>
+                <span id="amPinDesc1" class="text-[9.5px] text-neutral-500 block leading-tight mt-0.5">Inspired by F1 technology for maximum downforce</span>
               </div>
             </div>
 
-            <!-- PIN 2: Roof / Acoustic Glazing -->
-            <div id="amPin2" class="absolute -top-3 -right-2 sm:right-0 hidden md:flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/90 shadow-lg transition-all hover:scale-105 z-20">
+            <!-- FLOATING FEATURE CARD 2 (Top Right / Roof Monocoque) -->
+            <div id="amPin2" class="absolute top-[6%] right-[16%] hidden md:flex items-center gap-2.5 px-3.5 py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 z-20 max-w-[210px]">
               <span class="w-2.5 h-2.5 rounded-full bg-black ring-4 ring-black/15 shrink-0"></span>
               <div class="text-left">
-                <span id="amPinTitle2" class="font-bold text-[11px] text-neutral-900 block leading-tight">Acoustic Glazing</span>
-                <span id="amPinDesc2" class="text-[9px] text-neutral-500 block leading-tight">Double-laminated sound isolation</span>
+                <span id="amPinTitle2" class="font-bold text-[11px] text-neutral-900 block leading-tight">Carbon Fiber Monocoque</span>
+                <span id="amPinDesc2" class="text-[9.5px] text-neutral-500 block leading-tight mt-0.5">Ultra-lightweight racing structure</span>
               </div>
             </div>
 
-            <!-- PIN 3: Powertrain / Front -->
-            <div id="amPin3" class="absolute -bottom-3 -left-2 sm:left-2 hidden md:flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/90 shadow-lg transition-all hover:scale-105 z-20">
+            <!-- FLOATING FEATURE CARD 3 (Bottom Left / Engine & Powertrain) -->
+            <div id="amPin3" class="absolute bottom-[20%] -left-[2%] hidden md:flex items-center gap-2.5 px-3.5 py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 z-20 max-w-[210px]">
               <span class="w-2.5 h-2.5 rounded-full bg-black ring-4 ring-black/15 shrink-0"></span>
               <div class="text-left">
-                <span id="amPinTitle3" class="font-bold text-[11px] text-neutral-900 block leading-tight">3.0L Turbo I-6</span>
-                <span id="amPinDesc3" class="text-[9px] text-neutral-500 block leading-tight">EQ Boost instantaneous surge</span>
+                <span id="amPinTitle3" class="font-bold text-[11px] text-neutral-900 block leading-tight">6.5L V12 Hybrid Engine</span>
+                <span id="amPinDesc3" class="text-[9.5px] text-neutral-500 block leading-tight mt-0.5">Extreme power and efficiency</span>
               </div>
             </div>
 
-            <!-- PIN 4: Chassis / Air Suspension -->
-            <div id="amPin4" class="absolute -bottom-3 -right-2 sm:right-2 hidden md:flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/90 shadow-lg transition-all hover:scale-105 z-20">
+            <!-- FLOATING FEATURE CARD 4 (Bottom Center / Active Aerodynamics) -->
+            <div id="amPin4" class="absolute bottom-[6%] left-[36%] hidden md:flex items-center gap-2.5 px-3.5 py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 z-20 max-w-[210px]">
               <span class="w-2.5 h-2.5 rounded-full bg-black ring-4 ring-black/15 shrink-0"></span>
               <div class="text-left">
-                <span id="amPinTitle4" class="font-bold text-[11px] text-neutral-900 block leading-tight">Airmatic Damping</span>
-                <span id="amPinDesc4" class="text-[9px] text-neutral-500 block leading-tight">Continuous terrain smoothing</span>
+                <span id="amPinTitle4" class="font-bold text-[11px] text-neutral-900 block leading-tight">Active Aerodynamics</span>
+                <span id="amPinDesc4" class="text-[9.5px] text-neutral-500 block leading-tight mt-0.5">Adaptive systems for ultimate control</span>
+              </div>
+            </div>
+
+            <!-- FLOATING FEATURE CARD 5 (Bottom Right / Track-Focused Brakes) -->
+            <div id="amPin5" class="absolute bottom-[18%] -right-[2%] hidden md:flex items-center gap-2.5 px-3.5 py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 z-20 max-w-[210px]">
+              <span class="w-2.5 h-2.5 rounded-full bg-black ring-4 ring-black/15 shrink-0"></span>
+              <div class="text-left">
+                <span id="amPinTitle5" class="font-bold text-[11px] text-neutral-900 block leading-tight">Track-Focused</span>
+                <span id="amPinDesc5" class="text-[9.5px] text-neutral-500 block leading-tight mt-0.5">Built for speed, engineered for precision</span>
               </div>
             </div>
 
           </div>
 
-          <!-- Compact Angle Switcher / Gallery Strip -->
-          <div id="amGalleryThumbnails" class="flex items-center gap-2 mt-3 z-20">
-            <!-- Dynamically populated buttons -->
-          </div>
+          <!-- Angle Switcher Gallery Strip -->
+          <div id="amGalleryThumbnails" class="flex items-center gap-2 mt-2 z-20"></div>
 
         </div>
 
-        <!-- RIGHT COLUMN: Highlight Card & Finishes -->
-        <div class="lg:col-span-3 flex flex-col justify-between h-full py-1 z-20">
+        <!-- RIGHT COLUMN: Prominent Highlight Cards & Booking CTA (Matching Aston Martin Reference) -->
+        <div class="lg:col-span-3 flex flex-col justify-between h-full py-2 z-20 space-y-3">
           
-          <!-- Dark Highlight Card (Aston Martin Style) -->
-          <div class="rounded-2xl bg-[#0E0F12] text-white p-4 sm:p-5 shadow-lg border border-neutral-800">
-            <div class="flex items-center gap-2 mb-2">
-              <span class="w-6 h-6 rounded-lg bg-white/10 flex items-center justify-center text-white">
+          <!-- Highlight Card 1: Curved Black Header + White Body (Exact Aston Martin Style) -->
+          <div class="rounded-[22px] overflow-hidden border border-neutral-200/80 bg-white shadow-md">
+            <!-- Black Header Strip -->
+            <div class="bg-black text-white px-5 py-3.5 flex items-center gap-2.5 rounded-b-2xl">
+              <span class="w-6 h-6 rounded-lg bg-white/15 flex items-center justify-center text-white">
                 <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
               </span>
               <span id="amHighlightTitle" class="text-xs font-bold tracking-tight">Uncompromised Power</span>
             </div>
-            <p id="amHighlightDesc" class="text-[11px] text-neutral-400 leading-relaxed font-sans">
-              A fusion of cutting-edge automotive engineering and bespoke Dhaka executive travel.
-            </p>
+            <!-- White Description Body -->
+            <div class="p-4 sm:p-5">
+              <p id="amHighlightDesc" class="text-xs text-neutral-500 leading-relaxed font-sans">
+                A fusion of cutting-edge engineering and timeless Aston Martin design.
+              </p>
+            </div>
           </div>
 
-          <!-- Chauffeur & VIP Status Card -->
-          <div class="my-2 p-3 rounded-xl bg-white border border-neutral-200/80 shadow-2xs flex items-center justify-between">
-            <span class="text-[10px] font-bold text-neutral-500 uppercase tracking-wider">Chauffeur Included</span>
-            <span class="text-[11px] font-bold text-emerald-600 flex items-center gap-1">
-              <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
-              <span>English-Fluent VIP</span>
-            </span>
+          <!-- Highlight Card 2: Sleek Pill Card (vpc-accessories style) -->
+          <div class="p-3.5 rounded-full bg-white border border-neutral-200/80 shadow-2xs flex items-center justify-center gap-2 text-xs font-semibold text-neutral-700 hover:bg-neutral-50 transition cursor-pointer">
+            <i data-lucide="infinity" class="w-4 h-4 text-neutral-400"></i>
+            <span>vpc-accessories</span>
           </div>
 
-          <!-- Colors / Finishes Swatches -->
-          <div class="pt-2 border-t border-neutral-200/80">
-            <div class="text-[11px] font-bold text-neutral-700 mb-2">Available Finishes</div>
-            <div id="amModalColorSwatches" class="flex items-center gap-2.5"></div>
+          <!-- Booking Integration Card (Rental Rate + Reserve CTA) -->
+          <div class="p-4 rounded-2xl bg-white border border-neutral-200/90 shadow-sm mt-auto">
+            <div class="flex items-baseline justify-between mb-2.5">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-neutral-500">Rental Rate</span>
+              <div>
+                <span id="amSpecPriceVal" class="text-xl font-black text-neutral-900 font-sans">à§³ 18,000</span>
+                <span class="text-[11px] text-neutral-500 font-medium">/day</span>
+              </div>
+            </div>
+            <button type="button" onclick="handleModalBookThisCar()" class="w-full py-2.5 px-4 rounded-xl bg-black hover:bg-neutral-800 text-white font-bold text-xs transition flex items-center justify-center gap-2 shadow-sm group">
+              <span>Book This Vehicle</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition"></i>
+            </button>
           </div>
 
         </div>
 
       </div>
 
-      <!-- 3. BOTTOM SPECIFICATIONS & FEATURE HIGHLIGHTS ROW -->
+      <!-- 3. FEATURE HIGHLIGHTS BOTTOM SPECIFICATION SECTION (Exact Aston Martin Reference) -->
       <footer class="pt-3 border-t border-neutral-200/80 shrink-0 z-30">
         
-        <div class="flex items-center justify-between mb-2">
-          <span class="text-xs font-bold text-neutral-800 uppercase tracking-wider">Feature Highlights</span>
-          <span class="text-[11px] font-medium text-neutral-500">Full Technical Portfolio &middot; Dhaka Dispatch</span>
+        <!-- Header Strip: Title on Left, Color Swatches on Right -->
+        <div class="flex items-center justify-between mb-3">
+          <!-- Left: Title with Info Icon & Circular Scroll Buttons -->
+          <div class="flex items-center gap-3">
+            <div class="flex items-center gap-1">
+              <button onclick="prevModalCar()" class="w-7 h-7 rounded-full border border-neutral-200 hover:bg-white text-neutral-700 flex items-center justify-center transition shadow-2xs" title="Previous vehicle">
+                <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+              </button>
+              <button onclick="nextModalCar()" class="w-7 h-7 rounded-full border border-neutral-200 hover:bg-white text-neutral-700 flex items-center justify-center transition shadow-2xs" title="Next vehicle">
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="text-sm font-extrabold text-neutral-900 tracking-tight font-sans">Feature Highlights</span>
+              <button class="w-4 h-4 rounded-full border border-neutral-300 text-neutral-400 hover:text-neutral-700 flex items-center justify-center text-[9px] font-serif italic" title="Specs breakdown">
+                i
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Colors / Finishes Swatches -->
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-bold text-neutral-900">Colors</span>
+            <div id="amModalColorSwatches" class="flex items-center gap-2"></div>
+          </div>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3">
+        <!-- 6 Horizontal Specification Cards Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-3">
           
-          <!-- Card 1: Passenger Capacity + Seat Visual -->
-          <div class="p-3 rounded-2xl bg-white border border-neutral-200/80 shadow-2xs flex items-center justify-between">
+          <!-- Card 1: Passenger capacity + Interior Seat Thumbnail Photo -->
+          <div class="p-3 sm:p-3.5 rounded-2xl bg-white border border-neutral-200/80 shadow-2xs flex items-center justify-between">
             <div>
-              <div class="flex items-center gap-1.5 text-neutral-400 mb-0.5">
-                <i data-lucide="users" class="w-3.5 h-3.5"></i>
-                <span class="text-[10px] font-bold uppercase tracking-wider">Passenger</span>
+              <div class="flex items-center gap-1.5 text-neutral-400 mb-1">
+                <i data-lucide="user" class="w-3.5 h-3.5 text-neutral-400"></i>
+                <span class="text-[9.5px] font-bold uppercase tracking-wider text-neutral-500">Passenger capacity</span>
               </div>
-              <div id="amSpecCapacityVal" class="text-xl sm:text-2xl font-black text-neutral-900 leading-tight">4</div>
-              <div class="text-[10px] text-neutral-500 font-medium">VIP Recliners</div>
+              <div id="amSpecCapacityVal" class="text-2xl font-black text-neutral-900 leading-tight">4</div>
             </div>
-            <img id="amSpecSeatImg" src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=200&h=200&q=80" alt="Executive Interior" class="w-14 h-14 object-cover rounded-xl shadow-inner shrink-0">
+            <img id="amSpecSeatImg" src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=200&h=200&q=80" alt="Executive Interior" class="w-12 h-12 object-cover rounded-xl shadow-inner shrink-0">
           </div>
 
-          <!-- Card 2: Engine & Power -->
-          <div class="p-3 rounded-2xl bg-white border border-neutral-200/80 shadow-2xs">
-            <div class="flex items-center gap-1.5 text-neutral-400 mb-0.5">
-              <i data-lucide="gauge" class="w-3.5 h-3.5"></i>
-              <span class="text-[10px] font-bold uppercase tracking-wider">Engine</span>
+          <!-- Card 2: Engine -->
+          <div class="p-3 sm:p-3.5 rounded-2xl bg-white border border-neutral-200/80 shadow-2xs">
+            <div class="flex items-center justify-between text-neutral-400 mb-1">
+              <i data-lucide="cpu" class="w-3.5 h-3.5 text-neutral-400"></i>
+              <span class="text-[9.5px] font-bold text-neutral-400 uppercase tracking-wider">Engine</span>
             </div>
-            <div id="amSpecPowerVal" class="text-xl sm:text-2xl font-black text-neutral-900 leading-tight">362 hp</div>
-            <div id="amSpecEngineSub" class="text-[10px] text-neutral-500 font-medium truncate">3.0L Turbo I-6</div>
+            <div class="text-[10px] text-neutral-400 font-medium">Naturally Aspirated</div>
+            <div id="amSpecEngineSub" class="text-sm font-bold text-neutral-900 truncate mt-0.5">3.0L Turbo I-6</div>
           </div>
 
-          <!-- Card 3: Transmission & Acceleration -->
-          <div class="p-3 rounded-2xl bg-white border border-neutral-200/80 shadow-2xs">
-            <div class="flex items-center gap-1.5 text-neutral-400 mb-0.5">
-              <i data-lucide="cog" class="w-3.5 h-3.5"></i>
-              <span class="text-[10px] font-bold uppercase tracking-wider">Transmission</span>
+          <!-- Card 3: Power -->
+          <div class="p-3 sm:p-3.5 rounded-2xl bg-white border border-neutral-200/80 shadow-2xs">
+            <div class="flex items-center gap-1.5 text-neutral-400 mb-1">
+              <i data-lucide="sun" class="w-3.5 h-3.5 text-neutral-400"></i>
+              <span class="text-[9.5px] font-bold text-neutral-400 uppercase tracking-wider">Power</span>
+            </div>
+            <div class="flex items-baseline gap-1">
+              <div id="amSpecPowerVal" class="text-xl sm:text-2xl font-black text-neutral-900 leading-tight">362 hp</div>
+            </div>
+            <div class="text-[10px] text-neutral-400 font-medium">@ 6,000 rpm</div>
+          </div>
+
+          <!-- Card 4: Transmission -->
+          <div class="p-3 sm:p-3.5 rounded-2xl bg-white border border-neutral-200/80 shadow-2xs">
+            <div class="flex items-center gap-1.5 text-neutral-400 mb-1">
+              <i data-lucide="git-commit" class="w-3.5 h-3.5 text-neutral-400"></i>
+              <span class="text-[9.5px] font-bold text-neutral-400 uppercase tracking-wider">Transmission</span>
             </div>
             <div id="amSpecTransVal" class="text-base sm:text-lg font-bold text-neutral-900 leading-tight">9G-Tronic</div>
-            <div class="text-[10px] text-neutral-500 font-medium">0-100: <span id="amSpecAccelVal" class="font-bold text-electric">4.9s</span></div>
+            <div class="text-[10px] text-neutral-400 font-medium">Sequential</div>
           </div>
 
-          <!-- Card 4: Top Speed & Performance -->
-          <div class="p-3 rounded-2xl bg-white border border-neutral-200/80 shadow-2xs">
-            <div class="flex items-center gap-1.5 text-neutral-400 mb-0.5">
-              <i data-lucide="zap" class="w-3.5 h-3.5"></i>
-              <span class="text-[10px] font-bold uppercase tracking-wider">Top Speed</span>
+          <!-- Card 5: 0-100 km/h -->
+          <div class="p-3 sm:p-3.5 rounded-2xl bg-white border border-neutral-200/80 shadow-2xs">
+            <div class="flex items-center gap-1.5 text-neutral-400 mb-1">
+              <i data-lucide="gauge" class="w-3.5 h-3.5 text-neutral-400"></i>
+              <span class="text-[9.5px] font-bold text-neutral-400 uppercase tracking-wider">0-100 km/h</span>
             </div>
-            <div id="amSpecSpeedVal" class="text-xl sm:text-2xl font-black text-neutral-900 leading-tight">250 km/h</div>
-            <div class="text-[10px] text-neutral-500 font-medium">Electronic Limiter</div>
+            <div class="flex items-baseline gap-1">
+              <div id="amSpecAccelVal" class="text-xl sm:text-2xl font-black text-neutral-900 leading-tight">4.9s</div>
+            </div>
+            <div class="text-[10px] text-neutral-400 font-medium">0-200 km/h: 12.8s</div>
           </div>
 
-          <!-- Card 5: Rental Price & Immediate Booking CTA -->
-          <div class="col-span-2 sm:col-span-1 p-3 rounded-2xl bg-white border-2 border-neutral-900 shadow-xs flex flex-col justify-between">
-            <div class="flex items-baseline justify-between">
-              <span class="text-[10px] font-bold uppercase tracking-wider text-neutral-500">Daily Rate</span>
-              <div>
-                <span id="amSpecPriceVal" class="text-lg sm:text-xl font-black text-neutral-900">৳ 18,000</span>
-                <span class="text-[10px] text-neutral-500 font-medium">/day</span>
-              </div>
+          <!-- Card 6: Top Speed -->
+          <div class="p-3 sm:p-3.5 rounded-2xl bg-white border border-neutral-200/80 shadow-2xs">
+            <div class="flex items-center gap-1.5 text-neutral-400 mb-1">
+              <i data-lucide="compass" class="w-3.5 h-3.5 text-neutral-400"></i>
+              <span class="text-[9.5px] font-bold text-neutral-400 uppercase tracking-wider">Top Speed</span>
             </div>
-            <button type="button" onclick="handleModalBookThisCar()" class="w-full mt-1.5 py-2 px-3 rounded-xl bg-black hover:bg-neutral-800 text-white font-bold text-xs transition flex items-center justify-center gap-1.5 shadow-sm group">
-              <span>Book This Vehicle</span>
-              <i data-lucide="arrow-right" class="w-3 h-3 group-hover:translate-x-0.5 transition"></i>
-            </button>
+            <div class="flex items-baseline gap-1">
+              <div id="amSpecSpeedVal" class="text-xl sm:text-2xl font-black text-neutral-900 leading-tight">250</div>
+              <span class="text-xs font-semibold text-neutral-500">km/h</span>
+            </div>
+            <div class="text-[10px] text-neutral-400 font-medium">Track Tuned</div>
           </div>
 
         </div>
@@ -2024,7 +2113,7 @@
     </div>
   </div>
 
-  <!-- INTERACTIVE BOOKING DRAWER / MODAL -->
+  @*  <!-- INTERACTIVE BOOKING DRAWER / MODAL -->
   <div id="bookingDrawer" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-ink/70 backdrop-blur-md hidden transition-opacity">
     <div class="bg-white max-w-lg w-full rounded-[32px] p-6 sm:p-8 border border-hairline shadow-2xl relative max-h-[90vh] overflow-y-auto">
       
@@ -3148,10 +3237,11 @@
       if (!data.pins) return;
       const pinSet = data.pins[tabKey] || data.pins['performance'] || data.pins;
       
-      const p1 = pinSet.pin1 || { title: 'Aerodynamic Form', desc: 'Engineered for poise' };
-      const p2 = pinSet.pin2 || { title: 'Acoustic Glazing', desc: 'Silent isolation' };
+      const p1 = pinSet.pin1 || { title: 'Aerodynamic Design', desc: 'Engineered for maximum poise' };
+      const p2 = pinSet.pin2 || { title: 'Carbon Monocoque', desc: 'Ultra-lightweight rigid structure' };
       const p3 = pinSet.pin3 || { title: 'TwinPower Surge', desc: 'Instant electric assist' };
-      const p4 = pinSet.pin4 || { title: 'Active Damping', desc: 'Continuous balance' };
+      const p4 = pinSet.pin4 || { title: 'Active Aerodynamics', desc: 'Adaptive terrain smoothing' };
+      const p5 = pinSet.pin5 || { title: 'Track-Focused', desc: 'Engineered for precision braking' };
 
       const t1 = document.getElementById('amPinTitle1');
       const d1 = document.getElementById('amPinDesc1');
@@ -3172,16 +3262,21 @@
       const d4 = document.getElementById('amPinDesc4');
       if (t4) t4.textContent = p4.title;
       if (d4) d4.textContent = p4.desc;
+
+      const t5 = document.getElementById('amPinTitle5');
+      const d5 = document.getElementById('amPinDesc5');
+      if (t5) t5.textContent = p5.title;
+      if (d5) d5.textContent = p5.desc;
     }
 
     function setCarModalTab(tabKey) {
       currentActiveTab = tabKey;
       document.querySelectorAll('.am-tab-btn').forEach(btn => {
-        btn.className = 'am-tab-btn px-4 py-1.5 rounded-full text-xs font-semibold text-center text-neutral-600 hover:text-black hover:bg-neutral-100 transition shrink-0';
+        btn.className = 'am-tab-btn px-5 py-2 rounded-full text-xs font-semibold text-left text-neutral-600 hover:text-black hover:bg-white/80 transition shrink-0';
       });
       const activeBtn = document.getElementById(`amTabBtn-${tabKey}`);
       if (activeBtn) {
-        activeBtn.className = 'am-tab-btn px-4 py-1.5 rounded-full text-xs font-bold text-center bg-black text-white shadow-xs transition shrink-0';
+        activeBtn.className = 'am-tab-btn px-5 py-2 rounded-full text-xs font-bold text-left bg-black text-white shadow-xs transition shrink-0';
       }
 
       const currentKey = showcaseCarsList[currentModalIndex] || 's-class';
