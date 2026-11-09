@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Velora Drive — Premium Car Rental & Chauffeur Service | Dhaka</title>
   <meta name="description" content="Arrive in style. Book in minutes. Premium car rental and professional chauffeur service across Dhaka, Bangladesh.">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <!-- Instant Video Preload for Zero-Delay Hero Playback -->
+  <link rel="preload" as="video" href="hero.mp4?v=3" type="video/mp4">
 
   <!-- Google Fonts: Roboto Bold for Titles + Inter for Body & UI -->
 
@@ -471,11 +477,17 @@
       <div id="heroMediaContainer" class="absolute inset-0 w-full h-full pointer-events-none overflow-hidden bg-black z-0">
         <!-- Dual Stacked Video Elements for Seamless Crossfade Looping -->
         <video id="heroVideo1" autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg" class="hero-video-media z-[1] opacity-100">
-          <source src="hero.mp4?v=2" type="video/mp4">
+          <source src="hero.mp4?v=3" type="video/mp4">
         </video>
-        <video id="heroVideo2" muted playsinline preload="auto" poster="hero-poster.jpg" class="hero-video-media z-[1] opacity-0 pointer-events-none">
-          <source src="hero.mp4?v=2" type="video/mp4">
+        <video id="heroVideo2" muted playsinline preload="none" poster="hero-poster.jpg" class="hero-video-media z-[1] opacity-0 pointer-events-none">
+          <source src="hero.mp4?v=3" type="video/mp4">
         </video>
+        <script>
+          (function() {
+            var v = document.getElementById('heroVideo1');
+            if (v) { v.muted = true; v.play().catch(function(){}); }
+          })();
+        </script>
 
         <!-- Dark Gradient Contrast Overlay (Black ~84% on left fading to 0% on right for text contrast >= 4.5:1) -->
         <div class="hero-video-overlay"></div>
@@ -3314,6 +3326,13 @@
       let isCrossfading = false;
 
       // Autoplay initiation with fallback on first user gesture if restricted by browser
+      v1.addEventListener('playing', () => {
+        if (v2.preload === 'none') {
+          v2.preload = 'auto';
+          v2.load();
+        }
+      }, { once: true });
+
       const startPlay = () => {
         const p = v1.play();
         if (p !== undefined) {
