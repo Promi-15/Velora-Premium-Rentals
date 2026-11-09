@@ -10,7 +10,7 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Instant Video Preload for Zero-Delay Hero Playback -->
-  <link rel="preload" as="video" href="hero.mp4?v=3" type="video/mp4">
+  <link rel="preload" as="video" href="hero.mp4?v=4" type="video/mp4">
 
   <!-- Google Fonts: Roboto Bold for Titles + Inter for Body & UI -->
 
@@ -475,19 +475,10 @@
       
       <!-- HERO BACKGROUND VIDEO CONTAINER -->
       <div id="heroMediaContainer" class="absolute inset-0 w-full h-full pointer-events-none overflow-hidden bg-black z-0">
-        <!-- Dual Stacked Video Elements for Seamless Crossfade Looping -->
+        <!-- High-Performance FastStart Background Video with Native Hardware Acceleration -->
         <video id="heroVideo1" autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg" class="hero-video-media z-[1] opacity-100">
-          <source src="hero.mp4?v=3" type="video/mp4">
+          <source src="hero.mp4?v=4" type="video/mp4">
         </video>
-        <video id="heroVideo2" muted playsinline preload="none" poster="hero-poster.jpg" class="hero-video-media z-[1] opacity-0 pointer-events-none">
-          <source src="hero.mp4?v=3" type="video/mp4">
-        </video>
-        <script>
-          (function() {
-            var v = document.getElementById('heroVideo1');
-            if (v) { v.muted = true; v.play().catch(function(){}); }
-          })();
-        </script>
 
         <!-- Dark Gradient Contrast Overlay (Black ~84% on left fading to 0% on right for text contrast >= 4.5:1) -->
         <div class="hero-video-overlay"></div>
@@ -3315,29 +3306,21 @@
       if (rDate && !rDate.value) rDate.value = d2;
     })();
 
-    // Hero Background Video Seamless Crossfade & Autoplay Management
+    // Hero Background Video Autoplay & Seamless Looping Management
     (function initHeroVideo() {
       const v1 = document.getElementById('heroVideo1');
-      const v2 = document.getElementById('heroVideo2');
-      if (!v1 || !v2) return;
+      if (!v1) return;
 
-      let activeVideo = v1;
-      let nextVideo = v2;
-      let isCrossfading = false;
+      v1.muted = true;
+      v1.defaultMuted = true;
+      v1.playsInline = true;
 
-      // Autoplay initiation with fallback on first user gesture if restricted by browser
-      v1.addEventListener('playing', () => {
-        if (v2.preload === 'none') {
-          v2.preload = 'auto';
-          v2.load();
-        }
-      }, { once: true });
-
-      const startPlay = () => {
+      const playVideo = () => {
         const p = v1.play();
         if (p !== undefined) {
           p.catch(() => {
             const unlock = () => {
+              v1.muted = true;
               v1.play();
               window.removeEventListener('click', unlock);
               window.removeEventListener('touchstart', unlock);
@@ -3349,39 +3332,14 @@
           });
         }
       };
-      startPlay();
 
-      function monitorCrossfade(sourceVid, targetVid) {
-        sourceVid.addEventListener('timeupdate', () => {
-          if (!sourceVid.duration || isNaN(sourceVid.duration) || sourceVid.duration < 1.6) return;
-          const timeLeft = sourceVid.duration - sourceVid.currentTime;
-          
-          if (timeLeft <= 0.65 && !isCrossfading && timeLeft > 0.1) {
-            isCrossfading = true;
-            targetVid.currentTime = 0;
-            const playPromise = targetVid.play();
-            if (playPromise !== undefined) {
-              playPromise.then(() => {
-                targetVid.style.opacity = '1';
-                sourceVid.style.opacity = '0';
-                setTimeout(() => {
-                  sourceVid.pause();
-                  sourceVid.currentTime = 0;
-                  const temp = activeVideo;
-                  activeVideo = nextVideo;
-                  nextVideo = temp;
-                  isCrossfading = false;
-                }, 600);
-              }).catch(() => {
-                isCrossfading = false;
-              });
-            }
-          }
-        });
+      if (v1.readyState >= 2) {
+        playVideo();
+      } else {
+        v1.addEventListener('loadeddata', playVideo, { once: true });
+        v1.addEventListener('canplay', playVideo, { once: true });
       }
-
-      monitorCrossfade(v1, v2);
-      monitorCrossfade(v2, v1);
+      playVideo();
     })();
 
         // React Bits CircularCarousel Integration for Executive Fleet Showcase
