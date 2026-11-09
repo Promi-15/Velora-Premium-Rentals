@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
@@ -1851,7 +1851,7 @@
       </header>
 
       <!-- 2. MAIN VEHICLE SHOWCASE STAGE (Exact Aston Martin 3-Column Composition) -->
-      <div class="relative flex-1 grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 items-center my-auto py-2 overflow-hidden">
+      <div class="relative flex-1 grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 items-center my-auto py-2 overflow-visible">
         
         <!-- LEFT COLUMN: Vehicle Info & Vertical Feature Tabs -->
         <div class="lg:col-span-3 flex flex-col justify-between h-full py-2 z-20">
@@ -1893,62 +1893,82 @@
           <!-- Subtle Soft Halo behind car -->
           <div class="absolute inset-0 bg-radial from-neutral-200/50 via-transparent to-transparent rounded-full blur-3xl pointer-events-none -z-10"></div>
 
-          <!-- Vehicle Visual Container -->
-          <div class="relative w-full max-w-[760px] lg:max-w-[820px] h-[240px] sm:h-[300px] lg:h-[340px] flex items-center justify-center mx-auto">
+          <!-- Vehicle Visual Container with Full Overflow for Floating Feature Callouts -->
+          <div class="relative w-full max-w-[780px] lg:max-w-[840px] min-h-[300px] sm:min-h-[340px] lg:min-h-[370px] flex items-center justify-center mx-auto overflow-visible">
             
             <!-- Car Image Display (Transparent / Studio Presentation) -->
-            <div class="relative w-full h-full flex items-center justify-center">
+            <div class="relative w-full h-full flex items-center justify-center px-2 sm:px-6">
               <img id="amMainCarImg" 
                    src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&h=675&q=85" 
                    alt="Velora Fleet Vehicle" 
-                   class="max-w-full max-h-full object-contain filter contrast-[1.04] transition-all duration-500 select-none drop-shadow-[0_20px_35px_rgba(0,0,0,0.18)]">
+                   class="max-w-full max-h-[250px] sm:max-h-[290px] lg:max-h-[310px] object-contain filter contrast-[1.04] transition-all duration-500 select-none drop-shadow-[0_20px_35px_rgba(0,0,0,0.18)]">
             </div>
 
             <!-- Floor Contact Shadow -->
             <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-[85%] h-6 bg-black/20 rounded-[100%] blur-xl pointer-events-none"></div>
 
-            <!-- FLOATING FEATURE CARD 1 (Top Left / Rear Aerodynamics) -->
-            <div id="amPin1" class="absolute top-[8%] left-[6%] hidden md:flex items-center gap-2.5 px-3.5 py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 z-20 max-w-[210px]">
-              <span class="w-2.5 h-2.5 rounded-full bg-black ring-4 ring-black/15 shrink-0"></span>
+            <!-- FLOATING FEATURE CARD 1 (Top Left / Rear Aerodynamics & Spoiler) -->
+            <div id="amPin1" class="absolute top-[4%] sm:top-[6%] left-[1%] sm:left-[3%] flex items-center gap-2 sm:gap-2.5 px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/90 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 z-20 max-w-[190px] sm:max-w-[215px] cursor-default select-none">
+              <span class="relative flex h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 items-center justify-center">
+                <span class="w-3.5 h-3.5 rounded-full border-2 border-neutral-600/90 bg-white flex items-center justify-center shadow-2xs">
+                  <span class="w-1.5 h-1.5 rounded-full bg-black"></span>
+                </span>
+              </span>
               <div class="text-left">
-                <span id="amPinTitle1" class="font-bold text-[11px] text-neutral-900 block leading-tight">Aerodynamic Design</span>
-                <span id="amPinDesc1" class="text-[9.5px] text-neutral-500 block leading-tight mt-0.5">Inspired by F1 technology for maximum downforce</span>
+                <span id="amPinTitle1" class="font-bold text-[10.5px] sm:text-[11.5px] text-neutral-900 block leading-tight">Aerodynamic Design</span>
+                <span id="amPinDesc1" class="text-[9px] sm:text-[9.5px] text-neutral-500 block leading-tight mt-0.5">Inspired by F1 technology for maximum downforce</span>
               </div>
             </div>
 
-            <!-- FLOATING FEATURE CARD 2 (Top Right / Roof Monocoque) -->
-            <div id="amPin2" class="absolute top-[6%] right-[16%] hidden md:flex items-center gap-2.5 px-3.5 py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 z-20 max-w-[210px]">
-              <span class="w-2.5 h-2.5 rounded-full bg-black ring-4 ring-black/15 shrink-0"></span>
+            <!-- FLOATING FEATURE CARD 2 (Top Right / Roof Monocoque & Sanctuary Cabin) -->
+            <div id="amPin2" class="absolute top-[2%] sm:top-[4%] right-[4%] sm:right-[12%] flex items-center gap-2 sm:gap-2.5 px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/90 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 z-20 max-w-[190px] sm:max-w-[215px] cursor-default select-none">
+              <span class="relative flex h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 items-center justify-center">
+                <span class="w-3.5 h-3.5 rounded-full border-2 border-neutral-600/90 bg-white flex items-center justify-center shadow-2xs">
+                  <span class="w-1.5 h-1.5 rounded-full bg-black"></span>
+                </span>
+              </span>
               <div class="text-left">
-                <span id="amPinTitle2" class="font-bold text-[11px] text-neutral-900 block leading-tight">Carbon Fiber Monocoque</span>
-                <span id="amPinDesc2" class="text-[9.5px] text-neutral-500 block leading-tight mt-0.5">Ultra-lightweight racing structure</span>
+                <span id="amPinTitle2" class="font-bold text-[10.5px] sm:text-[11.5px] text-neutral-900 block leading-tight">Carbon Fiber Monocoque</span>
+                <span id="amPinDesc2" class="text-[9px] sm:text-[9.5px] text-neutral-500 block leading-tight mt-0.5">Ultra-lightweight racing structure</span>
               </div>
             </div>
 
-            <!-- FLOATING FEATURE CARD 3 (Bottom Left / Engine & Powertrain) -->
-            <div id="amPin3" class="absolute bottom-[20%] -left-[2%] hidden md:flex items-center gap-2.5 px-3.5 py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 z-20 max-w-[210px]">
-              <span class="w-2.5 h-2.5 rounded-full bg-black ring-4 ring-black/15 shrink-0"></span>
+            <!-- FLOATING FEATURE CARD 3 (Bottom Left / Engine & Powertrain Flank) -->
+            <div id="amPin3" class="absolute bottom-[22%] sm:bottom-[20%] -left-[2%] sm:left-[2%] flex items-center gap-2 sm:gap-2.5 px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/90 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 z-20 max-w-[190px] sm:max-w-[215px] cursor-default select-none">
+              <span class="relative flex h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 items-center justify-center">
+                <span class="w-3.5 h-3.5 rounded-full border-2 border-neutral-600/90 bg-white flex items-center justify-center shadow-2xs">
+                  <span class="w-1.5 h-1.5 rounded-full bg-black"></span>
+                </span>
+              </span>
               <div class="text-left">
-                <span id="amPinTitle3" class="font-bold text-[11px] text-neutral-900 block leading-tight">6.5L V12 Hybrid Engine</span>
-                <span id="amPinDesc3" class="text-[9.5px] text-neutral-500 block leading-tight mt-0.5">Extreme power and efficiency</span>
+                <span id="amPinTitle3" class="font-bold text-[10.5px] sm:text-[11.5px] text-neutral-900 block leading-tight">6.5L V12 Hybrid Engine</span>
+                <span id="amPinDesc3" class="text-[9px] sm:text-[9.5px] text-neutral-500 block leading-tight mt-0.5">Extreme power and efficiency</span>
               </div>
             </div>
 
-            <!-- FLOATING FEATURE CARD 4 (Bottom Center / Active Aerodynamics) -->
-            <div id="amPin4" class="absolute bottom-[6%] left-[36%] hidden md:flex items-center gap-2.5 px-3.5 py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 z-20 max-w-[210px]">
-              <span class="w-2.5 h-2.5 rounded-full bg-black ring-4 ring-black/15 shrink-0"></span>
+            <!-- FLOATING FEATURE CARD 4 (Bottom Center / Active Aerodynamics & Suspension) -->
+            <div id="amPin4" class="absolute bottom-[2%] sm:bottom-[3%] left-[28%] sm:left-[35%] flex items-center gap-2 sm:gap-2.5 px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/90 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 z-20 max-w-[190px] sm:max-w-[215px] cursor-default select-none">
+              <span class="relative flex h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 items-center justify-center">
+                <span class="w-3.5 h-3.5 rounded-full border-2 border-neutral-600/90 bg-white flex items-center justify-center shadow-2xs">
+                  <span class="w-1.5 h-1.5 rounded-full bg-black"></span>
+                </span>
+              </span>
               <div class="text-left">
-                <span id="amPinTitle4" class="font-bold text-[11px] text-neutral-900 block leading-tight">Active Aerodynamics</span>
-                <span id="amPinDesc4" class="text-[9.5px] text-neutral-500 block leading-tight mt-0.5">Adaptive systems for ultimate control</span>
+                <span id="amPinTitle4" class="font-bold text-[10.5px] sm:text-[11.5px] text-neutral-900 block leading-tight">Active Aerodynamics</span>
+                <span id="amPinDesc4" class="text-[9px] sm:text-[9.5px] text-neutral-500 block leading-tight mt-0.5">Adaptive systems for ultimate control</span>
               </div>
             </div>
 
-            <!-- FLOATING FEATURE CARD 5 (Bottom Right / Track-Focused Brakes) -->
-            <div id="amPin5" class="absolute bottom-[18%] -right-[2%] hidden md:flex items-center gap-2.5 px-3.5 py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 z-20 max-w-[210px]">
-              <span class="w-2.5 h-2.5 rounded-full bg-black ring-4 ring-black/15 shrink-0"></span>
+            <!-- FLOATING FEATURE CARD 5 (Bottom Right / Track-Focused Brakes & Transmission) -->
+            <div id="amPin5" class="absolute bottom-[18%] sm:bottom-[16%] -right-[2%] sm:right-[1%] flex items-center gap-2 sm:gap-2.5 px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200/90 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 z-20 max-w-[190px] sm:max-w-[215px] cursor-default select-none">
+              <span class="relative flex h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 items-center justify-center">
+                <span class="w-3.5 h-3.5 rounded-full border-2 border-neutral-600/90 bg-white flex items-center justify-center shadow-2xs">
+                  <span class="w-1.5 h-1.5 rounded-full bg-black"></span>
+                </span>
+              </span>
               <div class="text-left">
-                <span id="amPinTitle5" class="font-bold text-[11px] text-neutral-900 block leading-tight">Track-Focused</span>
-                <span id="amPinDesc5" class="text-[9.5px] text-neutral-500 block leading-tight mt-0.5">Built for speed, engineered for precision</span>
+                <span id="amPinTitle5" class="font-bold text-[10.5px] sm:text-[11.5px] text-neutral-900 block leading-tight">Track-Focused</span>
+                <span id="amPinDesc5" class="text-[9.5px] sm:text-[10px] text-neutral-500 block leading-tight mt-0.5">Built for speed, engineered for precision</span>
               </div>
             </div>
 
@@ -3234,14 +3254,58 @@
     }
 
     function updateModalPins(data, tabKey) {
-      if (!data.pins) return;
-      const pinSet = data.pins[tabKey] || data.pins['performance'] || data.pins;
+      if (!data) return;
+      const key = tabKey || currentActiveTab || 'performance';
+      const pinSet = (data.pins && data.pins[key]) || (data.pins && data.pins['performance']) || {};
       
-      const p1 = pinSet.pin1 || { title: 'Aerodynamic Design', desc: 'Engineered for maximum poise' };
-      const p2 = pinSet.pin2 || { title: 'Carbon Monocoque', desc: 'Ultra-lightweight rigid structure' };
-      const p3 = pinSet.pin3 || { title: 'TwinPower Surge', desc: 'Instant electric assist' };
-      const p4 = pinSet.pin4 || { title: 'Active Aerodynamics', desc: 'Adaptive terrain smoothing' };
-      const p5 = pinSet.pin5 || { title: 'Track-Focused', desc: 'Engineered for precision braking' };
+      const engineTitle = (data.specs && data.specs.engine) ? data.specs.engine : 'High-Output Engine';
+      const powerSub = (data.specs && data.specs.power) ? `Extreme power · ${data.specs.power}` : 'Extreme power and efficiency';
+      const transDesc = (data.specs && data.specs.transmission && data.specs.accel) ? `${data.specs.transmission} · 0-100 in ${data.specs.accel}` : 'Built for speed, engineered for precision';
+
+      const tabDefaults = {
+        performance: {
+          p1: { title: 'Aerodynamic Design', desc: 'Inspired by F1 technology for maximum downforce' },
+          p2: { title: 'Carbon Fiber Monocoque', desc: 'Ultra-lightweight high-tensile structure' },
+          p3: { title: engineTitle, desc: powerSub },
+          p4: { title: 'Active Aerodynamics', desc: 'Adaptive systems for ultimate control' },
+          p5: { title: 'Track-Focused Dynamics', desc: transDesc }
+        },
+        design: {
+          p1: { title: 'Aerodynamic Silhouette', desc: 'Sculpted low-drag aerodynamic profile' },
+          p2: { title: 'Panoramic Dual Moonroof', desc: 'Thermal insulated acoustic canopy' },
+          p3: { title: 'Forged Light Alloys', desc: 'Diamond-turned acoustic damping wheels' },
+          p4: { title: 'Flush Electric Handles', desc: 'Seamless motorized aerodynamic entry' },
+          p5: { title: 'Adaptive Digital Matrix', desc: 'Micro-mirror intelligent optics' }
+        },
+        safety: {
+          p1: { title: '360° Predictive Shield', desc: 'Millimeter wave radar collision scan' },
+          p2: { title: 'Ballistic Safety Cage', desc: 'Reinforced high-strength passenger cell' },
+          p3: { title: 'Pre-Safe Impulse Lift', desc: 'Automatic lateral pre-collision tension' },
+          p4: { title: 'Surround Radar Envelope', desc: 'Autonomous maneuvering perimeter' },
+          p5: { title: 'High-Friction Ceramic', desc: 'Fade-resistant emergency stopping' }
+        },
+        luxury: {
+          p1: { title: 'Executive Massage Lounge', desc: 'Heated recliners with calf extensions' },
+          p2: { title: 'Acoustic Soundstage', desc: 'Studio-grade spatial surround audio' },
+          p3: { title: 'Active Ionized Climate', desc: 'Tailored fragrance aromatherapy' },
+          p4: { title: 'Ambient Spectrum Glow', desc: 'Dynamic bespoke 64-color illumination' },
+          p5: { title: 'Rear Touch Command', desc: 'Digital armrest executive console' }
+        },
+        chauffeur: {
+          p1: { title: 'VIP Electric Privacy', desc: 'Side and rear acoustic sunshades' },
+          p2: { title: 'Acoustic Canopy Glazing', desc: 'Whisper-quiet dual-laminated sanctuary' },
+          p3: { title: 'Diplomatic English Chauffeur', desc: 'Vetted background & security protocol' },
+          p4: { title: 'Encrypted 5G Tethering', desc: 'Continuous high-speed mobile hotspot' },
+          p5: { title: 'Stowable Executive Desk', desc: 'Fold-out aircraft-grade workstation' }
+        }
+      };
+
+      const curDefaults = tabDefaults[key] || tabDefaults['performance'];
+      const p1 = pinSet.pin1 || curDefaults.p1;
+      const p2 = pinSet.pin2 || curDefaults.p2;
+      const p3 = pinSet.pin3 || curDefaults.p3;
+      const p4 = pinSet.pin4 || curDefaults.p4;
+      const p5 = pinSet.pin5 || curDefaults.p5;
 
       const t1 = document.getElementById('amPinTitle1');
       const d1 = document.getElementById('amPinDesc1');
@@ -3583,3 +3647,4 @@
   </script>
 </body>
 </html>
+
