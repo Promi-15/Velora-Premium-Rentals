@@ -414,6 +414,26 @@
       background: #2F5BFF;
     }
 
+    /* Luxury Slim Scrollbar for Vehicle Details Modal */
+    .modal-slim-scroll::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+    .modal-slim-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .modal-slim-scroll::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 9999px;
+    }
+    .modal-slim-scroll::-webkit-scrollbar-thumb:hover {
+      background: rgba(0, 0, 0, 0.45);
+    }
+    .modal-slim-scroll {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+    }
+
     /* Responsive Device Simulation Frame */
     .viewport-mobile {
       max-width: 390px !important;
@@ -1776,7 +1796,7 @@
     <div class="fixed inset-0 -z-10" onclick="closeCarDetailsModal()"></div>
 
     <!-- Self-Contained Showroom Box (Exact Aston Martin Valkyrie Configurator Experience) -->
-    <div id="carDetailsModalBox" class="relative bg-[#F6F7F9] text-[#0E0F12] w-full max-w-[1540px] max-h-[88vh] min-h-[580px] rounded-[28px] sm:rounded-[36px] border border-white/80 shadow-[0_30px_90px_rgba(0,0,0,0.35)] flex flex-col justify-between overflow-y-auto lg:overflow-hidden transform scale-95 transition-all duration-300 p-5 sm:p-7 lg:p-8 my-auto select-none">
+    <div id="carDetailsModalBox" class="relative bg-[#F6F7F9] text-[#0E0F12] w-full max-w-[1540px] max-h-[88vh] min-h-[580px] rounded-[28px] sm:rounded-[36px] border border-white/80 shadow-[0_30px_90px_rgba(0,0,0,0.35)] flex flex-col justify-between overflow-y-auto modal-slim-scroll transform scale-95 transition-all duration-300 p-5 sm:p-7 lg:p-8 my-auto select-none">
       
       <!-- TOP BROWSER CHROME & CONFIGURATOR APP HEADER (Matching Reference Image) -->
       <header class="w-full shrink-0 z-30 pb-3 sm:pb-3.5 mb-2 sm:mb-3 border-b border-neutral-200/80">
