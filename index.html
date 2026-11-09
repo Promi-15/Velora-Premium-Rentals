@@ -505,9 +505,9 @@
             <img src="./logo-white.png" alt="Velora" class="h-8 sm:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
           </a>
 
-          <!-- Centre: Nav Menu Links (Services, How it works, FAQ) -->
-          <div class="hidden md:flex items-center space-x-6 lg:space-x-8 text-sm font-medium text-white/85">
-            <a href="#services" class="hover:text-white transition py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-white hover:after:w-full after:transition-all">Services</a>
+          <!-- Centre: Nav Menu Links (Home, How it works, FAQ) - Always visible across all screen sizes -->
+          <div class="flex items-center space-x-3.5 sm:space-x-6 lg:space-x-8 text-xs sm:text-sm font-semibold text-white/90">
+            <a href="#hero" class="hover:text-white transition py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-white hover:after:w-full after:transition-all">Home</a>
             <a href="#how-it-works" class="hover:text-white transition py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-white hover:after:w-full after:transition-all">How it works</a>
             <a href="#faq" class="hover:text-white transition py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-white hover:after:w-full after:transition-all">FAQ</a>
           </div>
@@ -534,7 +534,7 @@
         <!-- Mobile Glass Dropdown Menu -->
         <div id="mobileGlassDropdown" class="hidden md:hidden max-w-[1200px] mx-auto mt-2 hero-glass-nav rounded-3xl p-5 space-y-3 pointer-events-auto shadow-2xl">
           <div class="flex flex-col space-y-3 text-sm font-medium text-white/90">
-            <a href="#services" onclick="toggleMobileNavMenu()" class="px-3 py-2 rounded-xl hover:bg-white/10 transition">Services</a>
+            <a href="#hero" onclick="toggleMobileNavMenu()" class="px-3 py-2 rounded-xl hover:bg-white/10 transition">Home</a>
             <a href="#how-it-works" onclick="toggleMobileNavMenu()" class="px-3 py-2 rounded-xl hover:bg-white/10 transition">How it works</a>
             <a href="#faq" onclick="toggleMobileNavMenu()" class="px-3 py-2 rounded-xl hover:bg-white/10 transition">FAQ</a>
             <div class="pt-2 border-t border-white/15 flex items-center justify-between px-3">
